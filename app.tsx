@@ -1,11 +1,11 @@
 import React, { Fragment, PropsWithChildren } from 'https://esm.sh/react'
-import { Head } from 'https://postjs.io/mod.ts'
+import { Head } from 'https://deno.land/x/aleph/mod.ts'
 
 export default function App({ children }: PropsWithChildren<{}>) {
     return (
         <Fragment>
             <Head>
-                <title>Welcome - postjs</title>
+                <title>Hello World - AlephJS</title>
             </Head>
             {children}
         </Fragment>

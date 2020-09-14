@@ -1,6 +1,4 @@
-# PostJS Website
-Website for [postjs](https://github.com/postui/postjs).
+# Aleph.js Website
+Website of [alephjs.org](https://alephjs.org).
 
-https://postjs.io
-
-[WIP]
+🚧 This project is work in progress.
