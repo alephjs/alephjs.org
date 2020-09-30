@@ -1,4 +1,5 @@
 import React, { useState } from 'https://esm.sh/react'
+import Button from '../components/button.tsx'
 import Logo from '../components/logo.tsx'
 import '../style/index.less'
 
@@ -6,21 +7,13 @@ export default function Home() {
     const [count, setCount] = useState(0)
 
     return (
-        <div className="wrapper">
-            <p className="logo"><Logo /></p>
-            <p>Welcome to use <strong>Aleph.js</strong>!</p>
-            <p className="links">
-                <a href="https://alephjs.org/guides" target="_blank">Get Started</a>
-                <span>&middot;</span>
-                <a href="https://alephjs.org/docs" target="_blank">Docs</a>
-                <span>&middot;</span>
-                <a href="https://github.com/postui/alephjs" target="_blank">Github</a>
-            </p>
-            <p className="counter">
-                <span>Counter:</span>
-                <strong>{count}</strong>
-                <button onClick={() => setCount(n => n - 1)}>-</button>
-                <button onClick={() => setCount(n => n + 1)}>+</button>
+        <div className="index-page wrapper">
+            <Logo />
+            <h1>The React Frame in Deno.</h1>
+            <p>Aleph.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript in  deno, ES module, route pre-fetching, and more. No config needed.</p>
+            <p>
+                <Button strong>Get Started</Button>
+                <Button strong>Documentation</Button>
             </p>
         </div>
     )

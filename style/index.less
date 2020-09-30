@@ -1,74 +1,31 @@
-main {
+.index-page {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     min-height: 100vh;
-}
 
-.wrapper {
-    p {
-        margin: 0;
-        line-height: 1.5;
-        font-size: 15px;
-        font-family: Helvetica, Arial, sans-serif;
-        text-align: center;
-        color: #333;
-
-        strong {
-            color: #000;
-            font-weight: 600;
-        }
-    }
-
-    .logo + p {
-        margin-top: 15px;
-    }
-
-    .links {
-        span, a {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        span {
-            color: #999;
-        }
-        a {
-            margin: 0 9px;
-            color: #0090f0;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .counter {
-        width: 240px;
+    h1 {
         margin-top: 30px;
-        padding: 12px 0;
-        border: 1px dashed #eee;
-        border-radius: 6px;
-        transition: border-color 0.15s ease-in;
+        line-height: 1.5;
+        font-size: 30px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        color: #111;
+    }
+    p {
+        width: 80%;
+        max-width: 600px;
+        line-height: 1.27;
+        font-size: 15px;
+        text-align: center;
+        color: #666;
 
-        &:hover {
-            border-color: #ddd;
-        }
-
-        strong,
-        button {
-            display: inline-block;
-            text-align: center;
-        }
-        strong {
-            width: 45px;
-        }
-        button {
-            width: 24px;
-            cursor: pointer;
-        }
         button + button {
-            margin-left: 6px;
+            margin: 12px;
         }
+    }
+    p + p {
+        margin-top: 24px;
     }
 }

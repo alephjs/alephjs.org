@@ -1,0 +1,44 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    .small {
+        height: 60px;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    ul {
+        li + li {
+            margin-left: 30px;
+        }
+        li {
+            float: left;
+            height: 24px;
+
+            a {
+                line-height: 24px;
+            }
+            a.icon {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                opacity: 0.75;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
