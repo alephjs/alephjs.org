@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <header>
             <div className="wrapper">
-                <h1><Link to="/">ALEPHJS</Link></h1>
+                <h1><Link to="/">ALEPH.JS</Link></h1>
                 <nav>
                     <ul>
                         <li>
