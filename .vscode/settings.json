@@ -4,7 +4,8 @@
     "files.exclude": {
         "**/.git": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        ".aleph/": true
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
