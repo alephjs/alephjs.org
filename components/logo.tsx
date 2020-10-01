@@ -1,10 +1,10 @@
 /// <reference lib="dom" />
 import { ZoomBlurFilter } from 'https://esm.sh/@pixi/filter-zoom-blur'
 import * as PIXI from 'https://esm.sh/pixi.js'
-import React, { useEffect, useMemo, useRef } from 'https://esm.sh/react'
-import { getTravelSpeed, setTravelSpeed } from '../shared/speed.ts'
+import React, { useEffect, useRef } from 'https://esm.sh/react'
 
 const starImage = '/star.png'
+const travel = {speed: 0.15}
 
 interface Star {
     sprite: PIXI.Sprite
@@ -102,21 +102,16 @@ class Canvas {
 
     private _travel(delta: number) {
         const { stage } = this._app
-        const travelSpeed = getTravelSpeed()
-        if (travelSpeed != 0) {
-            this._cameraZ += delta * 10 * travelSpeed
-            if (Math.abs(travelSpeed) > 0.2) {
-                this._zoomBlurFilter.strength = Math.abs(travelSpeed) / 45
-            } else {
-                this._zoomBlurFilter.strength = 0.01
-            }
-            if (stage.filters === null) {
-                stage.filters = [this._zoomBlurFilter]
-            }
-            this._renderStars()
-        } else if (stage.filters.length !== 0) {
-            stage.filters = []
+        this._cameraZ += delta * 10 * travel.speed
+        if (Math.abs(travel.speed) > 0.2) {
+            this._zoomBlurFilter.strength = Math.abs(travel.speed) / 45
+        } else {
+            this._zoomBlurFilter.strength = 0.01
         }
+        if (stage.filters === null) {
+            stage.filters = [this._zoomBlurFilter]
+        }
+        this._renderStars()
     }
 
     private _renderStars() {
@@ -194,12 +189,8 @@ export default function Logo({ size, fov, starBaseSize }: Props) {
                 width: size,
                 height: size,
             }}
-            onMouseEnter={()=>{
-                setTravelSpeed(0.9)
-            }}
-            onMouseLeave={()=>{
-                setTravelSpeed(0.1)
-            }}
+            onMouseEnter={() => travel.speed = 0.75}
+            onMouseLeave={() => travel.speed = 0.15}
             ref={el => {
                 if (el) {
                     ref.current = el
@@ -210,7 +201,7 @@ export default function Logo({ size, fov, starBaseSize }: Props) {
 }
 
 Logo.defaultProps = {
-    size: 240,
+    size: 210,
     fov: 50,
     starBaseSize: 7
 }
