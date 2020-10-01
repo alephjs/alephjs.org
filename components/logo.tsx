@@ -189,6 +189,7 @@ export default function Logo({ size, fov, starBaseSize }: Props) {
 
     return (
         <div
+            className="logo"
             style={{
                 width: size,
                 height: size,

@@ -1,10 +1,10 @@
 import React, { Fragment, PropsWithChildren } from 'https://esm.sh/react'
-import { Head,ViewPort } from 'https://deno.land/x/aleph/mod.ts'
+import { Head } from 'https://deno.land/x/aleph/mod.ts'
 import Header from './components/header.tsx'
 import './style/app.less'
 
 export default function App({ children }: PropsWithChildren<{}>) {
-    return (
+     return (
         <Fragment>
             <Head>
                 <title>AlephJS - The React Framework in Deno.</title>
