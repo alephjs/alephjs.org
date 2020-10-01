@@ -1,4 +1,5 @@
 import React, { useState } from 'https://esm.sh/react'
+import { Link } from 'https://deno.land/x/aleph/mod.ts'
 import '../style/header.less'
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
     return (
         <header>
             <div className="wrapper">
-                <h1>ALEPHJS</h1>
+                <h1><Link to="/">ALEPHJS</Link></h1>
                 <nav>
                     <ul>
                         <li>
