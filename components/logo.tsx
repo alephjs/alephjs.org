@@ -74,6 +74,7 @@ class Canvas {
             this._stars.push(star)
         }
         this._renderStars()
+        this._travel = this._travel.bind(this)
     }
 
     mount(el: HTMLElement) {
@@ -87,11 +88,11 @@ class Canvas {
     }
 
     play() {
-        this._app.ticker.add((delta: number) => this._travel(delta))
+        this._app.ticker.add(this._travel)
     }
 
     stop() {
-        this._app.ticker.remove((delta: number) => this._travel(delta))
+        this._app.ticker.remove(this._travel)
     }
 
     resize(size: number) {
@@ -180,7 +181,7 @@ export default function Logo({ size, fov, starBaseSize }: Props) {
                 canvas.unmount(ref.current)
             }
         }
-    }, [])
+    }, [size, fov, starBaseSize])
 
     return (
         <div
