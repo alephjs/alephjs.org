@@ -1,37 +1,88 @@
 .index-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-
-    .logo {
-        cursor: none;
+    .page {
+        width: 100vw;
+        min-height: 100vh;
     }
 
-    h1 {
-        line-height: 1.8;
-        font-size: 30px;
-        font-family: Helvetica, Arial, sans-serif;
-        font-weight: 600;
-        color: #111;
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
-    p {
-        width: 80%;
-        max-width: 600px;
-        line-height: 1.27;
-        font-size: 15px;
-        text-align: center;
-        color: #666;
+    .welcome {
+        .logo {
+            cursor: none;
+        }
+
+        h1 {
+            line-height: 1.8;
+            font-size: 30px;
+            font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: -1px;
+            font-weight: 600;
+            color: #111;
+        }
+
+        p {
+            width: 90%;
+            max-width: 600px;
+            line-height: 1.27;
+            font-size: 15px;
+            text-align: center;
+            color: #666;
+        }
+
+        p.buttons {
+            margin-top: 24px;
+
+            a {
+                display: inline-block;
+                margin: 0 6px;
+            }
+        }
     }
 
-    p.buttons {
-        margin-top: 24px;
+    .features {
+        justify-content: left;
 
-        a {
-            display: inline-block;
-            margin: 0 6px;
+        h2 {
+            line-height: 1.8;
+            font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: -1px;
+            font-size: 21px;
+            font-weight: 600;
+            text-align: center;
+            color: #111;
+
+            strong {
+                border-bottom: 3px solid #333;
+            }
+        }
+
+        ul {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 60px;
+
+            li:first-child {
+                border-top: 1px solid #eee;
+            }
+
+            li {
+                width: 100%;
+                padding: 15px 6px;
+                border-bottom: 1px solid #eee;
+                line-height: 1.27;
+                font-weight: 500;
+                cursor: pointer;
+
+                &:hover {
+                    color: #000;
+                    background-color: #f6f6f6;
+                }
+            }
         }
     }
 }
