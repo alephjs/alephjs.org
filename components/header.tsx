@@ -2,9 +2,7 @@ import React, { useState } from 'https://esm.sh/react'
 import { Link } from 'https://deno.land/x/aleph/mod.ts'
 import '../style/header.less'
 
-export default function Home() {
-    const [count, setCount] = useState(0)
-
+export default function Header() {
     return (
         <header>
             <div className="wrapper">
