@@ -1,17 +1,12 @@
 .index-page {
-    .page {
-        width: 100vw;
-        min-height: 100vh;
-    }
-
-    .modal {
+    .welcome {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    }
+        width: 100vw;
+        min-height: 100vh;
 
-    .welcome {
         .logo {
             cursor: none;
         }
@@ -19,9 +14,9 @@
         h1 {
             line-height: 1.8;
             font-size: 30px;
-            font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             letter-spacing: -1px;
-            font-weight: 600;
+            font-weight: bold;
             color: #111;
         }
 
@@ -44,10 +39,16 @@
         }
     }
 
-    .features {
+    .details {
+        display: flex;
+        align-items: center;
         justify-content: left;
+        flex-direction: column;
+        padding-bottom: 60px;
 
         h2 {
+            display: inline-block;
+            margin-bottom: 45px;
             line-height: 1.8;
             font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             letter-spacing: -1px;
@@ -55,16 +56,12 @@
             font-weight: 600;
             text-align: center;
             color: #111;
-
-            strong {
-                border-bottom: 3px solid #333;
-            }
+            border-bottom: 3px solid #333;
         }
 
         ul {
             width: 90%;
             max-width: 500px;
-            margin-top: 60px;
 
             li:first-child {
                 border-top: 1px solid #eee;
@@ -83,6 +80,21 @@
                     background-color: #f6f6f6;
                 }
             }
+        }
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        flex-direction: column;
+        padding: 90px 0;
+
+        p {
+            margin-top: 6px;
+            font-size: 14px;
+            line-height: 1.27;
+            color: #999;
         }
     }
 }

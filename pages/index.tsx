@@ -4,10 +4,12 @@ import Button from '../components/button.tsx'
 import Logo from '../components/logo.tsx'
 import '../style/index.less'
 
+const thisYear = (new Date).getFullYear()
+
 export default function Home() {
     return (
         <div className="index-page">
-            <div className="page modal welcome">
+            <div className="welcome">
                 <Logo size={180} />
                 <h1>The React Framework in Deno.</h1>
                 <p>Aleph.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript in  deno, ES module, route pre-fetching, and more. No config needed.</p>
@@ -16,8 +18,8 @@ export default function Home() {
                     <Link to="/docs"> <Button strong>Documentation</Button></Link>
                 </p>
             </div>
-            <div className="page modal features">
-                <h2><strong>Features</strong></h2>
+            <div className="details">
+                <h2>Features</h2>
                 <ul>
                     <li>Zero Config</li>
                     <li>Typescript in Deno</li>
@@ -28,6 +30,10 @@ export default function Home() {
                     <li>SSR/SSG</li>
                 </ul>
             </div>
+            <footer>
+                <p>(MIT License)</p>
+                <p>Copyright © {thisYear} postUI, Inc. All rights reserved.</p>
+            </footer>
         </div>
     )
 }
