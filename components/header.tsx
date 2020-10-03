@@ -1,10 +1,10 @@
-import React, { useState } from 'https://esm.sh/react'
-import { Link } from 'https://deno.land/x/aleph/mod.ts'
-import '../style/header.less'
+import React from 'https://esm.sh/react'
+import { Link, Import } from 'https://deno.land/x/aleph/mod.ts'
 
 export default function Header() {
     return (
         <header>
+            <Import from="../style/header.less" />
             <div className="wrapper">
                 <h1><Link to="/">ALEPH.JS</Link></h1>
                 <nav>

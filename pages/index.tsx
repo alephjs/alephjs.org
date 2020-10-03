@@ -1,14 +1,14 @@
 import React from 'https://esm.sh/react'
-import { Link } from 'https://deno.land/x/aleph/mod.ts'
+import { Link, Import } from 'https://deno.land/x/aleph/mod.ts'
 import Button from '../components/button.tsx'
 import Logo from '../components/logo.tsx'
-import '../style/index.less'
 
 const thisYear = (new Date).getFullYear()
 
 export default function Home() {
     return (
         <div className="index-page">
+            <Import from="../style/index.less" />
             <div className="welcome">
                 <Logo size={180} />
                 <h1>The React Framework in Deno.</h1>

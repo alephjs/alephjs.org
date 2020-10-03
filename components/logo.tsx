@@ -4,7 +4,7 @@ import * as PIXI from 'https://esm.sh/pixi.js'
 import React, { useEffect, useRef } from 'https://esm.sh/react'
 
 const starImage = '/star.png'
-const travel = {speed: 0.15}
+const travel = { speed: 0.15 }
 
 interface Star {
     sprite: PIXI.Sprite

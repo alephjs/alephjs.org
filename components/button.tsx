@@ -1,5 +1,5 @@
 import React, { CSSProperties, PropsWithChildren, useMemo, useState } from 'https://esm.sh/react'
-import '../style/button.less'
+import { Import } from 'https://deno.land/x/aleph/mod.ts'
 
 export default function Button({
     className,
@@ -27,7 +27,7 @@ export default function Button({
     round?: boolean,
     icon?: JSX.Element,
     iconPosition?: { top?: number | string, left?: number | string },
-    onClick?(e: React.MouseEvent<HTMLButtonElement>): void
+    onClick?(e: React.MouseEvent): void
 }>) {
     const [hover, setHover] = useState(false)
     const style = useMemo(() => {
@@ -80,6 +80,7 @@ export default function Button({
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
+            <Import from="../style/button.less" />
             {icon && (<span style={iconPosition} className="icon">{icon}</span>)}
             {children}
         </button>
