@@ -31,7 +31,7 @@ export default function Home() {
                 </ul>
             </div>
             <footer>
-                <p>Copyright © {thisYear} postUI, Inc. All rights reserved.</p>
+                <p>Copyright © {thisYear} postUI, Lab. All rights reserved.</p>
                 <p>(MIT License)</p>
             </footer>
         </div>
