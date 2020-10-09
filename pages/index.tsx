@@ -1,11 +1,13 @@
 import React from 'https://esm.sh/react'
-import { Link, Import } from 'https://deno.land/x/aleph/mod.ts'
+import { Link, Import, useData } from 'https://deno.land/x/aleph/mod.ts'
 import Button from '../components/button.tsx'
 import Logo from '../components/logo.tsx'
 
 const thisYear = (new Date).getFullYear()
 
 export default function Home() {
+    const version = useData('aleph.version')
+
     return (
         <div className="index-page">
             <Import from="../style/index.less" />
@@ -26,12 +28,14 @@ export default function Home() {
                     <li>ES Module Ready</li>
                     <li>HMR with Fast Refresh</li>
                     <li>File-system Routing</li>
+                    <li>Markdown Page</li>
                     <li>Built-in CSS(Less) Support</li>
                     <li>SSR/SSG</li>
                 </ul>
             </div>
             <footer>
                 <p>Copyright © {thisYear} postUI, Lab. All rights reserved.</p>
+                <p>Built by Aleph.js - v{version}</p>
                 <p>(MIT License)</p>
             </footer>
         </div>
