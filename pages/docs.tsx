@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-import { Head, Import, useRouter } from 'https://deno.land/x/aleph/mod.ts'
+import { Head, Import, NavLink, useRouter } from 'https://deno.land/x/aleph/mod.ts'
 import hljs from 'https://esm.sh/highlight.js/lib/core'
 import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
 import javascript from 'https://esm.sh/highlight.js/lib/languages/javascript'
@@ -41,6 +41,36 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             <Import from="../style/docs.less" />
             <aside>
                 <input placeholder="Search..." />
+                <h2>Documentation</h2>
+                <ul>
+                    <li>
+                        <NavLink to="/docs">About Aleph.js</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/docs/get-started">Get Started</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/docs/concepts">Concepts</NavLink>
+                    </li>
+                </ul>
+                <h2>API Reference</h2>
+                <ul>
+                    <li>
+                        <NavLink to="/docs/api-reference/cli">aleph/CLI</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/docs/api-reference/link">aleph/Link</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/docs/api-reference/head">aleph/Head</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/docs/api-reference/router">aleph/Router</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/docs/api-reference/config">config.ts</NavLink>
+                    </li>
+                </ul>
             </aside>
             <div className="content">
                 {Page && <Page />}

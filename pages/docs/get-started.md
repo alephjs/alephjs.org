@@ -3,10 +3,9 @@ title: Get Started
 author: postUI Lab.
 date: 2020-10-01
 ---
+
 # Get Started
 Welcome to use **Aleph.js**!
-<br>
-Aleph.js is inspired by [next.js](https://nextjs.org), many concepts is same.
 
 ## System Requirements
 You will need [deno](https://deno.land/) 1.4+ and [vscode](https://code.visualstudio.com/) with deno [extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno).
