@@ -1,5 +1,6 @@
 /// <reference lib="dom" />
 import { Head, Import, NavLink, useRouter } from 'https://deno.land/x/aleph/mod.ts'
+import util from 'https://deno.land/x/aleph/util.ts'
 import hljs from 'https://esm.sh/highlight.js/lib/core'
 import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
 import javascript from 'https://esm.sh/highlight.js/lib/languages/javascript'
@@ -96,7 +97,11 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             </Head>
             <Import from="../style/docs.less" />
             <aside>
-                <input placeholder="Search..." />
+                <input
+                    placeholder="Search..."
+                    // todo: implement search function
+                    onChange={util.debounce(() => { alert('Search function is work in progress!') }, 500)}
+                />
                 <nav>
                     {navMenu.map(g => (
                         <Fragment key={g.name}>
