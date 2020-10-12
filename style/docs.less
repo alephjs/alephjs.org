@@ -10,83 +10,8 @@
     aside {
         position: sticky;
         top: 90px;
-        padding-top: 15px;
         width: 300px;
         float: left;
-
-        h2 {
-            margin-top: 1.8rem;
-            line-height: 1.5;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            color: #999;
-        }
-
-        ul {
-            li.indent + li.indent {
-                margin-top: 0;
-                padding-top: 16px;
-            }
-            li {
-                margin-top: 16px;
-
-                &.indent {
-                    border-left: 1px solid rgb(234, 234, 234);
-                    padding-left: 19px;
-                    margin-left: 3px;
-                }
-
-                label {
-                    font-size: 1rem;
-                    color: #333;
-                    cursor: pointer;
-
-                    svg {
-                        display: inline-block;
-                        margin-right: 14px;
-                        transition: transform .15s linear;
-                    }
-                    &.open svg {
-                        margin-left: 1px;
-                        margin-right: 13px;
-                        transform: rotate(90deg);
-                    }
-                }
-
-                a {
-                    display: flex;
-                    align-items: center;
-                    font-size: 1rem;
-                    color: #333;
-
-                    &:before {
-                        flex-basis: 4px;
-                        flex-shrink: 0;
-                        display: block;
-                        width: 4px;
-                        height: 4px;
-                        margin-right: 16px;
-                        border-radius: 50%;
-                        background-color: #999;
-                        transition: background-color .15s linear;
-                        content: "";
-                    }
-
-                    &.active {
-                        color: #000;
-                        font-weight: 600;
-                    }
-                    &:hover {
-                        color: #000;
-                    }
-                    &.active:before,
-                    &:hover:before {
-                        background-color: #333;
-                    }
-                }
-            }
-        }
 
         input {
             box-shadow: none;
@@ -96,6 +21,7 @@
             line-height: 36px;
             width: 100%;
             height: 36px;
+            margin-top: 15px;
             padding: 3px 9px;
             border: 1px solid #eee;
             border-radius: 5px;
@@ -116,13 +42,100 @@
                 border-color: #999;
             }
         }
+
+        nav {
+            width: 100%;
+            height: calc(100vh - 90px - 15px - 36px - 1.8rem);
+            overflow: hidden;
+            overflow-y: auto;
+            margin-top: 1.8rem;
+            padding-bottom: 1.8rem;
+
+            h2 {
+                line-height: 1.5;
+                font-size: 0.9rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: #999;
+            }
+
+            ul + h2 {
+                margin-top: 1.8rem;
+            }
+
+            ul {
+                li {
+                    margin-top: 16px;
+
+                    &.indent {
+                        border-left: 1px solid rgb(234, 234, 234);
+                        padding-left: 19px;
+                        margin-left: 3px;
+
+                        & + li.indent {
+                            margin-top: 0;
+                            padding-top: 16px;
+                        }
+                    }
+
+                    label {
+                        font-size: 1rem;
+                        color: #333;
+                        cursor: pointer;
+
+                        svg {
+                            display: inline-block;
+                            margin-right: 14px;
+                            transition: transform .15s linear;
+                        }
+                        &.open svg {
+                            margin-left: 1px;
+                            margin-right: 13px;
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        font-size: 1rem;
+                        color: #333;
+
+                        &:before {
+                            flex-basis: 4px;
+                            flex-shrink: 0;
+                            display: block;
+                            width: 4px;
+                            height: 4px;
+                            margin-right: 16px;
+                            border-radius: 50%;
+                            background-color: #999;
+                            transition: background-color .15s linear;
+                            content: "";
+                        }
+
+                        &.active {
+                            color: #000;
+                            font-weight: 600;
+                        }
+                        &:hover {
+                            color: #000;
+                        }
+                        &.active:before,
+                        &:hover:before {
+                            background-color: #333;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .content {
         padding-left: 390px;
 
         .edit-link {
-            margin: 60px 0;
+            padding: 60px 0;
 
             a {
                 color: #d63369;

@@ -97,47 +97,48 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             <Import from="../style/docs.less" />
             <aside>
                 <input placeholder="Search..." />
-                {navMenu.map(g => (
-                    <Fragment key={g.name}>
-                        <h2>{g.name}</h2>
-                        <ul>
-                            {g.items.map(item => {
-                                if (item.submenu) {
-                                    return (
-                                        <Fragment key={item.title + item.pathname}>
-                                            <li>
-                                                <label
-                                                    className={opened[item.pathname] ? 'open' : 'close'}
-                                                    onClick={() => setOpened(opened => {
-                                                        opened[item.pathname] = !opened[item.pathname]
-                                                        console.log({ ...opened })
-                                                        return { ...opened }
-                                                    })}
-                                                >
-                                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="square"></path>
-                                                    </svg>
-                                                    {item.title}
-                                                </label>
-                                            </li>
-                                            {opened[item.pathname] && item.submenu.map(({ title, pathname }) => (
-                                                <li className="indent" key={title + pathname}>
-                                                    <NavLink to={item.pathname + pathname}>{title}</NavLink>
+                <nav>
+                    {navMenu.map(g => (
+                        <Fragment key={g.name}>
+                            <h2>{g.name}</h2>
+                            <ul>
+                                {g.items.map(item => {
+                                    if (item.submenu) {
+                                        return (
+                                            <Fragment key={item.title + item.pathname}>
+                                                <li>
+                                                    <label
+                                                        className={opened[item.pathname] ? 'open' : 'close'}
+                                                        onClick={() => setOpened(opened => {
+                                                            opened[item.pathname] = !opened[item.pathname]
+                                                            return { ...opened }
+                                                        })}
+                                                    >
+                                                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="square"></path>
+                                                        </svg>
+                                                        {item.title}
+                                                    </label>
                                                 </li>
-                                            ))}
-                                        </Fragment>
-                                    )
-                                } else {
-                                    return (
-                                        <li key={item.title + item.pathname}>
-                                            <NavLink to={item.pathname}>{item.title}</NavLink>
-                                        </li>
-                                    )
-                                }
-                            })}
-                        </ul>
-                    </Fragment>
-                ))}
+                                                {opened[item.pathname] && item.submenu.map(({ title, pathname }) => (
+                                                    <li className="indent" key={title + pathname}>
+                                                        <NavLink to={item.pathname + pathname}>{title}</NavLink>
+                                                    </li>
+                                                ))}
+                                            </Fragment>
+                                        )
+                                    } else {
+                                        return (
+                                            <li key={item.title + item.pathname}>
+                                                <NavLink to={item.pathname}>{item.title}</NavLink>
+                                            </li>
+                                        )
+                                    }
+                                })}
+                            </ul>
+                        </Fragment>
+                    ))}
+                </nav>
             </aside>
             <div className="content">
                 {Page && <Page />}
