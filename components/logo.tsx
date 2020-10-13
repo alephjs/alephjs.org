@@ -1,5 +1,6 @@
 /// <reference lib="dom" />
 import { ZoomBlurFilter } from 'https://esm.sh/@pixi/filter-zoom-blur'
+import { GlitchFilter } from 'https://esm.sh/@pixi/filter-glitch'
 import * as PIXI from 'https://esm.sh/pixi.js'
 import React, { useEffect, useRef } from 'https://esm.sh/react'
 
@@ -16,6 +17,7 @@ interface Star {
 class Canvas {
     private _app: PIXI.Application
     private _zoomBlurFilter: ZoomBlurFilter
+    private _glitchFilter: GlitchFilter | null
     private _cameraZ: number
     private _size: number
     private _fov: number
@@ -23,15 +25,17 @@ class Canvas {
     private _stars: Star[]
 
     constructor(props: Props) {
-        const { size, fov, starBaseSize } = props
+        const { size, fov, starBaseSize, glitch } = props
         this._size = size * window.devicePixelRatio
         this._app = new PIXI.Application({
             width: this._size,
             height: this._size,
             antialias: true,
+            backgroundColor: 0xffffff,
             transparent: true
         })
         this._zoomBlurFilter = new ZoomBlurFilter(0.01, [this._size / 2, this._size / 2])
+        this._glitchFilter = glitch ? new GlitchFilter({ fillMode: 4, direction: 90 }) : null
         this._cameraZ = 0
         this._fov = fov
         this._starBaseSize = starBaseSize
@@ -56,8 +60,9 @@ class Canvas {
         ])
         triangle.endFill()
         triangle.x = 0
-        triangle.y = -y / 2
+        triangle.y = -y
         stage.addChild(triangle)
+        stage.filters = [this._zoomBlurFilter, this._glitchFilter].filter(Boolean)
 
         const starTexture = PIXI.Texture.from(starImage)
         for (let i = 0; i < Math.round(this._size * this._size / 600); i++) {
@@ -102,15 +107,11 @@ class Canvas {
     }
 
     private _travel(delta: number) {
-        const { stage } = this._app
         this._cameraZ += delta * 10 * travel.speed
         if (Math.abs(travel.speed) > 0.2) {
             this._zoomBlurFilter.strength = Math.abs(travel.speed) / 45
         } else {
             this._zoomBlurFilter.strength = 0.01
-        }
-        if (stage.filters === null) {
-            stage.filters = [this._zoomBlurFilter]
         }
         this._renderStars()
     }
@@ -166,13 +167,14 @@ interface Props {
     size: number
     fov: number
     starBaseSize: number
+    glitch: boolean
 }
 
-export default function Logo({ size, fov, starBaseSize }: Props) {
+export default function Logo({ size, fov, starBaseSize, glitch }: Props) {
     const ref = useRef<HTMLDivElement>()
 
     useEffect(() => {
-        const canvas = new Canvas({ size, fov, starBaseSize })
+        const canvas = new Canvas({ size, fov, starBaseSize, glitch })
         if (ref.current) {
             canvas.mount(ref.current)
         }
@@ -204,7 +206,8 @@ export default function Logo({ size, fov, starBaseSize }: Props) {
 Logo.defaultProps = {
     size: 210,
     fov: 50,
-    starBaseSize: 7
+    starBaseSize: 7,
+    glitch: false
 }
 
 // hidden pixi.js banner from the console
