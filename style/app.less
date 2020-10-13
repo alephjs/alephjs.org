@@ -36,3 +36,49 @@ strong, b {
 em, i {
     font-style: italic;
 }
+
+.fullscreen-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+
+    .logo {
+        cursor: none;
+    }
+
+    h1 {
+        line-height: 1.2;
+        font-size: 36px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+        letter-spacing: -1px;
+        font-weight: bold;
+        text-align: center;
+        color: #111;
+    }
+
+    p {
+        margin-top: 6px;
+        width: 90%;
+        max-width: 600px;
+        line-height: 1.27;
+        font-size: 15px;
+        text-align: center;
+        color: #666;
+
+        strong {
+            color: #000;
+        }
+    }
+
+    p.buttons {
+        margin-top: 24px;
+
+        a {
+            display: inline-block;
+            margin: 0 6px;
+        }
+    }
+}
