@@ -20,19 +20,20 @@ export default function Home() {
                     <Link to="/docs"> <Button strong>Documentation</Button></Link>
                 </p>
             </div>
-            <div className="details">
+            <section>
                 <h2>Features</h2>
                 <ul>
                     <li>Zero Config</li>
                     <li>Typescript in Deno</li>
                     <li>ES Module Ready</li>
+                    <li>Import Maps</li>
                     <li>HMR with Fast Refresh</li>
                     <li>File-system Routing</li>
                     <li>Markdown Page</li>
                     <li>Built-in CSS(Less) Support</li>
                     <li>SSR/SSG</li>
                 </ul>
-            </div>
+            </section>
             <footer>
                 <p>Copyright © {thisYear} postUI, Lab. All rights reserved.</p>
                 <p>Built by Aleph.js - v{version}</p>
