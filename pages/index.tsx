@@ -12,9 +12,9 @@ export default function Home() {
         <div className="index-page">
             <Import from="../style/index.less" />
             <div className="fullscreen-page">
-                <Logo size={180} />
+                <Logo size={210} />
                 <h1>The React Framework in Deno.</h1>
-                <p>Aleph.js gives you the best developer experience on building modern web application: hybrid static & server rendering, TypeScript in Deno, ES module, file-system routing, and more. No config needed.</p>
+                <p><strong>Aleph.js</strong> gives you the best developer experience on building modern web application: hybrid static & server rendering, HMR with Fast Refresh, TypeScript in Deno,<br/> ES module imports, file-system routing, and more. No config needed.</p>
                 <p className="buttons">
                     <Link to="/docs/get-started"> <Button strong>Get Started</Button></Link>
                     <Link to="/docs"> <Button strong>Documentation</Button></Link>
