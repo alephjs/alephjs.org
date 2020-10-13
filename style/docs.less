@@ -143,10 +143,26 @@
             padding: 60px 0;
 
             a {
+                position: relative;
+                display: inline-block;
+                line-height: 1.8rem;
+                font-size: 0.95rem;
                 color: #999;
 
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: -1.8rem;
+                    line-height: 1.8rem;
+                    font-size: 0.95rem;
+                    opacity: 0;
+                    content: '👍🏿';
+                }
                 &:hover {
                     color: #333;
+                }
+                &:hover::before {
+                    opacity: 1;
                 }
             }
         }
