@@ -49,7 +49,12 @@
             overflow: hidden;
             overflow-y: auto;
             margin-top: 1.8rem;
-            padding-bottom: 1.8rem;
+
+            &:after {
+                display: block;
+                height: 1.8rem;
+                content: "";
+            }
 
             h2 {
                 line-height: 1.5;
@@ -123,7 +128,7 @@
                         }
                         &.active:before,
                         &:hover:before {
-                            background-color: #333;
+                            background-color: #111;
                         }
                     }
                 }
@@ -138,11 +143,10 @@
             padding: 60px 0;
 
             a {
-                color: #d63369;
-                box-shadow: 0 1px 0 0 currentColor;
+                color: #999;
 
                 &:hover {
-                    box-shadow: none;
+                    color: #333;
                 }
             }
         }
@@ -178,7 +182,7 @@
             }
 
             p {
-                margin-top: 1.27rem;
+                margin-top: 1rem;
                 line-height: 1.5;
             }
 
@@ -192,7 +196,7 @@
             }
 
             code {
-                font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', 'Courier New', Courier, monospace;
+                font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', Courier, monospace;
             }
 
             pre {
@@ -210,6 +214,11 @@
                 & > code {
                     display: block;
                     padding: 1.27rem;
+
+                    .bash_prompt {
+                        color: #bbb;
+                        user-select: none;
+                    }
                 }
             }
 
@@ -244,12 +253,13 @@
             }
 
             blockquote {
-                color: #666666;
-                background: #fafafa;
-                border: 1px solid #eaeaea;
-                border-radius: 6px;
-                padding: 0 1.27rem;
+                position: relative;
+                color: #666;
+                padding: 0 1.5rem;
                 margin: 1.5rem 0;
+                a {
+                    box-shadow: none;
+                }
             }
 
             hr {
@@ -267,8 +277,8 @@
               list-style-type: decimal;
             }
 
-            li {
-                margin-top: 0.6rem;
+            li + li {
+                margin-top: 0.5rem;
             }
 
             ul li:before {

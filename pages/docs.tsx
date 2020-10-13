@@ -5,7 +5,7 @@ import hljs from 'https://esm.sh/highlight.js/lib/core'
 import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
 import javascript from 'https://esm.sh/highlight.js/lib/languages/javascript'
 import json from 'https://esm.sh/highlight.js/lib/languages/json'
-import React, { ComponentType, useEffect, useMemo, Fragment, useState } from 'https://esm.sh/react'
+import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'https://esm.sh/react'
 
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('json', json)
@@ -14,12 +14,6 @@ hljs.registerLanguage('bash', (hljs: any) => {
     l.keywords.built_in += ' deno aleph'
     return l
 })
-
-interface Metadata {
-    title: string
-    author: string
-    date: string
-}
 
 const navMenu = [
     {
@@ -58,9 +52,9 @@ const navMenu = [
                 title: 'Advanced Features',
                 pathname: '/docs/advanced-features',
                 submenu: [
+                    { title: 'Global Static Data', pathname: '/global-static-data' },
                     { title: 'Custom `App`', pathname: '/custom-app' },
                     { title: 'Custom `404` Page', pathname: '/custom-404-page' },
-                    { title: 'Global Static Data', pathname: '/global-static-data' }
                 ]
             },
         ]
@@ -72,6 +66,19 @@ const navMenu = [
         ]
     }
 ]
+
+function bashPromptSpan(prompt: string = '$') {
+    const span = document.createElement('span')
+    span.className = 'bash_prompt'
+    span.innerText = prompt + ' '
+    return span
+}
+
+interface Metadata {
+    title: string
+    author: string
+    date: string
+}
 
 export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Metadata } }) {
     const { pagePath } = useRouter()
@@ -87,6 +94,35 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     useEffect(() => {
         document.querySelectorAll('.docs pre > code').forEach(block => {
             hljs.highlightBlock(block)
+            if (block.className.includes('language-bash')) {
+                for (let i = 0; i < block.childNodes.length; i++) {
+                    const child = block.childNodes[i]
+                    console.log(child, child.nodeName)
+                    if (child.nodeName === '#text') {
+                        const text = child.textContent!
+                        if (text == '$ ') {
+                            block.insertBefore(bashPromptSpan(), child)
+                            block.removeChild(child)
+                        } else {
+                            const texts = text.split('\n$ ')
+                            const n = texts.length
+                            if (n > 1) {
+                                for (let j = 0; j < n; j++) {
+                                    const t = texts[j]
+                                    if (t) {
+                                        const node = document.createTextNode(t + '\n')
+                                        block.insertBefore(node, child)
+                                    }
+                                    if (j > 0) {
+                                        block.insertBefore(bashPromptSpan(), child)
+                                    }
+                                }
+                                block.removeChild(child)
+                            }
+                        }
+                    }
+                }
+            }
         })
     }, [Page])
 
@@ -120,7 +156,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                                                         })}
                                                     >
                                                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="square"></path>
+                                                            <path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="round"></path>
                                                         </svg>
                                                         {item.title}
                                                     </label>
