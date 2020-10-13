@@ -5,9 +5,11 @@ import hljs from 'https://esm.sh/highlight.js/lib/core'
 import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
 import javascript from 'https://esm.sh/highlight.js/lib/languages/javascript'
 import json from 'https://esm.sh/highlight.js/lib/languages/json'
+import typescript from 'https://esm.sh/highlight.js/lib/languages/typescript'
 import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'https://esm.sh/react'
 
 hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('typescript', typescript)
 hljs.registerLanguage('json', json)
 hljs.registerLanguage('bash', (hljs: any) => {
     const l = bash(hljs)
@@ -27,8 +29,9 @@ const navMenu = [
                 submenu: [
                     { title: 'Pages', pathname: '/pages' },
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
-                    { title: 'Static File Serving', pathname: '/static-file-serving' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
+                    { title: 'Static File Serving', pathname: '/static-file-serving' },
+                    { title: 'Import Maps', pathname: '/import-maps' },
                 ]
             },
             {
@@ -55,6 +58,7 @@ const navMenu = [
                     { title: 'Global Static Data', pathname: '/global-static-data' },
                     { title: 'Custom `App`', pathname: '/custom-app' },
                     { title: 'Custom `404` Page', pathname: '/custom-404-page' },
+                    { title: 'I18N', pathname: '/i18n' },
                 ]
             },
         ]
@@ -97,7 +101,6 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             if (block.className.includes('language-bash')) {
                 for (let i = 0; i < block.childNodes.length; i++) {
                     const child = block.childNodes[i]
-                    console.log(child, child.nodeName)
                     if (child.nodeName === '#text') {
                         const text = child.textContent!
                         if (text == '$ ') {
