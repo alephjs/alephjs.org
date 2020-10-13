@@ -1,7 +1,7 @@
 ---
-title: Concepts
+title: Dynamic Routes
 author: postUI Lab.
 date: 2020-10-01
 ---
 
-# Concepts
+# Dynamic Routes
