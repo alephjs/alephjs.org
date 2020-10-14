@@ -207,7 +207,7 @@ export default function Logo({ size, fov, starBaseSize, glitch }: Props) {
 Logo.defaultProps = {
     size: 210,
     fov: 50,
-    starBaseSize: 7,
+    starBaseSize: 8,
     glitch: false
 }
 

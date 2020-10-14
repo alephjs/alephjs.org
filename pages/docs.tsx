@@ -6,11 +6,13 @@ import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
 import javascript from 'https://esm.sh/highlight.js/lib/languages/javascript'
 import json from 'https://esm.sh/highlight.js/lib/languages/json'
 import typescript from 'https://esm.sh/highlight.js/lib/languages/typescript'
+import xml from 'https://esm.sh/highlight.js/lib/languages/xml'
 import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'https://esm.sh/react'
 
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('typescript', typescript)
 hljs.registerLanguage('json', json)
+hljs.registerLanguage('xml', xml) // dep by jsx
 hljs.registerLanguage('bash', (hljs: any) => {
     const l = bash(hljs)
     l.keywords.built_in += ' deno aleph'
@@ -28,6 +30,7 @@ const navMenu = [
                 pathname: '/docs/basic-features',
                 submenu: [
                     { title: 'Pages', pathname: '/pages' },
+                    { title: 'Routing', pathname: '/routing' },
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
                     { title: 'Static File Serving', pathname: '/static-file-serving' },
@@ -35,38 +38,24 @@ const navMenu = [
                 ]
             },
             {
-                title: 'Routing',
-                pathname: '/docs/routing',
-                submenu: [
-                    { title: 'Introduction', pathname: '/' },
-                    { title: 'Dynamic Routes', pathname: '/dynamic-routes' },
-                    { title: 'Link & Redirect', pathname: '/link-and-redirect' },
-                ]
-            },
-            {
-                title: 'API Routes',
-                pathname: '/docs/api-routes',
-                submenu: [
-                    { title: 'Introduction', pathname: '/' },
-                    { title: 'Dynamic API Routes', pathname: '/dynamic-api-routes' }
-                ]
-            },
-            {
                 title: 'Advanced Features',
                 pathname: '/docs/advanced-features',
                 submenu: [
-                    { title: 'Global Static Data', pathname: '/global-static-data' },
+                    { title: 'App Static Data', pathname: '/app-static-data' },
                     { title: 'Custom `App`', pathname: '/custom-app' },
                     { title: 'Custom `404` Page', pathname: '/custom-404-page' },
-                    { title: 'I18N', pathname: '/i18n' },
+                    { title: 'Custom `Loading` Page', pathname: '/custom-loading-page' },
                 ]
             },
+            { title: 'Browser Support', pathname: '/docs/browser-support' },
         ]
     },
     {
         name: 'API Reference',
         items: [
-            { title: 'config.js', pathname: '/docs/api-reference/config.js' },
+            { title: 'CLI', pathname: '/docs/api-reference/cli' },
+            { title: 'types.ts', pathname: '/docs/api-reference/types_ts' },
+            { title: 'mod.ts', pathname: '/docs/api-reference/mod_ts' },
         ]
     }
 ]
@@ -87,7 +76,7 @@ interface Metadata {
 export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Metadata } }) {
     const { pagePath } = useRouter()
     const [opened, setOpened] = useState(() => navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
-        m[item.pathname] = false
+        m[item.pathname] = pagePath.startsWith(item.pathname)
         return m
     }, {} as Record<string, boolean>))
     const editUrl = useMemo(() => {
@@ -96,8 +85,23 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     }, [pagePath])
 
     useEffect(() => {
-        document.querySelectorAll('.docs pre > code').forEach(block => {
-            hljs.highlightBlock(block)
+        document.querySelectorAll('.docs .content video').forEach(block => {
+            const v = block as HTMLVideoElement
+            v.className = 'is-paused'
+            v.addEventListener('click', e => {
+                if (v.paused) {
+                    v.play()
+                } else {
+                    v.requestFullscreen()
+                }
+            })
+            v.addEventListener('playing', e => v.className = 'is-playing')
+            v.addEventListener('pause', e => v.className = 'is-paused')
+        })
+        document.querySelectorAll('.docs .content pre > code').forEach(block => {
+            if (block.className.includes('language-')) {
+                hljs.highlightBlock(block)
+            }
             if (block.className.includes('language-bash')) {
                 for (let i = 0; i < block.childNodes.length; i++) {
                     const child = block.childNodes[i]

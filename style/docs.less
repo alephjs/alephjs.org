@@ -57,9 +57,9 @@
             }
 
             h2 {
-                line-height: 1.5;
+                line-height: 1.27;
                 font-size: 0.9rem;
-                font-weight: 500;
+                font-weight: 400;
                 text-transform: uppercase;
                 color: #999;
             }
@@ -70,7 +70,7 @@
 
             ul {
                 li {
-                    margin-top: 16px;
+                    margin-top: 18px;
 
                     &.indent {
                         border-left: 1px solid rgb(234, 234, 234);
@@ -79,11 +79,12 @@
 
                         & + li.indent {
                             margin-top: 0;
-                            padding-top: 16px;
+                            padding-top: 18px;
                         }
                     }
 
                     label {
+                        line-height: 1.27;
                         font-size: 1rem;
                         color: #333;
                         cursor: pointer;
@@ -103,6 +104,7 @@
                     a {
                         display: flex;
                         align-items: center;
+                        line-height: 1.27;
                         font-size: 1rem;
                         color: #333;
 
@@ -168,13 +170,16 @@
         }
 
         .markdown-page {
-            h1,h2,h3,h4,h5 {
-                font-weight: 500;
+            h1, h2, h3, h4, h5 {
+                margin-top: 1.27rem;
                 line-height: 1.27;
+                font-weight: 500;
+                color: #000;
             }
 
             h1 {
                 margin-top: 0.6rem;
+                margin-bottom: 1.2rem;
                 font-size: 2.4rem;
                 font-weight: 700;
             }
@@ -208,6 +213,19 @@
 
                 &:hover {
                     box-shadow: none;
+                }
+            }
+
+            img {
+                max-width: 100%;
+                border-radius: 6px;
+            }
+            video {
+                max-width: 100%;
+                border-radius: 6px;
+
+                &.is-paused {
+                    cursor: url('/play-circle.svg'), pointer;
                 }
             }
 
@@ -269,10 +287,14 @@
             }
 
             blockquote {
-                position: relative;
                 color: #666;
-                padding: 0 1.5rem;
+                padding: 0.3rem 1.5rem;
                 margin: 1.5rem 0;
+                border-left: 2px solid #ccc;
+
+                p {
+                    margin: 0;
+                }
                 a {
                     box-shadow: none;
                 }
@@ -294,7 +316,7 @@
             }
 
             li + li {
-                margin-top: 0.5rem;
+                margin-top: 0.6rem;
             }
 
             ul li:before {
