@@ -1,11 +1,12 @@
 /// <reference lib="dom" />
-import { ZoomBlurFilter } from 'https://esm.sh/@pixi/filter-zoom-blur'
 import { GlitchFilter } from 'https://esm.sh/@pixi/filter-glitch'
+import { ZoomBlurFilter } from 'https://esm.sh/@pixi/filter-zoom-blur'
 import * as PIXI from 'https://esm.sh/pixi.js'
 import React, { useEffect, useRef } from 'https://esm.sh/react'
 
 const starImage = '/star.png'
-const travel = { speed: 0.15 }
+const defaultSpeed = 0.15
+const travel = { speed: defaultSpeed }
 
 interface Star {
     sprite: PIXI.Sprite
@@ -34,7 +35,7 @@ class Canvas {
             backgroundColor: 0xffffff,
             transparent: true
         })
-        this._zoomBlurFilter = new ZoomBlurFilter(0.01, [this._size / 2, this._size / 2])
+        this._zoomBlurFilter = new ZoomBlurFilter(defaultSpeed / 10, [this._size / 2, this._size / 2])
         this._glitchFilter = glitch ? new GlitchFilter({ fillMode: 4, direction: 90 }) : null
         this._cameraZ = 0
         this._fov = fov
@@ -108,10 +109,10 @@ class Canvas {
 
     private _travel(delta: number) {
         this._cameraZ += delta * 10 * travel.speed
-        if (Math.abs(travel.speed) > 0.2) {
+        if (Math.abs(travel.speed) > defaultSpeed) {
             this._zoomBlurFilter.strength = Math.abs(travel.speed) / 45
         } else {
-            this._zoomBlurFilter.strength = 0.01
+            this._zoomBlurFilter.strength = defaultSpeed / 10
         }
         this._renderStars()
     }
@@ -192,8 +193,8 @@ export default function Logo({ size, fov, starBaseSize, glitch }: Props) {
                 width: size,
                 height: size,
             }}
-            onMouseEnter={() => travel.speed = 0.75}
-            onMouseLeave={() => travel.speed = 0.15}
+            onMouseEnter={() => travel.speed = 1.5}
+            onMouseLeave={() => travel.speed = defaultSpeed}
             ref={el => {
                 if (el) {
                     ref.current = el
