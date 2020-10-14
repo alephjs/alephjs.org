@@ -1,7 +1,7 @@
 ---
-title: Config.js
+title: mod.ts
 author: postUI Lab.
 date: 2020-10-01
 ---
 
-# Config.js
+# mod.ts

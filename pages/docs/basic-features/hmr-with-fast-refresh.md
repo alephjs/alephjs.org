@@ -23,3 +23,6 @@ Aleph.js supports full HMR out-of-the-box for the following served files:
 <video src="/docs/fast-refresh.mp4" loop autoplay muted></video>
 
 [¹]: https://github.com/facebook/react/issues/16604#issuecomment-528663101
+
+### Limits
+Fast Refresh only support function components with hooks.

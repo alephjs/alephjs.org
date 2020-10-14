@@ -1,7 +1,7 @@
 ---
-title: App Static Data
+title: types.ts
 author: postUI Lab.
 date: 2020-10-01
 ---
 
-# App Static Data
+# types.ts

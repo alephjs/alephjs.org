@@ -13,3 +13,5 @@ Aleph.js requires a modern browser to support [native ES module imports](https:/
 - Firefox >= 60
 - Opera >= 48
 - Safari >= 11
+
+[Next.js]: https://nextjs.org
