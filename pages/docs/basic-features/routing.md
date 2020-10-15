@@ -33,7 +33,7 @@ The router supports nested routes like:
 - `pages/blog/index.tsx`
 - `pages/blog/[slug].tsx`
 
-This router will match `/blog` and `/blog/:slug`, then `blog.tsx` will be the parent component of `index.tsx` and `[slug].tsx`, ensure `blog.tsx` renders the children, you can also  add some public components:
+This router will match `/blog` and `/blog/:slug`, and `blog.tsx` will be the parent component of `index.tsx` and `[slug].tsx`, ensure `blog.tsx` renders the child components, you can also add some public components:
 
 ```jsx
 // blog.tsx
@@ -52,7 +52,7 @@ export default function Blog({ Page, pageProps }) {
 
 ## Linking between pages
 
-The Aleph.js router allows you to do client-side route redirects between pages, similarly to a SPA(single-page application). A React component called `Link` is provided to do this client-side route redirect.
+The Aleph.js router allows you to do client-side route redirects between pages, similarly to a SPA(single-page application). A React component called [`Link`](/docs/api-reference/mod_ts#Link) is provided to do this client-side route redirect.
 
 ```jsx
 import React from "https://esm.sh/react"

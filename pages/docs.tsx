@@ -47,6 +47,7 @@ const navMenu = [
                     { title: 'Custom `Loading` Page', pathname: '/custom-loading-page' },
                 ]
             },
+            { title: 'Deployment', pathname: '/docs/deployment' },
             { title: 'Browser Support', pathname: '/docs/browser-support' },
         ]
     },

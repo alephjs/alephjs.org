@@ -67,8 +67,8 @@ or specify exclude paths:
 {
   "ssr": {
     "exclude": [
-      "admin/"
-      "dashboard/"
+      "/admin/"
+      "/dashboard/"
     ]
   }
 }
