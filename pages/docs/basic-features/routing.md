@@ -95,12 +95,10 @@ export default function NavLink({ href, children }) {
   const onClick = useCallback(e => {
     e.preventDefault()
     redirect(href)
-  }, [href]]
+  }, [href])
 
   return (
-    <a href={href} className={className} onClick={onClick}>
-      {children}
-    </a>
+    <a href={href} className={className} onClick={onClick}>{children}</a>
   )
 }
 ```

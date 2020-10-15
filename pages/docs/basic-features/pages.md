@@ -17,9 +17,11 @@ export default function About() {
   return <h1>About</h1>
 }
 ```
+
 > To learn more about routing, check the [Routing documentation](/docs/basic-features/routing).
 
 ### Markdown Page
+
 Aleph.js supports **markdown** pages from `.md` files in the `pages` directory, and you can define page meta with **yaml** format at front of this `.md` files:
 
 ```

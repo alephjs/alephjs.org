@@ -6,9 +6,9 @@ date: 2020-10-01
 
 # Import Maps
 
-Aleph.js supports [import maps](https://github.com/WICG/import-maps).
+Aleph.js supports the [import maps](https://github.com/WICG/import-maps).
 
-Create `import_map.json` in your application root directory:
+To use **import maps**, create `import_map.json` in your application root directory:
 ```json
 {
   "imports": {
