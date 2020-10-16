@@ -32,8 +32,9 @@ const navMenu = [
                     { title: 'Pages', pathname: '/pages' },
                     { title: 'Routing', pathname: '/routing' },
                     { title: 'APIs', pathname: '/apis' },
-                    { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
+                    { title: 'SSR & SSG', pathname: '/ssr-and-ssg' },
+                    { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
                     { title: 'Static File Serving', pathname: '/static-file-serving' },
                     { title: 'Import Maps', pathname: '/import-maps' },
                 ]
