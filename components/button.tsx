@@ -1,5 +1,4 @@
 import React, { CSSProperties, PropsWithChildren, useMemo, useState } from 'https://esm.sh/react'
-import { Import } from 'https://deno.land/x/aleph/mod.ts'
 
 export default function Button({
     className,
@@ -32,11 +31,17 @@ export default function Button({
     const [hover, setHover] = useState(false)
     const style = useMemo(() => {
         const css: CSSProperties = {
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent:'center',
             height,
-            lineHeight: (height - (strong ? 4 : 2)) + 'px',
+            border: '1px solid #000',
             borderRadius: round === false ? '5px' : height / 2 + 'px',
-            fontSize: 14,
-            fontWeight: 500
+            fontSize: 15,
+            fontWeight: 500,
+            padding: '0 32px',
+            transition: 'all 0.21s ease-in-out',
+            cursor: 'pointer'
         }
         if (color) {
             css.color = color
@@ -51,14 +56,12 @@ export default function Button({
                 css.background = "black"
             }
         }
-
         if (compact) {
-            css.padding = '0 24px'
+            css.padding = '0 16px'
         }
         if (strong) {
-            css.padding = '0 36px'
-            css.fontWeight = 600
             css.borderWidth = '2px'
+            css.fontWeight = 600
         }
         if (width) {
             css.width = width
@@ -80,7 +83,6 @@ export default function Button({
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
-            <Import from="../style/button.less" />
             {icon && (<span style={iconPosition} className="icon">{icon}</span>)}
             {children}
         </button>

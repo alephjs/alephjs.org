@@ -12,7 +12,11 @@ export default function E404() {
             </Head>
             <Header />
             <div className="fullscreen-page">
-                <Import from="./components/logo.tsx" props={{ size: 150, glitch: true }} />
+                <Import
+                    from="./components/logo.tsx"
+                    props={{ size: 150, glitch: true }}
+                    placeholder={<div style={{ height: 150 }} />}
+                />
                 <p style={{ marginTop: '1.8rem' }}><strong style={{ color: 'black' }}>Error 404</strong> - Page not found</p>
             </div>
         </>
