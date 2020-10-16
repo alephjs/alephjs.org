@@ -1,7 +1,6 @@
 import { Head, Import } from 'https://deno.land/x/aleph/mod.ts'
 import React from 'https://esm.sh/react'
 import Header from './components/header.tsx'
-import Logo from './components/logo.tsx'
 
 export default function E404() {
     return (
@@ -13,7 +12,7 @@ export default function E404() {
             </Head>
             <Header />
             <div className="fullscreen-page">
-                <Logo size={150} glitch />
+                <Import from="./components/logo.tsx" props={{ size: 150, glitch: true }} />
                 <p style={{ marginTop: '1.8rem' }}><strong style={{ color: 'black' }}>Error 404</strong> - Page not found</p>
             </div>
         </>
