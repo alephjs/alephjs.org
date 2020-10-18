@@ -29,4 +29,4 @@ Aleph.js supports full HMR out-of-the-box for the following served files:
 
 ### Limits
 - Fast Refresh only supports function components with hooks.
-- Export as default funtion component must has be named: `export default function CompName() { ... }`.
+- Export as default funtion component must be named: `export default function ComponentName() { ... }`.

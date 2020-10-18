@@ -6,7 +6,7 @@ date: 2020-10-01
 
 # Built-in CSS Support
 
-Aleph.js allows you to import a **CSS**/**Less** as ESM syntax:
+Aleph.js allows you to import a **CSS**/**Less** with ESM syntax:
 
 ```javascript
 import '../styles.css'
@@ -19,7 +19,7 @@ import 'https://unpkg.com/tailwindcss@1.9.1/dist/tailwind.min.css'
 ```
 
 ## How It Works
-Aleph.js will transform all `.css` and `.less` imports as js module with HMR support. For example:
+Aleph.js will transform all `.css` and `.less` imports as js module with HMR support. **For example**:
 
 ```javascript
 import '../styles.css'
@@ -28,7 +28,7 @@ import '../styles.css'
 will be transformed to:
 
 ```javascript
-import '../styles.css.HASH.js'
+import '../styles.css.{HASH}.js'
 ```
 
 that will be ignored in Deno and applied in browser.
@@ -59,6 +59,8 @@ export default function MarkdownPage() {
     )
 }
 ```
+
+> To learn more about `Import` component, check the [Asynchronous Import documentation](/docs/advanced-features/asynchronous-import).
 
 ## Adding a Global Stylesheet
 

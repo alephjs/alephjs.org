@@ -67,7 +67,7 @@ export default function Post() {
 }
 ```
 
-> To learn more `useDeno`, check the [useDeno hook documentation](/docs/advanced-features/use-deno-hook).
+> To learn more `useDeno`, check the [useDeno Hook documentation](/docs/advanced-features/use-deno-hook).
 
 ## SSG
 
