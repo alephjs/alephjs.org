@@ -8,16 +8,16 @@ date: 2020-10-01
 
 Aleph.js has a file-system based router built on the [concept of pages](/docs/basic-features/pages).
 <br>
-When a file(`.js`, `.jsx`, `.ts`, `.tsx`, `.mjs`, `.md`) is added to the `pages` or `api` directory it's automatically available as a route.
+When a file(`.js`, `.jsx`, `.ts`, `.tsx`, `.mjs`, `.md`) is added to the `pages` directory it's automatically available as a route.
 
-### Index routes
+### Index Routes
 
 The router will automatically route files named `index` to the root of the directory.
 
 - `pages/index.tsx` → `/`
 - `pages/blog/index.tsx` → `/blog`
 
-### Dynamic routes
+### Dynamic Routes
 
 To match a dynamic segment you can use the bracket syntax or segment starts with **$**:
 
@@ -25,7 +25,7 @@ To match a dynamic segment you can use the bracket syntax or segment starts with
 - `pages/[username]/settings.tsx` → `/:username/settings` (`/foo/settings`)
 - `pages/post/[...all].tsx` → `/post/*` (`/post/2020/id/title`)
 
-### Nested routes
+### Nested Routes
 
 The router supports nested routes like:
 
@@ -50,7 +50,7 @@ export default function Blog({ Page, pageProps }) {
 }
 ```
 
-## Linking between pages
+## Linking Between Pages
 
 The Aleph.js router allows you to do client-side route redirects between pages, similarly to a SPA(single-page application). A React component called [`Link`](/docs/api-reference/mod_ts#Link) is provided to do this client-side route redirect.
 

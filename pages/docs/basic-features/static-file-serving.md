@@ -23,4 +23,4 @@ or other functional asset files:
 - `favicon.ico`
 - `manifest.json`
 - `robots.txt`
-- Google Site Verification
+- Google Site Verification, etc

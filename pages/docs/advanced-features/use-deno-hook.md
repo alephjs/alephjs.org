@@ -1,7 +1,8 @@
 ---
-title: App Static Data
+title: useDeno Hook
 author: postUI Lab.
 date: 2020-10-01
 ---
 
-# App Static Data
+# `useDeno` Hook
+

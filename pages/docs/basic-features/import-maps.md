@@ -8,7 +8,7 @@ date: 2020-10-01
 
 Aleph.js supports the [import maps](https://github.com/WICG/import-maps).
 
-To use **import maps**, create `import_map.json` in your application root directory:
+To use import maps, create a `import_map.json` file in your application root directory:
 ```json
 {
   "imports": {
@@ -28,7 +28,7 @@ export default function About() {
 }
 ```
 
-If you are using VS Code, please add below settings in `.vscode/settings.json`:
+If you are using VS Code, please add below settings in your `.vscode/settings.json`:
 ```json
 {
     "deno.enable": true,

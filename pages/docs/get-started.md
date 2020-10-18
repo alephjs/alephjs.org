@@ -10,12 +10,13 @@ Welcome to use **Aleph.js**!
 
 ## System Requirements
 
-You will need [Deno](https://deno.land/) 1.4+ and [VS Code](https://code.visualstudio.com/) with  [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno).
+ - You will need [Deno](https://deno.land/) 1.4+
+ - [VS Code](https://code.visualstudio.com/) with  [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
 
 ## Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@0.2.4/cli.ts
 ```
 
 ## Usage
@@ -55,15 +56,15 @@ The application will start at http://localhost:8080 by default.
 <br>
 The default port can be changed with `-p`.
 
-**Build the app in production mode**:
+**Build the app in production mode (SSG)**:
 
 ```bash
 $ aleph build
 ```
 
-This will export a static site in the `output` directory, you can deploy it on any servers.
-<br>
-See the [hello-world](https://alephjs-hello-world.vercel.app/) example on [Vercel](https://vercel.com).
+This will export a static site in the `output` directory, which can be run standalone on any server.
+
+> See the [hello-world](https://alephjs-hello-world.vercel.app/) example on [Vercel](https://vercel.com).
 
 **More usages**:
 

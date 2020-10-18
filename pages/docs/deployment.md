@@ -5,6 +5,3 @@ date: 2020-10-01
 ---
 
 # Deployment
-
- - [Vercel](https://vercel.com)
- - [Netlify](https://nentify.com)

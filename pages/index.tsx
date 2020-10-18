@@ -1,11 +1,13 @@
 import React from 'https://esm.sh/react'
-import { Link, Import, useData } from 'https://deno.land/x/aleph/mod.ts'
+import { Link, Import, useDeno } from 'https://deno.land/x/aleph/mod.ts'
 import Button from '../components/button.tsx'
 
 const thisYear = (new Date).getFullYear()
 
 export default function Home() {
-    const version = useData('aleph.version')
+    const { version } = useDeno(() =>  ({
+        version: (window as any).ALEPH.__version
+    }))
 
     return (
         <div className="index-page">

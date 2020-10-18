@@ -32,8 +32,8 @@ const navMenu = [
                     { title: 'Pages', pathname: '/pages' },
                     { title: 'Routing', pathname: '/routing' },
                     { title: 'APIs', pathname: '/apis' },
-                    { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'SSR & SSG', pathname: '/ssr-and-ssg' },
+                    { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
                     { title: 'Static File Serving', pathname: '/static-file-serving' },
                     { title: 'Import Maps', pathname: '/import-maps' },
@@ -43,14 +43,15 @@ const navMenu = [
                 title: 'Advanced Features',
                 pathname: '/docs/advanced-features',
                 submenu: [
-                    { title: 'App Static Data', pathname: '/app-static-data' },
+                    { title: '`useDeno` Hook', pathname: '/use-deno-hook' },
                     { title: 'Custom `App`', pathname: '/custom-app' },
                     { title: 'Custom `404` Page', pathname: '/custom-404-page' },
                     { title: 'Custom `Loading` Page', pathname: '/custom-loading-page' },
+                    { title: 'Asynchronous Import', pathname: '/asynchronous-import' },
                 ]
             },
-            { title: 'Deployment', pathname: '/docs/deployment' },
             { title: 'Browser Support', pathname: '/docs/browser-support' },
+            { title: 'Deployment', pathname: '/docs/deployment' },
         ]
     },
     {

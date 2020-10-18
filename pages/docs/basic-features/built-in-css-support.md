@@ -6,7 +6,7 @@ date: 2020-10-01
 
 # Built-in CSS Support
 
-Aleph.js allows you to import **CSS**/**Less** as ESM syntax:
+Aleph.js allows you to import a **CSS**/**Less** as ESM syntax:
 
 ```javascript
 import '../styles.css'
@@ -36,7 +36,7 @@ that will be ignored in Deno and applied in browser.
 
 ## CSS Imports (@import)
 
-Aleph.js don't handle `@import` in css module currently, you need to put the imported css files in the `public` directory and import them as a absolute URL.
+Aleph.js don't handle `@import` in css module currently, you need to put the imported css files in the `public` directory and import them as a _absolute_ URL.
 
 ## The `Import` Component
 
@@ -62,4 +62,4 @@ export default function MarkdownPage() {
 
 ## Adding a Global Stylesheet
 
-To add a global stylesheet to your application, import the CSS file within `app.tsx`.
+To add a global stylesheet to your application, import the CSS files within `app.tsx`.

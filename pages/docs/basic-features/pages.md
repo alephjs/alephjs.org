@@ -6,9 +6,9 @@ date: 2020-10-01
 
 # Pages
 
-In Aleph.js, a **page** is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, `.tsx`, `.mjs` as **default** in the `pages` directory. Each page is associated with a route based on its file name.
+In Aleph.js, a **page** is a [React Component](https://reactjs.org/docs/components-and-props.html) exported as **default** from a `.js`, `.tsx`, `.ts`, `.tsx`, `.mjs` file in the `pages` directory. Each page is associated with a route based on its file name.
 
-**Example**: If you create `pages/about.jsx` that exports a React component like below, it will be accessible at `/about`.
+**Example**: If you create `pages/about.tsx` that exports a React component like below, it will be accessible at `/about`.
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -20,9 +20,9 @@ export default function About() {
 
 > To learn more about routing, check the [Routing documentation](/docs/basic-features/routing).
 
-### Markdown Page
+### Markdown Pages
 
-Aleph.js supports **markdown** pages from `.md` files in the `pages` directory, and you can define page meta with **yaml** format at front of this `.md` files:
+Aleph.js supports **markdown** pages from `.md` files in the `pages` directory, and you can define page meta with **yaml** format at front of those `.md` files:
 
 ```
 ---
@@ -53,23 +53,4 @@ By default, Aleph.js **pre-renders** every page. This means that Aleph.js genera
 
 Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called _hydration_.)
 
-You can disable the **pre-rendering** function in the `config.json`:
-
-```json
-{
-  "ssr": false
-}
-```
-
-or specify exclude paths:
-
-```json
-{
-  "ssr": {
-    "exclude": [
-      "/admin/"
-      "/dashboard/"
-    ]
-  }
-}
-```
+> To learn more about rendering, check the [SSR & SSG](/docs/basic-features/ssr-and-ssg).
