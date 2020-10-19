@@ -1,10 +1,12 @@
 # Alephjs.org
-The website of [Aleph.js](https://alephjs.org).
+The website of **Aleph.js**, this website is built with Aleph.js and automatically deploys to [Vercel](https://vercel.com).
 
-https://alephjs.org
+> https://alephjs.org
 
 ## System Requirements
-You will need [Deno](https://deno.land/) 1.4+, [Aleph.js](https://deno.land/x/aleph) 0.2+ and [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno).
+- [Deno](https://deno.land/) 1.4+
+- [Aleph.js](https://deno.land/x/aleph) 0.26+
+- [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
 
 ## Development Setup
 ```bash
@@ -14,6 +16,6 @@ aleph dev
 # start the website in `production` mode
 aleph start
 
-# build the website
+# build&export the website to a stact site
 aleph build
 ```
