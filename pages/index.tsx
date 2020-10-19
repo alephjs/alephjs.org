@@ -16,7 +16,7 @@ export default function Home() {
                 <Import
                     from="../components/logo.tsx"
                     props={{ size: 200 }}
-                    placeholder={<div style={{ height: 200 }} />}
+                    fallback={<div style={{ height: 200 }} />}
                 />
                 <h1>The React Framework in Deno.</h1>
                 <p><strong>Aleph.js</strong> gives you the best developer experience on building modern web application:<br/> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>
