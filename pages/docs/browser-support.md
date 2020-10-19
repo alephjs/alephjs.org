@@ -13,7 +13,7 @@ Aleph.js requires a modern browser to support [native ES module imports](https:/
 - Safari >= 11
 - Opera >= 48
 
-## `nomodule.js` ployfill
+## `nomodule.js` Ployfill
 
 (**WIP**, planning to implement in **v0.3**)
 <br>

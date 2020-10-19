@@ -71,7 +71,7 @@ export default function Post() {
 
 ## SSG
 
-Aleph.js allows you to build your app to a **static site**, which can be run standalone on any server.
+Aleph.js allows you to build your app to a **static site**, which can run standalone on any server.
 
 ```bash
 $ aleph build

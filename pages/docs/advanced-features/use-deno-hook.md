@@ -45,7 +45,7 @@ export default function Post() {
 
 ## How It Works
 
-The `useDeno` hook can receive a sync or async **callback**(the first parameter), in the build time, each **callback** of `useDeno` will be invoked and then cache the execution data. After in the browser the callbacks of `useDeno` will be ingnored and the cached data will be used, that's it.
+The `useDeno` hook can receive a sync or async **callback**(the first parameter), in the build time, each **callback** of `useDeno` will be invoked and then cache the returned data. After in the browser the callbacks of `useDeno` will be ingnored and the cached data will be used, that's it.
 
 ## Refresh on Each Request
 
