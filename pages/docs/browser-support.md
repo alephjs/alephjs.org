@@ -6,13 +6,15 @@ date: 2020-10-01
 
 # Browser Support
 
-The mission of Aleph.js is to provide the best developer experience on building modern web application. If your app needs to be compatible with **IE** or other outdated browsers, please consider to use [Next.js].
-
-Aleph.js requires a modern browser to support [native ES module imports](https://caniuse.com/#feat=es6-module) and dynamic imports:
+Aleph.js requires a modern browser to support [native ES module imports](https://caniuse.com/#feat=es6-module) and **dynamic imports** during **development**:
 - Chrome >= 61
 - Edge >= 16
 - Firefox >= 60
-- Opera >= 48
 - Safari >= 11
+- Opera >= 48
 
-[Next.js]: https://nextjs.org
+## `nomodule.js` ployfill
+
+(**WIP**, planning to implement in **v0.3**)
+<br>
+To support older browsers like *IE11* in **production**, Aleph.js will create a ployfilled `nomodule.js` that use [system.js](https://github.com/systemjs/systemjs) to import modules.

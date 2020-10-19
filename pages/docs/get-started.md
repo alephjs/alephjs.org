@@ -16,7 +16,7 @@ Welcome to use **Aleph.js**!
 ## Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph@0.2.5/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@0.2.6/cli.ts
 ```
 
 ## Usage
@@ -54,9 +54,9 @@ $ aleph start
 
 The application will start at http://localhost:8080 by default.
 <br>
-The default port can be changed with `-p`.
+The default port can be changed with `-p` (or `--port`).
 
-**Build the app in production mode (SSG)**:
+**Build the app in `production` mode (SSG)**:
 
 ```bash
 $ aleph build

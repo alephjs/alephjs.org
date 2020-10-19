@@ -28,7 +28,7 @@ export default function About() {
 }
 ```
 
-If you are using VS Code, please add below settings in your `.vscode/settings.json`:
+If you are using VS Code, please add below settings in the `.vscode/settings.json`:
 ```json
 {
     "deno.enable": true,

@@ -44,18 +44,18 @@ Import `.css` with ESM syntax will be suggested it is an error in **VS Code** wi
 
 ![Figure.1](/docs/figure-1.png)
 
-To supplement this, Aleph.js provides a React Component called `Import` that allows you import module asynchronously:
+To supplement this, Aleph.js provides a React Component called [`Import`](/docs/api-reference/mod_ts#import) that allows you import module asynchronously:
 
 ```jsx
-import React, { Fragment } from "https://esm.sh/react"
+import React from "https://esm.sh/react"
 import { Import } from "https://deno.land/x/aleph/mod.ts"
 
-export default function MarkdownPage() {
+export default function Page() {
     return (
-        <Fragment>
+        <>
             <Import from="../style/about.css" />
             <h1>About</h1>
-        </Fragment>
+        </>
     )
 }
 ```
