@@ -9,7 +9,7 @@ date: 2020-10-01
 ### Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph@0.2.6/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.6/cli.ts
 ```
 
 ### Usage

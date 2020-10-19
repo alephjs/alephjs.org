@@ -44,7 +44,7 @@ Under the [MIT](https://opensource.org/licenses/MIT) License.
 
 ## Thirdparty Notice
 
-Some concept description in this docs is copied from [Next.js/docs](https://github.com/vercel/next.js/tree/master/docs) (**MIT License**)
+Some concept description texts in this docs are copied from [Next.js/docs](https://github.com/vercel/next.js/tree/master/docs) (**MIT License**)
 
 [Deno]: https://deno.land
 [Next.js]: https://nextjs.org
