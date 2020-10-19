@@ -9,14 +9,14 @@ date: 2020-10-01
 ### Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.6/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.7/cli.ts
 ```
 
 ### Usage
 
 ```bash
 $ aleph -h
-Aleph.js v0.2.6
+Aleph.js v0.2.7
 The React Framework in deno.
 
 Docs: https://alephjs.org/docs
@@ -29,7 +29,7 @@ Commands:
     init           Create a new app
     dev            Start the app in development mode
     start          Start the app in production mode
-    build          Build&Export a static site
+    build          Build & Export a static site
     upgrade        Upgrade Aleph.js command
 
 Options:
