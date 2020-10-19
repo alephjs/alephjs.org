@@ -1,3 +1,7 @@
+:root {
+    --header-height: 80px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +47,13 @@ em, i {
     justify-content: center;
     flex-direction: column;
     width: 100vw;
-    min-height: 100vh;
+    height: calc(100vh - var(--header-height));
+
+    &:after {
+        display: block;
+        height: var(--header-height);
+        content: '';
+    }
 
     .logo {
         cursor: none;
@@ -57,6 +67,13 @@ em, i {
         letter-spacing: -1.5px;
         text-align: center;
         color: #111;
+
+        @media screen and (max-width: 660px)  and (min-width: 480px) {
+            font-size: 30px;
+        }
+        @media screen and (max-width: 480px) {
+            font-size: 24px;
+        }
     }
 
     p {
@@ -71,6 +88,12 @@ em, i {
         strong {
             font-weight: 600;
         }
+
+        @media screen and (max-width: 660px) {
+            br {
+                display: none;
+            }
+        }
     }
 
     p.buttons {
@@ -79,6 +102,21 @@ em, i {
         a {
             display: inline-block;
             margin: 0 6px;
+        }
+
+        @media screen and (max-width: 660px) {
+            a {
+                display: block;
+                margin: 0;
+                margin-top: 12px;
+
+                button {
+                    box-sizing: border-box;
+                    width: 90%;
+                    height: 36px!important;
+                    border-radius: 18px!important;
+                }
+            }
         }
     }
 }
