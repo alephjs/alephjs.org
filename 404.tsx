@@ -7,7 +7,7 @@ export default function E404() {
         <>
             <Import from="./style/app.less" />
             <Head>
-                <title>Error 404 - Page not found | Aleph.js</title>
+                <title>404 - Page Not Found</title>
                 <meta name="robots" content="noindex" />
             </Head>
             <Header />
@@ -17,7 +17,7 @@ export default function E404() {
                     props={{ size: 150, glitch: true }}
                     fallback={<div style={{ height: 150 }} />}
                 />
-                <p style={{ marginTop: '1.8rem' }}><strong style={{ color: 'black' }}>Error 404</strong> - Page not found</p>
+                <p style={{ marginTop: '1.8rem' }}><strong style={{ color: 'black' }}>404</strong> - Page Not Found</p>
             </div>
         </>
     )
