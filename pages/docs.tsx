@@ -188,7 +188,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                                                 </li>
                                                 {opened[item.pathname] && item.submenu.map(({ title, pathname }) => (
                                                     <li className="indent" key={title + pathname}>
-                                                        <NavLink to={item.pathname + pathname}>{title}</NavLink>
+                                                        <NavLink to={item.pathname + pathname}><a onClick={e => setMenuOpened(false)}>{title}</a></NavLink>
                                                     </li>
                                                 ))}
                                             </Fragment>
@@ -196,7 +196,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                                     } else {
                                         return (
                                             <li key={item.title + item.pathname}>
-                                                <NavLink to={item.pathname}>{item.title}</NavLink>
+                                                <NavLink to={item.pathname}><a onClick={e=>setMenuOpened(false)}>{item.title}</a></NavLink>
                                             </li>
                                         )
                                     }
