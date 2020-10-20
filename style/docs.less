@@ -153,6 +153,7 @@
             padding: 18px 0;
             line-height: 18px;
             font-size: 1rem;
+            font-weight: 500;
             color: #333;
             user-select: none;
             cursor: pointer;
@@ -171,7 +172,7 @@
         }
 
         @media screen and (max-width: 900px) {
-            top: 0;
+            top: -36px;
             float: none;
             width: 100%;
             border-bottom: 1px solid #eee;
@@ -181,7 +182,7 @@
             .search {
                 width: 90%;
                 margin: 0 auto;
-                padding-top: 12px;
+                padding-top: 0;
             }
 
             .menu-button {
@@ -191,14 +192,14 @@
             nav {
                 display: none;
                 margin-top: 0;
-                height: calc(100vh - 12px - 36px - 18px - 18px - 18px);
+                height: calc(100vh - 18px - 18px - 18px);
 
                 &.open {
                     display: block;
                 }
 
                 h2, ul {
-                    width: 90%;
+                    width: 80%;
                     margin: 0 auto;
                 }
             }
