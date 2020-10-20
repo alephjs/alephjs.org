@@ -52,7 +52,7 @@ class Canvas {
         view.style.height = this._size / devicePixelRatio + 'px'
 
         const triangle = new PIXI.Graphics()
-        const y = this._size - Math.sin(55 * Math.PI / 180) * this._size
+        const y = this._size - Math.sin(54 * Math.PI / 180) * this._size
         triangle.beginFill(0x111111)
         triangle.drawPolygon([
             0, this._size,
@@ -205,7 +205,7 @@ export default function Logo({ size, fov, starBaseSize, glitch }: Props) {
 }
 
 Logo.defaultProps = {
-    size: 210,
+    size: 200,
     fov: 50,
     starBaseSize: 8,
     glitch: false
