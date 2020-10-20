@@ -33,13 +33,14 @@ export default function Button({
         const css: CSSProperties = {
             display: 'inline-flex',
             alignItems: 'center',
-            justifyContent:'center',
+            justifyContent: 'center',
             height,
             border: '1px solid #000',
             borderRadius: round === false ? '5px' : height / 2 + 'px',
-            fontSize: 15,
+            lineHeight: 1,
+            fontSize: 16,
             fontWeight: 500,
-            padding: '0 32px',
+            padding: '0 36px',
             transition: 'all 0.21s ease-in-out',
             cursor: 'pointer'
         }
