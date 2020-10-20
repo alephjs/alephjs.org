@@ -85,6 +85,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
         m[item.pathname] = pagePath.startsWith(item.pathname)
         return m
     }, {} as Record<string, boolean>))
+    const [menuOpened, setMenuOpened] = useState(false)
     const editUrl = useMemo(() => {
         const md = pagePath === '/docs' ? pagePath + '/index.md' : pagePath + '.md'
         return 'https://github.com/postui/alephjs.org/edit/master/pages' + md
@@ -140,18 +141,29 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     }, [Page])
 
     return (
-        <div className="docs">
+        <div className={["docs", menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
             <Head>
                 <title>{Page?.meta.title} - Aleph.js</title>
             </Head>
             <Import from="../style/docs.less" />
             <aside>
-                <input
-                    placeholder="Search..."
-                    // todo: implement search function
-                    onChange={util.debounce(() => { alert('Search function is work in progress!') }, 500)}
-                />
-                <nav>
+                <div className="search">
+                    <input
+                        placeholder="Search..."
+                        // todo: implement search function
+                        onChange={util.debounce(() => { alert('Search function is work in progress!') }, 500)}
+                    />
+                </div>
+                <div
+                    className={["menu-button", menuOpened && 'open'].filter(Boolean).join(' ')}
+                    onClick={e => setMenuOpened(ok => !ok)}
+                >
+                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="round"></path>
+                    </svg>
+                    Menu
+                </div>
+                <nav className={menuOpened ? 'open' : undefined}>
                     {navMenu.map(g => (
                         <Fragment key={g.name}>
                             <h2>{g.name}</h2>

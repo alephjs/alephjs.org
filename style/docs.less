@@ -1,44 +1,53 @@
 // https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/styles/atom-one-light.min.css
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:#d63369}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:var(--theme-color)}.hljs-section,.hljs-selector-id,.hljs-title{color:#900;font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:navy;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
 
 .docs {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+
     aside {
         position: sticky;
         top: 80px;
-        width: 300px;
+        z-index: 98;
         float: left;
+        width: 270px;
 
-        input {
-            box-shadow: none;
-            box-sizing: border-box;
-            display: inline-block;
-            font-size: 14px;
-            line-height: 36px;
+        .search {
             width: 100%;
-            height: 36px;
-            margin-top: 6px;
-            padding: 3px 9px;
-            border: 1px solid #eee;
-            border-radius: 5px;
-            outline: 0px;
-            color: #000;
-            background-color: transparent;
-            caret-color: #000;
-            transition: border-color .3s linear, color .3s linear;
-            text-overflow: ellipsis;
-            -webkit-appearance: none;
+            padding-top: 6px;
 
-            &:hover {
+            input {
+                box-shadow: none;
+                box-sizing: border-box;
+                display: inline-block;
+                font-size: 14px;
+                line-height: 36px;
+                width: 100%;
+                height: 36px;
+                padding: 3px 9px;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                outline: 0px;
                 color: #000;
-                border-color: #666;
-            }
-            &:focus {
-                color: #111;
-                border-color: #999;
+                background-color: transparent;
+                caret-color: #000;
+                transition: border-color .3s linear, color .3s linear;
+                text-overflow: ellipsis;
+                -webkit-appearance: none;
+
+                &:hover {
+                    color: #000;
+                    border-color: #666;
+                }
+                &:focus {
+                    color: #111;
+                    border-color: #999;
+                }
             }
         }
 
@@ -135,10 +144,75 @@
                 }
             }
         }
+
+        .menu-button {
+            display: none;
+            width: 90%;
+            height: 18px;
+            margin: 0 auto;
+            padding: 18px 0;
+            line-height: 18px;
+            font-size: 1rem;
+            color: #333;
+            user-select: none;
+            cursor: pointer;
+
+            svg {
+                display: inline-block;
+                margin-right: 14px;
+                transition: transform .15s linear;
+            }
+
+            &.open svg {
+                margin-left: 1px;
+                margin-right: 13px;
+                transform: rotate(90deg);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            top: 0;
+            float: none;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(6px);
+
+            .search {
+                width: 90%;
+                margin: 0 auto;
+                padding-top: 12px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                margin-top: 0;
+                height: calc(100vh - 12px - 36px - 18px - 18px - 18px);
+
+                &.open {
+                    display: block;
+                }
+
+                h2, ul {
+                    width: 90%;
+                    margin: 0 auto;
+                }
+            }
+        }
     }
 
     .content {
-        padding-left: 390px;
+        padding-left: 360px;
+
+        @media screen and (max-width: 900px) {
+            width: 90%;
+            margin: 5vw auto 0;
+            padding-left: 0;
+        }
 
         .edit-link {
             padding: 45px 0;
@@ -207,7 +281,7 @@
             }
 
             a {
-                color: #d63369;
+                color: var(--theme-color);
                 box-shadow: 0 1px 0 0 currentColor;
 
                 &:hover {
@@ -259,7 +333,7 @@
             :not(pre) > code {
                 display: inline;
                 white-space: pre-wrap;
-                color: #d63369;
+                color: var(--theme-color);
 
                 &::before,
                 &::after {

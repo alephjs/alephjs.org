@@ -1,9 +1,10 @@
 import React from 'https://esm.sh/react'
-import { Link, Import } from 'https://deno.land/x/aleph/mod.ts'
+import { Link, Import, useRouter } from 'https://deno.land/x/aleph/mod.ts'
 
 export default function Header() {
+    const { pathname } = useRouter()
     return (
-        <header>
+        <header className={pathname === '/docs' || pathname.startsWith('/docs/') ? 'scrollable' : undefined}>
             <Import from="../style/header.less" />
             <div className="wrapper">
                 <h1><Link to="/">ALEPH.JS</Link></h1>

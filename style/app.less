@@ -1,5 +1,6 @@
 :root {
     --header-height: 80px;
+    --theme-color: #d63369;
 }
 
 * {
@@ -72,32 +73,41 @@ em, i {
             font-size: 30px;
         }
         @media screen and (max-width: 480px) {
-            font-size: 24px;
+            font-size: 25px;
         }
     }
 
-    p {
-        margin-top: 6px;
+    .intro {
         width: 90%;
         max-width: 600px;
+        margin-top: 6px;
         line-height: 1.27;
         font-size: 15px;
         text-align: center;
         color: #666;
+
+        &.short {
+            width: 80%;
+            display: none;
+        }
 
         strong {
             font-weight: 600;
         }
 
         @media screen and (max-width: 660px) {
-            br {
-                display: none;
+            display: none;
+
+            &.short {
+                display: block;
             }
         }
     }
 
-    p.buttons {
+    .buttons {
+        width: 90%;
         margin-top: 18px;
+        text-align: center;
 
         a {
             display: inline-block;
