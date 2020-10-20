@@ -8,7 +8,7 @@ date: 2020-10-01
 
 Sometimes you need to import a component **asynchronously(lazy)** because it is too heavy or you don't want it is rendered during the SSR.
 
-Aleph.js provides a [`Import`](/docs/api-reference/mod_ts#import) component  that allows you import components asynchronously:
+Aleph.js provides a [`Import`](/docs/api-reference/mod.ts#import) component  that allows you import components asynchronously:
 
 ```jsx
 import React from "https://esm.sh/react"

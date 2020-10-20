@@ -32,7 +32,7 @@ or specify exclude paths:
 ```
 
 ## SSR Data Fetching
-To fetch data at **build(SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod_ts#useDeno) hook that can get the **Deno** runtime in your component:
+To fetch data at **build(SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook that can get the **Deno** runtime in your component:
 
 ```jsx{5-7}
 import React from "https://esm.sh/react"

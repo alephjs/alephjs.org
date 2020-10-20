@@ -6,7 +6,7 @@ date: 2020-10-01
 
 # APIs
 
-Any file(`.ts`,`.js`,`.mjs`) inside the folder `api/` is mapped to `/api/*` and will be treated as an API endpoint. For an API route to work, you need to export as **default** a function, which receives a `req` (instance of [`APIRequest`](/docs/api-reference/types_ts#APIRequest)) parameter.
+Any file(`.ts`,`.js`,`.mjs`) inside the folder `api/` is mapped to `/api/*` and will be treated as an API endpoint. For an API route to work, you need to export as **default** a function, which receives a `req` (instance of [`APIRequest`](/docs/api-reference/types.ts#APIRequest)) parameter.
 
 **For example**, the following API route `api/user.ts` replies a json response to `api/user`:
 

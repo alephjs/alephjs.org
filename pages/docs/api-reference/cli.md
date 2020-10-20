@@ -9,14 +9,14 @@ date: 2020-10-01
 ### Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.7/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.9/cli.ts
 ```
 
 ### Usage
 
 ```bash
 $ aleph -h
-Aleph.js v0.2.7
+Aleph.js v0.2.9
 The React Framework in deno.
 
 Docs: https://alephjs.org/docs

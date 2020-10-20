@@ -35,6 +35,7 @@ const navMenu = [
                     { title: 'SSR & SSG', pathname: '/ssr-and-ssg' },
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
+                    { title: 'Custom Head', pathname: '/custom-head' },
                     { title: 'Static File Serving', pathname: '/static-file-serving' },
                     { title: 'Import Maps', pathname: '/import-maps' },
                 ]
@@ -58,8 +59,9 @@ const navMenu = [
         name: 'API Reference',
         items: [
             { title: 'CLI', pathname: '/docs/api-reference/cli' },
-            { title: 'types.ts', pathname: '/docs/api-reference/types_ts' },
-            { title: 'mod.ts', pathname: '/docs/api-reference/mod_ts' },
+            { title: 'types.ts', pathname: '/docs/api-reference/types.ts' },
+            { title: 'mod.ts', pathname: '/docs/api-reference/mod.ts' },
+            { title: 'aleph.config.js', pathname: '/docs/api-reference/aleph.config.js' },
         ]
     }
 ]
