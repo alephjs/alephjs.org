@@ -16,7 +16,7 @@ Welcome to use **Aleph.js**!
 ## Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.10/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.11/cli.ts
 ```
 
 ## Usage
