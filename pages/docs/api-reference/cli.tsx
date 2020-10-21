@@ -32,7 +32,7 @@ export default function CLI() {
 }
 
 CLI.meta = {
-    title: 'types.ts',
+    title: 'CLI',
     author: 'postUI Lab.',
     date: '2020-10-20',
     editable: false
