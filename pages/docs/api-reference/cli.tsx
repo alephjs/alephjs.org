@@ -7,7 +7,8 @@ async function run(...cmd: string[]) {
         stdout: 'piped',
         stderr: 'piped'
     })
-    const output = await p.output()
+    const [output, stderrOutput] = await Promise.all([p.output(), p.stderrOutput()])
+    await Deno.stderr.write(stderrOutput)
     p.close()
     return new TextDecoder().decode(output)
 }
@@ -16,7 +17,7 @@ export default function CLI() {
     const { version, helpMessage } = useDeno(async () => {
         return {
             version: (window as any).ALEPH.ENV.__version,
-            helpMessage: await run('aleph', '-h')
+            helpMessage: await run(Deno.execPath(), 'run', '-A', Deno.mainModule, '-h')
         }
     })
 
