@@ -19,10 +19,12 @@ export default function PlainLogo({ size }: Props) {
                 width={size}
                 height={size}
                 viewBox={`0 0 ${size} ${size}`}
-                fill="#111111"
             >
                 <path
                     d={`M 0,${size - y} L ${size},${size - y} L ${size / 2},0 z`}
+                    stroke="#999"
+                    stroke-dasharray="4"
+                    fill="white"
                 />
             </svg>
         </div>
