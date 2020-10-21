@@ -1,17 +1,6 @@
 import React from 'https://esm.sh/react'
 import { useDeno } from 'https://deno.land/x/aleph/mod.ts'
-
-async function run(...cmd: string[]) {
-    const p = Deno.run({
-        cmd,
-        stdout: 'piped',
-        stderr: 'piped'
-    })
-    const [output, stderrOutput] = await Promise.all([p.output(), p.stderrOutput()])
-    await Deno.stderr.write(stderrOutput)
-    p.close()
-    return new TextDecoder().decode(output)
-}
+import { run } from '../../../shared/util.ts'
 
 export default function CLI() {
     const { version, helpMessage } = useDeno(async () => {
@@ -27,7 +16,7 @@ export default function CLI() {
             <h2>Installation</h2>
             <pre><code className="language-bash">$ deno install -A -f -n aleph https://deno.land/x/aleph@v{version}/cli.ts</code></pre>
             <h2>Usage</h2>
-            <pre><code className="language-bash">{'$ aleph -h\n' + helpMessage}</code></pre>
+            <pre><code className="language-bash">{'$ aleph -h\n' + helpMessage.trim()}</code></pre>
         </div>
     )
 }
