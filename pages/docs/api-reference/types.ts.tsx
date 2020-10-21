@@ -5,7 +5,7 @@ export default function Types_TS() {
         <div className="markdown-page">
             <h1>types.ts</h1>
             <p>(<strong>WIP</strong>, generate using <code>deno doc</code>)</p>
-            <p><blockquote>Plase check <a href="https://deno.land/x/aleph/types.ts">https://deno.land/x/aleph/types.ts</a></blockquote></p>
+            <blockquote>Plase check <a href="https://deno.land/x/aleph/types.ts">https://deno.land/x/aleph/types.ts</a></blockquote>
         </div>
     )
 }
@@ -13,5 +13,6 @@ export default function Types_TS() {
 Types_TS.meta = {
     title: 'types.ts',
     author: 'postUI Lab.',
-    date: '2020-10-20'
+    date: '2020-10-20',
+    editable: false
 }

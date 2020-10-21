@@ -19,5 +19,6 @@ export default function Artworks() {
 Artworks.meta = {
     title: 'Artworks',
     author: 'postUI Lab.',
-    date: '2020-10-20'
+    date: '2020-10-20',
+    editable: false
 }

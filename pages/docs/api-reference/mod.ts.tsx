@@ -5,7 +5,7 @@ export default function Mod_TS() {
         <div className="markdown-page">
             <h1>mod.ts</h1>
             <p>(<strong>WIP</strong>,  generate using <code>deno doc</code>)</p>
-            <p><blockquote>Please check <a href="https://deno.land/x/aleph/mod.ts">https://deno.land/x/aleph/mod.ts</a></blockquote></p>
+            <blockquote>Please check <a href="https://deno.land/x/aleph/mod.ts">https://deno.land/x/aleph/mod.ts</a></blockquote>
         </div>
     )
 }
@@ -13,5 +13,6 @@ export default function Mod_TS() {
 Mod_TS.meta = {
     title: 'mod.ts',
     author: 'postUI Lab.',
-    date: '2020-10-20'
+    date: '2020-10-20',
+    editable: false
 }

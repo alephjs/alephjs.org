@@ -83,6 +83,7 @@ interface Metadata {
     title: string
     author: string
     date: string
+    editable?: boolean
 }
 
 export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Metadata } }) {
@@ -202,7 +203,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                                     } else {
                                         return (
                                             <li key={item.title + item.pathname}>
-                                                <NavLink to={item.pathname}><a onClick={e=>setMenuOpened(false)}>{item.title}</a></NavLink>
+                                                <NavLink to={item.pathname}><a onClick={e => setMenuOpened(false)}>{item.title}</a></NavLink>
                                             </li>
                                         )
                                     }
@@ -215,7 +216,9 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             <div className="content">
                 {Page && <Page />}
                 <p className="edit-link">
-                    <a href={editUrl} target="_blank">Edit this page on Github</a>
+                    {(Page && Page.meta.editable !== false) && (
+                        <a href={editUrl} target="_blank">Edit this page on Github</a>
+                    )}
                 </p>
             </div>
         </div>
