@@ -11,7 +11,7 @@ export default function Artworks() {
                 <img className="small" src="/docs/logo_3l.png" />
                 <img className="small" src="/docs/logo_3l_round.png" />
             </p>
-            <h3>Logo(other)</h3>
+            <h3>Logo(3L)</h3>
         </div>
     )
 }

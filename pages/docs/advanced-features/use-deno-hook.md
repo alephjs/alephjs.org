@@ -6,9 +6,9 @@ date: 2020-10-20
 
 # `useDeno` Hook
 
-In [Next.js](https://nextjs.org), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time(SSR)** or on **each request**. This solution isolates the `data` and  `view` likes different roles of the `back-end` and `front-end`.
+In [Next.js](https://nextjs.org/docs/basic-features/data-fetching), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time(SSR)** or on **each request**. This solution isolates the `data` and  `view` likes different roles of the `back-end` and `front-end`.
 
-In Aleph.js, we perfer the *mixed* solution, a **react hook** called `useDeno` provided that allows you *fetch data* at **build time(SSR)** in a component, that's more *React Style*:
+In Aleph.js, we perfer the *mixed* solution, a **react hook** called `useDeno` provided that allows you *fetch data* at **build time(SSR)** in a component with **Deno runtime**, that's more *React Style* likely:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -45,11 +45,11 @@ export default function Post() {
 
 ## How It Works
 
-The `useDeno` hook can receive a sync or async **callback**(the first parameter), in the build time(SSG) each **callback** of `useDeno` will be invoked and then cache the returned data, after in the browser the callbacks of `useDeno` will be ignored and the cached data will be used, that's it.
+The `useDeno` hook will receive a sync or async **callback**(the first parameter), in the build time(SSG) each **callback** of `useDeno` will be invoked and then cache the returned data, after in the browser the callbacks of `useDeno` will be ignored and the cached data will be used, that's it.
 
 ## Refresh on Each Request
 
-By default, the **callback** of `useDeno` only runs at **build time(SSR)**, but you also can run it in the browser by passing the second parameter `true`:
+By default, the **callback** of `useDeno` only invoke at **build time(SSR)**, but you also can call it in the browser by passing the second parameter with `true`:
 
 ```jsx
  const post = useDeno(async () => {
@@ -67,7 +67,7 @@ even refresh depends `deps`:
 
 ## Caveats
 
-- When you passed the second parameter `true` to the `useDeno` hook, you should not use the **Deno runtime** since the **callback** will be invoked in the browser.
+- When you passed the second parameter with `true` to the `useDeno` hook, you should NOT use the **Deno runtime** since the **callback** will be invoked in the browser.
 
   ```jsx
   const version = useDeno(() => {
@@ -75,4 +75,5 @@ even refresh depends `deps`:
   }, true)
   ```
   > ReferenceError: Deno is not defined.
+
 - To fetch data asynchronously at **build time(SSG)**, the `renderToString` may be invoked repeatedly until all the async data is ready.

@@ -10,7 +10,7 @@ date: 2020-10-20
 
 ## How It Works
 
-The built-in **HMR** module of Aleph.js will create a **WS** connection to the dev server on the client during **development**, and the server will listen the app file changes. Once the HMR client gets a update signal from server, Aleph.js will re-import the updated module, for a CSS moudule the old style will be removed after the new one was appied, for a React Component the Fast Refresh will re-render view without losing component state.
+The built-in **HMR** module of Aleph.js will create a **WS** connection to the dev server on the client during **development**, and the server will listen the app file changes. Once the HMR client gets a update signal from server, Aleph.js will re-import the updated module, for a CSS moudule the old style will be removed after the new one was appied, for a React Component the Fast Refresh will re-render the component view without losing component state.
 
 Aleph.js supports full HMR out-of-the-box for the following served files:
 
