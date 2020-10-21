@@ -1,14 +1,14 @@
 ---
 title: useDeno Hook
 author: postUI Lab.
-date: 2020-10-01
+date: 2020-10-20
 ---
 
 # `useDeno` Hook
 
-In [Next.js](https://nextjs.org), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time(SSR)** or on **each request**. This solution isolates the `data` and the `view` likes different roles of the `back-end` and `front-end`.
+In [Next.js](https://nextjs.org), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time(SSR)** or on **each request**. This solution isolates the `data` and  `view` likes different roles of the `back-end` and `front-end`.
 
-In Aleph.js, we perfer the *mixed* solution, a **react hook** called `useDeno` provided that allows you *fetch data* at **build time(SSR)** in a component:
+In Aleph.js, we perfer the *mixed* solution, a **react hook** called `useDeno` provided that allows you *fetch data* at **build time(SSR)** in a component, that's more *React Style*:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -45,7 +45,7 @@ export default function Post() {
 
 ## How It Works
 
-The `useDeno` hook can receive a sync or async **callback**(the first parameter), in the build time, each **callback** of `useDeno` will be invoked and then cache the returned data. After in the browser the callbacks of `useDeno` will be ingnored and the cached data will be used, that's it.
+The `useDeno` hook can receive a sync or async **callback**(the first parameter), in the build time(SSG) each **callback** of `useDeno` will be invoked and then cache the returned data, after in the browser the callbacks of `useDeno` will be ingnored and the cached data will be used, that's it.
 
 ## Refresh on Each Request
 
@@ -68,11 +68,10 @@ even refresh depends `deps`:
 ## Caveats
 
 - When you passed the second parameter `true` to the `useDeno` hook, you can't not use the **Deno runtime** since the **callback** will be invoked in the browser.
-
   ```jsx
   const version = useDeno(() => {
     return Deno.version
   }, true)
   ```
   > ReferenceError: Deno is not defined.
-- To fetch data asynchronously, the `renderToString` maybe run repeatedly until all async data are ready.
+- To fetch data asynchronously in the build time(SSG), the `renderToString` maybe invoked repeatedly until all the async data is ready.

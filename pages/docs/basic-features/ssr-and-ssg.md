@@ -1,7 +1,7 @@
 ---
 title: SSR & SSG
 author: postUI Lab.
-date: 2020-10-01
+date: 2020-10-20
 ---
 
 # SSR & SSG
@@ -10,7 +10,7 @@ By default, Aleph.js **pre-renders** every page. This means that Aleph.js genera
 
 Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called _hydration_.)
 
-You can disable the **SSR** function in the `config.json` (or `config.js` or `config.ts`):
+You can disable the **SSR** function in the `aleph.config.js`:
 
 ```json
 {
@@ -77,7 +77,7 @@ Aleph.js allows you to build your app to a **static site**, which can run standa
 $ aleph build
 ```
 
-For **dynamic routes**, your can define the `staticPaths` in the `config.js`:
+For **dynamic routes**, your can define the `staticPaths` in the `aleph.config.js`:
 
 ```javascript
 export default async () => {

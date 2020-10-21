@@ -13,5 +13,5 @@ export default function Mod_TS() {
 Mod_TS.meta = {
     title: 'mod.ts',
     author: 'postUI Lab.',
-    date: '2020-10-01'
+    date: '2020-10-20'
 }

@@ -60,8 +60,7 @@ const navMenu = [
         items: [
             { title: 'CLI', pathname: '/docs/api-reference/cli' },
             { title: 'types.ts', pathname: '/docs/api-reference/types.ts' },
-            { title: 'mod.ts', pathname: '/docs/api-reference/mod.ts' },
-            { title: 'aleph.config.js', pathname: '/docs/api-reference/aleph.config.js' },
+            { title: 'mod.ts', pathname: '/docs/api-reference/mod.ts' }
         ]
     }
 ]

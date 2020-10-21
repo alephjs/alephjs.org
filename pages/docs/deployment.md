@@ -1,7 +1,7 @@
 ---
 title: Deployment
 author: postUI Lab.
-date: 2020-10-01
+date: 2020-10-20
 ---
 
 # Deployment
@@ -15,7 +15,7 @@ $ deno run -A https://deno.land/x/aleph@v0.2.9/cli.ts start ${APP_DIR} --port 80
 ## Deploy as Static Site on Vercel
 
 - **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@v0.2.9/cli.ts build`
-- **Output Directory**: `dist` (**outputDir**, you can override it in `config.json`)
+- **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
 - **Environment**: `NO_COLOR` (recommended)
 - **APIs**: not support currently
 

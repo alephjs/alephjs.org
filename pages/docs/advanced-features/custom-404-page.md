@@ -1,7 +1,7 @@
 ---
 title: Custom `404` Page
 author: postUI Lab.
-date: 2020-10-01
+date: 2020-10-20
 ---
 
 # Custom `404` Page

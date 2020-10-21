@@ -1,7 +1,7 @@
 ---
 title: Custom `Loading` Page
 author: postUI Lab.
-date: 2020-10-01
+date: 2020-10-20
 ---
 
 # Custom `Loading` Page
@@ -16,7 +16,7 @@ export default function Loading() {
 }
 ```
 
-To enable the **SPA** mode, disable **SSR** in the `config.json` (or `config.js` or `config.ts`):
+To enable the **SPA** mode, disable **SSR** in the `aleph.config.js`:
 
 ```json
 {

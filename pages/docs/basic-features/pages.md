@@ -1,7 +1,7 @@
 ---
 title: Pages
 author: postUI Lab.
-date: 2020-10-01
+date: 2020-10-20
 ---
 
 # Pages
@@ -27,7 +27,7 @@ Aleph.js supports **markdown** pages from `.md` files in the `pages` directory, 
 ```
 ---
 title: About
-date: 2020-10-01
+date: 2020-10-20
 ---
 # About
 ```
@@ -43,7 +43,7 @@ export default function MarkdownPage() {
 
 MarkdownPage.meta = {
     title: "About",
-    date: "2020-10-01T00:00:00.000Z"
+    date: "2020-10-20T00:00:00.000Z"
 }
 ```
 
