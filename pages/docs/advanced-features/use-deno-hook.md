@@ -67,11 +67,13 @@ even refresh depends `deps`:
 
 ## Caveats
 
-- When you passed the second parameter `true` to the `useDeno` hook, you can't not use the **Deno runtime** since the **callback** will be invoked in the browser.
+- When you pass the second parameter `true` to the `useDeno` hook, you cannot use the **Deno runtime** since the **callback** will be invoked in the browser.
+  
   ```jsx
   const version = useDeno(() => {
     return Deno.version
   }, true)
   ```
   > ReferenceError: Deno is not defined.
-- To fetch data asynchronously in the build time(SSG), the `renderToString` maybe invoked repeatedly until all the async data is ready.
+
+- To fetch data asynchronously at build time (SSG), the `renderToString` may be invoked repeatedly until all the async data is ready.
