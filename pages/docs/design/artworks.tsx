@@ -3,7 +3,7 @@ import React from 'https://esm.sh/react'
 export default function Artworks() {
     return (
         <div className="artworks">
-            <p><img className="medium" src="/docs/logo.svg" width="180" /></p>
+            <p><img className="medium" src="/docs/logo.svg" /></p>
             <h3>Logo(main)</h3>
             <p><img src="/docs/logo_filled.png" /><br /><img src="/docs/logo_filled_frame.png" /></p>
             <h3>Logo(filled)</h3>

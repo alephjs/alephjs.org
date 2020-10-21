@@ -56,20 +56,20 @@ const navMenu = [
         ]
     },
     {
-        name: 'Design',
-        items: [
-            { title: 'Theme', pathname: '/docs/design/theme' },
-            { title: 'Artworks', pathname: '/docs/design/artworks' }
-        ]
-    },
-    {
         name: 'API Reference',
         items: [
             { title: 'CLI', pathname: '/docs/api-reference/cli' },
             { title: 'types.ts', pathname: '/docs/api-reference/types.ts' },
             { title: 'mod.ts', pathname: '/docs/api-reference/mod.ts' }
         ]
-    }
+    },
+    {
+        name: 'Design',
+        items: [
+            { title: 'Theme', pathname: '/docs/design/theme' },
+            { title: 'Artworks', pathname: '/docs/design/artworks' }
+        ]
+    },
 ]
 
 function bashPromptSpan(prompt: string = '$') {
