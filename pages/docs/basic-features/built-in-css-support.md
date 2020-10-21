@@ -50,9 +50,9 @@ Aleph.js don't handle `@import` in css module currently, you need to put the imp
 
 ## The `Import` Component
 
-Import `.css` with ESM syntax will be suggested it is an error in **VS Code** with deno extension, you can **ignore** it if you can ensure the import URL is correct.
+Import `.css` with ESM syntax will be suggested it is a resolve error in **VS Code** with deno extension, you can **ignore** it if you can ensure the import URL is correct.
 
-![Figure.1](/docs/figure-1.png)
+![Figure.1 CSS resolve error](/docs/figure-css-resolve-error.png)
 
 To supplement this, Aleph.js provides a React Component called [`Import`](/docs/api-reference/mod.ts#import) that allows you import module asynchronously:
 

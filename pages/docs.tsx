@@ -56,6 +56,13 @@ const navMenu = [
         ]
     },
     {
+        name: 'Design',
+        items: [
+            { title: 'Theme', pathname: '/docs/design/theme' },
+            { title: 'Artworks', pathname: '/docs/design/artworks' }
+        ]
+    },
+    {
         name: 'API Reference',
         items: [
             { title: 'CLI', pathname: '/docs/api-reference/cli' },
