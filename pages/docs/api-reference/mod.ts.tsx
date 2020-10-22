@@ -5,8 +5,9 @@ import DenoDocFunction from '../../../components/deno-doc-function.tsx'
 import DenoDocVariable from '../../../components/deno-doc-variable.tsx'
 
 export default function ModTS() {
-    const { doc } = useDeno(async () => {
-        const outputJson = await run(Deno.execPath(), 'doc', 'https://deno.land/x/aleph/mod.ts', '--json')
+    const { doc, version } = useDeno(async () => {
+        const version = (window as any).ALEPH.ENV.__version
+        const outputJson = await run(Deno.execPath(), 'doc', `https://deno.land/x/aleph@v${version}/mod.ts`, '--json')
         const doc = JSON.parse(outputJson)
         if (Array.isArray(doc)) {
             doc.sort((a: any, b: any) => {
@@ -17,16 +18,14 @@ export default function ModTS() {
                 }
                 return 0
             })
-            return { doc }
+            return { doc, version }
         }
-        return {
-            doc: []
-        }
+        return { doc: [], version }
     })
 
     return (
         <div className="api-doc-page">
-            <header><a href="https://deno.land/x/aleph/mod.ts">https://deno.land/x/aleph/mod.ts</a></header>
+            <header><a href={`https://deno.land/x/aleph@v${version}/mod.ts`}>{`https://deno.land/x/aleph@v${version}/mod.ts`}</a></header>
             {doc.map((node: any) => {
                 if (node.kind === 'variable') {
                     return <DenoDocVariable node={node} key={node.name} />

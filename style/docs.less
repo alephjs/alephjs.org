@@ -444,8 +444,8 @@
         header {
             display: flex;
             align-items: center;
-            top: 17px;
-            height: 46px;
+            top: 14px;
+            height: 42px;
             width: 50%;
 
             @media screen and (max-width: 900px) {
@@ -461,12 +461,13 @@
                 }
             }
         }
-        code {
+        h2 code,
+        pre code {
             font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', Courier, monospace;
         }
         section {
             margin: 30px 0;
-            padding: 24px 30px 30px;
+            padding: 30px;
             border: 1px solid #eee;
             border-radius: 6px;
             transition: border-color 0.15s ease-in;
@@ -482,6 +483,9 @@
             h2 {
                 font-size: 1.5rem;
                 line-height: 1.5;
+                &.single-line {
+                    font-size: 1.2rem;
+                }
             }
 
             h3 {

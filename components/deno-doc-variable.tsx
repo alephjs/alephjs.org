@@ -11,11 +11,9 @@ interface VariableNode {
 export default function DenoDocVariable({ node }: { node: VariableNode }) {
     return (
         <section key={node.name}>
-            <h2>
-                <code>
-                    <span className="keyword">{node.kind} </span>
-                    <strong>{node.name}</strong>
-                </code>
+            <h2 className="single-line">
+                <code className="keyword">{node.variableDef.kind} </code>
+                <strong>{node.name}</strong>
             </h2>
             {node.jsDoc && (
                 <p>{node.jsDoc}</p>

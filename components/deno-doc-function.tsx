@@ -11,10 +11,10 @@ interface FunctionNode {
 export default function DenoDocFunction({ node }: { node: FunctionNode }) {
     return (
         <section key={node.name}>
-            <h2>
+            <h2 className="single-line">
+                <code className="keyword">{node.kind} </code>
+                <strong>{node.name}</strong>
                 <code>
-                    <span className="keyword">{node.kind} </span>
-                    <strong>{node.name}</strong>
                     <span>(</span>
                     {node.functionDef.params?.map((t, i, { length }) => (
                         <>

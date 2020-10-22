@@ -15,6 +15,7 @@ interface InterfaceNode {
 }
 
 export interface IProperty {
+    kind: string
     name: string
     optional: boolean
     jsDoc: string | null
@@ -111,7 +112,8 @@ export function TSType({ tsType }: { tsType: ITSType }) {
     if (tsType.kind === 'fnOrConstructor') {
         return (
             <>
-                <span className="keyword">{'() => '}<TSType tsType={tsType.fnOrConstructor!.tsType} /> </span>
+                <span>{'() => '}</span>
+                <TSType tsType={tsType.fnOrConstructor!.tsType} />
             </>
         )
     }
@@ -139,52 +141,8 @@ export default function DenoDocInterface({ node }: { node: InterfaceNode }) {
             {node.jsDoc && (
                 <p>{node.jsDoc}</p>
             )}
-            {node.interfaceDef.properties.length > 0 && (
-                <>
-                    <h3>Properties</h3>
-                    {node.interfaceDef.properties.map(prop => (
-                        <div className="def" key={prop.name}>
-                            <pre>
-                                <code>
-                                    <span>{prop.name}{prop.optional ? '?' : ''}</span>
-                                    <span>: </span>
-                                    <TSType tsType={prop.tsType} />
-                                </code>
-                            </pre>
-                            {prop.jsDoc && (
-                                <p dangerouslySetInnerHTML={{ __html: util.trimSuffix(util.trimPrefix(marked.parse(prop.jsDoc).trim(), '<p>'), '</p>') }} />
-                            )}
-                        </div>
-                    ))}
-                </>
-            )}
-            {node.interfaceDef.methods.length > 0 && (
-                <>
-                    <h3>Methods</h3>
-                    {node.interfaceDef.methods.map(prop => (
-                        <div className="def" key={prop.name}>
-                            <pre>
-                                <code>
-                                    <span>{prop.name}{prop.optional ? '?' : ''}(</span>
-                                    {prop.params?.map((t, i, { length }) => (
-                                        <>
-                                            <span>{t.name}: </span>
-                                            <TSType tsType={t.tsType} />
-                                            {i < length - 1 && <span className="separator">, </span>}
-                                        </>
-                                    ))}
-                                    <span>): </span>
-                                    {prop.returnType && (<TSType tsType={prop.returnType} />)}
-                                </code>
-                            </pre>
-                            {prop.jsDoc && (
-                                <p dangerouslySetInnerHTML={{ __html: util.trimSuffix(util.trimPrefix(marked.parse(prop.jsDoc).trim(), '<p>'), '</p>') }} />
-                            )}
-                        </div>
-                    ))}
-                </>
-            )}
-            {node.interfaceDef.indexSignatures.length > 0 && (
+
+{node.interfaceDef.indexSignatures.length > 0 && (
                 <>
                     <h3>Index Signatures</h3>
                     {node.interfaceDef.indexSignatures.map(prop => (
@@ -227,6 +185,51 @@ export default function DenoDocInterface({ node }: { node: InterfaceNode }) {
                                     ))}
                                     <span>): </span>
                                     <TSType tsType={prop.tsType} />
+                                </code>
+                            </pre>
+                            {prop.jsDoc && (
+                                <p dangerouslySetInnerHTML={{ __html: util.trimSuffix(util.trimPrefix(marked.parse(prop.jsDoc).trim(), '<p>'), '</p>') }} />
+                            )}
+                        </div>
+                    ))}
+                </>
+            )}
+            {node.interfaceDef.properties.length > 0 && (
+                <>
+                    <h3>Properties</h3>
+                    {node.interfaceDef.properties.map(prop => (
+                        <div className="def" key={prop.name}>
+                            <pre>
+                                <code>
+                                    <span>{prop.name}{prop.optional ? '?' : ''}</span>
+                                    <span>: </span>
+                                    <TSType tsType={prop.tsType} />
+                                </code>
+                            </pre>
+                            {prop.jsDoc && (
+                                <p dangerouslySetInnerHTML={{ __html: util.trimSuffix(util.trimPrefix(marked.parse(prop.jsDoc).trim(), '<p>'), '</p>') }} />
+                            )}
+                        </div>
+                    ))}
+                </>
+            )}
+            {node.interfaceDef.methods.length > 0 && (
+                <>
+                    <h3>Methods</h3>
+                    {node.interfaceDef.methods.map(prop => (
+                        <div className="def" key={prop.name}>
+                            <pre>
+                                <code>
+                                    <span>{prop.name}{prop.optional ? '?' : ''}(</span>
+                                    {prop.params?.map((t, i, { length }) => (
+                                        <>
+                                            <span>{t.name}: </span>
+                                            <TSType tsType={t.tsType} />
+                                            {i < length - 1 && <span className="separator">, </span>}
+                                        </>
+                                    ))}
+                                    <span>): </span>
+                                    {prop.returnType && (<TSType tsType={prop.returnType} />)}
                                 </code>
                             </pre>
                             {prop.jsDoc && (
