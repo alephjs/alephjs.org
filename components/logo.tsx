@@ -210,6 +210,3 @@ Logo.defaultProps = {
     starBaseSize: 8,
     glitch: false
 }
-
-// hidden pixi.js banner from the console
-PIXI.utils.skipHello()
