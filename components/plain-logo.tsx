@@ -20,11 +20,20 @@ export default function PlainLogo({ size }: Props) {
                 height={size}
                 viewBox={`0 0 ${size} ${size}`}
             >
+                <defs>
+                    <linearGradient id="gradient" x1="100%" y1="100%">
+                        <stop offset="0%" stopColor="#f9f9f9">
+                            <animate attributeName="stop-color" values="#fafafa;#ccc;#ccc;#fafafa" dur="1.5s" repeatCount="indefinite" />
+                        </stop>
+                        <stop offset="100%" stopColor="#ccc" stopOpacity="0.5">
+                            <animate attributeName="stop-color" values="#ccc;#fafafa;#fafafa;#ccc" dur="1.5s" repeatCount="indefinite" />
+                            <animate attributeName="offset" values="0.1;.50;.50;0.1" dur="1.5s" repeatCount="indefinite" />
+                        </stop>
+                    </linearGradient>
+                </defs>
                 <path
                     d={`M 0,${size - y} L ${size},${size - y} L ${size / 2},0 z`}
-                    stroke="#999"
-                    stroke-dasharray="4"
-                    fill="white"
+                    fill="url(#gradient)"
                 />
             </svg>
         </div>

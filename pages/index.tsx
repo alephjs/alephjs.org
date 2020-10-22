@@ -16,8 +16,7 @@ export default function Home() {
             <div className="fullscreen-page">
                 <Import
                     from="../components/logo.tsx"
-                    props={{ size: 200 }}
-                    fallback={<PlainLogo size={200} />}
+                    fallback={<PlainLogo />}
                 />
                 <h1>The React Framework in Deno.</h1>
                 <p className="intro"><strong>Aleph.js</strong> gives you the best developer experience on building modern web application:<br /> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>
