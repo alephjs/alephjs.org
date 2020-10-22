@@ -5,6 +5,10 @@ export default function Theme() {
         <div className="artworks">
             <p><img className="round" src="/docs/theme_color.png" /></p>
             <h3>Theme Color</h3>
+            <p><img className="round" src="/docs/theme_color_second.png" /></p>
+            <h3>Theme Color(second)</h3>
+            <p><img className="round" src="/docs/theme_color_black.png" /></p>
+            <h3>Theme Color(black)</h3>
         </div>
     )
 }
