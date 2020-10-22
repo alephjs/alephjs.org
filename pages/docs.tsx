@@ -150,7 +150,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     return (
         <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
             <Head>
-                <title>{Page?.meta.title} - Docs | Aleph.js</title>
+                <title>{Page?.meta.title} - Docs ・ Aleph.js</title>
             </Head>
             <Import from="../style/docs.less" />
             <aside>

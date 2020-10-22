@@ -20,7 +20,7 @@ export default function Theme() {
 }
 
 Theme.meta = {
-    title: 'Artworks',
+    title: 'Theme',
     author: 'postUI Lab.',
     date: '2020-10-20',
     editable: false
