@@ -406,6 +406,7 @@
         }
     }
 
+    .theme,
     .artworks {
         padding: 150px 0;
         text-align: center;
@@ -413,18 +414,18 @@
         background-size: 24px 24px;
 
         h3 {
+            margin-top: 12px;
+            line-height: 1.5;
+            font-family:  'Source Code Pro', 'Courier Prime Code', Courier, monospace;
             font-size: 1rem;
             font-weight: 600;
             color: #333;
-        }
-        h3 + p {
-            margin-top: 120px;
         }
 
         img {
             display: inline-block;
             width: 210px;
-            margin: 30px;
+            margin: 0 30px;
 
             &.round {
                 border-radius: 50%;
@@ -437,6 +438,14 @@
             &.small {
                 width: 120px;
             }
+        }
+
+        .space {
+            display: block;
+            height: 30px;
+        }
+        .large {
+            height: 150px;
         }
     }
 
