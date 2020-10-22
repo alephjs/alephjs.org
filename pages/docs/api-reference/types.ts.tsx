@@ -5,8 +5,9 @@ import DenoDocInterface from '../../../components/deno-doc-interface.tsx'
 
 export default function TypesTS() {
     const { doc, version } = useDeno(async () => {
-        const version = (window as any).ALEPH.ENV.__version
-        const outputJson = await run(Deno.execPath(), 'doc', `https://deno.land/x/aleph@v${version}/types.ts`, '--json')
+        const { __version: version, __buildMode } = (window as any).ALEPH.ENV
+        const tsFile = __buildMode === 'development' ? Deno.mainModule.replace(/cli\.ts$/, 'types.ts') : `https://deno.land/x/aleph@v${version}/types.ts`
+        const outputJson = await run(Deno.execPath(), 'doc', tsFile, '--json')
         const doc = JSON.parse(outputJson)
         if (Array.isArray(doc)) {
             return { doc, version }

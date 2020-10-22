@@ -447,6 +447,8 @@
             top: 14px;
             height: 42px;
             width: 50%;
+            background-color: tranparent;
+            backdrop-filter: none;
 
             @media screen and (max-width: 900px) {
                display: none;
@@ -461,19 +463,18 @@
                 }
             }
         }
-        h2 code,
-        pre code {
-            font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', Courier, monospace;
-        }
+
         section {
             margin: 30px 0;
             padding: 30px;
             border: 1px solid #eee;
             border-radius: 6px;
             transition: border-color 0.15s ease-in;
+            opacity: 0.9;
 
             &:hover {
-                border-color: #ccc;
+                border-color: #aaa;
+                opacity: 1;
             }
 
             .keyword {
@@ -494,17 +495,59 @@
                 color: #999;
             }
 
-            p {
-                color: #666;
+            .jsdoc {
+                code {
+                    background: #f6f3f3;
+                    padding: 0 9px;
+                    border-radius: 3px;
+                }
+                p {
+                    padding-top: 3px;
+                    line-height: 1.27;
+                    color: #515151;
+                    a {
+                        color: #515151;
+                        box-shadow: 0 1px 0 0 #aaa;
+
+                        &:hover {
+                            box-shadow: none;
+                        }
+                    }
+                }
+                ul, ol {
+                    padding-left: 1.5rem;
+                    li {
+                        margin-top: 0.6rem;
+                    }
+                }
+                ol {
+                  list-style-type: decimal;
+                }
+                ul li:before {
+                    position: absolute;
+                    margin-left: -1rem;
+                    color: #aaa;
+                    content: '-';
+                }
+            }
+
+            h2 code,
+            pre code {
+                font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', Courier, monospace;
             }
 
             .def {
-                margin-top: 15px;
+                margin-top: 18px;
+
                 pre {
-                    font-size: 1.1rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
                     color: #000;
+                    white-space: pre-wrap;
                 }
+
                 .separator {
+                    font-weight: 400;
                     color: #999;
                 }
             }

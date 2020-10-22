@@ -1,11 +1,12 @@
-import React from 'https://esm.sh/react'
-import { TSType, IProperty } from './deno-doc-interface.tsx'
+import React, { Fragment } from 'https://esm.sh/react'
+import { Def, TSType } from './deno-doc-tstype.tsx'
+import JSDoc from './deno-doc-js-doc.tsx'
 
 interface FunctionNode {
     kind: 'function'
     name: string
     jsDoc: string | null
-    functionDef: IProperty
+    functionDef: Def
 }
 
 export default function DenoDocFunction({ node }: { node: FunctionNode }) {
@@ -17,7 +18,7 @@ export default function DenoDocFunction({ node }: { node: FunctionNode }) {
                 <code>
                     <span>(</span>
                     {node.functionDef.params?.map((t, i, { length }) => (
-                        <>
+                        <Fragment key={t.kind + t.name}>
                             {t.kind === 'identifier' && (
                                 <span>{t.name}{t.optional ? '?' : ''}</span>
                             )}
@@ -27,7 +28,7 @@ export default function DenoDocFunction({ node }: { node: FunctionNode }) {
                             <span>: </span>
                             <TSType tsType={t.tsType} />
                             {i < length - 1 && <span className="separator">, </span>}
-                        </>
+                        </Fragment>
                     ))}
                     <span>)</span>
                     {node.functionDef.returnType && (
@@ -39,7 +40,7 @@ export default function DenoDocFunction({ node }: { node: FunctionNode }) {
                 </code>
             </h2>
             {node.jsDoc && (
-                <p>{node.jsDoc}</p>
+                <JSDoc jsDoc={node.jsDoc} />
             )}
         </section>
     )

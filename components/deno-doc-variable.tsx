@@ -1,11 +1,12 @@
 import React from 'https://esm.sh/react'
-import { IProperty } from './deno-doc-interface.tsx'
+import { Def } from './deno-doc-tstype.tsx'
+import JSDoc from './deno-doc-js-doc.tsx'
 
 interface VariableNode {
     kind: 'variable'
     name: string
     jsDoc: string | null
-    variableDef: IProperty
+    variableDef: Def
 }
 
 export default function DenoDocVariable({ node }: { node: VariableNode }) {
@@ -16,7 +17,7 @@ export default function DenoDocVariable({ node }: { node: VariableNode }) {
                 <strong>{node.name}</strong>
             </h2>
             {node.jsDoc && (
-                <p>{node.jsDoc}</p>
+                <JSDoc jsDoc={node.jsDoc} />
             )}
         </section>
     )

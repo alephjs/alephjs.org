@@ -19,6 +19,6 @@ To deploy your app to [Vercel](https://vercel.com), you need to config your *ver
 - **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@v0.2.11/cli.ts build`
 - **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
 - **Environment Variables**: `NO_COLOR` (recommended)
-- **APIs(Functions)**: not support currently
+- **APIs(Functions)**: not supported currently
 
 > See the [hello-world](https://alephjs-hello-world.vercel.app/) example on [Vercel](https://vercel.com).
