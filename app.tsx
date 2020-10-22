@@ -1,4 +1,4 @@
-import { Head, Import ,Viewport} from 'https://deno.land/x/aleph/mod.ts'
+import { Head, Import, Viewport, SEO } from 'https://deno.land/x/aleph/mod.ts'
 import React, { ComponentType } from 'https://esm.sh/react'
 import Header from './components/header.tsx'
 
@@ -13,9 +13,12 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
                     minimumScale={1.0}
                     maximumScale={1.0}
                 />
-                <title>Aleph.js - The React Framework in Deno.</title>
-                <meta name="description" content="The React Framework in Deno." />
-                <meta name="keywords" content="react,deno,ssr,typescript,esm,fast-refresh" />
+                <SEO
+                    title="Aleph.js"
+                    description="The React Framework in Deno."
+                    keywords="react,deno,ssr,ssg,typescript,esm,import-maps,hmr,fast-refresh"
+                    image="https://alephjs.org/poster.png"
+                />
             </Head>
             <Header />
             <Page {...pageProps} />

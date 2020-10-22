@@ -12,10 +12,10 @@ import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'ht
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('typescript', typescript)
 hljs.registerLanguage('json', json)
-hljs.registerLanguage('xml', xml) // dep by jsx
+hljs.registerLanguage('xml', xml) // depended by jsx
 hljs.registerLanguage('bash', (hljs: any) => {
     const l = bash(hljs)
-    l.keywords.built_in += ' deno aleph'
+    l.keywords.built_in = 'cd deno aleph'
     return l
 })
 
@@ -148,9 +148,9 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     }, [Page])
 
     return (
-        <div className={["docs", menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
+        <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
             <Head>
-                <title>{Page?.meta.title} - Aleph.js</title>
+                <title>{Page?.meta.title} - Docs | Aleph.js</title>
             </Head>
             <Import from="../style/docs.less" />
             <aside>
@@ -162,7 +162,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                     />
                 </div>
                 <div
-                    className={["menu-button", menuOpened && 'open'].filter(Boolean).join(' ')}
+                    className={['menu-button', menuOpened && 'open'].filter(Boolean).join(' ')}
                     onClick={e => setMenuOpened(ok => !ok)}
                 >
                     <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
