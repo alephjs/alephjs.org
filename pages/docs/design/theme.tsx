@@ -3,9 +3,9 @@ import React from 'https://esm.sh/react'
 export default function Theme() {
     return (
         <div className="theme">
-            <p><img className="small" src="/docs/logo.svg" /></p>
+            <p><img className="small" src="/logo.svg" /></p>
             <div className="space" />
-            <p><img className="small" src="/docs/theme_title.svg" /></p>
+            <p><img className="small" src="/main_title.svg" /></p>
             <div className="large space" />
             <p><img className="medium round" src="/docs/theme_color.png" /></p>
             <h3>Theme Color</h3>
