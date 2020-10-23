@@ -1,8 +1,12 @@
-import { Head, Import, Scripts, SEO, Viewport } from 'https://deno.land/x/aleph/mod.ts'
+import { Head, Import, Scripts, SEO, useDeno, Viewport } from 'https://deno.land/x/aleph/mod.ts'
 import React, { ComponentType } from 'https://esm.sh/react'
 import Header from './components/header.tsx'
 
 export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {
+    const { isDev } = useDeno(() => ({
+        isDev: (window as any).ALEPH.ENV.__buildMode === 'development'
+    }))
+
     return (
         <>
             <Import from="./style/app.less" />
@@ -22,9 +26,10 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
             </Head>
             <Header />
             <Page {...pageProps} />
-            <Scripts>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDCBBBRC98"></script>
-                <script>{`
+            {!isDev && (
+                <Scripts>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDCBBBRC98"></script>
+                    <script>{`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){
                         dataLayer.push(arguments);
@@ -32,7 +37,8 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
                     gtag('js', new Date());
                     gtag('config', 'G-WDCBBBRC98');
                 `}</script>
-            </Scripts>
+                </Scripts>
+            )}
         </>
     )
 }
