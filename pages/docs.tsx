@@ -46,6 +46,7 @@ const navMenu = [
                 submenu: [
                     { title: '`useDeno` Hook', pathname: '/use-deno-hook' },
                     { title: 'Custom `App`', pathname: '/custom-app' },
+                    { title: 'Custom `Scripts`', pathname: '/custom-scripts' },
                     { title: 'Custom `404` Page', pathname: '/custom-404-page' },
                     { title: 'Custom `Loading` Page', pathname: '/custom-loading-page' },
                     { title: 'Asynchronous Import', pathname: '/asynchronous-import' },
@@ -132,6 +133,9 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                                     const t = texts[j]
                                     if (t) {
                                         const node = document.createTextNode(t + '\n')
+                                        block.insertBefore(node, child)
+                                    } else if (j == 0) {
+                                        const node = document.createTextNode('\n')
                                         block.insertBefore(node, child)
                                     }
                                     if (j > 0) {
