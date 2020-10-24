@@ -1,7 +1,7 @@
 ---
 title: Browser Support
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # Browser Support

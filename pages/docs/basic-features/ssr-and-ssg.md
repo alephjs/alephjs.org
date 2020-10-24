@@ -1,7 +1,7 @@
 ---
 title: SSR & SSG
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # SSR & SSG

@@ -1,7 +1,7 @@
 ---
 title: Custom Head
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # Custom Head

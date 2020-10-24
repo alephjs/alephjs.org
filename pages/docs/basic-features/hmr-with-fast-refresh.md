@@ -1,7 +1,7 @@
 ---
 title: HMR with Fast Refresh
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # HMR with Fast Refresh

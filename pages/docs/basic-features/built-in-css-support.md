@@ -1,7 +1,7 @@
 ---
 title: Built-in CSS Support
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # Built-in CSS Support

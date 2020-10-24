@@ -1,7 +1,7 @@
 ---
 title: Pages
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # Pages
@@ -27,7 +27,6 @@ Aleph.js supports **markdown** pages from `.md` files in the `pages` directory, 
 ```
 ---
 title: About
-date: 2020-10-20
 ---
 # About
 ```

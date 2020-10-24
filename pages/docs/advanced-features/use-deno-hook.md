@@ -1,7 +1,8 @@
 ---
 title: useDeno Hook
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
+  - Noah Jorgensen
 ---
 
 # `useDeno` Hook

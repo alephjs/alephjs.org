@@ -1,7 +1,7 @@
 ---
 title: Static File Serving
-author: postUI Lab.
-date: 2020-10-20
+authors:
+  - ije
 ---
 
 # Static File Serving
