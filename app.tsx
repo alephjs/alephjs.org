@@ -24,13 +24,13 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
                 <Scripts>
                     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDCBBBRC98"></script>
                     <script>{`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){
-                        dataLayer.push(arguments);
-                    }
-                    gtag('js', new Date());
-                    gtag('config', 'G-WDCBBBRC98');
-                `}</script>
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){
+                            dataLayer.push(arguments);
+                        }
+                        gtag('js', new Date());
+                        gtag('config', 'G-WDCBBBRC98');
+                    `}</script>
                 </Scripts>
             )}
         </>

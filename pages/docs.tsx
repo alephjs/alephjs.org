@@ -35,7 +35,6 @@ const navMenu = [
                     { title: 'SSR & SSG', pathname: '/ssr-and-ssg' },
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
-                    { title: 'Custom Head', pathname: '/custom-head' },
                     { title: 'Static File Serving', pathname: '/static-file-serving' },
                     { title: 'Import Maps', pathname: '/import-maps' },
                 ]
@@ -46,6 +45,7 @@ const navMenu = [
                 submenu: [
                     { title: '`useDeno` Hook', pathname: '/use-deno-hook' },
                     { title: 'Custom `App`', pathname: '/custom-app' },
+                    { title: 'Custom `Head`', pathname: '/custom-head' },
                     { title: 'Custom `Scripts`', pathname: '/custom-scripts' },
                     { title: 'Custom `404` Page', pathname: '/custom-404-page' },
                     { title: 'Custom `Loading` Page', pathname: '/custom-loading-page' },
@@ -154,8 +154,8 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     return (
         <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
             <SEO
-                title={Page?.meta.title || ''}
-                description={"Aleph.js Documentation" + Page?.meta.title ? ': ' + Page?.meta.title : ''}
+                title={Page?.meta.title + ' - Aleph.js'}
+                description={"Aleph.js documentation."}
                 keywords={Page?.meta.keywords || []}
             />
             <Import from="../style/docs.less" />

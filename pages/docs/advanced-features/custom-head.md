@@ -1,12 +1,12 @@
 ---
-title: Custom Head
+title: Custom `Head`
 authors:
   - ije
 ---
 
-# Custom Head
+# Custom `Head`
 
-Aleph.js allows you to custom the app **head**. A [`Head`](/docs/api-reference/mod.ts#Head) React Component provided which can be added in the `app.tsx` to defined the global head:
+Aleph.js allows you to customize the app **head**. A [`Head`](/docs/api-reference/mod.ts#Head) React Component provided which can be added in the `app.tsx` to defined the global head:
 
 ```jsx
 import React from "https://esm.sh/react"

@@ -41,8 +41,7 @@ export default function MarkdownPage() {
 }
 
 MarkdownPage.meta = {
-    title: "About",
-    date: "2020-10-20T00:00:00.000Z"
+    title: "About"
 }
 ```
 
