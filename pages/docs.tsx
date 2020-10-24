@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-import { Head, Import, NavLink, useRouter } from 'https://deno.land/x/aleph/mod.ts'
+import { SEO, Import, NavLink, useRouter } from 'https://deno.land/x/aleph/mod.ts'
 import util from 'https://deno.land/x/aleph/util.ts'
 import hljs from 'https://esm.sh/highlight.js/lib/core'
 import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
@@ -82,8 +82,8 @@ function bashPromptSpan(prompt: string = '$') {
 
 interface Metadata {
     title: string
-    author: string
-    date: string
+    authors: string[]
+    keywords?: string[]
     editable?: boolean
 }
 
@@ -153,9 +153,11 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
 
     return (
         <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
-            <Head>
-                <title>{Page?.meta.title} - Docs ・ Aleph.js</title>
-            </Head>
+            <SEO
+                title={Page?.meta.title || ''}
+                description={"Aleph.js Documentation" + Page?.meta.title ? ': ' + Page?.meta.title : ''}
+                keywords={Page?.meta.keywords || []}
+            />
             <Import from="../style/docs.less" />
             <aside>
                 <div className="search">
