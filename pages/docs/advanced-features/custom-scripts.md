@@ -20,16 +20,16 @@ export default function App({ Page, pageProps }) {
       </Head>
       <Page {...pageProps} />
       <Scripts>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDCBBBRC98"></script>
-            <script>{`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){
-                    dataLayer.push(arguments);
-                }
-                gtag('js', new Date());
-                gtag('config', 'G-WDCBBBRC98');
-            `}</script>
-        </Scripts>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDCRFYDRC98"></script>
+        <script>{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-WDCRFYDRC98');
+        `}</script>
+      </Scripts>
     </>
   )
 }
