@@ -83,7 +83,7 @@ In the example above we have multiple links, each one maps a path (`to`) to the 
 
 ## Use the `Router`
 
-To access the [`Router`](/docs/api-reference/type_ts/#router) in a React component you can use the [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
+To access the [`Router`](/docs/api-reference/types.ts/#RouterURL) in a React component you can use the [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
 
 ```jsx
 import React, { useMemo, useCallback } from "https://esm.sh/react"
