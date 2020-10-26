@@ -1,5 +1,5 @@
 import React, { Fragment } from 'https://esm.sh/react'
-import { Def, TSType } from './deno-doc-tstype.tsx'
+import { Def, TSType, ITSType } from './deno-doc-tstype.tsx'
 import JSDoc from './deno-doc-js-doc.tsx'
 
 interface InterfaceNode {
@@ -7,6 +7,7 @@ interface InterfaceNode {
     name: string
     jsDoc: string | null
     interfaceDef: {
+        extends: ITSType[]
         properties: Def[]
         methods: Def[]
         indexSignatures: Def[]
@@ -16,8 +17,17 @@ interface InterfaceNode {
 
 export default function DenoDocInterface({ node }: { node: InterfaceNode }) {
     return (
-        <section key={node.name}>
-            <h2><code className="keyword">{node.kind}</code> <strong>{node.name}</strong></h2>
+        <section id={node.name} key={node.name}>
+            <h2>
+                <code className="keyword">{node.kind} </code>
+                <strong>{node.name}</strong>
+                {node.interfaceDef.extends.length > 0 && (
+                    <>
+                        <code className="keyword"> extends </code>
+                        <strong>{node.interfaceDef.extends.map(e => e.repr).join(', ')}</strong>
+                    </>
+                )}
+            </h2>
             {node.jsDoc && (
                 <JSDoc jsDoc={node.jsDoc} />
             )}
@@ -25,7 +35,7 @@ export default function DenoDocInterface({ node }: { node: InterfaceNode }) {
             {node.interfaceDef.indexSignatures.length > 0 && (
                 <>
                     <h3>Index Signatures</h3>
-                    {node.interfaceDef.indexSignatures.map((prop,i) => (
+                    {node.interfaceDef.indexSignatures.map((prop, i) => (
                         <div className="def" key={i}>
                             <pre>
                                 <code>
@@ -51,7 +61,7 @@ export default function DenoDocInterface({ node }: { node: InterfaceNode }) {
             {node.interfaceDef.callSignatures.length > 0 && (
                 <>
                     <h3>Call Signatures</h3>
-                    {node.interfaceDef.callSignatures.map((prop,i) => (
+                    {node.interfaceDef.callSignatures.map((prop, i) => (
                         <div className="def" key={i}>
                             <pre>
                                 <code>

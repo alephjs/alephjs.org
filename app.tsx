@@ -36,3 +36,6 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
         </>
     )
 }
+
+// set hash anchor scroll offset to avoid the fixed header override the hash target element
+(window as any).ALEPH.hashAnchorScroll = { offset: { top: 80 } }
