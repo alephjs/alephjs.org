@@ -3,6 +3,7 @@ title: useDeno Hook
 authors:
   - ije
   - Noah Jorgensen
+  - Serdar Sever
 ---
 
 # `useDeno` Hook

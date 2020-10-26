@@ -2,6 +2,7 @@
 title: SSR & SSG
 authors:
   - ije
+  - Serdar Sever
 ---
 
 # SSR & SSG
