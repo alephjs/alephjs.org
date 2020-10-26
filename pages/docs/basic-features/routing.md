@@ -107,13 +107,13 @@ To access the [`Router`](/docs/api-reference/types.ts/#RouterURL) object in a Re
 ```jsx
 import { useRouter } from "https://deno.land/x/aleph/mod.ts"
 
-// current location patname: '/post/hello-world?theme=dark'
+// hypothetically current location patname is '/post/hello-world?theme=dark'
 export default function Component({ href, children }) {
   const {
-    pathname, // the pathname of current router, sholud be: '/post/hello-world'
-    pagePath, // the pagePath of current router, sholud be: '/post/[slug]'
-    params,   // the params object of current router, sholud be: {slug: 'hello-world'}
-    query     // the URLSearchParams object of current router, `query.get('theme')` sholud be: 'dark'
+    pathname, // string, sholud be '/post/hello-world'
+    pagePath, // string, sholud be '/post/[slug]'
+    params,   // object, sholud be {slug: 'hello-world'}
+    query     // URLSearchParams, `query.get('theme')` sholud be 'dark'
   } = useRouter()
 
   ...
@@ -122,7 +122,7 @@ export default function Component({ href, children }) {
 
 ## I18N
 
-Aleph.js don't provide the **I18N** function directly, but the routing supports the **locale prefix**, you need to config the locale list in `aleph.config.js`, then access the locale in the [`Router`](/docs/api-reference/types.ts/#RouterURL) object with [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook, and the **SSG** will generate all the pages in the locale list will the prefix.
+Aleph.js don't provide **I18N** function directly, but the routing supports the **locale prefix**, you need to config the locale list in `aleph.config.js`:
 
 ```javascript
 export default {
@@ -137,6 +137,8 @@ then all the routes will match paths with **'zh-CN'** prefix, even the *zh-CN* d
 - `pages/index.tsx` →  `/` and `/zh-CN` (pathname is `/`)
 - `pages/blog.tsx` →  `/blog` and `/zh-CN/blog` (pathname is `/blog`)
 
+Now you can access the **locale** in the [`Router`](/docs/api-reference/types.ts/#RouterURL) object with [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
+
 ```jsx
 import React from "https://esm.sh/react"
 import { useRouter } from "https://deno.land/x/aleph/mod.ts"
@@ -150,3 +152,5 @@ export default function Page() {
   return <h1>Hello World</h1>
 }
 ```
+
+And the **SSG** will generate all the pages in the locale list will the prefix.

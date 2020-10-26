@@ -69,7 +69,7 @@ even refresh depends `deps`:
 
 ## Caveats
 
-- When you passed the second parameter with `true` to the `useDeno` hook, you should NOT use the **Deno runtime** since the **callback** will be invoked in the browser.
+- When the second parameter with `true` passed, you should *NOT* use the **Deno runtime** since the **callback** will be invoked in the browser.
 
   ```jsx
   const version = useDeno(() => {

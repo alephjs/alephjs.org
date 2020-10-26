@@ -10,7 +10,7 @@ Aleph.js uses the `App` component to initialize pages. You can override it and c
 
 - Add global layout elements
 - Add global Styles
-- Add Head elements
+- Add global Head
 - Custom error handling using `componentDidCatch`
 - Inject **props** into pages
 

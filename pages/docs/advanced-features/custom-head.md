@@ -6,7 +6,7 @@ authors:
 
 # Custom `Head`
 
-Aleph.js provides a [`Head`](/docs/api-reference/mod.ts#Head) React Component to customize global app head in the `app.tsx`:
+Aleph.js provides a [`Head`](/docs/api-reference/mod.ts#Head) component to customize global app head in the `app.tsx`:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -26,7 +26,7 @@ export default function App({ Page, pageProps }) {
 }
 ```
 
-or customize head in the page components:
+or customize page head:
 
 ```jsx
 import React from "https://esm.sh/react"

@@ -31,8 +31,8 @@ export default function About() {
 If you are using VS Code, please add below settings in the `.vscode/settings.json`:
 ```json
 {
-    "deno.enable": true,
-    "deno.unstable": true,
-    "deno.import_map": "./import_map.json"
+  "deno.enable": true,
+  "deno.unstable": true,
+  "deno.import_map": "./import_map.json"
 }
 ```

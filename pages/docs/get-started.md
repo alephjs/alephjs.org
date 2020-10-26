@@ -40,7 +40,7 @@ Visit http://localhost:8080 to view your application.
 
 Server features:
 
-- Compile modules(`js,jsx,ts,tsx,md,css,less...`) and download deps
+- Compile modules(`js,jsx,ts,tsx,md,css,less...`) and manage deps
 - HMR With React Fast Refresh
 - Serve APIs of `./api/`
 - Server-side rendering of `./pages/`
@@ -56,7 +56,7 @@ The application will start at http://localhost:8080 by default.
 <br>
 The default port can be changed with `-p` (or `--port`).
 
-**Build the app in `production` mode (SSG)**:
+**Build the app to s static site(SSG)**:
 
 ```bash
 $ aleph build

@@ -12,7 +12,7 @@ In **SPA** mode, the **index** HTML will display a blank page before your app lo
 import React from "https://esm.sh/react"
 
 export default function Loading() {
-    return <div>loading...</div>
+  return <div>loading...</div>
 }
 ```
 

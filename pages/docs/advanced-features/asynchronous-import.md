@@ -6,9 +6,7 @@ authors:
 
 # Asynchronous Import
 
-Sometimes you need to import a component **asynchronously(lazy)** because it is too heavy or you don't want it is rendered during the **SSR**.
-
-Aleph.js provides a [`Import`](/docs/api-reference/mod.ts#import) react component  that allows you import components asynchronously:
+Sometimes you need to import a component **asynchronously(lazy)** because it is too heavy or you don't want it is rendered during the **SSR**. Aleph.js provides a [`Import`](/docs/api-reference/mod.ts#import) component that allows you import components asynchronously:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -35,6 +33,7 @@ export default function About() {
 - prop `fallback` will be rendered when the component is *loading*.
 
 ## Import Styles
+
 The `Import` component can also import styles instead of the ESM syntax.
 
 ```jsx

@@ -43,7 +43,6 @@ import.meta.hot.accept();
 
 that will be ignored in Deno and applied in browser.
 
-
 ## CSS Imports (@import)
 
 Aleph.js don't handle `@import` in css module currently, you need to put the imported css files in the `public` directory and import them as a _absolute_ URL.
