@@ -56,7 +56,7 @@ import React from "https://esm.sh/react"
 import { useDeno, useRouter } from "https://deno.land/x/aleph/mod.ts"
 
 export default function Post() {
-  const { params } = userRouter()
+  const { params } = useRouter()
   const post = useDeno(async () => {
     return await (await fetch(`https://.../post/${params.id}`)).json()
   }, true, [params]) // true means to refetch data in the browser deps the `params`
