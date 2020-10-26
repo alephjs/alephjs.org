@@ -11,29 +11,31 @@ By default, Aleph.js **pre-renders** every page. This means that Aleph.js genera
 
 Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called _hydration_.)
 
-You can disable the **SSR** function in the `aleph.config.js`:
+You can disable the **SSR** function in `aleph.config.js`:
 
-```json
-{
-  "ssr": false // SPA mode
+```javascript
+export default {
+  "ssr": false, // SPA mode
+  ...
 }
 ```
 
 or specify exclude paths:
 
-```json
-{
+```javascript
+export default {
   "ssr": {
     "exclude": [
       "/admin/"
       "/dashboard/"
     ]
-  }
+  },
+  ...
 }
 ```
 
 ## SSR Data Fetching
-To fetch data at **build(SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook that can get the **Deno** runtime in your component:
+To fetch data during **build(SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook that can get the **Deno** runtime in your component:
 
 ```jsx{5-7}
 import React from "https://esm.sh/react"

@@ -18,8 +18,9 @@ export default function Loading() {
 
 To enable the **SPA** mode, disable **SSR** in the `aleph.config.js`:
 
-```json
-{
-  "ssr": false // SPA mode
+```javascript
+export default {
+  "ssr": false // SPA mode,
+  ...
 }
 ```

@@ -52,7 +52,7 @@ export default function Blog({ Page, pageProps }) {
 
 ## Linking Between Pages
 
-The Aleph.js router allows you to do client-side route redirects between pages, similarly to a SPA(single-page application). A React component called [`Link`](/docs/api-reference/mod.ts#Link) is provided to do this client-side route redirect.
+A React Component called [`Link`](/docs/api-reference/mod.ts#Link) is provided to do this client-side route redirects between pages, similarly to a SPA(single-page application).
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -75,30 +75,78 @@ export default function Nav() {
 }
 ```
 
-In the example above we have multiple links, each one maps a path (`to`) to the specify page:
+In the example above we have three links, each one maps a path (`to`) to the specify page:
 
 - `/` → `pages/index.tsx`
 - `/about` → `pages/about.tsx`
 - `/blog/hello-world` → `pages/blog/[slug].tsx`
 
-## Use the `Router`
-
-To access the [`Router`](/docs/api-reference/types.ts/#RouterURL) in a React component you can use the [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
+### Use the `redirect` function
+you can also redirect page with the `redirect` function:
 
 ```jsx
-import React, { useMemo, useCallback } from "https://esm.sh/react"
-import { useRouter, redirect } from "https://deno.land/x/aleph/mod.ts"
+import React, { useCallback } from "https://esm.sh/react"
+import { redirect } from "https://deno.land/x/aleph/mod.ts"
 
-export default function NavLink({ href, children }) {
-  const { pathname } = useRouter()
-  const className = useMemo(() => pathname === href ? "active" : "", [pathname])
+export default function Link({to, replace, children}) {
   const onClick = useCallback(e => {
     e.preventDefault()
-    redirect(href)
-  }, [href])
+    redirect(to, replace)
+  }, [to, replace])
 
   return (
-    <a href={href} className={className} onClick={onClick}>{children}</a>
+    <a href={to} onClick={onClick}>{children}</a>
   )
+}
+```
+
+## Use the `Router`
+
+To access the [`Router`](/docs/api-reference/types.ts/#RouterURL) object in a React component you can use the [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
+
+```jsx
+import { useRouter } from "https://deno.land/x/aleph/mod.ts"
+
+// current location patname: '/post/hello-world?theme=dark'
+export default function Component({ href, children }) {
+  const {
+    pathname, // the pathname of current router, sholud be: '/post/hello-world'
+    pagePath, // the pagePath of current router, sholud be: '/post/[slug]'
+    params,   // the params object of current router, sholud be: {slug: 'hello-world'}
+    query     // the URLSearchParams object of current router, `query.get('theme')` sholud be: 'dark'
+  } = useRouter()
+
+  ...
+}
+```
+
+## I18N
+
+Aleph.js don't provide the **I18N** function directly, but the routing supports the **locale prefix**, you need to config the locale list in `aleph.config.js`, then access the locale in the [`Router`](/docs/api-reference/types.ts/#RouterURL) object with [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook, and the **SSG** will generate all the pages in the locale list will the prefix.
+
+```javascript
+export default {
+  defaultLocale: 'en',
+  locales: ['en', 'zh-CN'],
+  ...
+}
+```
+
+then all the routes will match paths with **'zh-CN'** prefix, even the *zh-CN* don't exist in the `pages` dir:
+
+- `pages/index.tsx` →  `/` and `/zh-CN` (pathname is `/`)
+- `pages/blog.tsx` →  `/blog` and `/zh-CN/blog` (pathname is `/blog`)
+
+```jsx
+import React from "https://esm.sh/react"
+import { useRouter } from "https://deno.land/x/aleph/mod.ts"
+
+export default function Page() {
+  const { locale } = useRouter()
+
+  if (locale === 'zh-CN') {
+    return <h1>你好世界</h1>
+  }
+  return <h1>Hello World</h1>
 }
 ```

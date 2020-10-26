@@ -6,7 +6,7 @@ authors:
 
 # Custom `Head`
 
-Aleph.js allows you to customize the app **head**. A [`Head`](/docs/api-reference/mod.ts#Head) React Component provided which can be added in the `app.tsx` to defined the global head:
+Aleph.js provides a [`Head`](/docs/api-reference/mod.ts#Head) React Component to customize global app head in the `app.tsx`:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -18,7 +18,7 @@ export default function App({ Page, pageProps }) {
       <Head>
         <title>Aleph.js</title>
         <meta name="description" content="The React Framework in Deno." />
-        <meta name="keywords" content="aleph,js,react,framework,deno" />
+        <meta name="keywords" content="alephjs,react,framework,deno" />
       </Head>
       <Page {...pageProps} />
     </>
@@ -26,7 +26,7 @@ export default function App({ Page, pageProps }) {
 }
 ```
 
-or use it in the page components:
+or customize head in the page components:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -46,7 +46,7 @@ export default function Page() {
 }
 ```
 
-and support **multiple** `Head` in your components:
+**multiple** [`Head`](/docs/api-reference/mod.ts#Head) elemenets will be combined intelligently:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -69,7 +69,7 @@ export default function Page() {
 ```
 
 ## `SEO` and `Viewport`
-Two *shortcut* components `SEO` and `Viewport` provided to defined **head** more easy:
+Two *shortcut* components [`SEO`](/docs/api-reference/mod.ts#SEO) and [`Viewport`](/docs/api-reference/mod.ts#Viewport) provided to customize **head** more easy:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -78,19 +78,17 @@ import { Head } from "https://deno.land/x/aleph/mod.ts"
 export default function App({ Page, pageProps }) {
   return (
     <>
-      <Head>
-        <Viewport
-            width="device-width"
-            initialScale={1.0}
-            minimumScale={1.0}
-            maximumScale={1.0}
-        />
-        <SEO
-          title="Aleph.js"
-          description="The React Framework in Deno."
-          keywords="aleph,js,react,framework,deno"
-        />
-      </Head>
+      <SEO
+        title="Aleph.js"
+        description="The React Framework in Deno."
+        keywords="alephjs,react,framework,deno"
+      />
+      <Viewport
+          width="device-width"
+          initialScale={1.0}
+          minimumScale={1.0}
+          maximumScale={1.0}
+      />
       <Page {...pageProps} />
     </>
   )
