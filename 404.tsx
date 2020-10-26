@@ -1,6 +1,7 @@
 import { Head, Import } from 'https://deno.land/x/aleph/mod.ts'
 import React from 'https://esm.sh/react'
 import Header from './components/header.tsx'
+import PlainLogo from './components/plain-logo.tsx'
 
 export default function E404() {
     return (
@@ -15,7 +16,7 @@ export default function E404() {
                 <Import
                     from="./components/logo.tsx"
                     props={{ size: 150, glitch: true }}
-                    fallback={<div style={{ height: 150 }} />}
+                    fallback={<PlainLogo size={150} />}
                 />
                 <p style={{ marginTop: '1.8rem' }}><strong style={{ color: 'black' }}>404</strong> - Page Not Found</p>
             </div>
