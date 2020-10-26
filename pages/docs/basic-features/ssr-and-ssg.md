@@ -53,7 +53,7 @@ or fetching data **asynchronously**:
 
 ```jsx
 import React from "https://esm.sh/react"
-import { useDeno, userRouter } from "https://deno.land/x/aleph/mod.ts"
+import { useDeno, useRouter } from "https://deno.land/x/aleph/mod.ts"
 
 export default function Post() {
   const { params } = userRouter()
