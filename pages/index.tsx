@@ -17,9 +17,10 @@ export default function Home() {
                     title="Aleph.js"
                     description="The React Framework in Deno."
                     keywords="aleph.js,react,deno,ssr,ssg,typescript,esm,import-maps,hmr,fast-refresh"
-                    image="https://alephjs.org/poster.jpg"
+                    image="https://alephjs.org/twitter_card.jpg"
                 />
-                <meta name="twitter:image" content="https://alephjs.org/poster.jpg" />
+                <meta name="twitter:image" content="https://alephjs.org/twitter_card.jpg" />
+                <meta name="twitter:site" content="@alephjs" />
             </Head>
             <Import from="../style/index.less" />
             <div className="fullscreen-page">
