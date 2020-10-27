@@ -1,5 +1,5 @@
 import React from 'https://esm.sh/react'
-import { Link, Import, useDeno, SEO } from 'https://deno.land/x/aleph/mod.ts'
+import { Link, Import, useDeno, SEO, Head } from 'https://deno.land/x/aleph/mod.ts'
 import Button from '../components/button.tsx'
 import PlainLogo from '../components/plain-logo.tsx'
 
@@ -12,12 +12,15 @@ export default function Home() {
 
     return (
         <div className="index-page">
-            <SEO
-                title="Aleph.js"
-                description="The React Framework in Deno."
-                keywords="aleph.js,react,deno,ssr,ssg,typescript,esm,import-maps,hmr,fast-refresh"
-                image="https://alephjs.org/poster.png"
-            />
+            <Head>
+                <SEO
+                    title="Aleph.js"
+                    description="The React Framework in Deno."
+                    keywords="aleph.js,react,deno,ssr,ssg,typescript,esm,import-maps,hmr,fast-refresh"
+                    image="https://alephjs.org/poster.jpg"
+                />
+                <meta name="twitter:image" content="https://alephjs.org/poster.jpg" />
+            </Head>
             <Import from="../style/index.less" />
             <div className="fullscreen-page">
                 <Import
