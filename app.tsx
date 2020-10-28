@@ -19,7 +19,7 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
             />
             <Header />
             <Page {...pageProps} />
-            {buildMode === 'production' && GTAGID && (
+            {(buildMode === 'production' && GTAGID) && (
                 <Scripts>
                     <script async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}`}></script>
                     <script>{`
