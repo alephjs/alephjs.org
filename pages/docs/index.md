@@ -42,7 +42,7 @@ In **alpha** stage, not ready for production.
 
 Under the [MIT](https://opensource.org/licenses/MIT) License.
 
-## Thirdparty Notice
+## Credits
 
 Some concept description texts in this docs are copied from [Next.js/docs](https://github.com/vercel/next.js/tree/master/docs) (**MIT License**)
 

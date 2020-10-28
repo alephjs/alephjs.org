@@ -10,7 +10,7 @@ authors:
 
 In [Next.js](https://nextjs.org/docs/basic-features/data-fetching), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time(SSR)** or on **each request**. This solution isolates the `data` and  `view` likes different roles of the `back-end` and `front-end`.
 
-In Aleph.js, we perfer the *mixed* solution, a **react hook** called `useDeno` provided that allows you *fetch data* at **build time(SSR)** in a component with **Deno runtime**, that's more *React Style* likely:
+In Aleph.js, we perfer the *mixed* solution, a **react hook** called [`useDeno`](/docs/api-reference/mod.ts#useDeno) provided that allows you *fetch data* at **build time(SSR)** in a component with **Deno runtime**, that's more *React Style* likely:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -47,24 +47,36 @@ export default function Post() {
 
 ## How It Works
 
-The `useDeno` hook will receive a sync or async **callback**(the first parameter), in the build time(SSG) each **callback** of `useDeno` will be invoked and then cache the returned data, after in the browser the callbacks of `useDeno` will be ignored and the cached data will be used, that's it.
+The `useDeno` hook will receive a sync or async **callback**(the first parameter), during the build time(SSG) each callback of useDeno will be invoked and then cache the returned data, after in the browser the callbacks of useDeno will be ignored and the cached data will be used, that's it.
 
 ## Refresh on Each Request
 
-By default, the **callback** of `useDeno` only invoke at **build time(SSR)**, but you also can call it in the browser by passing the second parameter with `true`:
+By default, the **callback** of `useDeno` only invoke at **build time(SSR)**, but you can also call it in the browser by passing the second parameter with `true`:
 
 ```jsx
- const post = useDeno(async () => {
-    return await (await fetch(`https://.../post/${params.id}`)).json()
-  }, true)
+const post = useDeno(async () => {
+  return await (await fetch(`https://.../post/${params.id}`)).json()
+}, true)
 ```
 
 even refresh depends `deps`:
 
 ```jsx
- const post = useDeno(async () => {
-    return await (await fetch(`https://.../post/${params.id}`)).json()
-  }, true, [params.id])
+const post = useDeno(async () => {
+  return await (await fetch(`https://.../post/${params.id}`)).json()
+}, true, [params.id])
+```
+
+## `useEnv` Hook
+
+A shortcut hook [`useEnv`](/docs/api-reference/mod.ts#useEnv) provided to allow you access the system `ENV`:
+
+```jsx
+const { user } = useEnv(env => {
+  return {
+    user: env.USER
+  }
+})
 ```
 
 ## Caveats
