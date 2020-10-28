@@ -3,10 +3,7 @@ import React, { ComponentType } from 'https://esm.sh/react'
 import Header from './components/header.tsx'
 
 export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {
-    const { buildMode, GTAGID } = useEnv(env => ({
-        buildMode: env.__buildMode,
-        GTAGID: env.GTAGID
-    }))
+    const GTAGID = useEnv(env => env.GTAGID)
 
     return (
         <>
@@ -19,7 +16,7 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
             />
             <Header />
             <Page {...pageProps} />
-            {(buildMode === 'production' && GTAGID) && (
+            {GTAGID && (
                 <Scripts>
                     <script async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}`}></script>
                     <script>{`
