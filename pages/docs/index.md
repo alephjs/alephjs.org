@@ -12,7 +12,7 @@ Different with Next.js, Aleph.js don't need **webpack** or other bundler since A
 
 > To learn more about **HMR** with Fast Refresh, check the [HMR with Fast Refresh documentation](/docs/basic-features/hmr-with-fast-refresh).
 
-Aleph.js works in [Deno], a *simple*, *modern* and *secure* runtime for JavaScript and TypeScript. No `node_modules` directory needed, all dependencies are imported as URL and managed by Aleph.js:
+Aleph.js works in [Deno], a *simple*, *modern* and *secure* runtime for JavaScript and TypeScript. No `package.json` and `node_modules` directory needed, all dependencies are imported as URL and managed by Aleph.js:
 
 ```jsx
 import React from "https://esm.sh/react"
