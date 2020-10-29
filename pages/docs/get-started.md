@@ -56,7 +56,7 @@ The application will start at http://localhost:8080 by default.
 <br>
 The default port can be changed with `-p` (or `--port`).
 
-**Build the app to s static site(SSG)**:
+**Build the app to a static site(SSG)**:
 
 ```bash
 $ aleph build
