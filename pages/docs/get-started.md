@@ -11,7 +11,7 @@ Welcome to use **Aleph.js**!
 ## System Requirements
 
  - You will need [Deno](https://deno.land/) 1.4+
- - [VS Code](https://code.visualstudio.com/) with  [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
+ - [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
 
 ## Installation
 

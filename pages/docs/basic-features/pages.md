@@ -41,7 +41,7 @@ export default function MarkdownPage() {
 }
 
 MarkdownPage.meta = {
-    title: "About"
+  title: "About"
 }
 ```
 

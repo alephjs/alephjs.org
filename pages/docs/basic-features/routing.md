@@ -41,12 +41,12 @@ import React from "https://esm.sh/react"
 import BlogHeader from "../components/blog-header.tsx"
 
 export default function Blog({ Page, pageProps }) {
-    return (
-        <>
-            <BlogHeader />
-            <Page ...pageProps />
-        </>
-    )
+  return (
+    <>
+      <BlogHeader />
+      <Page ...pageProps />
+    </>
+  )
 }
 ```
 
@@ -115,7 +115,6 @@ export default function Component({ href, children }) {
     params,   // object, sholud be {slug: 'hello-world'}
     query     // URLSearchParams, `query.get('theme')` sholud be 'dark'
   } = useRouter()
-
   ...
 }
 ```

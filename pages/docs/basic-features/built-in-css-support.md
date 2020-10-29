@@ -60,12 +60,12 @@ import React from "https://esm.sh/react"
 import { Import } from "https://deno.land/x/aleph/mod.ts"
 
 export default function Page() {
-    return (
-        <>
-            <Import from="../style/about.css" />
-            <h1>About</h1>
-        </>
-    )
+  return (
+    <>
+      <Import from="../style/about.css" />
+      <h1>About</h1>
+    </>
+  )
 }
 ```
 

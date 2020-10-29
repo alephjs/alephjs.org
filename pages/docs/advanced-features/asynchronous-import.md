@@ -13,17 +13,17 @@ import React from "https://esm.sh/react"
 import { Import } from "https://deno.land/x/aleph/mod.ts"
 
 export default function About() {
-    return (
-        <div>
-            <Import
-                from="../components/logo.tsx"
-                name={"Logo"}
-                props={{ size: 100 }}
-                fallback={<Loading />}
-            />
-            <h1>About</h1>
-        </div>
-    )
+  return (
+    <div>
+      <Import
+        from="../components/logo.tsx"
+        name={"Logo"}
+        props={{ size: 100 }}
+        fallback={<Loading />}
+      />
+      <h1>About</h1>
+    </div>
+  )
 }
 ```
 
@@ -41,11 +41,11 @@ import React from "https://esm.sh/react"
 import { Import } from "https://deno.land/x/aleph/mod.ts"
 
 export default function About() {
-    return (
-        <div>
-            <Import from="../style/about.css" />
-            <h1>About</h1>
-        </div>
-    )
+  return (
+    <div>
+      <Import from="../style/about.css" />
+      <h1>About</h1>
+    </div>
+  )
 }
 ```

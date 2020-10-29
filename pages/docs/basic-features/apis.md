@@ -14,7 +14,7 @@ Any file(`.ts`,`.js`,`.mjs`) inside the folder `api/` is mapped to `/api/*` and 
 import type { APIRequest } from "https://deno.land/x/aleph/types.ts"
 
 export default function handler(req: APIRequest) {
-    req.status(200).json({ name: 'Carol' })
+  req.status(200).json({ name: 'Carol' })
 }
 ```
 
@@ -28,7 +28,7 @@ Let's create an API route called `api/user/$name.ts`:
 import type { APIRequest } from "https://deno.land/x/aleph/types.ts"
 
 export default function handler(req: APIRequest) {
-    req.status(200).json({ name: req.url.params.name })
+  req.status(200).json({ name: req.url.params.name })
 }
 ```
 
