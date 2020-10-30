@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-import { SEO, Import, NavLink, useRouter } from 'https://deno.land/x/aleph/mod.ts'
+import { Import, NavLink, SEO, useRouter } from 'https://deno.land/x/aleph/mod.ts'
 import util from 'https://deno.land/x/aleph/util.ts'
 import hljs from 'https://esm.sh/highlight.js/lib/core'
 import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
@@ -36,6 +36,7 @@ const navMenu = [
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
                     { title: 'Static File Serving', pathname: '/static-file-serving' },
+                    { title: 'Import From NPM', pathname: '/import-from-npm' },
                     { title: 'Import Maps', pathname: '/import-maps' },
                 ]
             },
