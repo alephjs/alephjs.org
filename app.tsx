@@ -13,6 +13,7 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
                 initialScale={1.0}
                 minimumScale={1.0}
                 maximumScale={1.0}
+                userScalable="no"
             />
             <Header />
             <Page {...pageProps} />
