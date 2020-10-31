@@ -41,8 +41,9 @@ header {
 
     nav ul {
         li + li {
-            margin-left: 30px;
+            margin-left: 18px;
         }
+
         li {
             float: left;
             height: 24px;
@@ -57,12 +58,21 @@ header {
                 }
             }
             a.icon {
-                display: inline-block;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
                 width: 24px;
                 height: 24px;
-                opacity: 0.75;
+                opacity: 0.8;
+
                 &:hover {
                     opacity: 1;
+                }
+
+                svg {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }
