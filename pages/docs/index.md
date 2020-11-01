@@ -28,7 +28,7 @@ export default function Page() {
 }
 ```
 
-<!-- Aleph.js use [swc] which written in rust with **high performance** to transform your code in **Typescript** and **JSX**. -->
+<!-- Aleph.js provider a compiler which written in rust with **high performance** to transform your code in **Typescript** and **JSX**. Our goal is each compile task should be done in **10ms** and less! -->
 
 ## Features
 
@@ -41,6 +41,7 @@ export default function Page() {
 - Markdown Page
 - Built-in CSS(Less) Support
 - SSR/SSG
+<!-- - High Performance Comilper -->
 
 ## Status
 
