@@ -74,3 +74,29 @@ export default function Page() {
 ## Adding a Global Stylesheet
 
 To add a global stylesheet to your application, import the CSS files within `app.tsx`.
+
+## Sass
+
+Aleph.js provide a `sass-loader` plugin allows you import `sass` files, to use the plugin please update the `aleph.config.js`:
+
+```javascript
+import sass from 'https://deno.land/x/aleph@0.2.19/plugins/sass.ts'
+
+export default {
+    plugins: [sass, ...],
+    ...
+}
+```
+
+then in your code:
+
+```jsx
+import React from "https://esm.sh/react"
+import "./style/about.sass"
+
+export default function Page() {
+  return (
+    <h1>About</h1>
+  )
+}
+```
