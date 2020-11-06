@@ -6,7 +6,7 @@ authors:
 
 # HMR with Fast Refresh
 
-**HMR** (Hot Module Replacement) allows you update Aleph.js application without refreshing the page during **development**, any change instantly updates in the browser.
+**HMR** (Hot Module Replacement) allows you update Aleph.js application without refreshing the page during **development**.  Any change instantly updates in the browser.
 
 ## How It Works
 
