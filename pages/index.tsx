@@ -61,31 +61,31 @@ export default function Home() {
                 <h2>Features</h2>
                 <ul>
                     <li>
-                        <Link to="/docs`">Zero Config</Link>
+                        <Link to="/docs">Zero Config</Link>
                     </li>
                     <li>
-                        <Link to="/docs`">Typescript in Deno</Link>
+                        <Link to="/docs">Typescript in Deno</Link>
                     </li>
                     <li>
-                        <Link to="/docs/basic-features/import-from-npm`">ES Module Ready</Link>
+                        <Link to="/docs/basic-features/import-from-npm">ES Module Ready</Link>
                     </li>
                     <li>
-                        <Link to="/docs/basic-features/import-maps`">Import Maps</Link>
+                        <Link to="/docs/basic-features/import-maps">Import Maps</Link>
                     </li>
                     <li>
-                        <Link to="/docs/basic-features/hmr-with-fast-refresh`">HMR with Fast Refresh</Link>
+                        <Link to="/docs/basic-features/hmr-with-fast-refresh">HMR with Fast Refresh</Link>
                     </li>
                     <li>
-                        <Link to="/docs/basic-features/routing`">File-system Routing</Link
+                        <Link to="/docs/basic-features/routing">File-system Routing</Link
                     ></li>
                     <li>
-                        <Link to="/docs/basic-features/pages#markdown-pages`">Markdown Page</Link>
+                        <Link to="/docs/basic-features/pages#markdown-pages">Markdown Page</Link>
                     </li>
                     <li>
-                        <Link to="/docs/basic-features/built-in-css-support`">Built-in CSS(Less) Support</Link>
+                        <Link to="/docs/basic-features/built-in-css-support">Built-in CSS(Less) Support</Link>
                     </li>
                     <li>
-                        <Link to="/docs/basic-features/ssr-and-ssg`">SSR & SSG</Link>
+                        <Link to="/docs/basic-features/ssr-and-ssg">SSR & SSG</Link>
                     </li>
                 </ul>
             </section>
