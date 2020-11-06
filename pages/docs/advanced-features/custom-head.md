@@ -73,7 +73,7 @@ Two *shortcut* components [`SEO`](/docs/api-reference/mod.ts#SEO) and [`Viewport
 
 ```jsx
 import React from "https://esm.sh/react"
-import { Head } from "https://deno.land/x/aleph/mod.ts"
+import { Head, SEO, Viewport  } from "https://deno.land/x/aleph/mod.ts"
 
 export default function App({ Page, pageProps }) {
   return (
