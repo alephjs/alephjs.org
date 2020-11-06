@@ -28,7 +28,7 @@ export default function Page() {
 }
 ```
 
-<!-- Aleph.js provider a compiler which written in rust with **high performance** to transform your code in **Typescript** and **JSX**. Our goal is each compile task should be done in **10ms** and less! -->
+<!-- Aleph.js provides a compiler written in Rust with **high performance** to transform your code in **Typescript**, **JSX**, etc. Our goal is each compile task should be done in **10ms** or less! -->
 
 ## Features
 
