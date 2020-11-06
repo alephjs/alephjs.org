@@ -74,13 +74,6 @@ const navMenu = [
     },
 ]
 
-function bashPromptSpan(prompt: string = '$') {
-    const span = document.createElement('span')
-    span.className = 'bash_prompt'
-    span.innerText = prompt + ' '
-    return span
-}
-
 interface Metadata {
     title: string
     authors: string[]
@@ -101,19 +94,6 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     }, [pagePath])
 
     useEffect(() => {
-        document.querySelectorAll('.docs .content video').forEach(block => {
-            const v = block as HTMLVideoElement
-            v.className = 'is-paused'
-            v.addEventListener('click', e => {
-                if (v.paused) {
-                    v.play()
-                } else {
-                    v.requestFullscreen()
-                }
-            })
-            v.addEventListener('playing', e => v.className = 'is-playing')
-            v.addEventListener('pause', e => v.className = 'is-paused')
-        })
         document.querySelectorAll('.docs .content pre > code').forEach(block => {
             if (block.className.includes('language-')) {
                 hljs.highlightBlock(block)
@@ -150,13 +130,26 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                 }
             }
         })
+        document.querySelectorAll('.docs .content video').forEach(block => {
+            const v = block as HTMLVideoElement
+            v.className = 'is-paused'
+            v.addEventListener('click', e => {
+                if (v.paused) {
+                    v.play()
+                } else {
+                    v.requestFullscreen()
+                }
+            })
+            v.addEventListener('playing', e => v.className = 'is-playing')
+            v.addEventListener('pause', e => v.className = 'is-paused')
+        })
     }, [Page])
 
     return (
         <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
             <SEO
-                title={Page?.meta.title + ' - Aleph.js'}
-                description={"Aleph.js documentation."}
+                title={[Page?.meta.title, !Page?.meta.title.endsWith('Aleph.js') && 'Aleph.js'].filter(Boolean).join(' - ')}
+                description={"Aleph.js Documentation."}
                 keywords={Page?.meta.keywords || []}
             />
             <Import from="../style/docs.less" />
@@ -230,4 +223,11 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             </div>
         </div>
     )
+}
+
+function bashPromptSpan(prompt: string = '$') {
+    const span = document.createElement('span')
+    span.className = 'bash_prompt'
+    span.innerText = prompt + ' '
+    return span
 }

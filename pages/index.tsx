@@ -16,10 +16,31 @@ export default function Home() {
                 <SEO
                     title="Aleph.js"
                     description="The React Framework in Deno."
-                    keywords="aleph,aleph.js,react,framework,deno,ssr,ssg,typescript,esm,import-maps,hmr,fast-refresh"
+                    keywords={[
+                        'aleph',
+                        'alephjs',
+                        'aleph.js',
+                        'react',
+                        'full-stack',
+                        'framework',
+                        'deno',
+                        'ssr',
+                        'server side rendering',
+                        'ssg',
+                        'static site generator',
+                        'markdown docs',
+                        'makdown blog',
+                        'typescript',
+                        'out-of-the-box',
+                        'esm',
+                        'import-maps',
+                        'hmr',
+                        'fast-refresh',
+                        'apis',
+                        'tooling'
+                    ]}
                     image="https://alephjs.org/twitter_card.jpg"
                 />
-                <meta name="twitter:image" content="https://alephjs.org/twitter_card.jpg" />
                 <meta name="twitter:site" content="@alephjs" />
             </Head>
             <Import from="../style/index.less" />
