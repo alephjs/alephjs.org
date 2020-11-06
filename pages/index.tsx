@@ -60,15 +60,33 @@ export default function Home() {
             <section>
                 <h2>Features</h2>
                 <ul>
-                    <li>Zero Config</li>
-                    <li>Typescript in Deno</li>
-                    <li>ES Module Ready</li>
-                    <li>Import Maps</li>
-                    <li>HMR with Fast Refresh</li>
-                    <li>File-system Routing</li>
-                    <li>Markdown Page</li>
-                    <li>Built-in CSS(Less) Support</li>
-                    <li>SSR & SSG</li>
+                    <li>
+                        <Link to="/docs`">Zero Config</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs`">Typescript in Deno</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs/basic-features/import-from-npm`">ES Module Ready</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs/basic-features/import-maps`">Import Maps</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs/basic-features/hmr-with-fast-refresh`">HMR with Fast Refresh</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs/basic-features/routing`">File-system Routing</Link
+                    ></li>
+                    <li>
+                        <Link to="/docs/basic-features/pages#markdown-pages`">Markdown Page</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs/basic-features/built-in-css-support`">Built-in CSS(Less) Support</Link>
+                    </li>
+                    <li>
+                        <Link to="/docs/basic-features/ssr-and-ssg`">SSR & SSG</Link>
+                    </li>
                 </ul>
             </section>
             <footer>
