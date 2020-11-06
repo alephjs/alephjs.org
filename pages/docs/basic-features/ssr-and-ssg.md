@@ -1,13 +1,13 @@
 ---
-title: SSR & SSG
+title: Server-Side Rendering (SSR) & Static Site Generation (SSG)
 authors:
   - ije
   - Serdar Sever
 ---
 
-# SSR & SSG
+# Server-Side Rendering (SSR) & Static Site Generation (SSG)
 
-By default, Aleph.js **pre-renders** every page. This means that Aleph.js generates HTML for each page in advance, instead of having it all done by client-side JavaScript. SSR can result in better performance and SEO.
+By default, Aleph.js **pre-renders** every page. This means that Aleph.js generates HTML for each page in advance, instead of having it all done by client-side JavaScript. SSR (server-side rendering) can result in better performance and SEO.
 
 Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called _hydration_.)
 
@@ -35,7 +35,7 @@ export default {
 ```
 
 ## SSR Data Fetching
-To fetch data during **build(SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook that can get the **Deno** runtime in your component:
+To fetch data during **build (SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook that can get the **Deno** runtime in your component:
 
 ```jsx{5-7}
 import React from "https://esm.sh/react"
@@ -72,9 +72,9 @@ export default function Post() {
 
 > To learn more `useDeno`, check the [useDeno Hook documentation](/docs/advanced-features/use-deno-hook).
 
-## SSG
+## Static Site Generation (SSG)
 
-Aleph.js allows you to build your app to a **static site**, which can run standalone on any server.
+Aleph.js allows you to build your app to a **static site**, which can be hosted as static html pages on any server or CDN.
 
 ```bash
 $ aleph build
