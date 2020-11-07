@@ -149,8 +149,10 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
         <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
             <SEO
                 title={[Page?.meta.title, !Page?.meta.title.endsWith('Aleph.js') && 'Aleph.js'].filter(Boolean).join(' - ')}
-                description={"Aleph.js Documentation."}
+                description={"The Documentation of Aleph.js."}
                 keywords={Page?.meta.keywords || []}
+                image="https://alephjs.org/twitter_card.jpg"
+                twitter={{ site: '@alephjs' }}
             />
             <Import from="../style/docs.less" />
             <aside>

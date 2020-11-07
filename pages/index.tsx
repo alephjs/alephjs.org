@@ -40,8 +40,8 @@ export default function Home() {
                         'tooling'
                     ]}
                     image="https://alephjs.org/twitter_card.jpg"
+                    twitter={{ site: '@alephjs' }}
                 />
-                <meta name="twitter:site" content="@alephjs" />
             </Head>
             <Import from="../style/index.less" />
             <div className="fullscreen-page">
@@ -77,7 +77,7 @@ export default function Home() {
                     </li>
                     <li>
                         <Link to="/docs/basic-features/routing">File-system Routing</Link
-                    ></li>
+                        ></li>
                     <li>
                         <Link to="/docs/basic-features/pages#markdown-pages">Markdown Page</Link>
                     </li>
