@@ -21,7 +21,7 @@ export default function Theme() {
 
 Theme.meta = {
     title: 'Theme',
-    author: 'postUI Lab.',
+    author: 'The Aleph.js Authors',
     date: '2020-10-20',
     editable: false
 }

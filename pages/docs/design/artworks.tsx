@@ -20,7 +20,7 @@ export default function Artworks() {
 
 Artworks.meta = {
     title: 'Artworks',
-    author: 'postUI Lab.',
+    author: 'The Aleph.js Authors',
     date: '2020-10-20',
     editable: false
 }

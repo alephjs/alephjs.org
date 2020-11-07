@@ -90,7 +90,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     const [menuOpened, setMenuOpened] = useState(false)
     const editUrl = useMemo(() => {
         const md = pagePath === '/docs' ? pagePath + '/index.md' : pagePath + '.md'
-        return 'https://github.com/postui/alephjs.org/edit/master/pages' + md
+        return 'https://github.com/alephjs/alephjs.org/edit/master/pages' + md
     }, [pagePath])
 
     useEffect(() => {
