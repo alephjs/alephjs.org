@@ -1,11 +1,11 @@
-import React from 'https://esm.sh/react'
 import { useDeno } from 'https://deno.land/x/aleph/mod.ts'
+import React from 'https://esm.sh/react'
 import { run } from '../../../shared/util.ts'
 
 export default function CLI() {
     const { version, helpMessage } = useDeno(async () => {
         return {
-            version: (window as any).ALEPH.ENV.__version,
+            version: Deno.env.get('__version'),
             helpMessage: await run(Deno.execPath(), 'run', '-A', Deno.mainModule, '-h')
         }
     })
