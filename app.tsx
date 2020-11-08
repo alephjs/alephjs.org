@@ -1,9 +1,11 @@
-import { Import, Scripts, useEnv, Viewport } from 'https://deno.land/x/aleph/mod.ts'
+import { Import, Scripts, useDeno, Viewport } from 'https://deno.land/x/aleph/mod.ts'
 import React, { ComponentType } from 'https://esm.sh/react'
 import Header from './components/header.tsx'
 
 export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {
-    const GTAGID = useEnv(env => env.GTAGID)
+    const GTAGID = useDeno(() => {
+        return Deno.env.get('GTAGID')
+    })
 
     return (
         <>
