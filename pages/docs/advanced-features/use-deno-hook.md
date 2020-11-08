@@ -67,18 +67,6 @@ const post = useDeno(async () => {
 }, true, [params.id])
 ```
 
-## `useEnv` Hook
-
-A shortcut hook [`useEnv`](/docs/api-reference/mod.ts#useEnv) provided to allow you access the system `ENV`:
-
-```jsx
-const { user } = useEnv(env => {
-  return {
-    user: env.USER
-  }
-})
-```
-
 ## Caveats
 
 - When the second parameter with `true` passed, you should *NOT* use the **Deno runtime** since the **callback** will be invoked in the browser.
