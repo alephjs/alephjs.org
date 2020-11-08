@@ -7,7 +7,7 @@ const thisYear = (new Date).getFullYear()
 
 export default function Home() {
     const { version } = useDeno(() => ({
-        version: (window as any).ALEPH.ENV.__version
+        version: Deno.env.get('__version')
     }))
 
     return (

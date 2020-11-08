@@ -1,12 +1,13 @@
-import React from 'https://esm.sh/react'
 import { useDeno } from 'https://deno.land/x/aleph/mod.ts'
-import { run } from '../../../shared/util.ts'
+import React from 'https://esm.sh/react'
 import DenoDocInterface from '../../../components/deno-doc-interface.tsx'
+import { run } from '../../../shared/util.ts'
 
 export default function TypesTS() {
     const { doc, version } = useDeno(async () => {
-        const { __version: version, __buildMode } = (window as any).ALEPH.ENV
-        const tsFile = __buildMode === 'development' ? Deno.mainModule.replace(/cli\.ts$/, 'types.ts') : `https://deno.land/x/aleph@v${version}/types.ts`
+        const version = Deno.env.get('__version')
+        const  buildMode = Deno.env.get('__buildMode')
+        const tsFile =  buildMode === 'development' ? Deno.mainModule.replace(/cli\.ts$/, 'types.ts') : `https://deno.land/x/aleph@v${version}/types.ts`
         const outputJson = await run(Deno.execPath(), 'doc', tsFile, '--json')
         const doc = JSON.parse(outputJson)
         if (Array.isArray(doc)) {

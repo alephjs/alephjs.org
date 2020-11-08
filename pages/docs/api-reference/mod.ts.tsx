@@ -1,12 +1,12 @@
-import React from 'https://esm.sh/react'
 import { useDeno } from 'https://deno.land/x/aleph/mod.ts'
-import { run } from '../../../shared/util.ts'
+import React from 'https://esm.sh/react'
 import DenoDocFunction from '../../../components/deno-doc-function.tsx'
 import DenoDocVariable from '../../../components/deno-doc-variable.tsx'
+import { run } from '../../../shared/util.ts'
 
 export default function ModTS() {
     const { doc, version } = useDeno(async () => {
-        const version = (window as any).ALEPH.ENV.__version
+        const version = Deno.env.get('__version')
         const outputJson = await run(Deno.execPath(), 'doc', `https://deno.land/x/aleph@v${version}/mod.ts`, '--json')
         const doc = JSON.parse(outputJson)
         if (Array.isArray(doc)) {
