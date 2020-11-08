@@ -17,6 +17,9 @@
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features",
     },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+    },
     "deno.enable": true,
     "deno.unstable": true,
     "deno.import_map": "./import_map.json",
