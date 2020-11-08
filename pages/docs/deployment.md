@@ -14,14 +14,14 @@ $ aleph build
 or run it in **production** mode with Aleph.js server with APIs support in Deno:
 
 ```bash
-$ deno run -A https://deno.land/x/aleph@v0.2.22/cli.ts start ${APP_DIR} --port 80
+$ deno run -A https://deno.land/x/aleph@v0.2.24/cli.ts start ${APP_DIR} --port 80
 ```
 
 ## Deploy on Vercel
 
 To deploy your app to [Vercel](https://vercel.com), you need to config your *vercel project* manually:
 
-- **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@v0.2.22/cli.ts build`
+- **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@v0.2.24/cli.ts build`
 - **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
 - **Environment Variables**: `NO_COLOR` (recommended)
 - **APIs(Functions)**: not supported currently
