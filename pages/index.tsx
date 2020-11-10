@@ -4,6 +4,17 @@ import Button from '../components/button.tsx'
 import PlainLogo from '../components/plain-logo.tsx'
 
 const thisYear = (new Date).getFullYear()
+const features = [
+    { href: '/docs', title: 'Zero Config' },
+    { href: '/docs', title: 'Typescript in Deno' },
+    { href: '/docs/basic-features/import-from-npm', title: 'ES Module Ready' },
+    { href: '/docs/basic-features/import-maps', title: 'Import Maps' },
+    { href: '/docs/basic-features/hmr-with-fast-refresh', title: 'HMR with Fast Refresh' },
+    { href: '/docs/basic-features/routing', title: 'File-system Routing' },
+    { href: '/docs/basic-features/pages#markdown-pages', title: 'Markdown Page' },
+    { href: '/docs/basic-features/built-in-css-support', title: 'Built-in CSS(Less) Support' },
+    { href: '/docs/basic-features/ssr-and-ssg', title: 'SSR & SSG' },
+]
 
 export default function Home() {
     const { version } = useDeno(() => ({
@@ -53,40 +64,20 @@ export default function Home() {
                 <p className="intro"><strong>Aleph.js</strong> gives you the best developer experience on building modern web application:<br /> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>
                 <p className="intro short"><strong>Aleph.js</strong> gives you the best developer experience on building modern web application.</p>
                 <div className="buttons">
-                    <Link to="/docs/get-started"> <Button strong>Get Started</Button></Link>
-                    <Link to="/docs"> <Button strong>Documentation</Button></Link>
+                    <Link to="/docs/get-started">
+                        <Button strong>Get Started</Button>
+                    </Link>
+                    <Link to="/docs">
+                        <Button strong>Documentation</Button>
+                    </Link>
                 </div>
             </div>
             <section>
                 <h2>Features</h2>
                 <ul>
-                    <li>
-                        <Link to="/docs">Zero Config</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs">Typescript in Deno</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs/basic-features/import-from-npm">ES Module Ready</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs/basic-features/import-maps">Import Maps</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs/basic-features/hmr-with-fast-refresh">HMR with Fast Refresh</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs/basic-features/routing">File-system Routing</Link
-                        ></li>
-                    <li>
-                        <Link to="/docs/basic-features/pages#markdown-pages">Markdown Page</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs/basic-features/built-in-css-support">Built-in CSS(Less) Support</Link>
-                    </li>
-                    <li>
-                        <Link to="/docs/basic-features/ssr-and-ssg">SSR & SSG</Link>
-                    </li>
+                    {features.map(({ href, title }) => (
+                        <li key={href + title}><Link to={href}>{title}</Link></li>
+                    ))}
                 </ul>
             </section>
             <footer>

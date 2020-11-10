@@ -217,11 +217,11 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
             </aside>
             <div className="content">
                 {Page && <Page />}
-                <p className="edit-link">
-                    {(Page && Page.meta.editable !== false) && (
+                {(Page && Page.meta.editable !== false) && (
+                    <p className="edit-link">
                         <a href={editUrl} target="_blank">Edit this page on Github</a>
-                    )}
-                </p>
+                    </p>
+                )}
             </div>
         </div>
     )
