@@ -34,20 +34,14 @@ export default function Home() {
                         'react',
                         'full-stack',
                         'framework',
-                        'deno',
                         'ssr',
-                        'server side rendering',
                         'ssg',
-                        'static site generator',
-                        'markdown docs',
-                        'makdown blog',
+                        'deno',
                         'typescript',
                         'out-of-the-box',
                         'esm',
-                        'import-maps',
                         'hmr',
                         'fast-refresh',
-                        'apis',
                         'tooling'
                     ]}
                     image="https://alephjs.org/twitter_card.jpg"
