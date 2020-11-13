@@ -152,4 +152,4 @@ export default function Page() {
 }
 ```
 
-And the **SSG** will generate all the pages in the locale list will the prefix.
+And the **SSG** will generate all the pages in the locale list with the prefix.
