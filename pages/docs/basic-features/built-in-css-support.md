@@ -15,7 +15,7 @@ import "../style.css"
 or import styles from network:
 
 ```javascript
-import "https://unpkg.com/tailwindcss@1.9.1/dist/tailwind.min.css"
+import "https://esm.sh/tailwindcss/dist/tailwind.min.css"
 ```
 
 ## How It Works
