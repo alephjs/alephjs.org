@@ -80,7 +80,7 @@ To add a global stylesheet to your application, import the CSS files within `app
 Aleph.js provide a `sass-loader` plugin allows you import `sass` files, to use the plugin please update the `aleph.config.js`:
 
 ```javascript
-import sass from 'https://deno.land/x/aleph@0.2.19/plugins/sass.ts'
+import sass from 'https://deno.land/x/aleph/plugins/sass.ts'
 
 export default {
     plugins: [sass, ...],
