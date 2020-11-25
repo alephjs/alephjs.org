@@ -1,11 +1,11 @@
 ---
-title: Server-Side Rendering (SSR) & Static Site Generation (SSG)
+title: SSR & SSG
 authors:
   - ije
   - Serdar Sever
 ---
 
-# Server-Side Rendering (SSR) & Static Site Generation (SSG)
+# SSR & SSG
 
 By default, Aleph.js **pre-renders** every page. This means that Aleph.js generates HTML for each page in advance, instead of having it all done by client-side JavaScript. SSR (server-side rendering) can result in better performance and SEO.
 
@@ -35,6 +35,7 @@ export default {
 ```
 
 ## SSR Data Fetching
+
 To fetch data during **build (SSR) time**, you can use the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook that can get the **Deno** runtime in your component:
 
 ```jsx{5-7}
