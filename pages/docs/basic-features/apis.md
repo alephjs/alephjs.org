@@ -22,7 +22,7 @@ export default function handler(req: APIRequest) {
 
 The API route also suports the **dynamic routes** just like [pages routing](/docs/basic-features/routing#dynamic-routes):
 <br>
-Let's create an API route called `api/user/$name.ts`:
+Let's create an API route called `api/user/[name].ts`:
 
 ```typescript
 import type { APIRequest } from "https://deno.land/x/aleph/types.ts"
