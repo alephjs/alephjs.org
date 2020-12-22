@@ -1,4 +1,4 @@
-import React, { Fragment } from 'https://esm.sh/react'
+import React, { Fragment } from 'https://esm.sh/react@17.0.1'
 
 export interface Def {
     kind: string

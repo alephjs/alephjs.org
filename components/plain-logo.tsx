@@ -1,4 +1,4 @@
-import React, { useMemo } from 'https://esm.sh/react'
+import React, { useMemo } from 'https://esm.sh/react@17.0.1'
 
 interface Props {
     size: number

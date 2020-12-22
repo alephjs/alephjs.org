@@ -1,8 +1,8 @@
 /// <reference lib="dom" />
-import { GlitchFilter } from 'https://esm.sh/@pixi/filter-glitch'
-import { ZoomBlurFilter } from 'https://esm.sh/@pixi/filter-zoom-blur'
-import * as PIXI from 'https://esm.sh/pixi.js-legacy'
-import React, { useEffect, useRef } from 'https://esm.sh/react'
+import { GlitchFilter } from 'https://esm.sh/@pixi/filter-glitch@3.1.1'
+import { ZoomBlurFilter } from 'https://esm.sh/@pixi/filter-zoom-blur@3.1.1'
+import * as PIXI from 'https://esm.sh/pixi.js-legacy@5.3.6'
+import React, { useEffect, useRef } from 'https://esm.sh/react@17.0.1'
 
 const starImage = '/star.png'
 const defaultSpeed = 0.15

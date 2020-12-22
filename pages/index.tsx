@@ -1,4 +1,4 @@
-import { Head, Import, Link, SEO, useDeno } from 'https://deno.land/x/aleph/mod.ts'
+import { Head, Import, Link, SEO, useDeno } from 'https://deno.land/x/aleph@0.2.27/mod.ts'
 import React from 'https://esm.sh/react'
 import Button from '../components/button.tsx'
 import PlainLogo from '../components/plain-logo.tsx'
