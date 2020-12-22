@@ -1,4 +1,4 @@
-import React, { CSSProperties, PropsWithChildren, useMemo, useState } from 'https://esm.sh/react@17.0.1'
+import React, { CSSProperties, PropsWithChildren, useMemo, useState } from 'https://esm.sh/react'
 
 export default function Button({
     className,

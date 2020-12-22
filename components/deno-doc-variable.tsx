@@ -1,6 +1,6 @@
-import React from 'https://esm.sh/react@17.0.1'
-import JSDoc from './deno-doc-js-doc.tsx'
+import React from 'https://esm.sh/react'
 import { Def } from './deno-doc-tstype.tsx'
+import JSDoc from './deno-doc-js-doc.tsx'
 
 interface VariableNode {
     kind: 'variable'

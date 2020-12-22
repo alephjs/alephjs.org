@@ -1,5 +1,5 @@
-import { Import, Link, useRouter } from 'https://deno.land/x/aleph@0.2.27/mod.ts'
-import React from 'https://esm.sh/react@17.0.1'
+import { Import, Link, useRouter } from 'https://deno.land/x/aleph/mod.ts'
+import React from 'https://esm.sh/react'
 
 export default function Header() {
     const { pathname } = useRouter()

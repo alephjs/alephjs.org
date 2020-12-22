@@ -1,12 +1,12 @@
 /// <reference lib="dom" />
 import { Import, NavLink, SEO, useRouter } from 'https://deno.land/x/aleph/mod.ts'
-import util from 'https://deno.land/x/aleph@0.2.27/util.ts'
-import hljs from 'https://esm.sh/highlight.js@10.4.1/lib/core'
-import bash from 'https://esm.sh/highlight.js@10.4.1/lib/languages/bash'
-import javascript from 'https://esm.sh/highlight.js@10.4.1/lib/languages/javascript'
-import json from 'https://esm.sh/highlight.js@10.4.1/lib/languages/json'
-import typescript from 'https://esm.sh/highlight.js@10.4.1/lib/languages/typescript'
-import xml from 'https://esm.sh/highlight.js@10.4.1/lib/languages/xml'
+import util from 'https://deno.land/x/aleph/util.ts'
+import hljs from 'https://esm.sh/highlight.js/lib/core'
+import bash from 'https://esm.sh/highlight.js/lib/languages/bash'
+import javascript from 'https://esm.sh/highlight.js/lib/languages/javascript'
+import json from 'https://esm.sh/highlight.js/lib/languages/json'
+import typescript from 'https://esm.sh/highlight.js/lib/languages/typescript'
+import xml from 'https://esm.sh/highlight.js/lib/languages/xml'
 import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'https://esm.sh/react'
 
 hljs.registerLanguage('javascript', javascript)

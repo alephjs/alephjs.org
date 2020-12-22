@@ -1,6 +1,6 @@
-import React, { Fragment } from 'https://esm.sh/react@17.0.1'
-import JSDoc from './deno-doc-js-doc.tsx'
+import React, { Fragment } from 'https://esm.sh/react'
 import { Def, TSType } from './deno-doc-tstype.tsx'
+import JSDoc from './deno-doc-js-doc.tsx'
 
 interface FunctionNode {
     kind: 'function'
