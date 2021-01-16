@@ -6,7 +6,7 @@ authors:
 
 # Built-in CSS Support
 
-Aleph.js allows you to import a **CSS**(or **Less**) with ESM syntax:
+Aleph.js allows you to import a **CSS** (or **Less**) file with ESM syntax:
 
 ```javascript
 import "../style.css"
@@ -45,15 +45,15 @@ that will be ignored in Deno and applied in browser.
 
 ## CSS Imports (@import)
 
-Aleph.js don't handle `@import` in css module currently, you need to put the imported css files in the `public` directory and import them as a _absolute_ URL.
+Aleph.js doesn't handle `@import` in CSS module currently. You need to put the imported CSS files in the `public` directory and import them as a _absolute_ URL.
 
 ## The `Import` Component
 
-Import `.css` with ESM syntax will be suggested it is a resolve error in **VS Code** with deno extension, you can **ignore** it if you can ensure the import URL is correct.
+Importing `.css` with ESM syntax will be suggested as a resolve error in **VS Code** with deno extension. You can **ignore** it if you can ensure that the import URL is correct.
 
 ![Figure.1 CSS resolve error](/docs/figure-css-resolve-error.png)
 
-To supplement this, Aleph.js provides a React Component called [`Import`](/docs/api-reference/mod.ts#import) that allows you import module asynchronously:
+To supplement this, Aleph.js provides a React Component called [`Import`](/docs/api-reference/mod.ts#import) that allows you to import module asynchronously:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -77,7 +77,7 @@ To add a global stylesheet to your application, import the CSS files within `app
 
 ## Sass
 
-Aleph.js provide a `sass-loader` plugin allows you import `sass` files, to use the plugin please update the `aleph.config.js`:
+Aleph.js provides a `sass-loader` plugin that allows you to import `sass` files. To use the plugin please update the `aleph.config.js`:
 
 ```javascript
 import sass from 'https://deno.land/x/aleph/plugins/sass.ts'
