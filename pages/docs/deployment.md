@@ -33,8 +33,8 @@ To deploy your app to [Vercel](https://vercel.com), you need to config your *ver
 
 To deploy your app to [Fleek](https://fleek.co), you need to config your *fleek project* manually:
 
-- **Build Command**: `deno run -A https://deno.land/x/aleph@v0.2.26/cli.ts build`
-- **Docker Image Name**: `hayd/deno`
+- **Build Command**: `deno run -A https://deno.land/x/aleph@v0.2.28/cli.ts build`
+- **Docker Image Name**: `hayd/deno:1.6.3`
 - **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
 - **Environment Variables**: `NO_COLOR` (recommended)
 - **APIs(Functions)**: not supported currently
