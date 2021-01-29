@@ -6,11 +6,11 @@ authors:
 
 # Get Started
 
-Welcome to use **Aleph.js**!
+Welcome to **Aleph.js**!
 
-## System Requirements
+## Prerequisites
 
- - You will need [Deno](https://deno.land/) 1.4+
+ - [Deno](https://deno.land/) 1.4+
  - [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
 
 ## Installation
@@ -42,9 +42,9 @@ Server features:
 
 - Compile modules(`js,jsx,ts,tsx,md,css,less...`) and manage deps
 - HMR With React Fast Refresh
-- Serve APIs of `./api/`
+- Serve APIs from `./api/`
 - Server-side rendering of `./pages/`
-- Serve Static files of `./public/` (mapped to `/`)
+- Serve Static files from `./public/` (mapped to `/`)
 
 **Start the app in `production` mode**:
 
