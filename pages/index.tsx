@@ -55,8 +55,8 @@ export default function Home() {
                     fallback={<PlainLogo />}
                 />
                 <h1>The React Framework in Deno.</h1>
-                <p className="intro"><strong>Aleph.js</strong> gives you the best developer experience on building modern web application:<br /> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>
-                <p className="intro short"><strong>Aleph.js</strong> gives you the best developer experience on building modern web application.</p>
+                <p className="intro"><strong>Aleph.js</strong> gives you the best developer experience for building modern web applications:<br /> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>
+                <p className="intro short"><strong>Aleph.js</strong> gives you the best developer experience for building modern web applications.</p>
                 <div className="buttons">
                     <Link to="/docs/get-started">
                         <Button strong>Get Started</Button>
