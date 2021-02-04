@@ -110,9 +110,9 @@ import { useRouter } from "https://deno.land/x/aleph/mod.ts"
 // hypothetically current location patname is '/post/hello-world?theme=dark'
 export default function Component({ href, children }) {
   const {
-    pathname, // string, sholud be '/post/hello-world'
-    pagePath, // string, sholud be '/post/[slug]'
-    params,   // object, sholud be {slug: 'hello-world'}
+    pathname, // string, should be '/post/hello-world'
+    pagePath, // string, should be '/post/[slug]'
+    params,   // object, should be {slug: 'hello-world'}
     query     // URLSearchParams, `query.get('theme')` sholud be 'dark'
   } = useRouter()
   ...
