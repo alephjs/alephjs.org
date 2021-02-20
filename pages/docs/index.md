@@ -8,7 +8,7 @@ authors:
 
 **Aleph.js** (or **Aleph** or **א**, /ˈɑːlɛf/) is a React Framework in [Deno], inspired by [Next.js].
 
-Different with Next.js, Aleph.js don't need **webpack** or other bundler since it uses the **ESM** imports syntax. Every module only needs to be compiled once and then cached on the disk. When a module changes, Aleph.js just needs to re-compile that single module, there's no time wasted to *re-bundle* every changes, and instantly updates in the browser by **HMR** (Hot Module Replacement) with **React Fast Refresh**.
+Different with Next.js, Aleph.js doesn't need **webpack** or other bundler since it uses the **ESM** imports syntax. Every module only needs to be compiled once and then cached on the disk. When a module changes, Aleph.js just needs to re-compile that single module, there's no time wasted to *re-bundle* every changes, and instantly updates in the browser by **HMR** (Hot Module Replacement) with **React Fast Refresh**.
 
 > To learn more about **HMR** with Fast Refresh, check the [HMR with Fast Refresh documentation](/docs/basic-features/hmr-with-fast-refresh).
 
