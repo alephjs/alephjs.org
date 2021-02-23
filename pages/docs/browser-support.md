@@ -13,8 +13,8 @@ Aleph.js requires a modern browser to support [native ES module imports](https:/
 - Safari >= 11
 - Opera >= 48
 
-## `nomodule.js` Ployfill
+## `nomodule.js` Polyfill
 
 (**WIP**, planning to implement in **v0.3**)
 <br>
-To support older browsers like *IE11* in **production**, Aleph.js will create a ployfilled `nomodule.js` that use [system.js](https://github.com/systemjs/systemjs) to import modules.
+To support older browsers like *IE11* in **production**, Aleph.js will create a polyfilled `nomodule.js` that use [system.js](https://github.com/systemjs/systemjs) to import modules.
