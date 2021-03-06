@@ -10,13 +10,13 @@ Welcome to **Aleph.js**!
 
 ## Prerequisites
 
- - [Deno](https://deno.land/) 1.7+
+ - [Deno](https://deno.land/) **1.6.3**
  - [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
 
 ## Installation
 
 ```bash
-$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.3.0-alpha.1/cli.ts
+$ deno install -A -f -n aleph https://deno.land/x/aleph@v0.2.28/cli.ts
 ```
 
 ## Usage

@@ -14,14 +14,14 @@ $ aleph build
 or run it in **production** mode with Aleph.js server with APIs support in Deno:
 
 ```bash
-$ deno run -A https://deno.land/x/aleph@v0.3.0-alpha.1/cli.ts start ${APP_DIR} --port 80
+$ deno run -A https://deno.land/x/aleph@v0.2.28/cli.ts start ${APP_DIR} --port 80
 ```
 
 ## Deploy on Vercel
 
 To deploy your app to [Vercel](https://vercel.com), you need to config your *vercel project* manually:
 
-- **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@v0.3.0-alpha.1/cli.ts build`
+- **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.6.3 && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@v0.2.28/cli.ts build`
 - **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
 - **Environment Variables**: `NO_COLOR` (recommended)
 - **APIs(Functions)**: not supported currently
@@ -33,7 +33,7 @@ To deploy your app to [Vercel](https://vercel.com), you need to config your *ver
 
 To deploy your app to [Fleek](https://fleek.co), you need to config your *fleek project* manually:
 
-- **Build Command**: `deno run -A https://deno.land/x/aleph@v0.3.0-alpha.1/cli.ts build`
+- **Build Command**: `deno run -A https://deno.land/x/aleph@v0.2.28/cli.ts build`
 - **Docker Image Name**: `hayd/deno:1.6.3`
 - **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
 - **Environment Variables**: `NO_COLOR` (recommended)
