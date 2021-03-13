@@ -2,15 +2,16 @@
 title: Custom `Head`
 authors:
   - ije
+  - razermoon
 ---
 
 # Custom `Head`
 
-Aleph.js provides a [`Head`](/docs/api-reference/mod.ts#Head) component to customize global app head in the `app.tsx`:
+Aleph.js provides a [`Head`](/docs/api-reference/mod.ts#Head) component to customize the global app head in `app.tsx`:
 
 ```jsx
-import React from "https://esm.sh/react"
-import { Head } from "https://deno.land/x/aleph/mod.ts"
+import React from "https://esm.sh/react";
+import { Head } from "https://deno.land/x/aleph/mod.ts";
 
 export default function App({ Page, pageProps }) {
   return (
@@ -22,11 +23,11 @@ export default function App({ Page, pageProps }) {
       </Head>
       <Page {...pageProps} />
     </>
-  )
+  );
 }
 ```
 
-or customize page head:
+or customize the page head:
 
 ```jsx
 import React from "https://esm.sh/react"
@@ -69,11 +70,12 @@ export default function Page() {
 ```
 
 ## `SEO` and `Viewport`
-Two *shortcut* components [`SEO`](/docs/api-reference/mod.ts#SEO) and [`Viewport`](/docs/api-reference/mod.ts#Viewport) provided to customize **head** more easy:
+
+Two _shortcut_ components [`SEO`](/docs/api-reference/mod.ts#SEO) and [`Viewport`](/docs/api-reference/mod.ts#Viewport) are provided to customize **head** more easily:
 
 ```jsx
-import React from "https://esm.sh/react"
-import { Head, SEO, Viewport  } from "https://deno.land/x/aleph/mod.ts"
+import React from "https://esm.sh/react";
+import { Head, SEO, Viewport } from "https://deno.land/x/aleph/mod.ts";
 
 export default function App({ Page, pageProps }) {
   return (
@@ -84,13 +86,13 @@ export default function App({ Page, pageProps }) {
         keywords="alephjs,react,framework,deno"
       />
       <Viewport
-          width="device-width"
-          initialScale={1.0}
-          minimumScale={1.0}
-          maximumScale={1.0}
+        width="device-width"
+        initialScale={1.0}
+        minimumScale={1.0}
+        maximumScale={1.0}
       />
       <Page {...pageProps} />
     </>
-  )
+  );
 }
 ```

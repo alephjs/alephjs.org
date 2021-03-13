@@ -2,29 +2,32 @@
 title: About Aleph.js
 authors:
   - ije
+  - razermoon
 ---
 
 # Aleph.js
 
-**Aleph.js** (or **Aleph** or **א**, /ˈɑːlɛf/) is a React Framework in [Deno], inspired by [Next.js].
+**Aleph.js** (or **Aleph** or **א**, /ˈɑːlɛf/) is a React Framework for [Deno], inspired by [Next.js].
 
-Different with Next.js, Aleph.js doesn't need **webpack** or other bundler since it uses the **ESM** imports syntax. Every module only needs to be compiled once and then cached on the disk. When a module changes, Aleph.js just needs to re-compile that single module, there's no time wasted to *re-bundle* every changes, and instantly updates in the browser by **HMR** (Hot Module Replacement) with **React Fast Refresh**.
+Unlike Next.js, Aleph.js doesn't need **webpack** or other bundlers since it uses **ESM** import syntax. Every module only needs to be compiled once, and then cached on the disk.
 
-> To learn more about **HMR** with Fast Refresh, check the [HMR with Fast Refresh documentation](/docs/basic-features/hmr-with-fast-refresh).
+When a module changes, Aleph.js just needs to re-compile that single module. There is no time wasted _re-bundling_ everytime a change is made. This, along with **HMR** (Hot Module Replacement) with **React Fast Refresh**, leads to instant updates in the browser.
 
-Aleph.js works in **Deno**, a *simple*, *modern* and *secure* runtime for JavaScript and TypeScript. No `package.json` and `node_modules` directory needed, all dependencies are imported as URL and managed by Aleph.js:
+> To learn more about **HMR** with Fast Refresh, check out the [HMR with Fast Refresh documentation](/docs/basic-features/hmr-with-fast-refresh).
+
+Aleph.js works in **Deno**, a _simple_, _modern_ and _secure_ runtime for JavaScript and TypeScript. All dependencies are imported using URLs, and managed by Aleph.js. No `package.json` and `node_modules` directory needed:
 
 ```jsx
-import React from "https://esm.sh/react@17.0.1"
-import Logo from "../components/logo.tsx"
+import React from "https://esm.sh/react@17.0.1";
+import Logo from "../components/logo.tsx";
 
 export default function Home() {
-    return (
-      <div>
-        <Logo />
-        <h1>Hello World!</h1>
-      </div>
-    )
+  return (
+    <div>
+      <Logo />
+      <h1>Hello World!</h1>
+    </div>
+  );
 }
 ```
 
@@ -33,20 +36,20 @@ export default function Home() {
 ## Features
 
 - Zero Config
-- Typescript in Deno
+- Typescript Support
 - ES Module Ready
 - Import Maps
 - HMR with Fast Refresh
 - File-system Routing
-- APIs Routing
-- Built-in Markdown Page
-- Built-in CSS(Less) Support
+- API Routes
+- Built-in Markdown Support
+- Built-in CSS (Less) Support
 - SSR/SSG
 <!-- - High Performance Comilper -->
 
 ## Status
 
-In **alpha** stage, not ready for production.
+Currently in **alpha**, not ready for production.
 
 ## License
 
@@ -54,8 +57,8 @@ Under the [MIT](https://opensource.org/licenses/MIT) License.
 
 ## Credits
 
-Some concept description texts in this docs are copied from [Next.js/docs](https://github.com/vercel/next.js/tree/master/docs) (**MIT License**)
+Some concept description text in these docs is copied from [Next.js/docs](https://github.com/vercel/next.js/tree/master/docs) (**MIT License**).
 
-[Deno]: https://deno.land
-[Next.js]: https://nextjs.org
+[deno]: https://deno.land
+[next.js]: https://nextjs.org
 [swc]: https://swc.rs

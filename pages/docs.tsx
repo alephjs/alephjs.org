@@ -31,7 +31,7 @@ const navMenu = [
                 submenu: [
                     { title: 'Pages', pathname: '/pages' },
                     { title: 'Routing', pathname: '/routing' },
-                    { title: 'APIs', pathname: '/apis' },
+                    { title: 'API Routes', pathname: '/api-routes' },
                     { title: 'SSR & SSG', pathname: '/ssr-and-ssg' },
                     { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
                     { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
