@@ -16,7 +16,11 @@ Welcome to **Aleph.js**!
 ## Installation
 
 ```bash
-$ deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.2.28/cli.ts
+# Install latest version
+$ deno install --unstable -A -f -n aleph https://deno.land/x/aleph/cli.ts
+
+# Install specific version
+$ deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.3.0-alpha.8/cli.ts
 ```
 
 ## Usage
@@ -62,7 +66,7 @@ The default port can be changed with `-p` (or `--port`).
 $ aleph build
 ```
 
-This will export a static site in the `output` directory, which can be run standalone on any server.
+This will export a static site in the `dist` directory, which can be run standalone on any server.
 
 > See the [hello-world](https://alephjs-hello-world.vercel.app/) example on [Vercel](https://vercel.com).
 
