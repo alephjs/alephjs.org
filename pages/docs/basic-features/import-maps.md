@@ -36,6 +36,6 @@ If you are using VS Code, please add these settings to `.vscode/settings.json`:
 {
   "deno.enable": true,
   "deno.unstable": true,
-  "deno.import_map": "./import_map.json"
+  "deno.importMap": "./import_map.json"
 }
 ```
