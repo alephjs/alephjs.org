@@ -1,6 +1,6 @@
-import css from '../aleph.js/plugins/css.ts'
-import markdown from '../aleph.js/plugins/markdown.ts'
-import type { Config } from '../aleph.js/types.ts'
+import css from 'https://deno.land/x/aleph@v0.3.0-alpha.19/plugins/css.ts'
+import markdown from 'https://deno.land/x/aleph@v0.3.0-alpha.19/plugins/markdown.ts'
+import type { Config } from 'https://deno.land/x/aleph@v0.3.0-alpha.19/types.ts'
 
 export default (): Config => ({
   plugins: [
