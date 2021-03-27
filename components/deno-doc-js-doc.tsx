@@ -1,8 +1,8 @@
-import React from 'https://esm.sh/react'
-import marked from 'https://esm.sh/marked@1.2.0'
+import React from 'react'
+import marked from 'marked'
 
 export default function DenoDocJSDoc({ jsDoc }: { jsDoc: string }) {
-    return (
-        <div className="jsdoc" dangerouslySetInnerHTML={{ __html: marked.parse(jsDoc.replace(/@param ([^\s]+) /g, '- **param** `$1` ')) }} />
-    )
+  return (
+    <div className="jsdoc" dangerouslySetInnerHTML={{ __html: marked.parse(jsDoc.replace(/@param ([^\s]+) /g, '- **param** `$1` ')) }} />
+  )
 }
