@@ -280,6 +280,17 @@
         font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', Courier, monospace;
       }
 
+      samp {
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 700;
+
+        &::before,
+        &::after {
+          color: #666;
+          content: '/'
+        }
+      }
+
       pre {
         box-sizing: border-box;
         overflow-x: auto;
