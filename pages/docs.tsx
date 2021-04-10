@@ -1,4 +1,4 @@
-import { useRouter } from 'framework:react'
+import { useRouter } from 'framework/react'
 import util from 'aleph/shared/util.ts'
 import hljs from 'highlight'
 import bash from 'highlight-languages/bash'
@@ -82,16 +82,16 @@ interface Metadata {
 }
 
 export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Metadata } }) {
-  const { pagePath } = useRouter()
+  const { routePath } = useRouter()
   const [opened, setOpened] = useState(() => navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
-    m[item.pathname] = pagePath.startsWith(item.pathname)
+    m[item.pathname] = routePath.startsWith(item.pathname)
     return m
   }, {} as Record<string, boolean>))
   const [menuOpened, setMenuOpened] = useState(false)
   const editUrl = useMemo(() => {
-    const md = pagePath === '/docs' ? pagePath + '/index.md' : pagePath + '.md'
+    const md = routePath === '/docs' ? routePath + '/index.md' : routePath + '.md'
     return 'https://github.com/alephjs/alephjs.org/edit/master/pages' + md
-  }, [pagePath])
+  }, [routePath])
   const title = [Page?.meta.title, !Page?.meta.title.endsWith('Aleph.js') && 'Aleph.js'].filter(Boolean).join(' - ')
 
   useEffect(() => {

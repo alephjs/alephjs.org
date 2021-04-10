@@ -1,4 +1,4 @@
-import { useRouter } from 'framework:react'
+import { useRouter } from 'framework/react'
 import React from 'react'
 
 export default function Header() {

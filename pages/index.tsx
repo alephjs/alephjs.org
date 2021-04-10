@@ -1,4 +1,4 @@
-import { useDeno, dynamic } from 'framework:react'
+import { useDeno, dynamic } from 'framework/react'
 import React from 'react'
 import Button from '~/components/button.tsx'
 import PlainLogo from '~/components/plain-logo.tsx'

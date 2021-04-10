@@ -1,4 +1,4 @@
-import { useDeno } from 'framework:react'
+import { useDeno } from 'framework/react'
 import React from 'react'
 import { run } from '~/shared/util.ts'
 
