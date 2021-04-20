@@ -69,7 +69,7 @@ em, i {
     text-align: center;
     color: #111;
 
-    @media screen and (max-width: 660px)  and (min-width: 480px) {
+    @media screen and (max-width: 690px)  and (min-width: 480px) {
       font-size: 30px;
     }
     @media screen and (max-width: 480px) {
@@ -95,7 +95,7 @@ em, i {
       font-weight: 600;
     }
 
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 690px) {
       display: none;
 
       &.short {
@@ -114,7 +114,7 @@ em, i {
       margin: 0 6px;
     }
 
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 690px) {
       a {
         display: block;
         margin: 0;
