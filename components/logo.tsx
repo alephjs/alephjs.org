@@ -33,7 +33,7 @@ class Canvas {
       height: this._size,
       antialias: true,
       backgroundColor: 0xffffff,
-      transparent: true
+      backgroundAlpha: 0
     })
     this._zoomBlurFilter = new ZoomBlurFilter({ strength: defaultSpeed / 10, center: [this._size / 2, this._size / 2] })
     this._glitchFilter = glitch ? new GlitchFilter({ fillMode: 4, direction: 90 }) : null
