@@ -1,3 +1,5 @@
+/// <reference lib="dom" />
+
 import { useRouter } from 'framework/react'
 import util from 'aleph/shared/util.ts'
 import hljs from 'highlight'
@@ -14,7 +16,7 @@ hljs.registerLanguage('json', json)
 hljs.registerLanguage('xml', xml) // depended by jsx
 hljs.registerLanguage('bash', (hljs: any) => {
   const l = bash(hljs)
-  l.keywords.built_in = 'cd deno aleph'
+  l.keywords.built_in = 'cd deno aleph land'
   return l
 })
 
@@ -24,52 +26,51 @@ const navMenu = [
   {
     name: 'Documentation',
     items: [
-      { title: 'About Aleph.js', pathname: '/docs' },
-      { title: 'Get Started', pathname: '/docs/get-started' },
+      { title: 'About Aleph.js', path: '/docs' },
+      { title: 'Get Started', path: '/docs/get-started' },
       {
         title: 'Basic Features',
-        pathname: '/docs/basic-features',
+        path: '/docs/basic-features',
         submenu: [
-          { title: 'Pages', pathname: '/pages' },
-          { title: 'Routing', pathname: '/routing' },
-          { title: 'APIs', pathname: '/api-routes' },
-          { title: 'SSR & SSG', pathname: '/ssr-and-ssg' },
-          { title: 'HMR with Fast Refresh', pathname: '/hmr-with-fast-refresh' },
-          { title: 'Built-in CSS Support', pathname: '/built-in-css-support' },
-          { title: 'Static File Serving', pathname: '/static-file-serving' },
-          { title: 'Import From NPM', pathname: '/import-from-npm' },
-          { title: 'Import Maps', pathname: '/import-maps' },
+          { title: 'Pages', path: '/pages' },
+          { title: 'APIs', path: '/api-routes' },
+          { title: 'Routing', path: '/routing' },
+          { title: 'SSR & SSG', path: '/ssr-and-ssg' },
+          { title: 'HMR with Fast Refresh', path: '/hmr-with-fast-refresh' },
+          { title: 'Built-in CSS Support', path: '/built-in-css-support' },
+          { title: 'Static File Serving', path: '/static-file-serving' },
+          { title: 'Import From NPM', path: '/import-from-npm' },
+          { title: 'Import Maps', path: '/import-maps' },
         ]
       },
       {
         title: 'Advanced Features',
-        pathname: '/docs/advanced-features',
+        path: '/docs/advanced-features',
         submenu: [
-          { title: '`useDeno` Hook', pathname: '/use-deno-hook' },
-          { title: 'Custom `App`', pathname: '/custom-app' },
-          { title: 'Custom `Head`', pathname: '/custom-head' },
-          { title: 'Custom `Scripts`', pathname: '/custom-scripts' },
-          { title: 'Custom `404` Page', pathname: '/custom-404-page' },
-          { title: 'Custom `Loading` Page', pathname: '/custom-loading-page' },
-          { title: 'Asynchronous Import', pathname: '/asynchronous-import' },
+          { title: '`useDeno` Hook', path: '/use-deno-hook' },
+          { title: 'Dynamic Import', path: '/dynamic-import' },
+          { title: 'JSX Magic', path: '/jsx-magic' },
+          { title: 'Custom `App`', path: '/custom-app' },
+          { title: 'Custom `404` Page', path: '/custom-404-page' },
+          { title: 'Custom `Loading` Page', path: '/custom-loading-page' },
         ]
       },
-      { title: 'Browser Support', pathname: '/docs/browser-support' },
-      { title: 'Deployment', pathname: '/docs/deployment' },
+      { title: 'Browser Support', path: '/docs/browser-support' },
+      { title: 'Deployment', path: '/docs/deployment' },
     ]
   },
   {
     name: 'API Reference',
     items: [
-      { title: 'CLI', pathname: '/docs/api-reference/cli' },
-      { title: 'types.ts', pathname: '/docs/api-reference/types.ts' },
+      { title: 'CLI', path: '/docs/api-reference/cli' },
+      { title: 'types.ts', path: '/docs/api-reference/types.ts' },
     ]
   },
   {
     name: 'Design',
     items: [
-      { title: 'Theme', pathname: '/docs/design/theme' },
-      { title: 'Artworks', pathname: '/docs/design/artworks' }
+      { title: 'Theme', path: '/docs/design/theme' },
+      { title: 'Artworks', path: '/docs/design/artworks' }
     ]
   },
 ]
@@ -82,12 +83,12 @@ interface Metadata {
 }
 
 export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Metadata } }) {
-  const { routePath } = useRouter()
-  const [opened, setOpened] = useState(() => navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
-    m[item.pathname] = routePath.startsWith(item.pathname)
+  const { pathname: currentPath, routePath } = useRouter()
+  const [extended, setExtended] = useState(() => navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
+    m[item.path] = routePath.startsWith(item.path)
     return m
   }, {} as Record<string, boolean>))
-  const [menuOpened, setMenuOpened] = useState(false)
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
   const editUrl = useMemo(() => {
     const md = routePath === '/docs' ? routePath + '/index.md' : routePath + '.md'
     return 'https://github.com/alephjs/alephjs.org/edit/master/pages' + md
@@ -147,7 +148,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
   }, [Page])
 
   return (
-    <div className={['docs', menuOpened && 'scroll-lock'].filter(Boolean).join(' ')}>
+    <div className={['docs', menuIsOpen && 'scroll-lock'].filter(Boolean).join(' ')}>
       <head>
         <title>{title}</title>
         <meta name="description" content={about} />
@@ -173,15 +174,15 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
           />
         </div>
         <div
-          className={['menu-button', menuOpened && 'open'].filter(Boolean).join(' ')}
-          onClick={e => setMenuOpened(ok => !ok)}
+          className={['menu-button', menuIsOpen && 'open'].filter(Boolean).join(' ')}
+          onClick={e => setMenuIsOpen(ok => !ok)}
         >
           <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7" stroke="#999" strokeLinecap="round"></path>
           </svg>
           Menu
         </div>
-        <nav className={menuOpened ? 'open' : undefined}>
+        <nav className={menuIsOpen ? 'open' : undefined}>
           {navMenu.map(g => (
             <Fragment key={g.name}>
               <h2>{g.name}</h2>
@@ -189,13 +190,13 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                 {g.items.map(item => {
                   if (item.submenu) {
                     return (
-                      <Fragment key={item.title + item.pathname}>
+                      <Fragment key={item.title + item.path}>
                         <li>
                           <label
-                            className={opened[item.pathname] ? 'open' : 'close'}
-                            onClick={() => setOpened(opened => {
-                              opened[item.pathname] = !opened[item.pathname]
-                              return { ...opened }
+                            className={extended[item.path] ? 'open' : 'close'}
+                            onClick={() => setExtended(extended => {
+                              extended[item.path] = !extended[item.path]
+                              return { ...extended }
                             })}
                           >
                             <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -204,12 +205,13 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                             {item.title}
                           </label>
                         </li>
-                        {opened[item.pathname] && item.submenu.map(({ title, pathname }) => (
-                          <li className="indent" key={title + pathname}>
+                        {extended[item.path] && item.submenu.map(({ title, path }) => (
+                          <li className="indent" key={title + path}>
                             <a
                               rel="nav"
-                              href={item.pathname + pathname}
-                              onClick={() => setMenuOpened(false)}
+                              className={currentPath === item.path + path ? 'active' : undefined}
+                              href={item.path + path}
+                              onClick={() => setMenuIsOpen(false)}
                             >{title}</a>
                           </li>
                         ))}
@@ -217,11 +219,12 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                     )
                   } else {
                     return (
-                      <li key={item.title + item.pathname}>
+                      <li key={item.title + item.path}>
                         <a
                           rel="nav"
-                          href={item.pathname}
-                          onClick={() => setMenuOpened(false)}
+                          className={currentPath === item.path ? 'active' : undefined}
+                          href={item.path}
+                          onClick={() => setMenuIsOpen(false)}
                         >{item.title}</a>
                       </li>
                     )
