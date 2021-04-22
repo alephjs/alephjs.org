@@ -3,9 +3,8 @@ import React from 'react'
 import { run } from '~/shared/util.ts'
 
 export default function CLI() {
-  const { version, helpMessage } = useDeno(async () => {
+  const { helpMessage } = useDeno(async () => {
     return {
-      version: Deno.env.get('ALEPH_VERSION'),
       helpMessage: await run(Deno.execPath(), 'run', '-A', Deno.mainModule, '-h')
     }
   })
@@ -14,7 +13,9 @@ export default function CLI() {
     <div className="doc-page">
       <h1>CLI</h1>
       <h2>Installation</h2>
-      <pre><code className="language-bash">$ deno run -A https://deno.land/x/aleph@v{version}/install.ts</code></pre>
+      <pre><code className="language-bash">$ deno run -A https://deno.land/x/aleph/install.ts</code></pre>
+      <p>or use <a href="https://deno.land/x/land">land</a> without installation:</p>
+      <pre><code className="language-bash">$ land aleph</code></pre>
       <h2>Usage</h2>
       <pre><code className="language-bash">{'$ aleph -h\n' + helpMessage.trim()}</code></pre>
     </div>
