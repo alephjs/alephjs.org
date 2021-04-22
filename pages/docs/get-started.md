@@ -7,19 +7,20 @@ authors:
 
 # Get Started
 
-Welcome to **Aleph.js**!
+Welcome to use **Aleph.js**!
 
-If you're new to Aleph.js you should check out the [about](/docs/) page.
-
-## Prerequisites
-
-- [Deno](https://deno.land/) **1.6.3**
-- [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
+If you're new to Aleph.js you should check out the [About](/docs/) page.
 
 ## Installation
 
 ```bash
-$ deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.2.28/cli.ts
+$ deno run -A https://deno.land/x/aleph/install.ts
+```
+
+or use [land](https://deno.land/x/land) without installation:
+
+```bash
+$ land aleph
 ```
 
 ## Usage
@@ -28,7 +29,6 @@ $ deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.2.28/cli.t
 
 ```bash
 $ aleph init hello
-$ cd hello
 ```
 
 **Start the app in `development` mode**:
@@ -56,14 +56,6 @@ $ aleph build
 This will export a static site to the `output` directory, which can be run standalone on any server.
 
 > See the [hello-world](https://alephjs-hello-world.vercel.app/) example on [Vercel](https://vercel.com).
-
-### Server features
-
-- Compile modules (`js,jsx,ts,tsx,md,css,less...`) and manage deps
-- HMR With React Fast Refresh
-- Serve API routes from `./api/`
-- Server-side rendering of `./pages/`
-- Serve Static files from `./public/` (mapped to `/`)
 
 **More usages**:
 
