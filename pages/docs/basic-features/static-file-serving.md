@@ -19,7 +19,7 @@ export default function Logo() {
 }
 ```
 
-You can aslo serve other static assets such as:
+You can also serve other static assets such as:
 
 - `favicon.ico`
 - `manifest.json`
