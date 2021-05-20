@@ -19,7 +19,7 @@ If you're new to Aleph.js you should check out the [about](/docs/) page.
 ## Installation
 
 ```bash
-$ deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.2.28/cli.ts
+$ deno install --unstable -A -f -n aleph https://deno.land/x/aleph/cli.ts
 ```
 
 ## Usage
