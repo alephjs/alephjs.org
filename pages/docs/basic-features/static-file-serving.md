@@ -12,10 +12,12 @@ Aleph.js will serve any static files in the `public` directory. Files inside the
 For example, if you add an image `public/logo.png`, the following code will access the image:
 
 ```jsx
-import React from "https://esm.sh/react";
+import React from "https://esm.sh/react"
 
 export default function Logo() {
-  return <img src="/logo.png" alt="Logo" />;
+  return (
+    <img src="/logo.png" alt="Logo" />
+  )
 }
 ```
 

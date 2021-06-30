@@ -14,7 +14,7 @@ To use import maps, create a `import_map.json` file in the root directory:
 ```json
 {
   "imports": {
-    "react": "https://esm.sh/react@16.13.1",
+    "react": "https://esm.sh/react@17.0.2",
     ...
   }
 }

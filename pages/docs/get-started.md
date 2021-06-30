@@ -28,7 +28,7 @@ $ land aleph
 **Create a new app**:
 
 ```bash
-$ aleph init hello
+$ aleph init
 ```
 
 **Start the app in `development` mode**:
@@ -45,7 +45,7 @@ $ aleph start
 
 The application will start at http://localhost:8080 by default.
 <br>
-The default port can be changed with `-p` (or `--port`).
+The default port can be changed with `-p` (or `--port`) flag.
 
 **Build the app to a static site (SSG)**:
 

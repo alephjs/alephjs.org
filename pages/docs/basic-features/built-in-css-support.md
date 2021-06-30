@@ -5,98 +5,89 @@ authors:
   - razermoon
 ---
 
-# Built-in CSS Support
+# Built-in CSS Loader
 
-Aleph.js allows you to import **CSS** (or **Less**) files using ESM syntax:
+Aleph.js includes a builtin css loader that allows you to import `.css` files with `link` tag:
 
-```javascript
-import "../style.css";
-```
-
-or external styles:
-
-```javascript
-import "https://esm.sh/tailwindcss/dist/tailwind.min.css";
-```
-
-## How It Works
-
-Aleph.js will transform all `.css` and `.less` imports to js modules. **For example**:
-
-```javascript
-import "../style.css";
-```
-
-will become:
-
-```javascript
-import "../style.css.{HASH}.js";
-```
-
-the `style.css.{HASH}.js` file looks like:
-
-```javascript
-import { applyCSS } from "https://deno.land/x/aleph/head.ts";
-applyCSS("../style.css", `${CSS_CODE}`);
-
-// Support HMR in development mode.
-import.meta.hot.accept();
-```
-
-that will be ignored in Deno and applied in the browser.
-
-## CSS Imports (@import)
-
-Aleph.js doesn't currently support `@import` in CSS modules. You need to put the imported CSS files into the `public` directory and import them using _absolute_ URLs.
-
-## The `Import` Component
-
-Importing `.css` with ESM syntax will be flagged as a resolve error in **VS Code** when using the deno extension. You can **ignore** it if you are sure that the import URL is correct.
-
-![Figure.1 CSS resolve error](/docs/figure-css-resolve-error.png)
-
-To supplement this, Aleph.js provides a React Component called [`Import`](/docs/api-reference/mod.ts#import) that allows you to import modules asynchronously:
-
-```jsx
+```tsx
 import React from "https://esm.sh/react";
-import { Import } from "https://deno.land/x/aleph/mod.ts";
 
-export default function Page() {
+export default function App() {
   return (
     <>
-      <Import from="../style/about.css" />
-      <h1>About</h1>
+      <link rel="stylesheet" href="../style/app.css" />
+      <h1>Hi :)</h1>
     </>
   );
 }
 ```
 
-> To learn more about the `Import` component, check out the [Asynchronous Import documentation](/docs/advanced-features/asynchronous-import).
+## How It Works
 
-## Adding a Global Stylesheet
+Aleph.js will look for all the `link` tags with `rel="stylesheet"`, then load them using the builtin css loader. **For example**:
+
+```javascript
+<link rel="stylesheet" href="../style/app.css" />
+```
+
+will become:
+
+```javascript
+import "../style/app.css.js";
+```
+
+the `style.css.js` file looks like:
+
+```javascript
+import { applyCSS } from "https://deno.land/x/aleph/framework/core/style.ts";
+applyCSS("/style/app.css", `${CSS_CODE}`);
+
+// Support HMR in development mode.
+import.meta.hot.accept();
+```
+
+## CSS Modules
+
+Any CSS file ending with `.module.css` is considered a [CSS modules](https://github.com/css-modules/css-modules) file. With Aleph's [JSX magic](/docs/advanced-features/jsx-magic) you can use the scoped class names like `$title`:
+
+```css
+.bold {
+  font-weight: bold;
+}
+.title {
+  font-size: 30px;
+}
+.intro {
+  font-size: 14px;
+}
+```
+
+```tsx
+import React from "https://esm.sh/react";
+
+export default function App() {
+  return (
+    <>
+      <link rel="stylesheet"  href="../style/app.module.css" />
+      <h1 className="$title $bold">Hi :)</h1>
+      <p className="$intro">Welcome!</p>
+    </>
+  );
+}
+```
+
+CSS modules behavior can be configured via the `css.modules` option.
+
+## PostCSS
+
+If the `aleph.config.ts` contains valid `css.postcss` config, it will be automatically applied to all imported CSS.
+
+## Global Stylesheet
 
 To add a global stylesheet to your application, import the CSS files in `app.tsx`.
 
-## Sass
 
-Aleph.js provides a `sass-loader` plugin that allows you to import `sass` files. To use the plugin, please update the `aleph.config.js`:
+## CSS Imports (@import)
 
-```javascript
-import sass from 'https://deno.land/x/aleph/plugins/sass.ts'
+Aleph.js doesn't currently support `@import` in CSS modules. You need to put the imported CSS files into the `public` directory and import them using _absolute_ URLs.
 
-export default {
-    plugins: [sass, ...],
-    ...
-}
-```
-
-then in your code:
-
-```jsx
-import React from "https://esm.sh/react";
-import "./style/about.sass";
-
-export default function Page() {
-  return <h1>About</h1>;
-}
-```

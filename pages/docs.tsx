@@ -47,12 +47,12 @@ const navMenu = [
         title: 'Advanced Features',
         path: '/docs/advanced-features',
         submenu: [
-          { title: '`useDeno` Hook', path: '/use-deno-hook' },
+          { title: 'Data Fetching', path: '/data-fetching' },
           { title: 'Dynamic Import', path: '/dynamic-import' },
           { title: 'JSX Magic', path: '/jsx-magic' },
           { title: 'Custom `App`', path: '/custom-app' },
-          { title: 'Custom `404` Page', path: '/custom-404-page' },
-          { title: 'Custom `Loading` Page', path: '/custom-loading-page' },
+          { title: 'Custom Error Page', path: '/custom-error-page' },
+          { title: 'Using Plugins', path: '/using-plugins' },
         ]
       },
       { title: 'Browser Support', path: '/docs/browser-support' },
