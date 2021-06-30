@@ -26,7 +26,12 @@ class Canvas {
   private _stars: Star[]
 
   constructor(props: Props) {
-    const { size, fov, starBaseSize, glitch } = props
+    const {
+      size = 200,
+      fov = 50,
+      starBaseSize = 8,
+      glitch = false
+    } = props
     this._size = size * window.devicePixelRatio
     this._app = new PIXI.Application({
       width: this._size,
@@ -165,13 +170,19 @@ class Canvas {
 }
 
 interface Props {
-  size: number
-  fov: number
-  starBaseSize: number
-  glitch: boolean
+  size?: number
+  fov?: number
+  starBaseSize?: number
+  glitch?: boolean
 }
 
-export default function Logo({ size, fov, starBaseSize, glitch }: Props) {
+export default function Logo(props: Props) {
+  const {
+    size = 200,
+    fov = 50,
+    starBaseSize = 8,
+    glitch = false
+  } = props
   const ref = useRef<HTMLDivElement>()
 
   useEffect(() => {
@@ -202,11 +213,4 @@ export default function Logo({ size, fov, starBaseSize, glitch }: Props) {
       }}
     />
   )
-}
-
-Logo.defaultProps = {
-  size: 200,
-  fov: 50,
-  starBaseSize: 8,
-  glitch: false
 }

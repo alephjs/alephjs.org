@@ -1,4 +1,4 @@
-import { useDeno, dynamic } from 'framework/react'
+import { dynamic, Fallback, useDeno } from 'framework/react'
 import React from 'react'
 import Button from '~/components/button.tsx'
 import PlainLogo from '~/components/plain-logo.tsx'
@@ -60,7 +60,9 @@ export default function Home() {
         <link rel="stylesheet" href="~/style/index.css" />
       </head>
       <div className="fullscreen-page">
-        <Logo fallback={<PlainLogo />} />
+        <Fallback to={<PlainLogo />}>
+          <Logo />
+        </Fallback>
         <h1>The Fullstack Framework in Deno.</h1>
         <p className="intro"><strong>Aleph.js</strong> gives you the best developer experience for building modern web applications:<br /> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>
         <p className="intro short"><strong>Aleph.js</strong> gives you the best developer experience for building modern web applications in Deno.</p>

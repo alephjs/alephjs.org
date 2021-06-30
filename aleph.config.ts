@@ -1,5 +1,5 @@
-import markdown from '../aleph.js/plugins/markdown.ts'
-import type { Config } from '../aleph.js/types.ts'
+import markdown from 'aleph/plugins/markdown.ts'
+import type { Config } from 'aleph/types.ts'
 
 export default (): Config => ({
   plugins: [
