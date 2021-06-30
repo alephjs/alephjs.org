@@ -43,3 +43,5 @@ export default (): Config => ({
   plugins: [ markdown() ]
 })
 ```
+
+> To learn more about loader plugin, check the [Using Plugins](/docs/advanced-features/using-plugins).

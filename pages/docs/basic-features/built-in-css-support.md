@@ -48,7 +48,7 @@ import.meta.hot.accept();
 
 ## CSS Modules
 
-Any CSS file ending with `.module.css` is considered a [CSS modules](https://github.com/css-modules/css-modules) file. With Aleph's [JSX magic](/docs/advanced-features/jsx-magic) you can use the scoped class names like `$title`:
+Any CSS file ending with `.module.css` is considered a [CSS modules](https://github.com/css-modules/css-modules) file. With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names like `$title`:
 
 ```css
 .bold {
@@ -85,7 +85,6 @@ If the `aleph.config.ts` contains valid `css.postcss` config, it will be automat
 ## Global Stylesheet
 
 To add a global stylesheet to your application, import the CSS files in `app.tsx`.
-
 
 ## CSS Imports (@import)
 
