@@ -6,14 +6,8 @@ export default function Artworks() {
       <p><img className="medium" src="/logo.svg" /></p>
       <h3>Logo (main)</h3>
       <div className="large space" />
-      <p><img src="/docs/logo_filled.png" /><br /><img src="/docs/logo_filled_frame.png" /></p>
+      <p><img src="/docs/logo_filled_frame.png" /></p>
       <h3>Logo (filled)</h3>
-      <div className="large space" />
-      <p>
-        <img className="small" src="/docs/logo_3l.png" />
-        <img className="small" src="/docs/logo_3l_round.png" />
-      </p>
-      <h3>Logo (3L)</h3>
     </div>
   )
 }

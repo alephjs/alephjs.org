@@ -49,10 +49,20 @@ const navMenu = [
         submenu: [
           { title: 'Data Fetching', path: '/data-fetching' },
           { title: 'Dynamic Import', path: '/dynamic-import' },
-          { title: 'JSX Magic', path: '/jsx-magic' },
-          { title: 'Custom `App`', path: '/custom-app' },
+          { title: 'Custom App', path: '/custom-app' },
+          { title: 'Custom Head Meta', path: '/custom-head-meta' },
+          { title: 'Custom Script', path: '/custom-script' },
           { title: 'Custom Error Page', path: '/custom-error-page' },
+          { title: 'JSX Magic', path: '/jsx-magic' },
           { title: 'Using Plugins', path: '/using-plugins' },
+        ]
+      },
+      {
+        title: 'Plugins',
+        path: '/docs/plugins',
+        submenu: [
+          { title: 'Official Plugins', path: '/official-plugins' },
+          { title: 'Community Plugins', path: '/community-plugins' },
         ]
       },
       { title: 'Browser Support', path: '/docs/browser-support' },
@@ -63,14 +73,16 @@ const navMenu = [
     name: 'API Reference',
     items: [
       { title: 'CLI', path: '/docs/api-reference/cli' },
-      { title: 'types.ts', path: '/docs/api-reference/types.ts' },
+      { title: 'Config', path: '/docs/api-reference/config' },
+      { title: 'Framework API', path: '/docs/api-reference/famework-api' },
+      { title: 'Plugin API', path: '/docs/api-reference/plugin-api' },
     ]
   },
   {
     name: 'Design',
     items: [
+      { title: 'Artworks', path: '/docs/design/artworks' },
       { title: 'Theme', path: '/docs/design/theme' },
-      { title: 'Artworks', path: '/docs/design/artworks' }
     ]
   },
 ]

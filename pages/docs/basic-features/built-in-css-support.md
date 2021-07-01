@@ -5,7 +5,7 @@ authors:
   - razermoon
 ---
 
-# Built-in CSS Loader
+# Built-in CSS Support
 
 Aleph.js includes a builtin css loader that allows you to import `.css` files with `link` tag:
 

@@ -1,6 +1,5 @@
 import { dynamic, Fallback } from 'framework/react'
 import React from 'react'
-import Header from '~/components/header.tsx'
 import PlainLogo from '~/components/plain-logo.tsx'
 
 const Logo = dynamic(() => import('~/components/logo.tsx'))
@@ -11,9 +10,7 @@ export default function E404() {
       <head>
         <title>404 - Page Not Found</title>
         <meta name="robots" content="noindex" />
-        <link rel="stylesheet" href="../style/app.css" />
       </head>
-      <Header />
       <div className="fullscreen-page">
         <Fallback to={<PlainLogo size={150} />}>
           <Logo

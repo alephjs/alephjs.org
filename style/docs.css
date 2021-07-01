@@ -96,6 +96,7 @@
             font-size: 1rem;
             color: #333;
             cursor: pointer;
+            user-select: none;
 
             svg {
               display: inline-block;
@@ -115,6 +116,7 @@
             line-height: 1.27;
             font-size: 1rem;
             color: #333;
+            user-select: none;
 
             &:before {
               flex-basis: 4px;
@@ -439,7 +441,7 @@
 
     img {
       display: inline-block;
-      width: 210px;
+      width: 200px;
       margin: 0 30px;
 
       &.round {

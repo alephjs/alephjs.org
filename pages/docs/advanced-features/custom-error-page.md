@@ -7,9 +7,11 @@ authors:
 
 # Custom `404` Page
 
-By default, Aleph.js will render a static 404 page for bad requests, you can override it by creating a `404.tsx` file in the root directory:
+By default, Aleph.js will render a static 404 page for bad requests, you can override it by creating a `404.tsx` file in the `pages` directory:
 
-```jsx
+```tsx
+// pages/404.tsx
+
 export default function E404() {
   return <h1>404 - Page Not Found</h1>;
 }

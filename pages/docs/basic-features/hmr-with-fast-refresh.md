@@ -18,7 +18,7 @@ For a CSS module, the old style will be removed after the new one is applied. Fo
 Aleph.js supports full HMR out-of-the-box for the following served files:
 
 - **JSX**/**TSX** in `pages` and `components` directory
-- Files loaded by loader plugin with `acceptHMR` enable
+- Files loaded by loader plugin with `acceptHMR` enabled
 
 ## What Is Fast Refresh
 
