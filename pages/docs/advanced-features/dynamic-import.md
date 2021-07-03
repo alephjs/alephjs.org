@@ -7,7 +7,7 @@ authors:
 
 # Dynamic Import
 
-Aleph.js provides a [`dynamic`](/docs/api-reference/framework/react/mod.ts#dynamic) hoc that allows you to import components asynchronously, in case you might want to import a component **asynchronously (lazy)** if it is too large or you don't want it to be rendered during **SSR**.
+Aleph.js provides a [`dynamic`](/docs/api-reference/framework/react/mod.ts#dynamic) HOC that allows you to import components asynchronously, in case you might want to import a component **asynchronously (lazy)** if it is too large or you don't want it to be rendered during **SSR**.
 
 ```tsx
 import React from 'https://esm.sh/react'
@@ -27,7 +27,7 @@ export default function About() {
 
 ## Fallback
 
-Aleph.js also provides a `Fallback` component to render fallback UI during the component module is loading.
+Aleph.js also provides a `Fallback` component to render a fallback UI during the asynchronous component module is loading.
 
 ```tsx
 import React from 'https://esm.sh/react'

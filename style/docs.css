@@ -437,6 +437,15 @@
       font-size: 1rem;
       font-weight: 600;
       color: #333;
+
+      a {
+        color: #999;
+        font-size: 0.9rem;
+
+        &:hover {
+          color: #333;
+        }
+      }
     }
 
     img {

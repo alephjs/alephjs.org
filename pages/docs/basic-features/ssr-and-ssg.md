@@ -14,7 +14,7 @@ Each generated HTML page only needs a small amount of JavaScript. When a page is
 
 You can disable **SSR** functionality in `aleph.config.js`:
 
-```javascript
+```ts
 export default {
   ssr: false, // SPA mode
   ...
@@ -23,7 +23,7 @@ export default {
 
 or specify exclude paths:
 
-```javascript
+```ts
 export default {
   ssr: {
     exclude: [
@@ -35,11 +35,40 @@ export default {
 }
 ```
 
-## SSR Data Fetching
+## SSR Options
 
-If you want to fetch data during **build time** (SSR), you can do so with the [`useDeno`](/docs/api-reference/mod.ts#useDeno) hook will get the **Deno** runtime in your component:
+If you export an async function called `ssr.props` from a page, Aleph.js will pre-render this page at build time using the props returned by `ssr.props`.
 
-```jsx{5-7}
+```tsx
+// pages/index.tsx
+
+import React from 'https://esm.sh/react'
+import type { SSROptions } from 'https://esm.sh/react/types.ts'
+
+export const ssr: SSROptions = {
+  props: async router => {
+    return {
+      $revalidate: 1, // revalidate props after 1 second
+      serverTime: Date.now()
+    }
+  },
+  paths: async () => {
+    return [] // static paths for ssg
+  }
+}
+
+export default function Page(props) {
+  return (
+    <p>Now: {props.serverTime}</p>
+  )
+}
+```
+
+## `useDeno` hook
+
+Aleph.js also provides an `useDeno` hook to mix the **Deno** runtime in your component:
+
+```tsx
 import React from 'https://esm.sh/react'
 import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
@@ -54,44 +83,27 @@ export default function Page() {
 }
 ```
 
-or fetch data **asynchronously**:
-
-```jsx
-import React from 'https://esm.sh/react'
-import { useDeno, useRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
-
-export default function Post() {
-  const { params } = useRouter()
-  const post = useDeno(
-    async () => {
-      return await (await fetch(`https://.../post/${params.id}`)).json()
-    },
-    [params]
-  )
-
-  return <h1>{post.title}</h1>
-}
-```
-
-> To learn more `useDeno`, check the [useDeno Hook documentation](/docs/advanced-features/use-deno-hook).
+> To learn more `useDeno`, check the [`useDeno` Hook](/docs/advanced-features/usedeno-hook) documentation.
 
 ## Static Site Generation (SSG)
 
-Aleph.js allows you to export your app to a **static site**, which can be served as static site on any server or CDN.
+Aleph.js can export your app to a **static site** in html, which can be served on any server or CDN.
 
 ```bash
 $ aleph build
 ```
 
-For **dynamic routes**, your can define the static paths in `ssr` options:
+For **dynamic routes**, your can define the **static paths** in `ssr` options:
 
-```javascript
+```tsx
 // pages/post/[id].tsx
 
-export const ssr = {
+import type { SSROptions } from 'https://esm.sh/react/types.ts'
+
+export const ssr: SSROptions = {
   paths: async () => {
-    const posts = await (await fetch('https://.../posts')).json()
-    return posts.map(({id}) => `/post/${id}`)
+    const posts = await (await fetch('https://company.com/posts')).json()
+    return posts.map(({ id }) => `/post/${id}`)
   }
 }
 

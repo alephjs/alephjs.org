@@ -1,13 +1,15 @@
 ---
-title: Custom `404` Page
+title: Custom Error Page
 authors:
   - ije
   - razermoon
 ---
 
-# Custom `404` Page
+# Custom Error Page
 
-By default, Aleph.js will render a static 404 page for bad requests, you can override it by creating a `404.tsx` file in the `pages` directory:
+By default, Aleph.js will render a default error page for bad requests, you can override it by creating `404.tsx` and `500.tsx` files in the `pages` directory:
+
+## 404
 
 ```tsx
 // pages/404.tsx
@@ -18,3 +20,14 @@ export default function E404() {
 ```
 
 > check out our [404 page](/404).
+
+## 500
+
+```tsx
+// pages/500.tsx
+
+export default function E500({ error }: {error: Error}) {
+  return <h1>500 - {error.mesage}</h1>;
+}
+```
+

@@ -9,7 +9,7 @@ authors:
 
 Aleph.js uses the `App` component to initialize pages. You can override it to control the page initialization, which allows you to:
 
-- Add global heam element(meta,link...)
+- Add global heam element(meta, link...)
 - Add global styles
 - Add global layout elements
 - Add custom `ErrorBoundary`

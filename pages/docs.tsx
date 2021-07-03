@@ -47,11 +47,10 @@ const navMenu = [
         title: 'Advanced Features',
         path: '/docs/advanced-features',
         submenu: [
-          { title: 'Data Fetching', path: '/data-fetching' },
+          { title: '`useDeno` Hook', path: '/use-deno-hook' },
           { title: 'Dynamic Import', path: '/dynamic-import' },
-          { title: 'Custom App', path: '/custom-app' },
-          { title: 'Custom Head Meta', path: '/custom-head-meta' },
-          { title: 'Custom Script', path: '/custom-script' },
+          { title: 'Custom `App`', path: '/custom-app' },
+          { title: 'Custom Page Meta', path: '/custom-page-meta' },
           { title: 'Custom Error Page', path: '/custom-error-page' },
           { title: 'JSX Magic', path: '/jsx-magic' },
           { title: 'Using Plugins', path: '/using-plugins' },
@@ -74,7 +73,7 @@ const navMenu = [
     items: [
       { title: 'CLI', path: '/docs/api-reference/cli' },
       { title: 'Config', path: '/docs/api-reference/config' },
-      { title: 'Framework API', path: '/docs/api-reference/famework-api' },
+      { title: 'Framework API', path: '/docs/api-reference/framework-api' },
       { title: 'Plugin API', path: '/docs/api-reference/plugin-api' },
     ]
   },

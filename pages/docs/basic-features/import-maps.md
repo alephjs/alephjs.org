@@ -14,6 +14,7 @@ To use import maps, create a `import_map.json` file in the root directory:
 ```json
 {
   "imports": {
+    "@/": "./",
     "react": "https://esm.sh/react@17.0.2",
     ...
   }
@@ -22,15 +23,16 @@ To use import maps, create a `import_map.json` file in the root directory:
 
 then in your code:
 
-```jsx
+```tsx
 import React from "react";
+import Logo from "@/components/logo.tsx";
 
-export default function About() {
-  return <h1>About</h1>;
+export default function Hi() {
+  return <Logo />;
 }
 ```
 
-If you are using VS Code, please add these settings to `.vscode/settings.json`:
+If you are using **VS Code**, please add below settings to `.vscode/settings.json`:
 
 ```json
 {
