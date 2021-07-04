@@ -23,5 +23,6 @@
   },
   "deno.enable": true,
   "deno.unstable": true,
+  "deno.config": "./tsconfig.json",
   "deno.importMap": "./import_map.json"
 }

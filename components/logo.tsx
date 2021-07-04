@@ -1,4 +1,3 @@
-/// <reference lib="dom" />
 import { GlitchFilter } from '@pixi/filter-glitch'
 import { ZoomBlurFilter } from '@pixi/filter-zoom-blur'
 import * as PIXI from 'pixi'

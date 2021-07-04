@@ -1,6 +1,16 @@
 import { useDeno } from 'framework/react'
 import React from 'react'
-import { run } from '~/shared/util.ts'
+
+async function run(...cmd: string[]) {
+  const p = Deno.run({
+    cmd,
+    stdout: 'piped',
+    stderr: 'inherit'
+  })
+  const output = await p.output()
+  p.close()
+  return new TextDecoder().decode(output)
+}
 
 export default function CLI() {
   const { helpMessage } = useDeno(async () => {

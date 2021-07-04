@@ -1,5 +1,3 @@
-/// <reference lib="dom" />
-
 import { useRouter } from 'framework/react'
 import util from 'aleph/shared/util.ts'
 import hljs from 'highlight'
