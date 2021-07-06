@@ -31,6 +31,55 @@ Each generated HTML page only needs a small amount of JavaScript. When a page is
 
 > To learn more about rendering, check the [SSR & SSG](/docs/basic-features/ssr-and-ssg).
 
+## Linking Between Pages
+
+Aleph.js will check `anchor` tags ([JSX Magic](/docs/advanced-features/jsx-magic)) in your app to move between pages automatically, similarly to a SPA (single-page application).
+
+```jsx
+import React from "https://esm.sh/react";
+
+export default function Nav() {
+  return (
+    <>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/blog/hello-world">Hello World</a>
+    </>
+  );
+}
+```
+
+In the example above we have three links, each one maps a path (`href`) to the specified page:
+
+- `/` → `pages/index.tsx`
+- `/about` → `pages/about.tsx`
+- `/blog/hello-world` → `pages/blog/[slug].tsx`
+
+### Use the `redirect` function
+
+You can also redirect pages with the `redirect` function:
+
+```jsx
+import React, { useCallback } from "https://esm.sh/react"
+import { redirect } from "https://deno.land/x/aleph/framework/core/mod.ts"
+
+export default function Link({ to, replace, children }) {
+  const onClick = useCallback(
+    (e) => {
+      e.preventDefault()
+      redirect(to, replace)
+    },
+    [to, replace]
+  )
+
+  return (
+    <span onClick={onClick}>
+      {children}
+    </span>
+  )
+}
+```
+
 ## Custom Page Loader
 
 By default Aleph.js only renders pages from `.js`, `.jsx`, `.ts`, `.tsx`, and `.mjs` files in the `pages` directory. You can add loader plugins to support more page formats, for example **markdown** page:

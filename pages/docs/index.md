@@ -12,7 +12,7 @@ authors:
 Different with Next.js, Aleph.js doesn't need **webpack** or other bundler since it uses the [ES moudule] syntax during development. Every module only needs to be compiled once, and then cached on the disk.
 When a module changes, Aleph.js just needs to re-compile that single module. There is no time wasted _re-bundling_ everytime a change is made. This, along with **HMR** (Hot Module Replacement) and **Fast Refresh**, leads to instant updates in the browser.
 
-Aleph.js uses modern tools to build your app. It transpiles code using [swc] in rust with high performance and bundles modules with [esbuild] at build phase extremely fast.
+Aleph.js uses modern tools to build your app. It transpiles code using [swc] in rust with high performance and bundles modules with [esbuild] at build time extremely fast.
 
 Aleph.js works in **Deno**, a _simple_, _modern_ and _secure_ runtime for JavaScript and TypeScript. All dependencies are imported using URLs, and managed by Deno cache system. No `package.json` and `node_modules` directory needed:
 

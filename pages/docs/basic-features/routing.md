@@ -28,12 +28,12 @@ To match a dynamic segment, you can use bracket syntax or start the segment with
 
 ### Nested Routes
 
-The router supports nested route structures such as:
+Aleph's router supports nested route structures like:
 
 - `pages/blog.tsx`
 - `pages/blog/[slug].tsx`
 
-In the example, ensure to render the child page(component) in `pages/blog.tsx`:
+In the example, routes in `/blog/:slug` will be rendered under the `pages/blog.tsx`, that is useful to create a **layout** for pages:
 
 ```jsx
 // pages/blog.tsx
@@ -51,58 +51,9 @@ export default function Blog({ Page, pageProps }) {
 }
 ```
 
-## Linking Between Pages
-
-Aleph.js will check `anchor` tags ([JSX Magic](/docs/advanced-features/jsx-magic)) in your app to move between pages automatically, similarly to a SPA (single-page application).
-
-```jsx
-import React from "https://esm.sh/react";
-
-export default function Nav() {
-  return (
-    <>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/blog/hello-world">Hello World</a>
-    </>
-  );
-}
-```
-
-In the example above we have three links, each one maps a path (`href`) to the specified page:
-
-- `/` → `pages/index.tsx`
-- `/about` → `pages/about.tsx`
-- `/blog/hello-world` → `pages/blog/[slug].tsx`
-
-### Use the `redirect` function
-
-You can also redirect pages with the `redirect` function:
-
-```jsx
-import React, { useCallback } from "https://esm.sh/react"
-import { redirect } from "https://deno.land/x/aleph/framework/core/mod.ts"
-
-export default function Link({ to, replace, children }) {
-  const onClick = useCallback(
-    (e) => {
-      e.preventDefault()
-      redirect(to, replace)
-    },
-    [to, replace]
-  )
-
-  return (
-    <span onClick={onClick}>
-      {children}
-    </span>
-  )
-}
-```
-
 ## `RouterURL` object
 
-To access the [`RouterURL`](/docs/api-reference/types.ts/#RouterURL) object in a component, you can use the [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
+To access the`RouterURL` object in a component, you can use the `useRouter` hook:
 
 ```jsx
 import { useRouter } from "https://deno.land/x/aleph/framework/react/mod.ts";
