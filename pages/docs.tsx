@@ -48,7 +48,6 @@ const navMenu = [
           { title: '`useDeno` Hook', path: '/use-deno-hook' },
           { title: 'Dynamic Import', path: '/dynamic-import' },
           { title: 'Custom `App`', path: '/custom-app' },
-          { title: 'Custom Page Meta', path: '/custom-page-meta' },
           { title: 'Custom Error Page', path: '/custom-error-page' },
           { title: 'JSX Magic', path: '/jsx-magic' },
           { title: 'Using Plugins', path: '/using-plugins' },

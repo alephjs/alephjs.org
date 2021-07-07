@@ -34,7 +34,7 @@ export default function CLI() {
 
 CLI.meta = {
   title: 'CLI',
-  author: 'The Aleph.js Authors',
+  author: ['ije'],
   date: '2020-10-20',
   editable: false
 }

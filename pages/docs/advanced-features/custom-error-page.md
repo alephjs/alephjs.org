@@ -2,7 +2,6 @@
 title: Custom Error Page
 authors:
   - ije
-  - razermoon
 ---
 
 # Custom Error Page
@@ -30,4 +29,3 @@ export default function E500({ error }: {error: Error}) {
   return <h1>500 - {error.mesage}</h1>;
 }
 ```
-

@@ -2,7 +2,6 @@
 title: Built-in CSS Support
 authors:
   - ije
-  - razermoon
 ---
 
 # Built-in CSS Support

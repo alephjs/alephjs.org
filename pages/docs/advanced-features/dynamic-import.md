@@ -2,7 +2,6 @@
 title: Dynamic Import
 authors:
   - ije
-  - razermoon
 ---
 
 # Dynamic Import
@@ -38,7 +37,7 @@ const Logo = dynamic(() => import('../components/logo.tsx'))
 export default function About() {
   return (
     <Fallback to={<p>loading...</p>}>
-      <Logo size={100}/>
+      <Logo size={100} />
     </Fallback>
   )
 }
