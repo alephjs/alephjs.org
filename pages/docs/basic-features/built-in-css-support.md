@@ -7,7 +7,7 @@ authors:
 
 # Built-in CSS Support
 
-Aleph.js includes a builtin css loader that allows you to import `.css` files with `link` tag:
+Aleph.js includes a builtin CSS loader that allows you to import `.css` files via the `link` jsx tag with `rel="stylesheet"` property:
 
 ```tsx
 import React from "https://esm.sh/react";
@@ -24,7 +24,7 @@ export default function App() {
 
 ## How It Works
 
-Aleph.js will look for all the `link` tags with `rel="stylesheet"`, then load them using the builtin css loader. **For example**:
+Aleph's compiler will look for all the `link` jsx tags with `rel="stylesheet"` and transforms them to ES modules, then loads them via the builtin CSS loader. **For example**:
 
 ```javascript
 <link rel="stylesheet" href="../style/app.css" />
@@ -44,6 +44,35 @@ applyCSS("/style/app.css", `${CSS_CODE}`);
 
 // Support HMR in development mode.
 import.meta.hot.accept();
+```
+
+
+## Inline CSS
+
+Aleph.js supports inline CSS, that means you can write CSS in `.jsx` files directly, the concept is called **CSS-in-JS**:
+
+```tsx
+import React from 'https://esm.sh/react'
+
+const color = 'black'
+
+export default function App() {
+  return (
+    <>
+      <style>{`
+        h1 {
+          font-size: 2em;
+          color: ${color};
+        }
+        p {
+          font-size: 1em;
+        }
+      `}</style>
+      <h1>Hi :)</h1>
+      <p>Welcome!</p>
+    </>
+  )
+}
 ```
 
 ## CSS Modules
