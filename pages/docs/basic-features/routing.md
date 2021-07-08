@@ -36,8 +36,6 @@ Aleph's router supports nested route structures like:
 In the example, routes in `/blog/:slug` will be rendered under the `pages/blog.tsx`, that is useful to create a **layout** for pages:
 
 ```jsx
-// pages/blog.tsx
-
 import React from "https://esm.sh/react"
 import BlogHeader from "../components/blog-header.tsx"
 

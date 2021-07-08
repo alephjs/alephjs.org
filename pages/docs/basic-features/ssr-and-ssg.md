@@ -40,8 +40,6 @@ export default {
 If you export an async function called `ssr.props` from a page, Aleph.js will pre-render this page at build time using the props returned by `ssr.props`.
 
 ```tsx
-// pages/index.tsx
-
 import React from 'https://esm.sh/react'
 import type { SSROptions } from 'https://esm.sh/react/types.ts'
 

@@ -33,10 +33,10 @@ Each generated HTML page only needs a small amount of JavaScript. When a page is
 
 ## Linking Between Pages
 
-Aleph.js will check `anchor` tags ([JSX Magic](/docs/advanced-features/jsx-magic)) in your app to move between pages automatically, similarly to a SPA (single-page application).
+Aleph.js will check `anchor` tags ([JSX Magic](/docs/advanced-features/jsx-magic)) in your app to move between pages without refresh whole page, similarly to a SPA (single-page application).
 
-```jsx
-import React from "https://esm.sh/react";
+```tsx
+import React from 'https://esm.sh/react'
 
 export default function Nav() {
   return (
@@ -45,7 +45,7 @@ export default function Nav() {
       <a href="/about">About</a>
       <a href="/blog/hello-world">Hello World</a>
     </>
-  );
+  )
 }
 ```
 
@@ -54,6 +54,24 @@ In the example above we have three links, each one maps a path (`href`) to the s
 - `/` → `pages/index.tsx`
 - `/about` → `pages/about.tsx`
 - `/blog/hello-world` → `pages/blog/[slug].tsx`
+
+### NavLink
+
+You also can add `rel="nav"` property in the `anchor` tag to make it as `NavLink` that will add `active` className when the specific page is activated. You can change the active className via `data-active-className` or add active style using `data-active-style`.
+
+```tsx
+import React from 'https://esm.sh/react'
+
+export default function Nav() {
+  return (
+    <>
+      <a rel="nav" href="/">Home</a>
+      <a rel="nav" data-active-className="current" href="/about">About</a>
+      <a rel="nav" data-active-style={{ fontWeight: 'bold' }} href="/contact">Contact</a>
+    </>
+  )
+}
+```
 
 ### Use the `redirect` function
 
