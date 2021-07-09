@@ -1,6 +1,7 @@
 import { useDeno } from 'framework/react'
 import React, { ComponentType } from 'react'
 import Header from './components/header.tsx'
+import './style/app.css'
 
 export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {
   const GTAGID = useDeno(() => {
@@ -9,7 +10,6 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
 
   return (
     <main>
-      <link rel="stylesheet" href="./style/app.css" />
       <Header />
       <Page {...pageProps} />
       {GTAGID && (
