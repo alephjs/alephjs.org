@@ -1,10 +1,10 @@
 ---
-title: Dynamic Import
+title: Dynamic Importing
 authors:
   - ije
 ---
 
-# Dynamic Import
+# Dynamic Importing
 
 Aleph.js provides a [`dynamic`](/docs/api-reference/framework/react/mod.ts#dynamic) HOC that allows you to import components asynchronously, in case you might want to import a component **asynchronously (lazy)** if it is too large or you don't want it to be rendered during **SSR**.
 

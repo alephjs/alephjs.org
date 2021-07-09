@@ -255,6 +255,10 @@
         line-height: 1.5;
       }
 
+      p + p {
+        margin-top: 1.2rem;
+      }
+
       a {
         color: var(--theme-color);
         box-shadow: 0 1px 0 0 currentColor;
@@ -372,6 +376,11 @@
       ul, ol {
         padding-left: 1.5rem;
         margin-top: 1.5rem;
+      }
+
+      p + ul,
+      p + ol {
+        margin-top: 0.75rem;
       }
 
       ol {

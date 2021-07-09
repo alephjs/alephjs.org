@@ -6,45 +6,60 @@ authors:
 
 # Built-in CSS Support
 
-Aleph.js includes a builtin CSS loader that allows you to import `.css` files via the `link` jsx tag with `rel="stylesheet"` property:
+Aleph.js allows you to import **CSS** files using ESM syntax:
 
-```tsx
-import React from "https://esm.sh/react";
+```javascript
+import '../style.css'
+```
 
-export default function App() {
-  return (
-    <>
-      <link rel="stylesheet" href="../style/app.css" />
-      <h1>Hi :)</h1>
-    </>
-  );
-}
+or external styles:
+
+```javascript
+import 'https://esm.sh/tailwindcss/dist/tailwind.min.css'
 ```
 
 ## How It Works
 
-Aleph's compiler will look for all the `link` jsx tags with `rel="stylesheet"` and transforms them to ES modules, then loads them via the builtin CSS loader. **For example**:
+Aleph.js will transform all `.css` imports to JS modules, then loads them via the builtin CSS loader. **For example**:
 
 ```javascript
-<link rel="stylesheet" href="../style/app.css" />
+import '../style.css';
 ```
 
 will become:
 
 ```javascript
-import "../style/app.css.js";
+import '../style.css.js'
 ```
 
 the `style.css.js` file looks like:
 
 ```javascript
-import { applyCSS } from "https://deno.land/x/aleph/framework/core/style.ts";
-applyCSS("/style/app.css", `${CSS_CODE}`);
+import { applyCSS } from 'https://deno.land/x/aleph/framework/core/style.ts'
+applyCSS('/style/app.css', `${CSS_CODE}`)
 
 // Support HMR in development mode.
-import.meta.hot.accept();
+import.meta.hot.accept()
 ```
 
+that will be ignored in Deno and applied in the browser.
+
+## Using `link` Tag
+
+**If you import CSS files using ESM syntax above, these CSS files will not be removed when page(component) unmounted.** To imporve this, Aleph's compiler checks all the `link` JSX elements with `rel="stylesheet"` then transpiles them as ES modules, and these CSS files will be **cleaned up** automatically when current page(component) unmounted (we call it [JSX Magic](/docs/advanced-features/jsx-magic)).
+
+```tsx
+import React from 'https://esm.sh/react'
+
+export default function App() {
+  return (
+    <>
+      <link rel="stylesheet" from="../style/app.css" />
+      <h1>Hi :)</h1>
+    </>
+  )
+}
+```
 
 ## Inline CSS
 
@@ -53,9 +68,8 @@ Aleph.js supports inline CSS, that means you can write CSS in `.tsx` files direc
 ```tsx
 import React from 'https://esm.sh/react'
 
-const color = 'black'
-
 export default function App() {
+  const color = 'black'
   return (
     <>
       <style>{`
@@ -72,31 +86,33 @@ export default function App() {
 
 ## CSS Modules
 
-Any CSS file ending with `.module.css` is considered a [CSS modules](https://github.com/css-modules/css-modules) file. With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names like `$title`:
-
-```css
-.bold {
-  font-weight: bold;
-}
-.title {
-  font-size: 30px;
-}
-.intro {
-  font-size: 14px;
-}
-```
+Any CSS file ending with `.module.css` is considered a [CSS modules](https://github.com/css-modules/css-modules) file:
 
 ```tsx
-import React from "https://esm.sh/react";
+import React from 'https://esm.sh/react'
+import styles from '../style/app.module.css'
 
 export default function App() {
   return (
     <>
-      <link rel="stylesheet"  href="../style/app.module.css" />
-      <h1 className="$title $bold">Hi :)</h1>
-      <p className="$intro">Welcome!</p>
+      <h1 className={styles.title}>Hi :)</h1>
     </>
-  );
+  )
+}
+```
+
+With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names via `$CLASSNAME` magic trick, when the CSS Modules is loaded by the `link` tag that can give a **better experience**:
+
+```tsx
+import React from 'https://esm.sh/react'
+
+export default function App() {
+  return (
+    <>
+      <link rel="stylesheet" href="../style/app.module.css" />
+      <h1 className="$title">Hi :)</h1>
+    </>
+  )
 }
 ```
 
