@@ -1,12 +1,12 @@
 import { useRouter } from 'framework/react'
 import React from 'react'
+import '~/style/header.css'
 
 export default function Header() {
   const { pathname } = useRouter()
 
   return (
     <header className={pathname === '/docs' || pathname.startsWith('/docs/') ? 'scrollable' : undefined}>
-      <link rel="stylesheet" href="~/style/header.css" />
       <div className="wrapper">
         <h1>
           <a href="/">
