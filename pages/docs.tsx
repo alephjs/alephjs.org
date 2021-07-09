@@ -46,7 +46,7 @@ const navMenu = [
         path: '/docs/advanced-features',
         submenu: [
           { title: '`useDeno` Hook', path: '/use-deno-hook' },
-          { title: 'Dynamic Import', path: '/dynamic-import' },
+          { title: 'Dynamic Importing', path: '/dynamic-importing' },
           { title: 'Custom `App`', path: '/custom-app' },
           { title: 'Custom Error Page', path: '/custom-error-page' },
           { title: 'JSX Magic', path: '/jsx-magic' },
@@ -97,11 +97,25 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     return m
   }, {} as Record<string, boolean>))
   const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [serachWords, setSerachWords] = useState('')
   const editUrl = useMemo(() => {
     const md = routePath === '/docs' ? routePath + '/index.md' : routePath + '.md'
     return 'https://github.com/alephjs/alephjs.org/edit/master/pages' + md
   }, [routePath])
   const title = [Page?.meta.title, !Page?.meta.title.endsWith('Aleph.js') && 'Aleph.js'].filter(Boolean).join(' - ')
+  const filteredNavMenu = useMemo(() => {
+    if (serachWords === '') {
+      return navMenu
+    }
+    return navMenu.map(g => {
+      const includes = (item: any) => item.title.toLowerCase().includes(serachWords)
+      return {
+        ...g, items: g.items.filter(item => {
+          return includes(item) || item.submenu?.some(includes)
+        }).map(item => ({ ...item, submenu: item.submenu?.filter(subItem => includes(item) || includes(subItem)) }))
+      }
+    }).filter(g => g.items.length > 0)
+  }, [serachWords])
 
   useEffect(() => {
     document.querySelectorAll('.docs .content pre > code').forEach(block => {
@@ -177,8 +191,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
         <div className="search">
           <input
             placeholder="Search..."
-            // todo: implement search function
-            onChange={util.debounce(() => { alert('Search function is work in progress!') }, 500)}
+            onChange={util.debounce((e: any) => setSerachWords(e.target.value.trim().toLowerCase()), 150)}
           />
         </div>
         <div
@@ -191,7 +204,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
           Menu
         </div>
         <nav className={menuIsOpen ? 'open' : undefined}>
-          {navMenu.map(g => (
+          {filteredNavMenu.map(g => (
             <Fragment key={g.name}>
               <h2>{g.name}</h2>
               <ul>
@@ -201,7 +214,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                       <Fragment key={item.title + item.path}>
                         <li>
                           <label
-                            className={extended[item.path] ? 'open' : 'close'}
+                            className={serachWords || extended[item.path] ? 'open' : 'close'}
                             onClick={() => setExtended(extended => {
                               extended[item.path] = !extended[item.path]
                               return { ...extended }
@@ -213,7 +226,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                             {item.title}
                           </label>
                         </li>
-                        {extended[item.path] && item.submenu.map(({ title, path }) => (
+                        {(serachWords || extended[item.path]) && item.submenu.map(({ title, path }) => (
                           <li className="indent" key={title + path}>
                             <a
                               rel="nav"
