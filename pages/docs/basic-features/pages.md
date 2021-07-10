@@ -29,7 +29,7 @@ By default, Aleph.js **pre-renders** every page. This means that Aleph.js genera
 
 Each generated HTML page only needs a small amount of JavaScript. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called _hydration_.)
 
-> To learn more about rendering, check the [SSR & SSG](/docs/basic-features/ssr-and-ssg).
+> To learn more about rendering, check out the [SSR & SSG](/docs/basic-features/ssr-and-ssg).
 
 ## Linking Between Pages
 

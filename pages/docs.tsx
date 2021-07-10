@@ -19,7 +19,7 @@ hljs.registerLanguage('bash', (hljs: any) => {
 })
 
 const ogImage = 'https://alephjs.org/twitter_card.jpg'
-const about = 'The Documentation of Aleph.js.'
+const about = 'The Documentation for Aleph.js'
 const navMenu = [
   {
     name: 'Documentation',

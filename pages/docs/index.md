@@ -40,7 +40,8 @@ export default function Home() {
 - File-system Routing
 - API Routes
 - SSR/SSG
-- Plugin System
+- JSX Magic
+- Plugins System
 - Powered by Modern Tools
 
 ## Status

@@ -63,7 +63,7 @@ export default function App() {
 
 ## Inline CSS
 
-Aleph.js supports inline CSS, that means you can write CSS in `.tsx` files directly, the concept is called **CSS-in-JS**:
+Aleph.js supports _Inline CSS_, that means you can write CSS in `.tsx` files directly, this concept is called **CSS-in-JS**:
 
 ```tsx
 import React from 'https://esm.sh/react'
