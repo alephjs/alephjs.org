@@ -13,17 +13,17 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
       <Header />
       <Page {...pageProps} />
       {GTAGID && (
-        <>
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}`}></script>
-          <script>{`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){
-              dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', ${JSON.stringify(GTAGID)});
-          `}</script>
-        </>
+        <script src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}`} async></script>
+      )}
+      {GTAGID && (
+        <script>{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', ${JSON.stringify(GTAGID)});
+       `}</script>
       )}
     </main>
   )

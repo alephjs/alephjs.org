@@ -412,7 +412,7 @@
         &::before {
           position: absolute;
           top: 0;
-          left: -1.8rem;
+          left: -1.5rem;
           line-height: 1.8rem;
           font-size: 0.95rem;
           opacity: 0;
@@ -423,6 +423,49 @@
         }
         &:hover::before {
           opacity: 1;
+        }
+      }
+    }
+
+    .doc-page-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 45px;
+
+      .page-nav-link {
+        display: inline-flex;
+        align-items: center;
+
+        & > span {
+          display: inline-flex;
+          align-items: center;
+          font-size: 16px;
+          height: 24px;
+          color: #999;
+          transition: color 0.2s;
+        }
+
+        & > a {
+          display: inline-block;
+          height: 24px;
+          line-height: 24px;
+          font-size: 16px;
+          color: #333;
+          transition: color 0.2s;
+        }
+
+        &:hover > span {
+          color: #333;
+        }
+
+        &:hover > a {
+          color: #000;
+        }
+
+        span + a,
+        a + span {
+          padding-left: 6px;
         }
       }
     }

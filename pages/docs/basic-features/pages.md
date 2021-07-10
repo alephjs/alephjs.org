@@ -100,17 +100,16 @@ export default function Link({ to, replace, children }) {
 
 ## Custom Page Loader
 
-By default Aleph.js only renders pages from `.js`, `.jsx`, `.ts`, `.tsx`, and `.mjs` files in the `pages` directory. You can add loader plugins to support more page formats, for example **markdown** page:
+By default Aleph.js only renders pages from `.js`, `.jsx`, `.ts`, `.tsx`, and `.mjs` files in the `pages` directory. You can add loader plugins to support more page formats, for example **markdown** pages:
 
 ```ts
-// aleph.config.ts
-
 import markdown from 'https://deno.land/x/aleph/plugins/markdown.ts'
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
 
-export default (): Config => ({
-  plugins: [ markdown() ]
-})
+export default {
+  plugins: [
+    markdown()
+  ]
+}
 ```
 
 > To learn more about loader plugin, check the [Using Plugins](/docs/advanced-features/using-plugins).
