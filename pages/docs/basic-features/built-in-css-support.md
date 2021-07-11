@@ -6,7 +6,7 @@ authors:
 
 # Built-in CSS Support
 
-Aleph.js allows you to import **CSS** files using ESM syntax:
+Aleph.js allows you to import **CSS** files with ESM syntax:
 
 ```javascript
 import '../style.css'
@@ -20,7 +20,7 @@ import 'https://esm.sh/tailwindcss/dist/tailwind.min.css'
 
 ## How It Works
 
-Aleph.js will transform all `.css` imports to JS modules, then loads them via the builtin CSS loader. **For example**:
+Aleph's built-in CSS Loader transpiles `.css` file as JS module that will be ignored in Deno runtime and be applied in browser.
 
 ```javascript
 import '../style.css';
@@ -41,8 +41,6 @@ applyCSS('/style/app.css', `${CSS_CODE}`)
 // Support HMR in development mode.
 import.meta.hot.accept()
 ```
-
-that will be ignored in Deno and applied in the browser.
 
 ## Using `link` Tag
 

@@ -18,8 +18,8 @@ hljs.registerLanguage('bash', (hljs: any) => {
   return l
 })
 
-const ogImage = 'https://alephjs.org/twitter_card.jpg'
 const about = 'The Documentation for Aleph.js'
+const ogImage = 'https://alephjs.org/twitter_card.jpg'
 const navMenu = [
   {
     name: 'Documentation',
@@ -33,10 +33,10 @@ const navMenu = [
           { title: 'Pages', path: '/pages' },
           { title: 'APIs', path: '/api-routes' },
           { title: 'Routing', path: '/routing' },
-          { title: 'SSR & SSG', path: '/ssr-and-ssg' },
-          { title: 'HMR with Fast Refresh', path: '/hmr-with-fast-refresh' },
           { title: 'Built-in CSS Support', path: '/built-in-css-support' },
+          { title: 'SSR & SSG', path: '/ssr-and-ssg' },
           { title: 'Static File Serving', path: '/static-file-serving' },
+          { title: 'HMR with Fast Refresh', path: '/hmr-with-fast-refresh' },
           { title: 'Import From NPM', path: '/import-from-npm' },
           { title: 'Import Maps', path: '/import-maps' },
         ]
@@ -49,6 +49,7 @@ const navMenu = [
           { title: 'Dynamic Importing', path: '/dynamic-importing' },
           { title: 'Custom `App`', path: '/custom-app' },
           { title: 'Custom Error Page', path: '/custom-error-page' },
+          { title: 'Custom Server', path: '/custom-server' },
           { title: 'JSX Magic', path: '/jsx-magic' },
           { title: 'Using Plugins', path: '/using-plugins' },
         ]
@@ -69,9 +70,27 @@ const navMenu = [
     name: 'API Reference',
     items: [
       { title: 'CLI', path: '/docs/api-reference/cli' },
-      { title: 'Config', path: '/docs/api-reference/config' },
       { title: 'Framework API', path: '/docs/api-reference/framework-api' },
       { title: 'Plugin API', path: '/docs/api-reference/plugin-api' },
+      {
+        title: 'Config',
+        path: '/docs/api-reference/config',
+        submenu: [
+          { title: 'Introduction', path: '/' },
+          { title: 'Framework', path: '/framework' },
+          { title: 'Base Path', path: '/basepath' },
+          { title: '`src` Directory', path: '/src' },
+          { title: '`output` Directory', path: '/output' },
+          { title: 'Rewrites', path: '/rewrites' },
+          { title: 'CSS', path: '/css' },
+          { title: 'SSR Options', path: '/ssr' },
+          { title: 'I18N', path: '/i18n' },
+          { title: 'Custom Headers', path: '/headers' },
+          { title: 'Environment Variables', path: '/env' },
+          { title: 'Browser Compatibility', path: '/browser' },
+          { title: 'Plugins', path: '/plugins' },
+        ]
+      },
     ]
   },
   {
@@ -102,8 +121,8 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     const all: [string, string][] = []
     navMenu.forEach(g => g.items.forEach(item => {
       if (item.submenu) {
-        item.submenu.forEach(subItem => {
-          all.push([subItem.title, item.path + subItem.path])
+        item.submenu.forEach(({ title, path }) => {
+          all.push([title, item.path + (path === '/' ? '' : path)])
         })
       } else {
         all.push([item.title, item.path])
@@ -244,8 +263,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                           <li className="indent" key={title + path}>
                             <a
                               rel="nav"
-                              className={currentPath === item.path + path ? 'active' : undefined}
-                              href={item.path + path}
+                              href={item.path + (path === '/' ? '' : path)}
                               onClick={() => setMenuIsOpen(false)}
                             >{title}</a>
                           </li>
@@ -319,6 +337,15 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
         )}
         {(Page && Page.meta.editable !== false) && (
           <p className="edit-link">
+            Authors:
+            {Array.isArray(Page.meta.authors) && Page.meta.authors.map(name => (
+              <a
+                href={`https://github.com/${name}`}
+                target="_blank"
+                key={name}
+              >@{name}</a>
+            ))}
+            <span> | </span>
             <a href={editUrl} target="_blank">Edit this page on Github</a>
           </p>
         )}

@@ -400,29 +400,27 @@
     }
 
     .edit-link {
-      padding: 45px 0 30px;
+      margin-top: 30px;
+      padding: 12px 0;
+      border-top: 1px solid #f3f3f3;
+      color: #333;
+
+      span {
+        margin-left: 6px;
+        color: #ccc;
+      }
 
       a {
         position: relative;
         display: inline-block;
+        margin-left: 6px;
         line-height: 1.8rem;
         font-size: 0.95rem;
         color: #999;
+        transition: 0.2s color;
 
-        &::before {
-          position: absolute;
-          top: 0;
-          left: -1.5rem;
-          line-height: 1.8rem;
-          font-size: 0.95rem;
-          opacity: 0;
-          content: '👍🏿';
-        }
         &:hover {
-          color: #333;
-        }
-        &:hover::before {
-          opacity: 1;
+          color: #000;
         }
       }
     }
