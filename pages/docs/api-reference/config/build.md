@@ -1,7 +1,7 @@
 ---
-title: Rewrites
+title: Build
 authors:
   - ije
 ---
 
-# Rewrites
+# Build

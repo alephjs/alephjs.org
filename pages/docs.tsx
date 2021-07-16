@@ -1,12 +1,12 @@
-import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'react'
+import util from 'aleph/shared/util.ts'
 import { useRouter } from 'framework/react'
 import hljs from 'highlight'
 import bash from 'highlight-languages/bash'
-import json from 'highlight-languages/json'
 import javascript from 'highlight-languages/javascript'
+import json from 'highlight-languages/json'
 import typescript from 'highlight-languages/typescript'
 import xml from 'highlight-languages/xml'
-import util from 'aleph/shared/util.ts'
+import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'react'
 
 hljs.registerLanguage('json', json)
 hljs.registerLanguage('javascript', javascript)
@@ -79,15 +79,12 @@ const navMenu = [
           { title: 'Introduction', path: '/' },
           { title: 'Framework', path: '/framework' },
           { title: 'Base Path', path: '/basepath' },
-          { title: '`src` Directory', path: '/src' },
-          { title: '`output` Directory', path: '/output' },
-          { title: 'Rewrites', path: '/rewrites' },
-          { title: 'CSS', path: '/css' },
+          { title: 'Build', path: '/build' },
+          { title: 'Configuring CSS', path: '/css' },
           { title: 'SSR Options', path: '/ssr' },
           { title: 'I18N', path: '/i18n' },
-          { title: 'Custom Headers', path: '/headers' },
+          { title: 'Server', path: '/server' },
           { title: 'Environment Variables', path: '/env' },
-          { title: 'Browser Compatibility', path: '/browser' },
           { title: 'Plugins', path: '/plugins' },
         ]
       },
@@ -342,6 +339,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
               <a
                 href={`https://github.com/${name}`}
                 target="_blank"
+                className="author"
                 key={name}
               >@{name}</a>
             ))}

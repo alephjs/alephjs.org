@@ -7,15 +7,15 @@ authors:
 
 # APIs
 
-Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mapped to `/api/*` and will be treated as an API endpoint. For an API to work, you need to export a **default** function with a `req` parameter (instance of [`APIRequest`](/docs/api-reference/types.ts#APIRequest)).
+Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mapped to `/api/*` and will be treated as an API endpoint. For an API to work, you need to export a **default** function with a `req` parameter (instance of `APIRequest`.
 
 **For example**, the following API route `api/user.ts` sends a json response when you visit `/api/user`.
 
 ```typescript
 import type { APIRequest } from 'https://deno.land/x/aleph/types.ts'
 
-export default function handler(req: APIRequest) {
-  req.status(200).json({ name: 'Carol' })
+export default function handler({ resp }: APIRequest) {
+  resp.status(200).json({ name: 'Carol' })
 }
 ```
 
@@ -26,8 +26,8 @@ Aleph.js supports **dynamic API routes** as well. For example, the route `api/us
 ```typescript
 import type { APIRequest } from 'https://deno.land/x/aleph/types.ts'
 
-export default function handler(req: APIRequest) {
-  req.status(200).json({ name: req.params.name })
+export default function handler({ resp, router }: APIRequest) {
+  resp.status(200).json({ name: router.params.name })
 }
 ```
 

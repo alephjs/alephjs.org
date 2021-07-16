@@ -9,8 +9,8 @@ authors:
 
 **Aleph.js** (or **Aleph** or **א** or **阿莱夫**, <samp>ˈɑːlɛf</samp>) is a fullstack framework in [Deno], inspired by [Next.js].
 
-Different with Next.js, Aleph.js doesn't need **webpack** or other bundler since it uses the [ES moudule] syntax during development. Every module only needs to be compiled once, and then cached on the disk.
-When a module changes, Aleph.js just needs to re-compile that single module. There is no time wasted _re-bundling_ everytime a change is made. This, along with **HMR** (Hot Module Replacement) and **Fast Refresh**, leads to instant updates in the browser.
+Different with Next.js, Aleph.js doesn't need **webpack** or other bundler since it uses the [ES Moudule] syntax during development. Every module only needs to be compiled once, and then cached on the disk.
+When a module changes, Aleph.js just needs to re-compile that single module. There is no time wasted _re-bundling_ everytime a change is made. This, along with Hot Module Replacement (**HMR**) and **Fast Refresh**, leads to instant updates in the browser.
 
 Aleph.js uses modern tools to build your app. It transpiles code using [swc] in rust with high performance and bundles modules with [esbuild] at build time extremely fast.
 
@@ -52,7 +52,7 @@ Currently in **beta**, not ready for production.
 
 Under the [MIT](https://opensource.org/licenses/MIT) License.
 
-[ES moudule]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[ES Moudule]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 [deno]: https://deno.land
 [next.js]: https://nextjs.org
 [swc]: https://swc.rs
