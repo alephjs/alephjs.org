@@ -1,4 +1,4 @@
-import { dynamic, Fallback } from 'framework/react'
+import { dynamic, Fallback } from 'aleph/react'
 import React from 'react'
 import PlainLogo from '~/components/plain-logo.tsx'
 

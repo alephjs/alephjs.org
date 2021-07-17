@@ -1,4 +1,4 @@
-import { useDeno } from 'framework/react'
+import { useDeno } from 'aleph/react'
 import React, { ComponentType } from 'react'
 import Header from './components/header.tsx'
 import './style/app.css'

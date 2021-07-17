@@ -1,4 +1,4 @@
-import { useDeno } from 'framework/react'
+import { useDeno } from 'aleph/react'
 import React from 'react'
 
 async function run(...cmd: string[]) {

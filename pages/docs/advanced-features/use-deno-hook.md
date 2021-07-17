@@ -15,7 +15,7 @@ In Aleph.js, we prefer to use hooks. A **react hook** we provide called `useDeno
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
+import { useDeno } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
 
 export default function Page() {
   const version = useDeno(() => {
@@ -32,7 +32,7 @@ Even **asynchronous** callback is accepted:
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useDeno, useRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
+import { useDeno, useRouter } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
 
 export default function Post() {
   const { params } = useRouter()
@@ -56,7 +56,7 @@ An optional amount in seconds after which a page re-generation can occur (defaul
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
+import { useDeno } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
 
 export default function Page() {
   const now = useDeno(() => {

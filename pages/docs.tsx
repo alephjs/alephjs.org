@@ -1,5 +1,5 @@
 import util from 'aleph/shared/util.ts'
-import { useRouter } from 'framework/react'
+import { useRouter } from 'aleph/react'
 import hljs from 'highlight'
 import bash from 'highlight-languages/bash'
 import javascript from 'highlight-languages/javascript'

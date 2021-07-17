@@ -6,27 +6,11 @@ authors:
 
 # Plugin API
 
-There are two plugin types in Aleph.js:
-
-- **Loader Plugin**: extends importable source media
-- **Server Plugin**: enhances aleph runtime
-
-In Aleph.js, a **Plugin** is an object with options and the `type` specifies the plugin type.:
+In Aleph.js, a **Plugin** is an object with a `setup` method that can access the aleph internal runtime.
 
 ```ts
-type LoaderPlugin = {
-  type: 'loader'
-  name: string
-  test: RegExp
-  acceptHMR?: boolean
-  allowPage?: boolean
-  resolve?(specifier: string): ResolveResult
-  load?(input: { specifier: string, data?: any }, aleph: Aleph): LoaderOutput | Promise<LoaderOutput>
-}
-
-type ServerPlugin = {
-  type: 'server'
+type Plugin = {
   name: string
   setup(aleph: Aleph): Promise<void> | void
 }
-``
+```

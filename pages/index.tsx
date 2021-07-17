@@ -1,4 +1,4 @@
-import { dynamic, Fallback, useDeno } from 'framework/react'
+import { dynamic, Fallback, useDeno } from 'aleph/react'
 import React from 'react'
 import Button from '~/components/button.tsx'
 import PlainLogo from '~/components/plain-logo.tsx'

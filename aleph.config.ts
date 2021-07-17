@@ -1,9 +1,14 @@
 import markdown from 'aleph/plugins/markdown.ts'
-import type { Config } from 'aleph/types.ts'
+import type { Config } from 'aleph/types'
 
 export default (): Config => ({
   plugins: [
-    markdown(),
+    {
+      name: 'markdown',
+      setup: (aleph: any) => {
+        aleph.addModuleLoader(markdown())
+      },
+    },
   ],
   css: {
     postcss: {
