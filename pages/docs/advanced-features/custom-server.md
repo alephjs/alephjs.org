@@ -6,7 +6,7 @@ authors:
 
 # Custom Server
 
-By default, Aleph.js includes its own server with `next start`. A custom Aleph.js server allows you to start a server 100% programmatically in order to use custom server patterns. Most of the time, you will not need this – but it's available for complete customization.
+By default, Aleph.js includes its own server with `aleph start`. A custom Aleph.js server allows you to start a server 100% programmatically in order to use custom server patterns. Most of the time, you will not need this – but it's available for complete customization.
 
 Custom server with Deno's std http server:
 
@@ -19,7 +19,7 @@ const server = new Server(app)
 const s = serve({ port: 8080 })
 
 for await (const r of s) {
-  server.handle(r)
+  server.handle(r.req, resp => )
 }
 ```
 
