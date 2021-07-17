@@ -1,0 +1,18 @@
+{
+  "imports": {
+    "~/": "./",
+    "aleph/": "https://deno.land/x/aleph@v0.3.0-alpha.33/",
+    "aleph/types": "https://deno.land/x/aleph@v0.3.0-alpha.33/types.ts",
+    "aleph/web": "https://deno.land/x/aleph@v0.3.0-alpha.33/framework/core/mod.ts",
+    "aleph/react": "https://deno.land/x/aleph@v0.3.0-alpha.33/aleph/react/mod.ts",
+    "react": "https://esm.sh/react@17.0.2",
+    "react-dom": "https://esm.sh/react-dom@17.0.2",
+    "marked": "https://esm.sh/marked@2.0.1",
+    "highlight": "https://esm.sh/highlight.js@10.7.1/lib/core",
+    "highlight-languages/": "https://esm.sh/highlight.js@10.7.1/lib/languages/",
+    "pixi": "https://esm.sh/pixi.js-legacy@6.0.4",
+    "@pixi/filter-glitch": "https://esm.sh/@pixi/filter-glitch@4.0.0",
+    "@pixi/filter-zoom-blur": "https://esm.sh/@pixi/filter-zoom-blur@4.0.0"
+  },
+  "scopes": {}
+}

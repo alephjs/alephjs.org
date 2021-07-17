@@ -1,0 +1,132 @@
+:root {
+  --header-height: 80px;
+  --theme-color: #d63369;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', 'Helvetica Neue', Helvetica, Roboto, Ubuntu, Tahoma, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft YaHei', 'Heiti SC', sans-serif;
+  color: #333;
+  text-rendering: optimizeLegibility;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+em, i {
+  font-style: italic;
+}
+
+.fullscreen-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+
+  &:after {
+    display: block;
+    height: var(--header-height);
+    content: '';
+  }
+
+  .logo {
+    cursor: none;
+  }
+
+  h1 {
+    line-height: 1.27;
+    font-size: 36px;
+    font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    text-align: center;
+    color: #111;
+
+    @media screen and (max-width: 690px)  and (min-width: 480px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 25px;
+    }
+  }
+
+  .intro {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 6px;
+    line-height: 1.27;
+    font-size: 15px;
+    text-align: center;
+    color: #666;
+
+    &.short {
+      width: 80%;
+      display: none;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    @media screen and (max-width: 690px) {
+      display: none;
+
+      &.short {
+        display: block;
+      }
+    }
+  }
+
+  .buttons {
+    width: 90%;
+    margin-top: 18px;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      margin: 0 6px;
+    }
+
+    @media screen and (max-width: 690px) {
+      a {
+        display: block;
+        margin: 0;
+        margin-top: 9px;
+
+        button {
+          box-sizing: border-box;
+          width: 100%;
+          height: 36px!important;
+          border-radius: 18px!important;
+        }
+      }
+    }
+  }
+}

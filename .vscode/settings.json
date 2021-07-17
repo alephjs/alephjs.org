@@ -1,27 +1,28 @@
 {
-    "files.eol": "\n",
-    "files.trimTrailingWhitespace": true,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true
-    },
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "typescript.format.semicolons": "remove",
+  "typescript.preferences.quoteStyle": "single",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": false,
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features",
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features",
-    },
-    "deno.enable": true,
-    "deno.unstable": true,
-    "deno.import_map": "./importMap.json",
-    "deno.import_intellisense_autodiscovery": false
+      "source.organizeImports": true,
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    }
+  },
+  "deno.enable": true,
+  "deno.unstable": true,
+  "deno.config": "./tsconfig.json",
+  "deno.importMap": "./import_map.json"
 }
