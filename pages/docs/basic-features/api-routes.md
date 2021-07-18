@@ -15,7 +15,7 @@ Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mappe
 import type { APIRequest } from 'https://deno.land/x/aleph/types.ts'
 
 export default function handler({ resp }: APIRequest) {
-  resp.status(200).json({ name: 'Carol' })
+  resp.json({ name: 'Aleph' })
 }
 ```
 
@@ -27,7 +27,7 @@ Aleph.js supports **dynamic API routes** as well. For example, the route `api/us
 import type { APIRequest } from 'https://deno.land/x/aleph/types.ts'
 
 export default function handler({ resp, router }: APIRequest) {
-  resp.status(200).json({ name: router.params.name })
+  resp.json({ name: router.params.name })
 }
 ```
 
