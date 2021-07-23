@@ -108,7 +108,7 @@ interface Metadata {
 
 export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Metadata } }) {
   const { pathname: currentPath, routePath } = useRouter()
-  const [extended, setExtended] = useState(() => navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
+  const [extended, setExtended] = useState(navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
     m[item.path] = routePath.startsWith(item.path)
     return m
   }, {} as Record<string, boolean>))
@@ -148,6 +148,10 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
   }, [serachWords])
 
   useEffect(() => {
+    setExtended(navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
+      m[item.path] = routePath.startsWith(item.path)
+      return m
+    }, {} as Record<string, boolean>))
     document.querySelectorAll('.docs .content pre > code').forEach(block => {
       if (block.className.includes('language-')) {
         hljs.highlightElement(block)
@@ -197,7 +201,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
       v.addEventListener('playing', () => v.className = 'is-playing')
       v.addEventListener('pause', () => v.className = 'is-paused')
     })
-  }, [Page])
+  }, [routePath])
 
   return (
     <div className={['docs', menuIsOpen && 'scroll-lock'].filter(Boolean).join(' ')}>
