@@ -28,7 +28,7 @@ To match a dynamic segment, you can use bracket syntax or start the segment with
 
 ### Nested Routes
 
-Aleph's router supports nested route structures like:
+Aleph.js supports nested route structures like:
 
 - `pages/blog.tsx`
 - `pages/blog/[slug].tsx`

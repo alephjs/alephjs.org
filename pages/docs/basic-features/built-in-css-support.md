@@ -99,7 +99,7 @@ export default function App() {
 }
 ```
 
-With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names via `$CLASSNAME` magic trick, when the CSS Modules is loaded by the `link` tag that can give a **better experience**:
+With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names via `$CLASSNAME` **magic** trick that has a **better experience**, when the CSS Modules is loaded by the `link` tag.
 
 ```tsx
 import React from 'https://esm.sh/react'

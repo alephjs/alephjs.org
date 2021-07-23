@@ -14,7 +14,7 @@ Each page is associated with a route based on its file name.
 **Example**: If you create `pages/about.tsx` and it exports a React component like below, it will be accessible at `/about`.
 
 ```jsx
-import React from "https://esm.sh/react"
+import React from 'https://esm.sh/react'
 
 export default function About() {
   return <h1>About Me</h1>
@@ -112,4 +112,4 @@ export default {
 }
 ```
 
-> To learn more about loader plugin, check the [Using Plugins](/docs/advanced-features/using-plugins).
+> To learn more about plugins, check the [Using Plugins](/docs/advanced-features/using-plugins).

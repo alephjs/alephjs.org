@@ -18,7 +18,7 @@ hljs.registerLanguage('bash', (hljs: any) => {
   return l
 })
 
-const about = 'The Documentation for Aleph.js'
+const description = 'The Documentation for Aleph.js'
 const ogImage = 'https://alephjs.org/twitter_card.jpg'
 const navMenu = [
   {
@@ -31,7 +31,7 @@ const navMenu = [
         path: '/docs/basic-features',
         submenu: [
           { title: 'Pages', path: '/pages' },
-          { title: 'APIs', path: '/api-routes' },
+          { title: 'APIs', path: '/apis' },
           { title: 'Routing', path: '/routing' },
           { title: 'Built-in CSS Support', path: '/built-in-css-support' },
           { title: 'SSR & SSG', path: '/ssr-and-ssg' },
@@ -203,15 +203,15 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     <div className={['docs', menuIsOpen && 'scroll-lock'].filter(Boolean).join(' ')}>
       <head>
         <title>{title}</title>
-        <meta name="description" content={about} />
+        <meta name="description" content={description} />
         {Page?.meta.keywords && (
           <meta name="keywords" content={Page?.meta.keywords.join(',')} />
         )}
         <meta name="og:title" content={title} />
-        <meta name="og:description" content={about} />
+        <meta name="og:description" content={description} />
         <meta name="og:image" content={ogImage} />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={about} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alephjs" />
