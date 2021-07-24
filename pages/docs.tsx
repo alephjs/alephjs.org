@@ -1,12 +1,13 @@
-import util from 'aleph/shared/util.ts'
+import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'aleph/react'
+import util from 'aleph/shared/util.ts'
 import hljs from 'highlight'
 import bash from 'highlight-languages/bash'
 import javascript from 'highlight-languages/javascript'
 import json from 'highlight-languages/json'
 import typescript from 'highlight-languages/typescript'
 import xml from 'highlight-languages/xml'
-import React, { ComponentType, Fragment, useEffect, useMemo, useState } from 'react'
+import Logo from '../components/Logo.tsx'
 
 hljs.registerLanguage('json', json)
 hljs.registerLanguage('javascript', javascript)
@@ -24,7 +25,10 @@ const navMenu = [
   {
     name: 'Documentation',
     items: [
-      { title: 'About Aleph.js', path: '/docs' },
+      {
+        title: <>About Aleph.js <span className="aleph-logo"><Logo /></span></>,
+        path: '/docs'
+      },
       { title: 'Get Started', path: '/docs/get-started' },
       {
         title: 'Basic Features',
@@ -280,6 +284,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                           href={item.path}
                           onClick={() => setMenuIsOpen(false)}
                         >{item.title}</a>
+                        {item.icon}
                       </li>
                     )
                   }

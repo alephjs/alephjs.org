@@ -1,7 +1,7 @@
 import { dynamic, Fallback, useDeno } from 'aleph/react'
 import React from 'react'
-import Button from '~/components/button.tsx'
-import PlainLogo from '~/components/plain-logo.tsx'
+import Button from '~/components/_Button.tsx'
+import GreyTriangle from '~/components/GreyTriangle.tsx'
 
 const thisYear = (new Date).getFullYear()
 const title = 'Aleph.js'
@@ -36,7 +36,7 @@ const features = [
   { href: '/docs/basic-features/ssr-and-ssg', title: 'SSR & SSG' },
 ]
 
-const Logo = dynamic(() => import('~/components/logo.tsx'))
+const UniverseTriangle = dynamic(() => import('~/components/UniverseTriangle.tsx'))
 
 export default function Home() {
   const { version } = useDeno(() => ({
@@ -60,8 +60,8 @@ export default function Home() {
         <link rel="stylesheet" href="~/style/index.css" />
       </head>
       <div className="fullscreen-page">
-        <Fallback to={<PlainLogo />}>
-          <Logo />
+        <Fallback to={<GreyTriangle />}>
+          <UniverseTriangle />
         </Fallback>
         <h1>The Fullstack Framework in Deno.</h1>
         <p className="intro"><strong>Aleph.js</strong> gives you the best developer experience for building modern web applications:<br /> TypeScript in Deno, ES module imports, file-system routing, SSR & SSG,<br /> HMR with Fast Refresh, and more. No config needed.</p>

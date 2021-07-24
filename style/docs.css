@@ -111,12 +111,23 @@
           }
 
           a {
+            position: relative;
             display: flex;
             align-items: center;
             line-height: 1.27;
             font-size: 1rem;
             color: #333;
             user-select: none;
+
+            .aleph-logo {
+              position: absolute;
+              top: -1px;
+              right: 1px;
+              font-size: 1.44rem;
+              color: #ccc;
+              opacity: 0.9;
+              transition: color .2s linear;
+            }
 
             &:before {
               flex-basis: 4px;
@@ -131,16 +142,23 @@
               content: "";
             }
 
+            &:hover {
+              color: #000;
+            }
+
             &.active {
               color: #000;
               font-weight: 600;
             }
-            &:hover {
-              color: #000;
-            }
+
             &.active:before,
             &:hover:before {
               background-color: #111;
+            }
+
+            &.active .aleph-logo,
+            &:hover .aleph-logo {
+              color: #D63369;
             }
           }
         }
@@ -201,7 +219,7 @@
         }
 
         h2, ul {
-          width: 80%;
+          width: 90%;
           margin: 0 auto;
         }
       }

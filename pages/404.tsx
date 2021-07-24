@@ -1,8 +1,8 @@
 import { dynamic, Fallback } from 'aleph/react'
 import React from 'react'
-import PlainLogo from '~/components/plain-logo.tsx'
+import GreyTriangle from '~/components/GreyTriangle.tsx'
 
-const Logo = dynamic(() => import('~/components/logo.tsx'))
+const UniverseTranigle = dynamic(() => import('~/components/UniverseTriangle.tsx'))
 
 export default function E404() {
   return (
@@ -12,8 +12,8 @@ export default function E404() {
         <meta name="robots" content="noindex" />
       </head>
       <div className="fullscreen-page">
-        <Fallback to={<PlainLogo size={150} />}>
-          <Logo
+        <Fallback to={<GreyTriangle size={150} />}>
+          <UniverseTranigle
             size={150}
             glitch={true}
           />

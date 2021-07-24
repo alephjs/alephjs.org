@@ -4,7 +4,7 @@ interface Props {
   size: number
 }
 
-export default function PlainLogo({ size }: Props) {
+export default function GreyTrangle({ size }: Props) {
   const y = useMemo(() => size - Math.sin(54 * Math.PI / 180) * size, [size])
 
   return (
@@ -32,7 +32,7 @@ export default function PlainLogo({ size }: Props) {
           </linearGradient>
         </defs>
         <path
-          d={`M 0,${size - y} L ${size},${size - y} L ${size / 2},0 z`}
+          d={`M 0, ${size - y} L ${size}, ${size - y} L ${size / 2}, 0 z`}
           fill="url(#gradient)"
         />
       </svg>
@@ -40,7 +40,7 @@ export default function PlainLogo({ size }: Props) {
   )
 }
 
-PlainLogo.defaultProps = {
+GreyTrangle.defaultProps = {
   size: 200,
 }
 
