@@ -26,7 +26,8 @@ const navMenu = [
     name: 'Documentation',
     items: [
       {
-        title: <>About Aleph.js <span className="aleph-logo"><Logo /></span></>,
+        title: 'About Aleph.js',
+        modifier: <span className="aleph-logo"><Logo /></span>,
         path: '/docs'
       },
       { title: 'Get Started', path: '/docs/get-started' },
@@ -242,6 +243,9 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
           Menu
         </div>
         <nav className={menuIsOpen ? 'open' : undefined}>
+          {filteredNavMenu.length === 0 && (
+            <h2>look, blackhole!!!</h2>
+          )}
           {filteredNavMenu.map(g => (
             <Fragment key={g.name}>
               <h2>{g.name}</h2>
@@ -283,8 +287,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                           className={currentPath === item.path ? 'active' : undefined}
                           href={item.path}
                           onClick={() => setMenuIsOpen(false)}
-                        >{item.title}</a>
-                        {item.icon}
+                        ><>{item.title}{item.modifier}</></a>
                       </li>
                     )
                   }
