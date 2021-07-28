@@ -1,6 +1,6 @@
 import { dynamic, Fallback, useDeno } from 'aleph/react'
 import React from 'react'
-import Button from '~/components/_Button.tsx'
+import Button from '~/components/Button.tsx'
 import GreyTriangle from '~/components/GreyTriangle.tsx'
 
 const thisYear = (new Date).getFullYear()

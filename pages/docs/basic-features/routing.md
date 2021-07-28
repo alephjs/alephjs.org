@@ -36,8 +36,8 @@ Aleph.js supports nested route structures like:
 In the example, routes in `/blog/:slug` will be rendered under the `pages/blog.tsx`, that is useful to create a **layout** for pages:
 
 ```jsx
-import React from "https://esm.sh/react"
-import BlogHeader from "../components/blog-header.tsx"
+import React from 'https://esm.sh/react'
+import BlogHeader from '../components/blog-header.tsx'
 
 export default function Blog({ Page, pageProps }) {
   return (
@@ -49,20 +49,24 @@ export default function Blog({ Page, pageProps }) {
 }
 ```
 
-## `RouterURL` object
+## `RouterURL` Object
 
-To access the`RouterURL` object in a component, you can use the `useRouter` hook:
+To access the `RouterURL` object, you can use the `useRouter` hook in a component:
 
 ```jsx
-import { useRouter } from "https://deno.land/x/aleph/aleph/react/mod.ts";
+import { useRouter } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
 
 // hypothetically current location patname is '/post/hello-world?theme=dark'
 export default function Component({ href, children }) {
   const {
-    pathname, // string, should be '/post/hello-world'
-    pagePath, // string, should be '/post/[slug]'
-    params,   // object, should be {slug: 'hello-world'}
-    query,    // URLSearchParams, `query.get('theme')` sholud be 'dark'
+    basePath,      // string, should be '/'
+    locale,        // string, should be 'en'
+    defaultLocale, // string, should be 'en'
+    locales,       // string[], should be ['en']
+    pathname,      // string, should be '/post/hello-world'
+    routePath,     // string, should be '/post/[slug]'
+    params,        // object, should be {slug: 'hello-world'}
+    query,         // URLSearchParams, `query.get('theme')` sholud be 'dark'
   } = useRouter()
 
   return <p>current pathname: {pathname}</p>
@@ -89,16 +93,16 @@ In the above example, all the routes will match paths with the **'zh-CN'** prefi
 Now you can access **locale** in the [`Router`](/docs/api-reference/types.ts/#RouterURL) object using the [`useRouter`](/docs/api-reference/mod.ts#useRouter) hook:
 
 ```jsx
-import React from "https://esm.sh/react"
-import { useRouter } from "https://deno.land/x/aleph/mod.ts"
+import React from 'https://esm.sh/react'
+import { useRouter } from 'https://deno.land/x/aleph/mod.ts'
 
 export default function Page() {
   const { locale } = useRouter()
 
-  if (locale === "zh-CN") {
-    return <h1>你好世界</h1>
+  if (locale === 'zh-CN') {
+    return <h1>你好 :)</h1>
   }
-  return <h1>Hello World</h1>
+  return <h1>Hello :)</h1>
 }
 ```
 

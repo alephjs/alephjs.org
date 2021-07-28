@@ -1,6 +1,6 @@
 import { useDeno } from 'aleph/react'
 import React, { ComponentType } from 'react'
-import Header from './components/_Header.tsx'
+import Header from './components/Header.tsx'
 import './style/app.css'
 
 export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {

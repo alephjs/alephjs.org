@@ -501,7 +501,7 @@
   .artworks {
     padding: 150px 0;
     text-align: center;
-    background-image: url('/docs/grid.svg');
+    background-image: url('/grid.svg');
     background-size: 24px 24px;
 
     h3 {
@@ -527,25 +527,37 @@
       width: 200px;
       margin: 0 30px;
 
-      &.round {
-        border-radius: 50%;
-      }
-
-      &.medium {
+      &.md {
         width: 150px;
       }
 
-      &.small {
+      &.sm {
         width: 120px;
       }
     }
 
+    .color {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: Din;
+      color: #fff;
+    }
+
     .space {
       display: block;
-      height: 30px;
+      height: 36px;
     }
-    .large {
-      height: 150px;
+    .space.sm {
+      height: 12px;
+    }
+    .space.lg {
+      height: 120px;
     }
   }
 

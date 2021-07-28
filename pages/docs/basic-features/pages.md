@@ -73,7 +73,7 @@ export default function Nav() {
 }
 ```
 
-### Use the `redirect` function
+### Using the `redirect` function
 
 You can also redirect pages with the `redirect` function:
 

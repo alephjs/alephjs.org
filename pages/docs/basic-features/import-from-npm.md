@@ -7,7 +7,7 @@ authors:
 
 # Import From NPM
 
-Aleph.js uses **ESM** imports syntax. To import modules from **NPM**, you can use [esm.sh](https://esm.sh) (recommended), [skypack](https://skypack.dev), or [jspm](https://jspm.org):
+Aleph.js uses **ESM** imports syntax in Deno. To import modules from **NPM**, you can use [esm.sh](https://esm.sh) CDN that is maintained by Aleph.js team.
 
 ```jsx
 import useSWR from 'https://esm.sh/swr'

@@ -32,3 +32,7 @@ export default function handler({ response: resp, router }: APIContext) {
 ```
 
 This route will handle all `/api/user/:name` requests and reply with a json response that has the `name` param.
+
+## `APIContext` Object
+
+## Middleware
