@@ -37,11 +37,11 @@ export default {
 
 ## SSR Options
 
-If you export an async function called `ssr.props` from a page, Aleph.js will pre-render this page at build time using the props returned by `ssr.props`.
+If you export an async function called `ssr.props` from a page, Aleph.js will pre-render this page with the props returned by `ssr.props` at build time. You can get the `RtoueURL` object form the first parameter of the function.
 
 ```tsx
 import React from 'https://esm.sh/react'
-import type { SSROptions } from 'https://esm.sh/react/types.ts'
+import type { SSROptions } from 'https://deno.land/x/aleph/types.ts'
 
 export const ssr: SSROptions = {
   props: async router => {

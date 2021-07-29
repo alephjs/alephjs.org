@@ -7,7 +7,7 @@ authors:
 
 # APIs
 
-Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mapped to `/api/*` and will be treated as an API endpoint. For an API to work, you need to export a **default** or named to `handler` function, that can get the `context` parameter (instance of `APIContext`).
+Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mapped to `/api/*` and will be treated as an API endpoint. For an API to work, you need to export a function as **default** or named to `handler`, that has the `context` object (instance of `APIContext`) as the first parameter.
 
 **For example**, the following API route `api/user.ts` sends a json response when you visit `/api/user`.
 
@@ -35,13 +35,20 @@ This route will handle all `/api/user/:name` requests and reply with a json resp
 
 ## `APIContext` Object
 
-Type `APIContext` is an interface that aligns to the `Deno.RequestEvent` as the first argument of the API **handler** or **middleware**.
+The `APIContext` object aligns to the `Deno.RequestEvent` as the first argument of the API **handler** or **middleware**.
 
 ```ts
 interface APIContext extends Deno.RequestEvent {
   data: Map<string, any> // The data handled by middlewares.
   response: APIResponse  // An interface that aligns to the parts of the `Response` with helper methods
   router: RouterURL      // The router by the api routing.
+}
+
+type APIHandler = {
+  (context: APIContext): Promise<void> | void
+}
+type APIMiddleware = {
+  (context: APIContext, next: () => void): Promise<void> | void
 }
 ```
 
