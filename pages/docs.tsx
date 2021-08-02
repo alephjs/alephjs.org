@@ -75,24 +75,9 @@ const navMenu = [
     name: 'API Reference',
     items: [
       { title: 'CLI', path: '/docs/api-reference/cli' },
+      { title: 'Config', path: '/docs/api-reference/config' },
       { title: 'Framework API', path: '/docs/api-reference/framework-api' },
       { title: 'Plugin API', path: '/docs/api-reference/plugin-api' },
-      {
-        title: 'Config',
-        path: '/docs/api-reference/config',
-        submenu: [
-          { title: 'Introduction', path: '/' },
-          { title: 'Framework', path: '/framework' },
-          { title: 'Base Path', path: '/basepath' },
-          { title: 'Build', path: '/build' },
-          { title: 'Configuring CSS', path: '/css' },
-          { title: 'SSR Options', path: '/ssr' },
-          { title: 'I18N', path: '/i18n' },
-          { title: 'Server', path: '/server' },
-          { title: 'Environment Variables', path: '/env' },
-          { title: 'Plugins', path: '/plugins' },
-        ]
-      },
     ]
   },
   {

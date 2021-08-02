@@ -6,7 +6,7 @@ authors:
 
 # Plugin API
 
-In Aleph.js, a **Plugin** is an object with a `setup` method that can access the aleph internal data and methods.
+In Aleph.js, a **Plugin** is an object with a `setup` method that can access the runtime data, call internal methods, and add lifetime event hooks.
 
 ```ts
 type Plugin = {
@@ -17,14 +17,14 @@ type Plugin = {
 
 ## Write First Aleph Plugin
 
-Let's write a plugin for aleph
+Let's write a plugin for Aleph with below code:
 
 ```ts
-import type { Aleph } from "https://deno.land/x/aleph/types.ts"
+import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
 
-export default {
+export default <Plugin>{
   name: 'my-first-aleph-plugin',
-  setup(aleph: Aleph) {
+  setup(aleph) {
 
   }
 }

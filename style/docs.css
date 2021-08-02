@@ -352,11 +352,11 @@
       }
 
       details {
-        margin: 1.5rem 0;
         padding: 0.5rem 1rem;
-        background: #fafafa;
+        margin: 1.5rem 0;
         border: 1px solid #eaeaea;
         border-radius: 6px;
+        background-color: #fafafa;
 
         &[open] {
           overflow: hidden;
@@ -435,7 +435,7 @@
         margin-left: 6px;
         line-height: 1.8rem;
         font-size: 0.95rem;
-        color: #999;
+        color: #333;
         transition: 0.2s color;
 
         &.author {
@@ -572,7 +572,7 @@
       backdrop-filter: none;
 
       @media screen and (max-width: 900px) {
-         display: none;
+        display: none;
       }
 
       a {
@@ -637,6 +637,7 @@
         }
         ul, ol {
           padding-left: 1.5rem;
+
           li {
             margin-top: 0.6rem;
           }

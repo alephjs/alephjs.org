@@ -36,7 +36,7 @@ header {
 
   nav ul {
     li + li {
-      margin-left: 18px;
+      margin-left: 24px;
     }
 
     li {
@@ -58,7 +58,7 @@ header {
         width: 20px;
         height: 20px;
         font-size: 20px;
-        color: #666;
+        color: #454545;
         transition: color 0.2s ease-in-out;
 
         &:hover {

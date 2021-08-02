@@ -34,7 +34,7 @@ export default function CLI() {
 
 CLI.meta = {
   title: 'CLI',
-  author: ['ije'],
+  authors: ['ije'],
   date: '2020-10-20',
   editable: false
 }

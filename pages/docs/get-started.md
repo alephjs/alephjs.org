@@ -9,7 +9,7 @@ authors:
 
 Welcome to use **Aleph.js**!
 
-If you're new to Aleph.js you should check out the [About](/docs/) page.
+If you are new to Aleph.js you should check out the [About](/docs/) page.
 
 ## Installation
 
