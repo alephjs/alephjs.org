@@ -26,7 +26,7 @@ export default function Home() {
       <Logo />
       <h1>Hello World!</h1>
     </div>
-  );
+  )
 }
 ```
 

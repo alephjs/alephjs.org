@@ -6,7 +6,7 @@ authors:
 
 # Plugin API
 
-In Aleph.js, a **Plugin** is an object with a `setup` method that can access the runtime data, call internal methods, and add lifetime event hooks.
+In Aleph.js, a **Plugin** is an object with a `setup` method that will be invoked once before the Aleph server runtime is initialized.
 
 ```ts
 type Plugin = {
@@ -15,9 +15,9 @@ type Plugin = {
 }
 ```
 
-## Write First Aleph Plugin
+## Writing First Aleph Plugin
 
-Let's write a plugin for Aleph with below code:
+Here's a simple plugin example that allows you to add a virtual dist file to the server:
 
 ```ts
 import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
@@ -25,8 +25,9 @@ import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
 export default <Plugin>{
   name: 'my-first-aleph-plugin',
   setup(aleph) {
-
+    aleph.addDist('/hello-world.txt', (new TextEncoder).encode('Hello World!'))
   }
 }
-
 ```
+
+then you can download the txt file in http://localhost:8080/hello-world.txt
