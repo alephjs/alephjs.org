@@ -41,7 +41,7 @@ The `APIContext` object aligns to the `Deno.RequestEvent` as the first argument 
 interface APIContext extends Deno.RequestEvent {
   data: Map<string, any> // The data handled by middlewares.
   response: APIResponse  // An interface that aligns to the parts of the `Response` with helper methods
-  router: RouterURL      // The router by the api routing.
+  router: RouterURL      // The router for the api routing.
 }
 
 type APIHandler = {
