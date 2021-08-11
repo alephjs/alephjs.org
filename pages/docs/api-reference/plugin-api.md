@@ -38,8 +38,45 @@ export default <Config>{
 
 then you can download the `hello.js` file from http://localhost:8080/_aleph/hello.js
 
-## Get Runtime Variables
+## Using `Aleph` Object
 
-## Add Virtual Content
+The `Aleph` object is the runtime instance for Aleph.js's server
 
-## Add Lifetime Hooks
+#### Runtime Variables
+
+- `mode`: Aleph build mode in **'development'** or **'production'**.
+  ```ts
+  setup: aleph => {
+    if (aleph.mode === 'development') {
+      aleph.onSSR((path, html) => {
+        return html.replace('</body>', `<script>console.log('Hi :)')</script></body>`)
+      })
+    }
+  }
+  ```
+- `workingDir`: The Aleph application directory in fullpath.
+  ```ts
+  setup: async aleph => {
+    const fp = path.join(aleph.workingDir, 'data.json')
+    const data = await Deno.readFile(fp)
+  }
+  ```
+- `config`: Parsed configuration from 'aleph.config.ts', check [Config](/docs/api-reference/config) to get more usage.
+  ```ts
+  setup: async aleph => {
+    aleph.config.env['foo'] = await getDynamicEnv('foo')
+    aleph.config.server.headers['X-Foo'] = 'bar'
+  }
+  ```
+
+#### Virtual Content
+
+- `addDist`:
+- `addModule`:
+
+#### Lifetime Hooks
+
+- `onResolve`:
+- `onLoad`:
+- `onTransform`:
+- `onSSR`:
