@@ -44,7 +44,7 @@ The `Aleph` object is the runtime instance for Aleph.js's server
 
 #### Runtime Variables
 
-- `mode`: Aleph build mode in **'development'** or **'production'**.
+- `mode` sepecifies Aleph build mode in **'development'** or **'production'**.
   ```ts
   setup: aleph => {
     if (aleph.mode === 'development') {
