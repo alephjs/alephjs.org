@@ -19,7 +19,7 @@ or run it in **production** mode with Aleph.js server and get API routes support
 $ deno run -A https://deno.land/x/aleph@${VERSION}/cli.ts start ${APP_DIR} --port 80
 ```
 
-## Deploy on Deno
+## Deploy on Deno Deploy
 
 _In the plan, currently not supported._
 
