@@ -14,7 +14,7 @@ When a module changes, Aleph.js just needs to re-compile that single module. The
 
 Aleph.js uses modern tools to build your app. It transpiles code using [swc] in WASM with high performance, and bundles modules with [esbuild] at build time extremely fast.
 
-Aleph.js works in **Deno**, a _simple_, _modern_ and _secure_ runtime for JavaScript and TypeScript. All dependencies are imported using URLs, and managed by Deno cache system. No `package.json` and `node_modules` directory needed:
+Aleph.js works in **Deno**, a _simple_, _modern_ and _secure_ runtime for JavaScript and TypeScript. All dependencies are imported using URLs, and managed by Deno cache system. No `package.json` and `node_modules` directory needed.
 
 ```jsx
 import React from 'https://esm.sh/react'
@@ -33,11 +33,11 @@ export default function Home() {
 ## Features
 
 - Zero Config
-- Typescript in Deno out-of-the-box
+- Typescript in Deno
 - ES Module Ready
 - Import Maps
 - HMR with Fast Refresh
-- File-system Routing for Pages and APIs
+- File-system Routing
 - SSR/SSG
 - JSX Magic
 - Plugins System

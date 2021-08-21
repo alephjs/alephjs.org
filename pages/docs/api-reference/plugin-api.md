@@ -161,7 +161,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `onTransform` injects code to compiled modules.
+- `onTransform` injects code to compiled modules, you need to return an object with modified `code` or `undefined` to keep raw code.
   ```ts
   {
     name: 'plugin-name',
@@ -241,22 +241,29 @@ const answer = wasm.main() // 42
 
 #### Tailwind JIT for JSX
 
-Aleph's compiler will record the static classnames in JSX files, with that you can create css on demand for tailwind vary easily.
+Aleph's compiler will record the static class names in JSX files, with that you can create css on demand for tailwind vary easily.
 
 ```ts
+import { basename } from 'https://deno.land/std/path/mod.ts'
 import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
 
 export default <Plugin> {
   name: 'tailwind-loader',
   setup: aleph => {
     aleph.onTransform(/\.(j|t)sx$/i, async ({ module, code }) => {
-      const { specifier, jsxStaticClassNames } = module
-      const url = specifier.replace(/\.(j|t)sx$/i, '') + '.tailwind.css'
-      const css = tailwindCompile(jsxStaticClassNames)
-      const { jsFile } = aleph.addMoudle(url, css)
+      const { specifier, deps, sourceHash, jsxStaticClassNames } = module
+      if (jsxStaticClassNames?.length) {
+        const url = specifier.replace(/\.(j|t)sx$/i, '') + '.tailwind.css'
+        const css = tailwindCompile(jsxStaticClassNames)
+        const { jsFile } = aleph.addMoudle(url, css)
 
-      return {
-        code: `import "${jsFile}";` + code
+        // support SSR
+        deps.push({specifier: url})
+
+        // import tailwind css
+        return {
+          code: `import "./${basename(jsFile)}#${sourceHash.slice(0,8)}";` + code
+        }
       }
     })
   }

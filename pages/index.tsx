@@ -31,9 +31,10 @@ const features = [
   { href: '/docs/basic-features/import-maps', title: 'Import Maps' },
   { href: '/docs/basic-features/hmr-with-fast-refresh', title: 'HMR with Fast Refresh' },
   { href: '/docs/basic-features/routing', title: 'File-system Routing' },
-  { href: '/docs/basic-features/pages#markdown-pages', title: 'Markdown Page' },
-  { href: '/docs/basic-features/built-in-css-support', title: 'Built-in CSS(Less) Support' },
   { href: '/docs/basic-features/ssr-and-ssg', title: 'SSR & SSG' },
+  { href: '/docs/basic-features/built-in-css-support', title: 'Built-in CSS Support' },
+  { href: '/docs/advanced-features/jsx-magic', title: 'JSX Magic' },
+  { href: '/docs/advanced-features/using-plugins', title: 'Plugin System' },
 ]
 
 const UniverseTriangle = dynamic(() => import('~/components/UniverseTriangle.tsx'))
