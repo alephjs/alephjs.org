@@ -52,7 +52,7 @@ to hack into the server runtime lifecycle.
 
 #### Properties
 
-- `mode` specifies the build mode that should be **'development'** or
+- **`mode`** specifies the build mode that should be **'development'** or
   **'production'**.
   ```ts
   {
@@ -64,7 +64,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `workingDir` shows the application absolute path that is a **read-only**
+- **`workingDir`** shows the application absolute path that is a **read-only**
   property.
   ```ts
   {
@@ -75,7 +75,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `config` is an object parsed from **'aleph.config.ts'**, you can update it to
+- **`config`** is an object parsed from **'aleph.config.ts'**, you can update it to
   add more options, check [Config](/docs/api-reference/config) to get more
   usage.
   ```ts
@@ -90,7 +90,7 @@ to hack into the server runtime lifecycle.
 
 #### Methods
 
-- `addDist` adds a virtual dist file to the server, then access it from
+- **`addDist`** adds a virtual dist file to the server, then access it from
   `/_aleph/$NAME`.
   ```ts
   {
@@ -100,7 +100,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `addModule` adds a virtual module to the server, that can be a page or API.
+- **`addModule`** adds a virtual module to the server, that can be a page or API.
   ```ts
   {
     name: 'plugin-name',
@@ -114,10 +114,11 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
+  > The available module type: `js`, `jsx`, `ts`, `tsx` and `css`.
 
 #### Lifecycle Hooks
 
-- `onResolve` customizes how Aleph does path resolution.
+- **`onResolve`** customizes how Aleph does path resolution.
   ```ts
   {
     name: 'plugin-name',
@@ -139,7 +140,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `onLoad` allows you to load any content as a JS module, for example load
+- **`onLoad`** allows you to load any content as a JS module, for example load
   _markdown_ as pages.
   ```ts
   {
@@ -161,7 +162,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `onTransform` injects code to compiled modules, you need to return an object with modified `code` or `undefined` to keep raw code.
+- **`onTransform`** injects code to compiled modules, you need to return an object with modified `code` or `undefined` to keep raw code.
   ```ts
   {
     name: 'plugin-name',
@@ -190,7 +191,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- `onSSR` modifies the **SSR** output HTML.
+- **`onSSR`** modifies the **SSR** output HTML.
   ```ts
   {
     name: 'plugin-name',
@@ -204,11 +205,13 @@ to hack into the server runtime lifecycle.
   }
   ```
 
-## Example
+## Examples
+
+The example plugins below are meant to give you an idea of the different types of things you can do with the plugin API.
 
 #### WASM loader
 
-Here is a loader plugin allows you to import `.wasm` files into JS module.
+This example plugin is a loader allows you to import `.wasm` files into JS module.
 
 ```ts
 import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
@@ -256,16 +259,48 @@ export default <Plugin> {
         const url = specifier.replace(/\.(j|t)sx$/i, '') + '.tailwind.css'
         const css = tailwindCompile(jsxStaticClassNames)
         const { jsFile } = aleph.addMoudle(url, css)
-
         // support SSR
         deps.push({specifier: url})
-
         // import tailwind css
         return {
           code: `import "./${basename(jsFile)}#${sourceHash.slice(0,8)}";` + code
         }
       }
     })
+  }
+}
+```
+
+#### Google Analytics
+
+This example plugin shows how to insert custom scripts to SSR output HTML.
+
+```ts
+import { basename } from 'https://deno.land/std/path/mod.ts'
+import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
+
+export default <Plugin> {
+  name: 'tailwind-loader',
+  setup: aleph => {
+    const gtag = Deno.env.get('GTAG')
+    if (gtag && aleph.mode === 'production')
+      const scripts = `
+        <script src="https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}" async></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', ${JSON.stringify(GTAGID)});
+        </script>
+      `.split('\n').map(line => line.trim()).filter(Boolean).join('')
+      aleph.onSSR(({ html }) => {
+        return {
+          html: html.replace('</head>', `${scripts}</head>`)
+        }
+      })
+    }
   }
 }
 ```

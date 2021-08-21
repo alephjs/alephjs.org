@@ -10,15 +10,15 @@ Aleph.js provides a [`dynamic`](/docs/api-reference/aleph/react/mod.ts#dynamic) 
 
 ```tsx
 import React from 'https://esm.sh/react'
-import { dynamic } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { dynamic } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 const Logo = dynamic(() => import('../components/logo.tsx'))
 
 export default function About() {
   return (
     <div>
-      <Logo size={100}/>
-      <h1>About</h1>
+      <Logo size={100} />
+      <h1>About Me</h1>
     </div>
   )
 }
@@ -30,7 +30,7 @@ Aleph.js also provides a `Fallback` component to render a fallback UI during the
 
 ```tsx
 import React from 'https://esm.sh/react'
-import { dynamic, Fallback } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { dynamic, Fallback } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 const Logo = dynamic(() => import('../components/logo.tsx'))
 
