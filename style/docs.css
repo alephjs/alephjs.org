@@ -1,5 +1,5 @@
 /* https://esm.sh/highlightjs@9.16.2/styles/github.css */
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#111;font-weight:700}.hljs-literal,.hljs-number,.hljs-tag .hljs-attr,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:var(--theme-color)}.hljs-section,.hljs-selector-id,.hljs-title{color:var(--theme-color);font-weight:700}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:700}.hljs-attribute,.hljs-name,.hljs-tag{color:teal;font-weight:400}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:var(--theme-color)}.hljs-built_in,.hljs-builtin-name{color:teal}.hljs-meta{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#111;font-weight:500}.hljs-literal,.hljs-number,.hljs-template-variable,.hljs-variable{color:teal}.hljs-doctag,.hljs-string{color:var(--theme-color)}.hljs-section,.hljs-selector-id,.hljs-title{color:var(--theme-color);font-weight:600}.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type{color:#458;font-weight:600}.hljs-attribute,.hljs-name,.hljs-tag{color:#999;font-weight:400}.hljs-tag .hljs-name {color:teal;font-weight:500}.hljs-tag .hljs-attr {color:#454545;font-weight:500}.hljs-link,.hljs-regexp{color:#009926}.hljs-bullet,.hljs-symbol{color:var(--theme-color)}.hljs-built_in,.hljs-builtin-name{color:teal}.hljs-meta{color:#999;font-weight:600}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:600}
 
 .docs {
   width: 90%;
@@ -237,7 +237,6 @@
 
     .doc-page {
       h1, h2, h3, h4, h5 {
-        margin-top: 3rem;
         line-height: 1.27;
         font-weight: 500;
         color: #000;
@@ -253,18 +252,22 @@
       }
 
       h2 {
+        margin-top: 3rem;
         font-size: 1.8rem;
       }
 
       h3 {
+        margin-top: 2.7rem;
         font-size: 1.5rem;
       }
 
       h4 {
+        margin-top: 2.4rem;
         font-size: 1.27rem;
       }
 
       h5 {
+        margin-top: 2.1rem;
         font-size: 1rem;
       }
 
@@ -275,6 +278,10 @@
 
       p + p {
         margin-top: 1.2rem;
+      }
+
+      h4 + p {
+        margin-top: 0.9rem;
       }
 
       a {
@@ -301,7 +308,7 @@
       }
 
       code {
-        font-family: 'Dank Mono', 'Source Code Pro', 'Courier Prime Code', Courier, monospace;
+        font-family: 'Dank Mono', 'Source Code Pro', monospace;
       }
 
       samp {
