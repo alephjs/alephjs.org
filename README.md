@@ -6,8 +6,8 @@ The website of **Aleph.js**, this website is built with Aleph.js and automatical
 > https://alephjs.org
 
 ## System Requirements
-- [Deno](https://deno.land/) 1.5+
-- [Aleph.js](https://deno.land/x/aleph) 0.2.22+
+- [Deno](https://deno.land/) 1.13+
+- [Aleph.js](https://deno.land/x/aleph) 0.3.0+
 - [VS Code](https://code.visualstudio.com/) with [deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) (recommended)
 
 ## Development Setup
