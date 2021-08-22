@@ -15,7 +15,7 @@ In Aleph.js, we prefer to use hooks. A **react hook** we provide called `useDeno
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useDeno } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 export default function Page() {
   const version = useDeno(() => {
@@ -32,7 +32,7 @@ Even **asynchronous** callback is accepted:
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useDeno, useRouter } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { useDeno, useRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 export default function Post() {
   const { params } = useRouter()
@@ -48,7 +48,7 @@ export default function Post() {
 
 ## How It Works
 
-The `useDeno` hook receives a **callback** (the first parameter) that will be invoked during build time (SSG), then cache the callback result. In the browser, the callback will be ignored, and the cached result will be used instead.
+The `useDeno` hook receives a **callback** as first parameter that will be invoked at build time (SSR), then cache the callback result. In the browser, the callback will be ignored, and the cached result will be used instead.
 
 ## Revalidate
 
@@ -56,7 +56,7 @@ An optional amount in seconds after which a page re-generation can occur (defaul
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useDeno } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 export default function Page() {
   const now = useDeno(() => {

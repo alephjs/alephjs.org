@@ -126,5 +126,5 @@ To add a global stylesheet to your application, import the CSS files in `app.tsx
 
 ## CSS Imports (@import)
 
-Aleph.js doesn't currently support `@import` in CSS modules. You need to put the imported CSS files into the `public` directory and import them using _absolute_ URLs.
+Aleph.js use **esbuild** to bundle your css code that means you can use `@import` sytax safety. Or you can put the imported CSS files into the `public` directory then import them with _absolute_ URLs.
 

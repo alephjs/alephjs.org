@@ -272,7 +272,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                           className={currentPath === item.path ? 'active' : undefined}
                           href={item.path}
                           onClick={() => setMenuIsOpen(false)}
-                        ><>{item.title}{item.modifier}</></a>
+                        >{item.title}{item.modifier}</a>
                       </li>
                     )
                   }

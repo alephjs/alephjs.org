@@ -54,7 +54,7 @@ export default function Blog({ Page, pageProps }) {
 To access the `RouterURL` object, you can use the `useRouter` hook in a component:
 
 ```jsx
-import { useRouter } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { useRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 // hypothetically current location patname is '/post/hello-world?theme=dark'
 export default function Component({ href, children }) {

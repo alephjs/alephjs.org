@@ -150,6 +150,7 @@ to hack into the server runtime lifecycle.
       aleph.onLoad(/.(md|markdown)$/, async ({ specifier, data }) => {
         // loads and caches content as `Uint8Array` by the specifier
         const { content } = await aleph.loadModule(specifier)
+
         return {
           // specifies the output code type (Available type: `css` | `js` | `jsx` | `ts` | `tsx`)
           type: 'js',
@@ -191,14 +192,17 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- **`onSSR`** modifies the **SSR** output HTML.
+- **`onSSR`** modifies the **SSR** output HTML and data.
   ```ts
   {
     name: 'plugin-name',
     setup: async aleph => {
       aleph.onSSR(({path, html, data}) => {
         return {
-          html: html.replace('</head>', `<script src="/gtag.js?id=${GTAG}" async></script></head>`)
+          // update SSR html
+          html: html.replace('</head>', `<script src="/gtag.js?id=${GTAG}" async></script></head>`),
+          // modify SSR data
+          data: undefined
         }
       })
     }
@@ -259,10 +263,12 @@ export default <Plugin> {
         const url = specifier.replace(/\.(j|t)sx$/i, '') + '.tailwind.css'
         const css = tailwindCompile(jsxStaticClassNames)
         const { jsFile } = aleph.addMoudle(url, css)
+
         // support SSR
         deps.push({specifier: url})
-        // import tailwind css
+
         return {
+          // import tailwind css
           code: `import "./${basename(jsFile)}#${sourceHash.slice(0,8)}";` + code
         }
       }

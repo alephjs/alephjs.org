@@ -312,13 +312,13 @@
       }
 
       samp {
-        font-family: 'Source Code Pro', monospace;
+        font-family: monospace;
         font-weight: 700;
 
         &::before,
         &::after {
           font-weight: 500;
-          color: #999;
+          color: #aaa;
           content: '/'
         }
       }

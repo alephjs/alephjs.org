@@ -68,7 +68,7 @@ Aleph.js also provides an `useDeno` hook to mix the **Deno** runtime in your com
 
 ```tsx
 import React from 'https://esm.sh/react'
-import { useDeno } from 'https://deno.land/x/aleph/aleph/react/mod.ts'
+import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 export default function Page() {
   const version = useDeno(() => {

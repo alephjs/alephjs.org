@@ -33,7 +33,7 @@ Each generated HTML page only needs a small amount of JavaScript. When a page is
 
 ## Linking Between Pages
 
-Aleph.js will check `anchor` tags ([JSX Magic](/docs/advanced-features/jsx-magic)) in your app to move between pages without refresh whole page, similarly to a SPA (single-page application).
+Aleph.js will check `anchor` tags ([JSX Magic](/docs/advanced-features/jsx-magic)) in JSX code to move between pages without refresh whole page, similarly to a SPA (single-page application).
 
 ```tsx
 import React from 'https://esm.sh/react'
@@ -78,17 +78,14 @@ export default function Nav() {
 You can also redirect pages with the `redirect` function:
 
 ```jsx
-import React, { useCallback } from "https://esm.sh/react"
-import { redirect } from "https://deno.land/x/aleph/framework/core/mod.ts"
+import React, { FC, useCallback } from 'https://esm.sh/react'
+import { redirect } from 'https://deno.land/x/aleph/framework/core/mod.ts'
 
-export default function Link({ to, replace, children }) {
-  const onClick = useCallback(
-    (e) => {
-      e.preventDefault()
-      redirect(to, replace)
-    },
-    [to, replace]
-  )
+export const Link: FC<{to: string, replace?: boolean}> = ({ to, replace, children }) => {
+  const onClick = useCallback(e => {
+    e.preventDefault()
+    redirect(to, replace)
+  }, [to, replace])
 
   return (
     <span onClick={onClick}>
