@@ -14,8 +14,9 @@ To use a plugin, add it to the `plugins` array in the `aleph.config.ts`. **For e
 // aleph.config.ts
 
 import markdown from 'https://deno.land/x/aleph/plugins/markdown.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.ts'
 
-export default {
+export default <Config>{
   plugins: [
     markdown()
   ]

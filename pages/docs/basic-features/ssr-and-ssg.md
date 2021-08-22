@@ -12,7 +12,7 @@ By default, Aleph.js **pre-renders** every page. This means that Aleph.js genera
 
 Each generated HTML page only needs a small amount of JavaScript. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called _hydration_.)
 
-You can disable **SSR** functionality in `aleph.config.js`:
+You can disable **SSR** functionality in `aleph.config.ts`:
 
 ```ts
 export default {

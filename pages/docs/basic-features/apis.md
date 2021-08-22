@@ -87,3 +87,20 @@ const auth:APIMiddleware = ({ response, data, request }, next) => {
 export default [data, auth]
 ```
 
+As optional, you can also add global middlewares in `aleph.config.ts` those are put in front of `api/_middlewares.ts` defines:
+
+```ts
+import type { Config } from 'https://deno.land/x/aleph/types.ts'
+
+export default <Config>{
+  server: {
+    middlewares: [
+      ({ response, data }, next) => {
+        response.headers.set('server', 'Aleph.js')
+        data.set('foo', 'bar')
+        next()
+      }
+    ]
+  }
+}
+```

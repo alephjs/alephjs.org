@@ -13,6 +13,7 @@ If you are new to Aleph.js you should check out the [About](/docs/) page.
 
 ## Installation
 
+you will need [Deno](https://deno.land/#installation) **1.13+** to run Aleph.js server.
 ```bash
 $ deno run -A https://deno.land/x/aleph/install.ts
 ```
