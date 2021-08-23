@@ -26,7 +26,7 @@ Aleph.js supports **dynamic API routes** as well. For example, the route `api/us
 ```typescript
 import type { APIHandler } from 'https://deno.land/x/aleph/types.ts'
 
-export const handler: APIHandler = ({ response }) => {
+export const handler: APIHandler = ({ response, router }) => {
   response.json({ name: router.params.name })
 }
 ```
