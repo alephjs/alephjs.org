@@ -52,7 +52,7 @@ import React from 'https://esm.sh/react'
 export default function App() {
   return (
     <>
-      <link rel="stylesheet" from="../style/app.css" />
+      <link rel="stylesheet" href="../style/app.css" />
       <h1>Hi :)</h1>
     </>
   )

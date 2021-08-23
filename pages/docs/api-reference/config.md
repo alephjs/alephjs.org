@@ -57,8 +57,7 @@ export default <Config>{
 `css` specifies the css processing options.
 
 - **cache**: `boolean` caches remote css to local if it is true.
-- **extract**: `{ limit: number }` specifies the extract options (default is **8k** limit).
-- **postcss**: `{ plugins: PostCSSPlugin[] }` specifies the postcss plugins. The `PostCSSPlugin` can be a name string that is imported from [esm.sh](https://esm.sh).
+- **postcss**: `{plugins: PostCSSPlugin[]}` specifies the postcss plugins. The `PostCSSPlugin` can be a name string that is imported from [esm.sh](https://esm.sh).
 - **modules**: `CSSModulesOptions` specifies CSS modules behavior, the options are passed on to [postcss-modules](https://github.com/madyankin/postcss-modules).
 
 ```ts
@@ -67,7 +66,6 @@ import type { Config } from 'https://deno.land/x/aleph/types.ts'
 export default <Config>{
   css: {
     cache: true,
-    extract: { limit: 8*1024 },
     postcss: { [ 'autoprefixer' ] },
     modules: {
       scopeBehaviour: 'global', // can be 'global' or 'local'
