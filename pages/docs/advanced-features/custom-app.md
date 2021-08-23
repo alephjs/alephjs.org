@@ -9,18 +9,25 @@ authors:
 
 Aleph.js uses the `App` component to initialize pages. You can override it to control the page initialization, which allows you to:
 
+- Add global heam element(meta, link...)
+- Add global styles
 - Add global layout elements
-- Add global Styles
-- Add global Head
-- Add Custom error handling using `componentDidCatch`
+- Add custom `ErrorBoundary`
 - Inject **props** into pages
 
-To override the default `App`, create a `app.tsx` file in the root directory:
+To override the default `App`, create an `app.tsx` file in the root directory:
 
-```jsx
-import React from "https://esm.sh/react";
+```tsx
+import React from 'https://esm.sh/react'
 
 export default function App({ Page, pageProps }) {
-  return <Page {...pageProps} />;
+  return (
+    <>
+      <head>
+        <meta name="foo" content="bar" />
+      </head>
+      <Page {...pageProps} />
+    </>
+  )
 }
 ```

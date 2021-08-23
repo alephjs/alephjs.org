@@ -15,8 +15,18 @@ Aleph.js requires a modern browser to support [native ES module imports](https:/
 - Safari >= 11
 - Opera >= 48
 
-## `nomodule.js` Polyfill
+## Build Target, Browserslist, and Polyfills
 
-(**WIP**, planning to implement in **v0.3**)
+Aleph.js uses **esbuild** to bundle modules at build time for production. You can set the `build.target` and `build.browsers` in `aleph.config.ts`, a **polyfills** file will be created automatically that is based on the build target.
 
-To support older browsers like _IE11_ in **production**, Aleph.js will create a polyfilled `nomodule.js` that uses [system.js](https://github.com/systemjs/systemjs) to import modules.
+```ts
+export default {
+  build: {
+    target: 'es2015', // available targets: es2015-es2021, esnext
+    browsers: {
+      chrome: 70,
+      safari: 12
+    }
+  }
+}
+```
