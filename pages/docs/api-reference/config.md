@@ -13,7 +13,7 @@ For custom advanced behavior of Aleph.js, add an `aleph.config.ts` file in the r
 Aleph.js is a fulltack framework in Deno. Currently we only support **React** as the frontend renderer.
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   framework: 'react'
@@ -25,7 +25,7 @@ export default <Config>{
 `basePath` allows you to set a path prefix for the application.
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   basePath: '/docs'
@@ -41,7 +41,7 @@ export default <Config>{
 - **outputDir**: `string` specifies the output directory for _build_ command (default is **'/dist'**).
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   build: {
@@ -61,7 +61,7 @@ export default <Config>{
 - **modules**: `CSSModulesOptions` specifies CSS modules behavior, the options are passed on to [postcss-modules](https://github.com/madyankin/postcss-modules).
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   css: {
@@ -80,7 +80,7 @@ export default <Config>{
 
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   ssr: true
@@ -111,7 +111,7 @@ export default <Config>{
 `i18n` enables multiple locales for the routing.
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   i18n: {
@@ -132,7 +132,7 @@ export default <Config>{
 - **compress**: `boolean` enbles compression(gzip/brotli) for static files and SSR content (default is **true** for production mode).
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   server: {
@@ -160,7 +160,7 @@ export default <Config>{
 
 ```ts
 import markdown from 'https://deno.land/x/aleph/plugins/markdown.ts'
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   plugins: [

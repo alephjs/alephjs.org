@@ -37,11 +37,13 @@ export default {
 
 ## SSR Options
 
-If you export an async function called `ssr.props` from a page, Aleph.js will pre-render this page with the props returned by `ssr.props` at build time. You can get the `RtoueURL` object form the first parameter of the function.
+If you export an object called `ssr` with a `props` function from a page, Aleph.js will pre-render this page using the computed props by the `props` function at build time. The `RouterURL` object is passed as the first parameter of the function.
+
+The `paths` in the `ssr` options returns a static paths if the page is a dynamic route. (This is equal to `getStaticPaths` of Next.js)
 
 ```tsx
 import React from 'https://esm.sh/react'
-import type { SSROptions } from 'https://deno.land/x/aleph/types.ts'
+import type { SSROptions } from 'https://deno.land/x/aleph/types.d.ts'
 
 export const ssr: SSROptions = {
   props: async router => {
@@ -51,7 +53,7 @@ export const ssr: SSROptions = {
     }
   },
   paths: async () => {
-    return [] // static paths for ssg
+    return []
   }
 }
 
@@ -96,11 +98,11 @@ For **dynamic routes**, your can define the **static paths** in `ssr` options:
 ```tsx
 // pages/post/[id].tsx
 
-import type { SSROptions } from 'https://esm.sh/react/types.ts'
+import type { SSROptions } from 'https://deno.land/x/aleph/types.d.ts'
 
 export const ssr: SSROptions = {
   paths: async () => {
-    const posts = await (await fetch('https://company.com/posts')).json()
+    const posts = await (await fetch('https://.../api/posts')).json()
     return posts.map(({ id }) => `/post/${id}`)
   }
 }

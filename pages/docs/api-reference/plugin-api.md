@@ -25,7 +25,7 @@ server:
 ```ts
 // aleph.config.ts
 
-import type { Config, Plugin } from 'https://deno.land/x/aleph/types.ts'
+import type { Config, Plugin } from 'https://deno.land/x/aleph/types.d.ts'
 
 const helloPlugin: Plugin = {
   name: 'hello-plugin',
@@ -213,7 +213,7 @@ The example plugins below are meant to give you an idea of the different types o
 This example plugin is a loader allows you to import `.wasm` files into JS module.
 
 ```ts
-import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
+import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Plugin> {
   name: 'wasm-loader',
@@ -247,7 +247,7 @@ Aleph's compiler will record the static class names in JSX files, with that you 
 
 ```ts
 import { basename } from 'https://deno.land/std/path/mod.ts'
-import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
+import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Plugin> {
   name: 'tailwind-loader',
@@ -278,7 +278,7 @@ This example plugin shows how to insert custom scripts to SSR output HTML.
 
 ```ts
 import { basename } from 'https://deno.land/std/path/mod.ts'
-import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
+import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Plugin> {
   name: 'google-analytics-plugin',

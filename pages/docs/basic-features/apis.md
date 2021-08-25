@@ -12,7 +12,7 @@ Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mappe
 **For example**, the following API route `api/user.ts` sends a json response when you visit `/api/user`.
 
 ```typescript
-import type { APIHandler } from 'https://deno.land/x/aleph/types.ts'
+import type { APIHandler } from 'https://deno.land/x/aleph/types.d.ts'
 
 export const handler: APIHandler = ({ response }) => {
   response.json({ name: 'Aleph' })
@@ -24,7 +24,7 @@ export const handler: APIHandler = ({ response }) => {
 Aleph.js supports **dynamic API routes** as well. For example, the route `api/user/[name].ts` has the following code:
 
 ```typescript
-import type { APIHandler } from 'https://deno.land/x/aleph/types.ts'
+import type { APIHandler } from 'https://deno.land/x/aleph/types.d.ts'
 
 export const handler: APIHandler = ({ response, router }) => {
   response.json({ name: router.params.name })
@@ -59,7 +59,7 @@ In Aleph.js, a **middleware** for APIs is like `APIHandler` but with a `next` ca
 ```ts
 // api/_middlewares.ts
 
-import type { APIMiddleware } from 'https://deno.land/x/aleph/types.ts'
+import type { APIMiddleware } from 'https://deno.land/x/aleph/types.d.ts'
 
 const data:APIMiddleware = ({ response, data }, next) => {
   response.headers.set('server', 'Aleph.js')
@@ -90,7 +90,7 @@ export default [data, auth]
 As optional, you can also add global middlewares in `aleph.config.ts` those are put in front of `api/_middlewares.ts` defines:
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   server: {

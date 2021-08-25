@@ -78,7 +78,7 @@ export default function Component({ href, children }) {
 Aleph.js don't provide **I18N** function directly, but the routing supports the **locale prefix**. You need to config the locales in `aleph.config.ts`:
 
 ```ts
-import type { Config } from 'https://deno.land/x/aleph/types.ts'
+import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 
 export default <Config>{
   i18n: {
