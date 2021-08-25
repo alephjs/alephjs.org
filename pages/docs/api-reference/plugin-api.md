@@ -192,18 +192,13 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- **`onSSR`** modifies the **SSR** output HTML and data.
+- **`onRender`** modifies the **SSR** output HTML and data.
   ```ts
   {
     name: 'plugin-name',
     setup: async aleph => {
-      aleph.onSSR(({path, html, data}) => {
-        return {
-          // update SSR html
-          html: html.replace('</head>', `<script src="/gtag.js?id=${GTAG}" async></script></head>`),
-          // modify SSR data
-          data: undefined
-        }
+      aleph.onRender(({path, html, data}) => {
+        html.headElements.push(`<script src="/gtag.js?id=${GTAG}" async></script>`)
       })
     }
   }
@@ -286,25 +281,23 @@ import { basename } from 'https://deno.land/std/path/mod.ts'
 import type { Plugin } from 'https://deno.land/x/aleph/types.ts'
 
 export default <Plugin> {
-  name: 'tailwind-loader',
+  name: 'google-analytics-plugin',
   setup: aleph => {
-    const gtag = Deno.env.get('GTAG')
-    if (gtag && aleph.mode === 'production')
-      const scripts = `
-        <script src="https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}" async></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
+    const id = Deno.env.get('GTAG')
+    if (id && aleph.mode === 'production') {
+      aleph.onRender(({ html }) => {
+        html.scripts.push(
+          {
+            src: `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`,
+            async: true
+          },
+          `window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag('js', new Date());
-          gtag('config', ${JSON.stringify(GTAGID)});
-        </script>
-      `.split('\n').map(line => line.trim()).filter(Boolean).join('')
-      aleph.onSSR(({ html }) => {
-        return {
-          html: html.replace('</head>', `${scripts}</head>`)
-        }
+          gtag('config', ${JSON.stringify(id)});`
+        )
       })
     }
   }
