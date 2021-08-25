@@ -7,7 +7,7 @@ export default <Config>{
     {
       name: 'google-analytics-plugin',
       setup: aleph => {
-        const id = Deno.env.get('GTAG')
+        const id = Deno.env.get('GTAGID')
         if (id && aleph.mode === 'production') {
           aleph.onRender(({ html }) => {
             html.scripts.push(
