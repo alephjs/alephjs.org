@@ -66,7 +66,7 @@ import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
 export default <Config>{
   css: {
     cache: true,
-    postcss: { [ 'autoprefixer' ] },
+    postcss: { plugins: [ 'autoprefixer' ] },
     modules: {
       scopeBehaviour: 'global', // can be 'global' or 'local'
     }
