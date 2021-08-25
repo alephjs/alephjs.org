@@ -1,30 +1,12 @@
-import { useDeno } from 'aleph/react'
 import React, { ComponentType } from 'react'
 import Header from './components/Header.tsx'
 import './style/app.css'
 
 export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {
-  const GTAGID = useDeno(() => {
-    return Deno.env.get('GTAGID')
-  })
-
   return (
     <main>
       <Header />
       <Page {...pageProps} />
-      {GTAGID && (
-        <script src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GTAGID)}`} async></script>
-      )}
-      {GTAGID && (
-        <script>{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', ${JSON.stringify(GTAGID)});
-       `}</script>
-      )}
     </main>
   )
 }
