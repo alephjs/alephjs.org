@@ -23,9 +23,12 @@ $ deno run -A https://deno.land/x/aleph@${VERSION}/cli.ts start ${APP_DIR} --por
 
 To deploy your app to [Vercel](https://vercel.com), you need to configure your _vercel project_ manually:
 
-- **Build Command**: `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/aleph@${VERSION}/cli.ts build`
+- **Build Command**: `deno run -A https://deno.land/x/aleph@${VERSION}/cli.ts build`
 - **Output Directory**: `dist` (**outputDir**, you can override it in `aleph.config.js`)
+- **Install Command**: `curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=/usr/local sh`
 - **Functions Runtime**: [vercel-aleph@0.7.0](https://github.com/alephjs/vercel-aleph)
+
+![vercel-settings](/vercel-settings.png)
 
 > See the [hello-world](https://alephjs-hello-world.vercel.app/) example on [Vercel](https://vercel.com).
 
