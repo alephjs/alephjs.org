@@ -54,7 +54,9 @@ type APIMiddleware = {
 
 ## Middlewares
 
-In Aleph.js, a **middleware** for APIs is like `APIHandler` but with a `next` callback that calls next middleware or the final handler. You can have multiple middlewares that will be applied to all the API routes. To use middlewares add a `_middlewares.ts` in the `api/` directory and ensure export a middlewares array as default.
+In Aleph.js, a **middleware** for APIs is like `APIHandler` but with a `next` callback that calls next middleware or the final handler. You can have multiple middlewares that will be applied to all the API routes. 
+
+To use middlewares add a `_middlewares.ts` in the `api/` directory and ensure export a middlewares array as default.
 
 ```ts
 // api/_middlewares.ts
