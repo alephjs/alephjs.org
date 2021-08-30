@@ -7,7 +7,7 @@ authors:
 
 # APIs
 
-Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mapped to `/api/*` and will be treated as an API endpoint. For an API to work, you need to export a function as **default** or named to `handler`, that has the `context` object (instance of `APIContext`) as the first parameter.
+Any file ends with `.ts`, `.js`, and `.mjs` inside the `api/` directory is mapped to `/api/*` and will be treated as an API endpoint. For an API to work, you need to export a function named to `handler`, that will accept the `APIContext` object as the first parameter.
 
 **For example**, the following API route `api/user.ts` sends a json response when you visit `/api/user`.
 
@@ -89,7 +89,7 @@ const auth:APIMiddleware = ({ response, data, request }, next) => {
 export default [data, auth]
 ```
 
-As optional, you can also add global middlewares in `aleph.config.ts` those are put in front of `api/_middlewares.ts` defines:
+As optional, you can also add global middlewares in `aleph.config.ts`, those will be put in front of `api/_middlewares.ts` defines:
 
 ```ts
 import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
