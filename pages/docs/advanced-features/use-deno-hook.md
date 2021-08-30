@@ -9,7 +9,7 @@ authors:
 
 # `useDeno` hook
 
-In [Next.js](https://nextjs.org/docs/basic-features/data-fetching), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time (SSR)** or on **each request** respectively. This solution isolates the `data` and `view` like different roles of the `back-end` and `front-end`.
+In [Next.js](https://nextjs.org/docs/basic-features/data-fetching), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time (SSG)** or on **each request (SSR)** respectively. This solution isolates the `data` and `view` like different roles of the `back-end` and `front-end`.
 
 In Aleph.js, we prefer to use hooks. A **react hook** we provide called `useDeno` allows you to access **Deno runtime** in a component, that's more closed to React's credo.
 
