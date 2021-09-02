@@ -90,8 +90,30 @@ to hack into the server runtime lifecycle.
 
 #### Methods
 
-- **`addDist`** adds a virtual dist file to the server, then access it from
-  `/_aleph/$NAME`.
+- **`fetchModule`** fetches and caches the module source content.
+  ```ts
+  {
+    name: 'plugin-name',
+    setup: async aleph => {
+      const { content } = aleph.fetchModule(specifier)
+    }
+  }
+  ```
+- **`resolveImport`** resolves module import URL.
+  ```ts
+  {
+    name: 'plugin-name',
+    setup: async aleph => {
+      const bundleMode = true
+      const forceRefresh = true
+      const mod = aleph.addModule('https://deno.land/x/aleph/hello.ts', 'export default { ... }')
+      aleph.resolveImport(mod, '/app.tsx') // './-/deno.land/x/aleph/hello.js#XXXXXX'
+      aleph.resolveImport(mod, '/app.tsx', !bundleMode, forceRefresh) // './-/deno.land/x/aleph/hello.bundling.js#XXXXXX-TIMESTAMP'
+      aleph.resolveImport(mod, '/app.tsx', bundleMode) // './-/deno.land/x/aleph/hello.bundling.js'
+    }
+  }
+  ```
+- **`addDist`** adds a virtual dist file to the server, then access it from `/_aleph/$NAME`.
   ```ts
   {
     name: 'plugin-name',
@@ -252,19 +274,18 @@ import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
 export default <Plugin> {
   name: 'tailwind-loader',
   setup: aleph => {
-    aleph.onTransform(/\.(j|t)sx$/i, async ({ module, code }) => {
+    aleph.onTransform(/\.(j|t)sx$/i, async ({ module, code, bundleMode }) => {
       const { specifier, deps, sourceHash, jsxStaticClassNames } = module
       if (jsxStaticClassNames?.length) {
         const url = specifier.replace(/\.(j|t)sx$/i, '') + '.tailwind.css'
         const css = tailwindCompile(jsxStaticClassNames)
-        const { jsFile } = aleph.addMoudle(url, css)
-
-        // support SSR
-        deps.push({specifier: url})
+        const cssModule = await aleph.addModule(url, css, true)
 
         return {
           // import tailwind css
-          code: `import "./${basename(jsFile)}#${sourceHash.slice(0,8)}";` + code
+          code: `import "${aleph.resolveImport(cssModule, specifier, bundleMode, true)}";${code}`,
+          // support SSR
+          extraDeps: [{ specifier: url, virtual: true }],
         }
       }
     })
