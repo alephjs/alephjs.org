@@ -99,7 +99,7 @@ export default function App() {
 }
 ```
 
-With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names via `$CLASSNAME` **magic** trick that has a **better experience**, when the CSS Modules is loaded by the `link` tag.
+With Aleph's [JSX Magic](/docs/advanced-features/jsx-magic) you can use the scoped class names via `$CLASSNAME` magic trick that gives you a better developer experience, when the CSS Modules is loaded by the `link` tag.
 
 ```tsx
 import React from 'https://esm.sh/react'
@@ -114,11 +114,35 @@ export default function App() {
 }
 ```
 
-CSS modules behavior can be configured via the `css.modules` option.
+CSS modules behavior can be configured via the `css.modules` options, the options are passed on to [postcss-modules](https://github.com/madyankin/postcss-modules).
+
+```ts
+// aleph.config.ts
+
+export default <Config>{
+  css: {
+    modules: {
+      scopeBehaviour: 'global', // can be 'global' or 'local'
+    }
+  }
+}
+```
 
 ## PostCSS
 
 If the `aleph.config.ts` contains valid `css.postcss` config, it will be automatically applied to all imported CSS.
+
+```ts
+// aleph.config.ts
+
+export default <Config>{
+  css: {
+    postcss: {
+      plugins: ['postcss-nested', 'autoprefixer']
+    }
+  }
+}
+```
 
 ## Global Stylesheet
 
@@ -127,4 +151,3 @@ To add a global stylesheet to your application, import the CSS files in `app.tsx
 ## CSS Imports (@import)
 
 Aleph.js use **esbuild** to bundle your css code that means you can use `@import` sytax safety. Or you can put the imported CSS files into the `public` directory then import them with _absolute_ URLs.
-

@@ -107,8 +107,8 @@ to hack into the server runtime lifecycle.
       const bundleMode = true
       const forceRefresh = true
       const mod = aleph.addModule('https://deno.land/x/aleph/hello.ts', 'export default { ... }')
-      aleph.resolveImport(mod, '/app.tsx') // './-/deno.land/x/aleph/hello.js#XXXXXX'
-      aleph.resolveImport(mod, '/app.tsx', !bundleMode, forceRefresh) // './-/deno.land/x/aleph/hello.bundling.js#XXXXXX-TIMESTAMP'
+      aleph.resolveImport(mod, '/app.tsx') // './-/deno.land/x/aleph/hello.js#XXX'
+      aleph.resolveImport(mod, '/app.tsx', !bundleMode, forceRefresh) // './-/deno.land/x/aleph/hello.bundling.js#XXX-TIME'
       aleph.resolveImport(mod, '/app.tsx', bundleMode) // './-/deno.land/x/aleph/hello.bundling.js'
     }
   }
@@ -122,7 +122,7 @@ to hack into the server runtime lifecycle.
     }
   }
   ```
-- **`addModule`** adds a virtual module to the server, that can be a page or API.
+- **`addModule`** adds a virtual module to the server, that can be a page, API, or CSS.
   ```ts
   {
     name: 'plugin-name',
@@ -133,6 +133,8 @@ to hack into the server runtime lifecycle.
       aleph.addModule('api/hello.ts', 'export const handler = (req) => { ... }')
       // adds a virtual module as Page
       aleph.addModule('pages/hello.tsx', 'export defaut function Hello() { ... }')
+      // adds a virtual style module
+      aleph.addModule('style/app.css', 'body { font-family: sans-serif; }')
     }
   }
   ```
@@ -172,7 +174,6 @@ to hack into the server runtime lifecycle.
       aleph.onLoad(/.(md|markdown)$/, async ({ specifier, data }) => {
         // loads and caches content as `Uint8Array` by the specifier
         const { content } = await aleph.loadModule(specifier)
-
         return {
           // specifies the output code type (Available type: `css` | `js` | `jsx` | `ts` | `tsx`)
           type: 'js',
@@ -205,7 +206,7 @@ to hack into the server runtime lifecycle.
         }
       })
       // inject code to page modules
-      aleph.onTransform(/pages\//, ({ module, code, map }) => {
+      aleph.onTransform(/pages\//, ({ module, code, map, bundleMode }) => {
         return {
           code: code + `\nconsole.log("current module is ${module.specifier}")`,
           map: undefined, // provides source map if available
@@ -219,7 +220,7 @@ to hack into the server runtime lifecycle.
   {
     name: 'plugin-name',
     setup: async aleph => {
-      aleph.onRender(({path, html, data}) => {
+      aleph.onRender(({ path, html, data }) => {
         html.headElements.push(`<script src="/gtag.js?id=${GTAG}" async></script>`)
       })
     }
@@ -278,12 +279,12 @@ export default <Plugin> {
       const { specifier, deps, sourceHash, jsxStaticClassNames } = module
       if (jsxStaticClassNames?.length) {
         const url = specifier.replace(/\.(j|t)sx$/i, '') + '.tailwind.css'
-        const css = tailwindCompile(jsxStaticClassNames)
+        const css = tailwindJITCompile(jsxStaticClassNames)
         const cssModule = await aleph.addModule(url, css, true)
 
         return {
           // import tailwind css
-          code: `import "${aleph.resolveImport(cssModule, specifier, bundleMode, true)}";${code}`,
+          code: `import "${aleph.resolveImport(cssModule, specifier, bundleMode, true)}";\n${code}`,
           // support SSR
           extraDeps: [{ specifier: url, virtual: true }],
         }
@@ -304,7 +305,7 @@ import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
 export default <Plugin> {
   name: 'google-analytics-plugin',
   setup: aleph => {
-    const id = Deno.env.get('GTAG')
+    const id = Deno.env.get('GTAID')
     if (id && aleph.mode === 'production') {
       aleph.onRender(({ html }) => {
         html.scripts.push(
