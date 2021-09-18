@@ -2,7 +2,7 @@ import { dynamic, Fallback } from 'aleph/react'
 import React from 'react'
 import GreyTriangle from '~/components/GreyTriangle.tsx'
 
-const UniverseTranigle = dynamic(() => import('~/components/UniverseTriangle.tsx'))
+const UniverseTriangle = dynamic(() => import('~/components/UniverseTriangle.tsx'))
 
 export default function E404() {
   return (
@@ -13,7 +13,7 @@ export default function E404() {
       </head>
       <div className="fullscreen-page">
         <Fallback to={<GreyTriangle size={150} />}>
-          <UniverseTranigle
+          <UniverseTriangle
             size={150}
             glitch={true}
           />

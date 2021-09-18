@@ -10,7 +10,7 @@ For custom advanced behavior of Aleph.js, add an `aleph.config.ts` file in the r
 
 #### Framework
 
-Aleph.js is a fulltack framework in Deno. Currently we only support **React** as the frontend renderer.
+Aleph.js is a fullstack framework in Deno. Currently we only support **React** as the frontend renderer.
 
 ```ts
 import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
@@ -129,7 +129,7 @@ export default <Config>{
 - **middlewares:** `APIMiddleware[]` a list of _Middleware_ for API requests.
 - **headers**: `Record<string, string>` appends custom headers for server requests.
 - **rewrites**: `Record<string, string>` specifies the server rewrite map.
-- **compress**: `boolean` enbles compression(gzip/brotli) for static files and SSR content (default is **true** for production mode).
+- **compress**: `boolean` enables compression(gzip/brotli) for static files and SSR content (default is **true** for production mode).
 
 ```ts
 import type { Config } from 'https://deno.land/x/aleph/types.d.ts'

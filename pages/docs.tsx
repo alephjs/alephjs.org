@@ -103,7 +103,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
     return m
   }, {} as Record<string, boolean>))
   const [menuIsOpen, setMenuIsOpen] = useState(false)
-  const [serachWords, setSerachWords] = useState('')
+  const [searchWords, setSearchWords] = useState('')
   const navLinks = useMemo<[[string, string] | null, [string, string] | null]>(() => {
     const all: [string, string][] = []
     navMenu.forEach(g => g.items.forEach(item => {
@@ -124,18 +124,18 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
   }, [routePath])
   const title = [Page?.meta.title, !Page?.meta.title.endsWith('Aleph.js') && 'Aleph.js'].filter(Boolean).join(' - ')
   const filteredNavMenu = useMemo(() => {
-    if (serachWords === '') {
+    if (searchWords === '') {
       return navMenu
     }
     return navMenu.map(g => {
-      const includes = (item: any) => item.title.toLowerCase().includes(serachWords)
+      const includes = (item: any) => item.title.toLowerCase().includes(searchWords)
       return {
         ...g, items: g.items.filter(item => {
           return includes(item) || item.submenu?.some(includes)
         }).map(item => ({ ...item, submenu: item.submenu?.filter(subItem => includes(item) || includes(subItem)) }))
       }
     }).filter(g => g.items.length > 0)
-  }, [serachWords])
+  }, [searchWords])
 
   useEffect(() => {
     setExtended(navMenu.map(m => m.items).flat().filter(item => item.submenu).reduce((m, item) => {
@@ -215,7 +215,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
         <div className="search">
           <input
             placeholder="Search..."
-            onChange={util.debounce((e: any) => setSerachWords(e.target.value.trim().toLowerCase()), 150)}
+            onChange={util.debounce((e: any) => setSearchWords(e.target.value.trim().toLowerCase()), 150)}
           />
         </div>
         <div
@@ -241,7 +241,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                       <Fragment key={item.title + item.path}>
                         <li>
                           <label
-                            className={serachWords || extended[item.path] ? 'open' : 'close'}
+                            className={searchWords || extended[item.path] ? 'open' : 'close'}
                             onClick={() => setExtended(extended => {
                               extended[item.path] = !extended[item.path]
                               return { ...extended }
@@ -253,7 +253,7 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
                             {item.title}
                           </label>
                         </li>
-                        {(serachWords || extended[item.path]) && item.submenu.map(({ title, path }) => (
+                        {(searchWords || extended[item.path]) && item.submenu.map(({ title, path }) => (
                           <li className="indent" key={title + path}>
                             <a
                               rel="nav"

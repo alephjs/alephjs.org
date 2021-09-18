@@ -44,7 +44,7 @@ import.meta.hot.accept()
 
 ## Using `link` Tag
 
-**If you import CSS files using ESM syntax above, these CSS files will not be removed when page(component) unmounted.** To imporve this, Aleph's compiler checks all the `link` JSX elements with `rel="stylesheet"` then transpiles them as ES modules, and these CSS files will be **cleaned up** automatically when current page(component) unmounted (we call it [JSX Magic](/docs/advanced-features/jsx-magic)).
+**If you import CSS files using ESM syntax above, these CSS files will not be removed when page(component) unmounted.** To improve this, Aleph's compiler checks all the `link` JSX elements with `rel="stylesheet"` then transpiles them as ES modules, and these CSS files will be **cleaned up** automatically when current page(component) unmounted (we call it [JSX Magic](/docs/advanced-features/jsx-magic)).
 
 ```tsx
 import React from 'https://esm.sh/react'
@@ -150,4 +150,4 @@ To add a global stylesheet to your application, import the CSS files in `app.tsx
 
 ## CSS Imports (@import)
 
-Aleph.js use **esbuild** to bundle your css code that means you can use `@import` sytax safety. Or you can put the imported CSS files into the `public` directory then import them with _absolute_ URLs.
+Aleph.js use **esbuild** to bundle your css code that means you can use `@import` syntax safety. Or you can put the imported CSS files into the `public` directory then import them with _absolute_ URLs.

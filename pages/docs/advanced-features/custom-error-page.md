@@ -26,6 +26,6 @@ export default function E404() {
 // pages/500.tsx
 
 export default function E500({ error }: {error: Error}) {
-  return <h1>500 - {error.mesage}</h1>;
+  return <h1>500 - {error.message}</h1>;
 }
 ```

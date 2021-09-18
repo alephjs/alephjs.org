@@ -4,7 +4,7 @@ interface Props {
   size: number
 }
 
-export default function GreyTrangle({ size }: Props) {
+export default function GreyTriangle({ size }: Props) {
   const y = useMemo(() => size - Math.sin(54 * Math.PI / 180) * size, [size])
 
   return (
@@ -40,7 +40,7 @@ export default function GreyTrangle({ size }: Props) {
   )
 }
 
-GreyTrangle.defaultProps = {
+GreyTriangle.defaultProps = {
   size: 200,
 }
 
