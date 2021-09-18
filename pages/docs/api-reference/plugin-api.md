@@ -132,7 +132,7 @@ to hack into the server runtime lifecycle.
       // adds a virtual module as API
       aleph.addModule('api/hello.ts', 'export const handler = (req) => { ... }')
       // adds a virtual module as Page
-      aleph.addModule('pages/hello.tsx', 'export defaut function Hello() { ... }')
+      aleph.addModule('pages/hello.tsx', 'export default function Hello() { ... }')
       // adds a virtual style module
       aleph.addModule('style/app.css', 'body { font-family: sans-serif; }')
     }
@@ -198,7 +198,7 @@ to hack into the server runtime lifecycle.
           map: undefined, // provides source map if available
         }
       })
-      // inject code to modules when the HMR is avaiable
+      // inject code to modules when the HMR is available
       aleph.onTransform('hmr', ({ module, code, map }) => {
         return {
           code: code + '\nimport.meta.hot.accept(__REACT_REFRESH__)',

@@ -66,7 +66,7 @@ export default function Component({ href, children }) {
     pathname,      // string, should be '/post/hello-world'
     routePath,     // string, should be '/post/[slug]'
     params,        // object, should be {slug: 'hello-world'}
-    query,         // URLSearchParams, `query.get('theme')` sholud be 'dark'
+    query,         // URLSearchParams, `query.get('theme')` should be 'dark'
   } = useRouter()
 
   return <p>current pathname: {pathname}</p>
