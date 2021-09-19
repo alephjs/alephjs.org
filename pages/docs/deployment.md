@@ -13,10 +13,10 @@ Aleph.js allows you to export your application to a **static site**, which can r
 $ aleph build
 ```
 
-or run it in **production** mode with Aleph.js server and get API routes support in Deno:
+or run it in **production** mode with Aleph.js server and get API routes/ISR support in Deno:
 
 ```bash
-$ deno run -A https://deno.land/x/aleph@${VERSION}/cli.ts start ${APP_DIR} --port 80
+$ deno run -A https://deno.land/x/aleph@${VERSION}/commands/start.ts ${APP_DIR} --port 80
 ```
 
 ## Deploy on Vercel (Recommended)
