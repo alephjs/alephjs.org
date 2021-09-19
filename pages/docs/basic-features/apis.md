@@ -47,6 +47,7 @@ interface APIContext extends Deno.RequestEvent {
 type APIHandler = {
   (context: APIContext): Promise<void> | void
 }
+
 type APIMiddleware = {
   (context: APIContext, next: () => void): Promise<void> | void
 }
