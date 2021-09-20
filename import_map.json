@@ -1,12 +1,12 @@
 {
   "imports": {
-    "aleph/": "https://deno.land/x/aleph@v0.3.0-beta.15/",
-    "aleph/types": "https://deno.land/x/aleph@v0.3.0-beta.15/types.d.ts",
-    "aleph/web": "https://deno.land/x/aleph@v0.3.0-beta.15/framework/core/mod.ts",
-    "aleph/react": "https://deno.land/x/aleph@v0.3.0-beta.15/framework/react/mod.ts",
+    "~/": "./",
+    "aleph/": "https://deno.land/x/aleph@v0.3.0-beta.16/",
+    "aleph/types": "https://deno.land/x/aleph@v0.3.0-beta.16/types.d.ts",
+    "aleph/web": "https://deno.land/x/aleph@v0.3.0-beta.16/framework/core/mod.ts",
+    "aleph/react": "https://deno.land/x/aleph@v0.3.0-beta.16/framework/react/mod.ts",
     "react": "https://esm.sh/react@17.0.2",
     "react-dom": "https://esm.sh/react-dom@17.0.2",
-    "~/": "./",
     "marked": "https://esm.sh/marked@2.0.1",
     "highlight": "https://esm.sh/highlight.js@10.7.1/lib/core",
     "highlight-languages/": "https://esm.sh/highlight.js@10.7.1/lib/languages/",
