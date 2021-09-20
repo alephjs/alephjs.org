@@ -56,7 +56,7 @@ export default <Config>{
 
 `css` specifies the css processing options.
 
-- **cache**: `boolean` caches remote css to local if it is true.
+- **cache**: `boolean` caches remote css to local if it equals to `true`.
 - **postcss**: `{ plugins: PostCSSPlugin[] }` specifies the postcss plugins. The `PostCSSPlugin` can be a name string that is imported from [esm.sh](https://esm.sh).
 - **modules**: `CSSModulesOptions` specifies CSS modules behavior, the options are passed on to [postcss-modules](https://github.com/madyankin/postcss-modules).
 
@@ -156,7 +156,7 @@ export default <Config>{
 
 #### Plugins
 
-`plugins` provides some plugins to extend Aleph runtime.
+`plugins` provides some plugins to extend Aleph.js runtime.
 
 ```ts
 import markdown from 'https://deno.land/x/aleph/plugins/markdown.ts'

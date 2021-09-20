@@ -221,7 +221,8 @@ to hack into the server runtime lifecycle.
     name: 'plugin-name',
     setup: async aleph => {
       aleph.onRender(({ path, html, data }) => {
-        html.headElements.push(`<script src="/gtag.js?id=${GTAG}" async></script>`)
+        html.head.push('<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Crimson+Pro" />')
       })
     }
   }
