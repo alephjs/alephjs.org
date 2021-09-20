@@ -1,3 +1,4 @@
+import { join } from 'https://deno.land/std@0.106.0/path/mod.ts'
 import { useDeno } from 'aleph/react'
 import React from 'react'
 
@@ -15,7 +16,7 @@ async function run(...cmd: string[]) {
 export default function CLI() {
   const { helpMessage } = useDeno(async () => {
     return {
-      helpMessage: await run(Deno.execPath(), 'run', '-A', Deno.mainModule, '-h')
+      helpMessage: await run(Deno.execPath(), 'run', '-A', join(Deno.mainModule, '../../cli.ts'), '-h')
     }
   })
 
