@@ -1,4 +1,4 @@
-![Aleph.js](https://raw.githubusercontent.com/alephjs/aleph.js/master/design/poster.svg)
+![Aleph.js](https://raw.githubusercontent.com/alephjs/aleph.js/master/.github/poster.svg)
 
 # Alephjs.org
 The website of **Aleph.js**, this website is built with Aleph.js and automatically deploys to [Vercel](https://vercel.com).
