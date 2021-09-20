@@ -24,7 +24,7 @@ export default function Button({
   disabled?: boolean,
   activated?: boolean,
   round?: boolean,
-  icon?: JSX.Element,
+  icon?: React.ReactNode,
   iconPosition?: { top?: number | string, left?: number | string },
   onClick?(e: React.MouseEvent): void
 }>) {
