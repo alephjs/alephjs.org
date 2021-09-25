@@ -31,4 +31,4 @@ authors:
     ]
   }
   ```
-  now, you can add `{dir}/{name}.md` in `pages/` dir as pages. You can link between pages with `[{title}]({path})`. For code highlight, check [this example](https://github.com/alephjs/aleph.js/blob/master/examples/markdown-pages/aleph.config.ts#L7).
+  now, you can add `{dir}/{name}.md` in `pages/` dir as pages. You can link between pages with `[title](path)`. For code **highlight**, check [this example](https://github.com/alephjs/aleph.js/blob/master/examples/markdown-pages/aleph.config.ts#L7).

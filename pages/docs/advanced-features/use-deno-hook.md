@@ -2,14 +2,14 @@
 title: useDeno hook
 authors:
   - ije
-  - Noah Jorgensen
-  - Serdar Sever
+  - magus
+  - znk
   - razermoon
 ---
 
 # `useDeno` hook
 
-In [Next.js](https://nextjs.org/docs/basic-features/data-fetching), two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time (SSG)** or on **each request (SSR)** respectively. This solution isolates the `data` and `view` like different roles of the `back-end` and `front-end`.
+In Next.js, two functions called `getStaticProps` and `getServerSideProps` are used by the pages to fetch data at **build time (SSG)** or on **each request (SSR)** respectively. This solution isolates the `data` and `view` like different roles of the `back-end` and `front-end`.
 
 In Aleph.js, we prefer to use hooks. A **react hook** we provide called `useDeno` allows you to access **Deno runtime** in a component, that's more closed to React's credo.
 
@@ -48,11 +48,27 @@ export default function Post() {
 
 ## How It Works
 
-The `useDeno` hook receives a **callback** as first parameter that will be invoked at build time (SSR), then cache the callback result. In the browser, the callback will be ignored, and the cached result will be used instead.
+The `useDeno` hook receives a **callback** as first parameter that will be invoked during the server side rendering(SSR), then cache the returned result. In the browser, the callback will be ignored(tree-shaked), and the cached result will be used instead.
+
+## Access to Request
+
+Like the `ssr.props` option, you can access the [`Reqeust`](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request) in `useDeno` callback.
+
+```tsx
+export default function Page() {
+  const isLogined = useDeno(req => {
+    return req.headers.get('Auth') === 'XXX'
+  }, { revalidate: true })
+
+  return (
+    <p>isLogined: {isLogined}</p>
+  )
+}
+```
 
 ## Revalidate
 
-An optional amount in seconds after which a page re-generation can occur (defaults is no revalidating). More on Incremental Static Regeneration.
+An optional amount in seconds after which a page re-generation can occur (defaults is no revalidating). More on Incremental Static Regeneration (ISR).
 
 ```jsx
 import React from 'https://esm.sh/react'
@@ -65,6 +81,20 @@ export default function Page() {
 
   return (
     <p>Server Time: {now}</p>
+  )
+}
+```
+
+If the `revalidate` equals `0` or `true`, then revalidates props each request.
+
+```jsx
+export default function Page() {
+  const isLogined = useDeno(req => {
+    return req.headers.get('Auth') === 'XXX'
+  }, { revalidate: true })
+
+  return (
+    <p>isLogined: {isLogined}</p>
   )
 }
 ```

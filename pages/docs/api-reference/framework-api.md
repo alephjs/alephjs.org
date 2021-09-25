@@ -25,7 +25,7 @@ export default function About() {
 }
 ```
 
-- **@param1** `load: () => Promise<{ default: ComponentType }>`
+- **@param** `load: () => Promise<{ default: ComponentType }>`
 - **@return** `ComponentType`
 
 ### `Fallback` <samp>component</samp>
@@ -71,8 +71,8 @@ export default function Page() {
 }
 ```
 
-- **@param1** `callback: () => T`
-- **@param2** `options?: { revalidate: number }`
+- **@param** `callback: () => T`
+- **@param** `options?: { revalidate: number }`
 - **@return** `T`
 
 ### `useRouter` <samp>hook</samp>
@@ -118,7 +118,7 @@ class MyComponent extends Component  {
 export default useRouter(MyComponent)
 ```
 
-- **@param1** `component: ComponentType`
+- **@param** `component: ComponentType`
 - **@return** `ComponentType`
 
 ### `redirect` <samp>function</samp>
@@ -143,5 +143,5 @@ export const Link: FC<{to: string, replace?: boolean}> = ({ to, replace, childre
 }
 ```
 
-- **@param1** `path: string`
-- **@param2** `replace?: boolean`
+- **@param** `path: string`
+- **@param** `replace?: boolean`

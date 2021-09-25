@@ -314,12 +314,14 @@ export default <Plugin> {
             src: `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`,
             async: true
           },
-          `window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', ${JSON.stringify(id)});`
+          `
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', ${JSON.stringify(id)});
+          `
         )
       })
     }

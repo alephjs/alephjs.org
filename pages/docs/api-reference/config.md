@@ -56,7 +56,7 @@ export default <Config>{
 
 `css` specifies the css processing options.
 
-- **cache**: `boolean` caches remote css to local if it equals to `true`.
+- **cache**: `boolean` caches remote css to local if it equals `true`.
 - **postcss**: `{ plugins: PostCSSPlugin[] }` specifies the postcss plugins. The `PostCSSPlugin` can be a name string that is imported from [esm.sh](https://esm.sh).
 - **modules**: `CSSModulesOptions` specifies CSS modules behavior, the options are passed on to [postcss-modules](https://github.com/madyankin/postcss-modules).
 
