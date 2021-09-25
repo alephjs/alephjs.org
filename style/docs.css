@@ -432,31 +432,44 @@
 
     .edit-link {
       margin-top: 30px;
-      padding: 12px 0;
+      padding: 15px 0;
       border-top: 1px solid #f3f3f3;
       color: #333;
 
       span {
-        margin-left: 6px;
+        margin-left: 8px;
         color: #ccc;
       }
 
       a {
         position: relative;
         display: inline-block;
-        margin-left: 6px;
+        margin-left: 8px;
         line-height: 1.8rem;
         font-size: 0.95rem;
         color: #333;
         transition: 0.2s color;
+        vertical-align: middle;
 
         &.author {
-          color: #333;
-          font-weight: 600;
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin-left: 2px;
+          border-radius: 50%;
+          overflow: hidden;
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
         }
 
         &:hover {
           color: #000;
+        }
+        &:hover:after {
+          content: ' 👍🏿'
         }
       }
     }

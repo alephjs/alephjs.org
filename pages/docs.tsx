@@ -331,14 +331,15 @@ export default function Docs({ Page }: { Page?: ComponentType<any> & { meta: Met
         )}
         {(Page && Page.meta.editable !== false) && (
           <p className="edit-link">
-            Authors:
+            Authors:&nbsp;
             {Array.isArray(Page.meta.authors) && Page.meta.authors.map(name => (
               <a
                 href={`https://github.com/${name}`}
                 target="_blank"
                 className="author"
                 key={name}
-              >@{name}</a>
+                title={'@' + name}
+              ><img src={`https://github.com/${name}.png`} /></a>
             ))}
             <span> | </span>
             <a href={editUrl} target="_blank">Edit this page on Github</a>
