@@ -97,7 +97,7 @@ Now you can access **locale** in the [`Router`](/docs/api-reference/types.ts/#Ro
 
 ```jsx
 import React from 'https://esm.sh/react'
-import { useRouter } from 'https://deno.land/x/aleph/mod.ts'
+import { useRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 export default function Page() {
   const { locale } = useRouter()
