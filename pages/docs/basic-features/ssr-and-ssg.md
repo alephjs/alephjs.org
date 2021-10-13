@@ -97,7 +97,7 @@ export default function Page() {
 }
 ```
 
-> To learn more `useDeno`, check the [`useDeno` Hook](/docs/advanced-features/usedeno-hook) documentation.
+> To learn more `useDeno`, check the [`useDeno` Hook](/docs/advanced-features/use-deno-hook) documentation.
 
 ## Static Site Generation (SSG)
 
