@@ -37,7 +37,7 @@ export default <Config>{
 
 ## SSR Options
 
-If you export an object called `ssr` with a `props` function from a page, Aleph.js will pre-render this page using the returned props by the `props` function at build time. The [`Reqeust`](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request) object is passed as the first parameter of the function. (This is equal to `getStaticProps` of Next.js)
+If you export an object called `ssr` with a `props` function from a page, Aleph.js will pre-render this page using the returned props by the `props` function at build time. The [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request) object is passed as the first parameter of the function. (This is equal to `getStaticProps` of Next.js)
 
 The `paths` in the `ssr` options returns a static paths if the page is a dynamic route. (This is equal to `getStaticPaths` of Next.js)
 
