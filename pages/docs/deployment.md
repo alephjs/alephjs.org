@@ -16,7 +16,7 @@ $ aleph build
 or run it in **production** mode with Aleph.js server and get API routes/ISR support in Deno:
 
 ```bash
-$ deno run -A https://deno.land/x/aleph@${VERSION}/commands/start.ts ${APP_DIR} --port 80
+$ deno run -A https://deno.land/x/aleph@${VERSION}/cli.ts start
 ```
 
 ## Deploy on Vercel (Recommended)
