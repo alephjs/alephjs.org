@@ -267,7 +267,7 @@ const answer = wasm.main() // 42
 
 #### Tailwind JIT for JSX
 
-Aleph's compiler will record the static class names in JSX files, with that you can create css on demand for tailwind vary easily.
+Aleph's compiler will record the static class names in JSX files, with that you can create css on demand for tailwind very easily.
 
 ```ts
 import { basename } from 'https://deno.land/std/path/mod.ts'
