@@ -107,7 +107,7 @@ export default function Component({ href, children }) {
 
 ```jsx
 import React, { Component } from 'https://esm.sh/react'
-import { useRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
+import { withRouter } from 'https://deno.land/x/aleph/framework/react/mod.ts'
 
 class MyComponent extends Component  {
   render() {
@@ -115,7 +115,7 @@ class MyComponent extends Component  {
   }
 }
 
-export default useRouter(MyComponent)
+export default withRouter(MyComponent)
 ```
 
 - **@param** `component: ComponentType`
