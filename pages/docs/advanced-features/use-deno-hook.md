@@ -52,7 +52,7 @@ The `useDeno` hook receives a **callback** as first parameter that will be invok
 
 ## Access to Request
 
-Like the `ssr.props` option, you can access the [`Reqeust`](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request) in `useDeno` callback.
+Like the `ssr.props` option, you can access the [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request) in `useDeno` callback.
 
 ```tsx
 export default function Page() {
