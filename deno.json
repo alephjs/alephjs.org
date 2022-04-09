@@ -7,15 +7,15 @@
       "deno.ns"
     ],
     "types": [
-      "https://deno.land/x/aleph_canary@0.0.66/types.d.ts"
+      "https://deno.land/x/aleph_canary@0.0.67/types.d.ts"
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "https://esm.sh/react@17.0.2"
   },
   "tasks": {
-    "dev": "deno run -A https://deno.land/x/aleph_canary@0.0.66/cli.ts dev",
-    "start": "deno run -A https://deno.land/x/aleph_canary@0.0.66/cli.ts start",
-    "build": "deno run -A https://deno.land/x/aleph_canary@0.0.66/cli.ts build"
+    "dev": "deno run -A https://deno.land/x/aleph_canary@0.0.67/cli.ts dev",
+    "start": "deno run -A https://deno.land/x/aleph_canary@0.0.67/cli.ts start",
+    "build": "deno run -A https://deno.land/x/aleph_canary@0.0.67/cli.ts build"
   },
   "fmt": {},
   "lint": {}
