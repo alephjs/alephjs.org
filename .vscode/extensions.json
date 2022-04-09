@@ -1,7 +1,5 @@
 {
   "recommendations": [
-    "csstools.postcss",
-    "editorconfig.editorconfig",
     "denoland.vscode-deno"
   ]
 }
