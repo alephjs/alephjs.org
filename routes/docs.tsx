@@ -1,7 +1,7 @@
 import { ComponentType, Fragment, useEffect, useMemo, useState } from "react";
 import { useRouter } from "aleph/react";
 import util from "aleph/lib/util.ts";
-import Logo from "../components/Logo.tsx";
+import Logo from "~/components/Logo.tsx";
 
 const description = "The Documentation for Aleph.js";
 const ogImage = "https://alephjs.org/twitter_card.jpg";
