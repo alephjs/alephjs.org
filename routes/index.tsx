@@ -56,21 +56,15 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alephjs" />
       </head>
-      <div className="fullscreen-page">
-        <h1>The Fullstack Framework in Deno.</h1>
-        <p className="intro">
+      <div className="w-screen h-screen flex items-center justify-center flex-col gap-2">
+        <h1 className="text-4xl font-bold leading-7">
+          The Fullstack Framework in Deno.
+        </h1>
+        <p className="text-center text-xl">
           <strong>Aleph.js</strong>{" "}
-          gives you the best developer experience for building modern web
-          applications:<br />{" "}
-          TypeScript in Deno, ES module imports, file-system routing, SSR &
-          SSG,<br /> HMR with Fast Refresh, and more. No config needed.
+          gives you the best developer experience for building web applications.
         </p>
-        <p className="intro short">
-          <strong>Aleph.js</strong>{" "}
-          gives you the best developer experience for building modern web
-          applications in Deno.
-        </p>
-        <div className="buttons">
+        <div className="flex gap-2 mt-3">
           <a href="/docs/get-started">
             <Button strong>Get Started</Button>
           </a>
