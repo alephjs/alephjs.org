@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { useRouter } from "aleph/react";
+import { Head, useRouter } from "aleph/react";
 import util from "aleph/lib/util.ts";
 import Logo from "~/components/Logo.tsx";
 
@@ -89,14 +89,7 @@ const navMenu: Menu[] = [
   },
 ];
 
-interface Metadata {
-  title: string;
-  authors: string[];
-  keywords?: string[];
-  editable?: boolean;
-}
-
-export default function Docs() {
+export default function Docs({ children }: { children: React.ReactNode }) {
   const { url } = useRouter();
   const [extended, setExtended] = useState(
     navMenu.map((m) => m.items).flat().filter((item) => item.submenu).reduce(
@@ -187,7 +180,7 @@ export default function Docs() {
         " ",
       )}
     >
-      <head>
+      <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         {/* <meta name="keywords" content={keywords.join(",")} /> */}
@@ -199,8 +192,7 @@ export default function Docs() {
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alephjs" />
-        <link rel="stylesheet" href="~/style/docs.css" />
-      </head>
+      </Head>
       <aside>
         <div className="search">
           <input
@@ -312,7 +304,7 @@ export default function Docs() {
         </nav>
       </aside>
       <div className="content">
-        <p>todo: loading markdown</p>
+        {children}
       </div>
     </div>
   );

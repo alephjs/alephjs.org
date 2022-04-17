@@ -23,19 +23,7 @@ const keywords = [
 ];
 const ogImage = "https://alephjs.org/twitter_card.jpg";
 
-export const data: Data = {
-  get: async () => {
-    const [logo, mainTitle] = await Promise.all([
-      Deno.readTextFile("./assets/logo.svg"),
-      Deno.readTextFile("./assets/main_title.svg"),
-    ]);
-    return json({ icons: { logo, mainTitle } });
-  },
-};
-
 export default function Home() {
-  const { data: { icons } } = useData<{ icons: Record<string, string> }>();
-
   return (
     <div className="index-page">
       <Head>
@@ -66,27 +54,6 @@ export default function Home() {
           <a href="/docs">
             <Button strong>Documentation</Button>
           </a>
-        </div>
-
-        <div className="flex gap-2 mt-3">
-          <Button
-            strong
-            onClick={async () => {
-              await navigator.clipboard.writeText(icons.mainTitle);
-              alert("copied to clipboard!");
-            }}
-          >
-            icon: Main Title
-          </Button>
-          <Button
-            strong
-            onClick={async () => {
-              await navigator.clipboard.writeText(icons.logo);
-              alert("copied to clipboard!");
-            }}
-          >
-            icon: Logo
-          </Button>
         </div>
       </div>
     </div>
