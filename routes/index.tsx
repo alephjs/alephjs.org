@@ -1,6 +1,7 @@
+import { Head, useData } from "aleph/react";
+import { json } from "aleph/server";
 import Button from "~/components/Button.tsx";
 
-const thisYear = (new Date()).getFullYear();
 const title = "Aleph.js";
 const about = "The Fullstack Framework in Deno.";
 const keywords = [
@@ -21,29 +22,23 @@ const keywords = [
   "tooling",
 ];
 const ogImage = "https://alephjs.org/twitter_card.jpg";
-const features = [
-  { href: "/docs", title: "Zero Config" },
-  { href: "/docs", title: "Typescript in Deno" },
-  { href: "/docs/basic-features/import-from-npm", title: "ES Module Ready" },
-  { href: "/docs/basic-features/import-maps", title: "Import Maps" },
-  {
-    href: "/docs/basic-features/hmr-with-fast-refresh",
-    title: "HMR with Fast Refresh",
+
+export const data: Data = {
+  get: async () => {
+    const [logo, mainTitle] = await Promise.all([
+      Deno.readTextFile("./assets/logo.svg"),
+      Deno.readTextFile("./assets/main_title.svg"),
+    ]);
+    return json({ icons: { logo, mainTitle } });
   },
-  { href: "/docs/basic-features/routing", title: "File-system Routing" },
-  { href: "/docs/basic-features/ssr-and-ssg", title: "SSR & SSG" },
-  {
-    href: "/docs/basic-features/built-in-css-support",
-    title: "Built-in CSS Support",
-  },
-  { href: "/docs/advanced-features/jsx-magic", title: "JSX Magic" },
-  { href: "/docs/advanced-features/using-plugins", title: "Plugin System" },
-];
+};
 
 export default function Home() {
+  const { data: { icons } } = useData<{ icons: Record<string, string> }>();
+
   return (
     <div className="index-page">
-      <head>
+      <Head>
         <title>{title}</title>
         <meta name="description" content={about} />
         <meta name="keywords" content={keywords.join(",")} />
@@ -55,7 +50,7 @@ export default function Home() {
         <meta name="twitter:image" content={ogImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alephjs" />
-      </head>
+      </Head>
       <div className="w-screen h-screen flex items-center justify-center flex-col gap-2">
         <h1 className="text-4xl font-bold leading-7">
           The Fullstack Framework in Deno.
@@ -72,22 +67,28 @@ export default function Home() {
             <Button strong>Documentation</Button>
           </a>
         </div>
+
+        <div className="flex gap-2 mt-3">
+          <Button
+            strong
+            onClick={async () => {
+              await navigator.clipboard.writeText(icons.mainTitle);
+              alert("copied to clipboard!");
+            }}
+          >
+            icon: Main Title
+          </Button>
+          <Button
+            strong
+            onClick={async () => {
+              await navigator.clipboard.writeText(icons.logo);
+              alert("copied to clipboard!");
+            }}
+          >
+            icon: Logo
+          </Button>
+        </div>
       </div>
-      <section>
-        <h2>Features</h2>
-        <ul>
-          {features.map(({ href, title }) => (
-            <li key={href + title}>
-              <a href={href}>{title}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <footer>
-        <p>Copyright © {thisYear} postUI, Lab. All rights reserved.</p>
-        <p>Built by Aleph.js</p>
-        <p>(MIT License)</p>
-      </footer>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 100 100" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<title>Aleph.js</title>
 	<g fill="none" stroke="#D63369" stroke-width="3" stroke-miterlimit="10">
 		<path d="M54.8,11.1C68.2,34.3,81.6,57.5,95,80.7c-1.6,2.7-3.3,5.5-4.9,8.2c-26.8,0-53.7,0-80.5,0
