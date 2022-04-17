@@ -18,5 +18,9 @@
     "build": "deno run -A https://deno.land/x/aleph_canary@0.0.75/cli.ts build"
   },
   "fmt": {},
-  "lint": {}
+  "lint": {
+    "files": {
+      "exclude": ["dist/"]
+    }
+  }
 }

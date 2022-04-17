@@ -15,8 +15,11 @@ jobs:
 
       - name: Install Deno
         uses: denoland/setup-deno@v1
+      
+      - name: Deno Lint
+        run: deno lint
 
-      - name: Build frontend_next
+      - name: Build App
         run: deno task build -- --platform=deno-deploy
 
       - name: Deploy to Deno Deploy
