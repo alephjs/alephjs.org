@@ -17,7 +17,7 @@ jobs:
         uses: denoland/setup-deno@v1
 
       - name: Build frontend_next
-        run: deno task build --platform=deno-deploy
+        run: deno task build -- --platform=deno-deploy
 
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
