@@ -20,7 +20,7 @@ jobs:
         run: deno lint
 
       - name: Build App
-        run: deno task build -- --platform=deno-deploy
+        run: deno task build
 
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
