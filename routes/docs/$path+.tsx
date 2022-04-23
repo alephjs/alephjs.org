@@ -13,7 +13,6 @@ export const data: Data = {
       const markdown = await Deno.readTextFile(`./docs/${path}.md`);
       const { __content, ...meta } = safeLoadFront(markdown);
       const html = render(__content);
-      // todo(pipiduck): read markdown file from $path
       return ctx.json({ html, meta });
     } catch (error) {
       if (error instanceof Deno.errors.NotFound) {
@@ -31,8 +30,6 @@ type DataProps = {
 };
 
 export default function Markdown() {
-  // todo(pipiduck): use `useData()` to get markdown content
-
   const { data: { html, meta, error } } = useData<DataProps>();
 
   if (error) {
