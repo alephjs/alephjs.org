@@ -1,4 +1,4 @@
 import { Router } from "aleph/react";
-import { hydrate } from "react-dom";
+import { hydrateRoot } from "react-dom/client";
 
-hydrate(<Router />, document.querySelector("#root"));
+hydrateRoot(document.querySelector("#root")!, <Router />);
