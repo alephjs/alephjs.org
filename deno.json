@@ -10,7 +10,7 @@
       "https://deno.land/x/aleph@1.0.0-alpha.5/types.d.ts" 
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "https://esm.sh/react@18.0.0"
+    "jsxImportSource": "https://esm.sh/react@17.0.2"
   },
   "tasks": {
     "dev": "deno run -A https://deno.land/x/aleph@1.0.0-alpha.5/cli.ts dev",

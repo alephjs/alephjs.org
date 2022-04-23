@@ -1,5 +1,6 @@
 import { Head, useData } from "aleph/react";
 import { CSS, render } from "https://deno.land/x/gfm@0.1.20/mod.ts";
+import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
 
 import "https://esm.sh/prismjs@1.27.0/components/prism-jsx?no-check";
 import "https://esm.sh/prismjs@1.27.0/components/prism-bash?no-check";
@@ -10,9 +11,10 @@ export const data: Data = {
     try {
       const { path } = ctx.params;
       const markdown = await Deno.readTextFile(`./docs/${path}.md`);
-      const html = render(markdown);
+      const { __content, ...meta } = safeLoadFront(markdown);
+      const html = render(__content);
       // todo(pipiduck): read markdown file from $path
-      return ctx.json({ html });
+      return ctx.json({ html, meta });
     } catch (error) {
       if (error instanceof Deno.errors.NotFound) {
         return ctx.json({ error: "not-found" });
@@ -22,12 +24,16 @@ export const data: Data = {
   },
 };
 
+type DataProps = {
+  html?: string;
+  meta?: { title: string; authors: string[] };
+  error?: string;
+};
+
 export default function Markdown() {
   // todo(pipiduck): use `useData()` to get markdown content
 
-  const { data: { html, error } } = useData<
-    { html?: string; error?: string }
-  >();
+  const { data: { html, meta, error } } = useData<DataProps>();
 
   if (error) {
     if (error === "not-found") {
@@ -39,6 +45,7 @@ export default function Markdown() {
   return (
     <>
       <Head>
+        <title>{meta?.title}</title>
         <style>{CSS}</style>
       </Head>
       <div

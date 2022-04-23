@@ -192,7 +192,6 @@ export default function Docs({ children }: { children: React.ReactNode }) {
         <meta name="twitter:site" content="@alephjs" />
       </Head>
       <aside>
-        ``
         <div className="search">
           <input
             placeholder="Search..."
