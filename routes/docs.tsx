@@ -176,9 +176,7 @@ export default function Docs({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className={["docs", menuIsOpen && "scroll-lock"].filter(Boolean).join(
-        " ",
-      )}
+      className={"p-10"}
     >
       <Head>
         <title>{title}</title>
@@ -194,6 +192,7 @@ export default function Docs({ children }: { children: React.ReactNode }) {
         <meta name="twitter:site" content="@alephjs" />
       </Head>
       <aside>
+        ``
         <div className="search">
           <input
             placeholder="Search..."
@@ -269,10 +268,9 @@ export default function Docs({ children }: { children: React.ReactNode }) {
                             <li className="indent" key={title + path}>
                               <a
                                 rel="nav"
-                                href={item.path + (path === "/"
-                                  ? ""
-                                  : path)}
-                                onClick={() => setMenuIsOpen(false)}
+                                href={item.path + (path === "/" ? "" : path)}
+                                onClick={() =>
+                                  setMenuIsOpen(false)}
                               >
                                 {title}
                               </a>
@@ -303,9 +301,7 @@ export default function Docs({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
       </aside>
-      <div className="content">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }

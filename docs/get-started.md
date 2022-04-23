@@ -5,7 +5,7 @@ authors:
   - razermoon
 ---
 
-# Get Started
+# Get Started!
 
 Welcome to use **Aleph.js**!
 
