@@ -1,6 +1,6 @@
-import { Head, useData } from "aleph/react";
-import { json } from "aleph/server";
+import { Head } from "aleph/react";
 import Button from "~/components/Button.tsx";
+import Header from "~/components/Header.tsx";
 
 const title = "Aleph.js";
 const about = "The Fullstack Framework in Deno.";
@@ -25,7 +25,7 @@ const ogImage = "https://alephjs.org/twitter_card.jpg";
 
 export default function Home() {
   return (
-    <div className="index-page">
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={about} />
@@ -39,23 +39,29 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@alephjs" />
       </Head>
-      <div className="w-screen h-screen flex items-center justify-center flex-col gap-2">
+      <Header />
+      <div
+        className="w-screen flex items-center justify-center flex-col gap-2"
+        style={{ height: `calc(100vh - 10rem)` }}
+      >
         <h1 className="text-4xl font-bold leading-7">
           The Fullstack Framework in Deno.
         </h1>
-        <p className="text-center text-xl">
+        <p className="text-gray-700 text-center text-xl">
           <strong>Aleph.js</strong>{" "}
           gives you the best developer experience for building web applications.
         </p>
         <div className="flex gap-2 mt-3">
-          <a href="/docs/get-started">
-            <Button strong>Get Started</Button>
-          </a>
-          <a href="/docs">
-            <Button strong>Documentation</Button>
+          <a href="https://github.com/alephjs/aleph.js">
+            <Button height={42} strong>
+              Working In Progress{" "}
+              <span className="pl-3 opacity-60 text-sm font-medium">
+                v1.0.0-alpha.25
+              </span>
+            </Button>
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 }
