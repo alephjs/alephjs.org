@@ -44,10 +44,10 @@ export default function Home() {
         className="w-screen flex items-center justify-center flex-col gap-2"
         style={{ height: `calc(100vh - 10rem)` }}
       >
-        <h1 className="text-4xl font-bold leading-7">
+        <h1 className="text-2xl md:!text-3xl lg:!text-4xl font-bold leading-7">
           The Fullstack Framework in Deno.
         </h1>
-        <p className="text-gray-700 text-center text-xl">
+        <p className="text-gray-700 text-center text-base md:!text-lg lg:!text-xl w-15/16 !leading-none">
           <strong>Aleph.js</strong>{" "}
           gives you the best developer experience for building web applications.
         </p>
