@@ -1,12 +1,12 @@
 {
   "imports": {
     "~/": "./",
-    "@unocss/": "https://deno.land/x/aleph@1.0.0-alpha.19/lib/@unocss/",
-    "aleph/": "https://deno.land/x/aleph@1.0.0-alpha.19/",
-    "aleph/server": "https://deno.land/x/aleph@1.0.0-alpha.19/server/mod.ts",
-    "aleph/react": "https://deno.land/x/aleph@1.0.0-alpha.19/framework/react/mod.ts",
-    "react": "https://esm.sh/react@18.0.0",
-    "react-dom/": "https://esm.sh/react-dom@18.0.0/"
+    "@unocss/": "https://deno.land/x/aleph@1.0.0-alpha.25/lib/@unocss/",
+    "aleph/": "https://deno.land/x/aleph@1.0.0-alpha.25/",
+    "aleph/server": "https://deno.land/x/aleph@1.0.0-alpha.25/server/mod.ts",
+    "aleph/react": "https://deno.land/x/aleph@1.0.0-alpha.25/framework/react/mod.ts",
+    "react": "https://esm.sh/react@18.1.0",
+    "react-dom/": "https://esm.sh/react-dom@18.1.0/"
   },
   "scopes": {}
 }
