@@ -6,7 +6,7 @@ import { renderToReadableStream } from "react-dom/server";
 serve({
   config: {
     routes: "./routes/**/*.tsx",
-    atomicCSS: {
+    unocss: {
       presets: [presetUno()],
     },
   },
