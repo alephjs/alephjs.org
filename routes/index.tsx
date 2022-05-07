@@ -1,4 +1,4 @@
-import { Head } from "aleph/react";
+import { Head, useData } from "aleph/react";
 import Button from "~/components/Button.tsx";
 import Header from "~/components/Header.tsx";
 
@@ -23,7 +23,23 @@ const keywords = [
 ];
 const ogImage = "https://alephjs.org/twitter_card.jpg";
 
+type DataProps = {
+  version: string;
+};
+
+export const data: Data<DataProps> = {
+  cacheTtl: 60 * 60, // cache for 1 hour
+  get: async (_req, ctx) => {
+    const versions = await fetch(
+      `https://cdn.deno.land/aleph/meta/versions.json`,
+    ).then((res) => res.json());
+    return ctx.json({ version: versions.latest });
+  },
+};
+
 export default function Home() {
+  const { data: { version } } = useData<DataProps>();
+
   return (
     <>
       <Head>
@@ -56,7 +72,7 @@ export default function Home() {
             <Button height={42} strong>
               Working In Progress{" "}
               <span className="pl-3 opacity-60 text-sm font-medium">
-                v1.0.0-alpha.25
+                {version}
               </span>
             </Button>
           </a>
