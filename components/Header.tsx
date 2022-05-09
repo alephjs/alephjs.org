@@ -1,4 +1,13 @@
+import { useData } from "aleph/react";
+
+import { data } from "~/routes/index.tsx";
+
+type DataProps = {
+  version: string;
+};
+
 export default function Header() {
+  const { data: { version } } = useData<DataProps>();
   return (
     <header className="h-20 sticky top-0">
       <div className="m-auto w-14/16 max-w-250 h-full flex items-center justify-between">
@@ -30,6 +39,12 @@ export default function Header() {
           </a>
         </h1>
         <nav className="flex items-center gap-6 text-xl">
+          <a
+            href="https://github.com/alephjs/aleph.js"
+            className="text-gray-800 hover:text-black"
+          >
+            {version}
+          </a>
           <a
             href="https://deno.land/x/aleph"
             className="text-gray-800 hover:text-black"
