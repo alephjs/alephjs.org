@@ -68,12 +68,14 @@ export default function Home() {
           gives you the best developer experience for building web applications.
         </p>
         <div className="flex gap-2 mt-3">
-          <a href="https://github.com/alephjs/aleph.js">
+          <a href="/docs/get-started">
             <Button height={42} strong>
-              Working In Progress{" "}
-              <span className="pl-3 opacity-60 text-sm font-medium">
-                {version}
-              </span>
+              Get Started{" "}
+            </Button>
+          </a>
+          <a href="/docs">
+            <Button height={42} strong>
+              Documentation{" "}
             </Button>
           </a>
         </div>
