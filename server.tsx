@@ -4,8 +4,8 @@ import { serve } from "aleph/server";
 import { renderToReadableStream } from "react-dom/server";
 
 serve({
-  config: {
-    routes: "./routes/**/*.tsx",
+  routes: "./routes/**/*.tsx",
+  build: {
     unocss: {
       presets: [presetUno()],
     },
