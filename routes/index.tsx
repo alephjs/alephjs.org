@@ -29,11 +29,11 @@ type DataProps = {
 
 export const data: Data<DataProps> = {
   cacheTtl: 60 * 60, // cache for 1 hour
-  get: async (_req, ctx) => {
+  get: async () => {
     const versions = await fetch(
       `https://cdn.deno.land/aleph/meta/versions.json`,
     ).then((res) => res.json());
-    return ctx.json({ version: versions.latest });
+    return { version: versions.latest };
   },
 };
 
