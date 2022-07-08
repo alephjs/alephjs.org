@@ -1,6 +1,6 @@
 import { Head, useData } from "aleph/react";
-import Button from "~/components/Button.tsx";
-import Header from "~/components/Header.tsx";
+import Button from "components/Button.tsx";
+import Header from "components/Header.tsx";
 
 const title = "Aleph.js";
 const about = "The Fullstack Framework in Deno.";
@@ -29,7 +29,7 @@ type DataProps = {
 
 export const data: Data<DataProps> = {
   cacheTtl: 60 * 60, // cache for 1 hour
-  get: async () => {
+  get: async (req, ctx) => {
     const versions = await fetch(
       `https://cdn.deno.land/aleph/meta/versions.json`,
     ).then((res) => res.json());

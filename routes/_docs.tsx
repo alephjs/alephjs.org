@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { Head, useRouter } from "aleph/react";
 import util from "aleph/lib/util.ts";
-import Logo from "~/components/Logo.tsx";
+import Logo from "components/Logo.tsx";
 
 type Menu = {
   name: string;

@@ -1,17 +1,8 @@
 {
   "deno.enable": true,
   "deno.lint": true,
-  "deno.config": "./deno.json", 
-  "deno.importMap": "./import_map.json", 
-  "deno.suggest.imports.hosts": {
-    "https://deno.land": true,
-    "https://esm.sh": false
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "denoland.vscode-deno",
-    "editor.formatOnSave": true
-  },
-  "[typescriptreact]": {
+  "deno.config": "./deno.json",
+  "[typescript][typescriptreact]": {
     "editor.defaultFormatter": "denoland.vscode-deno",
     "editor.formatOnSave": true
   }

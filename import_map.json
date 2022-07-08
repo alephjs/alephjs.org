@@ -1,12 +1,17 @@
 {
   "imports": {
-    "~/": "./",
-    "@unocss/": "https://deno.land/x/aleph@1.0.0-alpha.43/lib/@unocss/",
-    "aleph/": "https://deno.land/x/aleph@1.0.0-alpha.43/",
-    "aleph/server": "https://deno.land/x/aleph@1.0.0-alpha.43/server/mod.ts",
-    "aleph/react": "https://deno.land/x/aleph@1.0.0-alpha.43/framework/react/mod.ts",
-    "react": "https://esm.sh/react@18.1.0",
-    "react-dom/": "https://esm.sh/react-dom@18.1.0/"
+    "components/": "./components/",
+    "std/": "https://deno.land/std@0.140.0/",
+    "@unocss/": "https://deno.land/x/aleph@1.0.0-alpha.88/lib/@unocss/",
+    "aleph/": "https://deno.land/x/aleph@1.0.0-alpha.88/",
+    "aleph/server": "https://deno.land/x/aleph@1.0.0-alpha.88/server/mod.ts",
+    "aleph/dev": "https://deno.land/x/aleph@1.0.0-alpha.88/server/dev.ts",
+    "aleph/react": "https://deno.land/x/aleph@1.0.0-alpha.88/framework/react/mod.ts",
+    "aleph/react-client": "https://deno.land/x/aleph@1.0.0-alpha.88/framework/react/client.ts",
+    "aleph/react-ssr": "https://deno.land/x/aleph@1.0.0-alpha.88/framework/react/ssr.ts",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/"
   },
   "scopes": {}
 }

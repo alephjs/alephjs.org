@@ -1,13 +1,10 @@
-name: Deploy
+name: Lint
 on: [push]
 
 jobs:
-  deploy:
-    name: Deploy
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
 
     steps:
       - name: Clone repository
@@ -15,15 +12,6 @@ jobs:
 
       - name: Install Deno
         uses: denoland/setup-deno@v1
-      
+
       - name: Deno Lint
         run: deno lint
-
-      - name: Build App
-        run: deno task build
-
-      - name: Deploy to Deno Deploy
-        uses: denoland/deployctl@v1
-        with:
-          project: aleph
-          entrypoint: dist/server.js

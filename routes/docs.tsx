@@ -1,6 +1,6 @@
 import { Head, useData } from "aleph/react";
-import Button from "~/components/Button.tsx";
-import Header from "~/components/Header.tsx";
+import Button from "components/Button.tsx";
+import Header from "components/Header.tsx";
 
 const title = "Aleph.js";
 const about = "The Fullstack Framework in Deno.";
