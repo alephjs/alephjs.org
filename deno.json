@@ -7,13 +7,13 @@
       "deno.ns"
     ],
     "types": [
-      "https://deno.land/x/aleph@1.0.0-alpha.88/types.d.ts"
+      "https://deno.land/x/aleph@1.0.0-beta.2/types.d.ts"
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "https://esm.sh/react@18.2.0"
   },
   "importMap": "import_map.json",
   "tasks": {
-    "dev": "deno run -A dev.ts"
+    "dev": "deno run -A -q server.ts --dev"
   }
 }

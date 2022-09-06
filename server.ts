@@ -1,13 +1,13 @@
 import presetUno from "@unocss/preset-uno.ts";
-import { serve } from "aleph/server";
-import ssr from "aleph/react-ssr";
+import { serve } from "aleph/react-server";
 import routes from "./routes/_export.ts";
 
 serve({
-  routeGlob: "./routes/**/*.tsx",
-  routes,
+  router: {
+    routes,
+  },
   unocss: {
     presets: [presetUno()],
   },
-  ssr,
+  ssr: true,
 });
