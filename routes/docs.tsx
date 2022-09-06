@@ -11,6 +11,7 @@ type Menu = {
 type MenuItem = {
   title: string;
   path: string;
+  category?: string;
   submenu?: MenuItem[];
   modifier?: React.ReactNode;
 };
@@ -22,7 +23,7 @@ const navMenu: Menu[] = [
     name: "Documentation",
     items: [
       {
-        title: "About Aleph.js",
+        title: "About",
         // modifier: (
         //   <span className="aleph-logo">
         //     <Logo />
@@ -32,8 +33,8 @@ const navMenu: Menu[] = [
       },
       { title: "Get Started", path: "/docs/get-started" },
       {
-        title: "Basic Features",
-        path: "/docs/basic-features",
+        title: "Basic Concepts",
+        path: "/docs/basic-concepts",
         submenu: [
           { title: "Pages", path: "/pages" },
           { title: "APIs", path: "/apis" },
@@ -47,8 +48,8 @@ const navMenu: Menu[] = [
         ],
       },
       {
-        title: "Advanced Features",
-        path: "/docs/advanced-features",
+        title: "Framwork",
+        path: "/docs/framwork",
         submenu: [
           { title: "`useDeno` Hook", path: "/use-deno-hook" },
           { title: "Dynamic Importing", path: "/dynamic-importing" },
@@ -57,14 +58,6 @@ const navMenu: Menu[] = [
           { title: "Custom Server", path: "/custom-server" },
           { title: "JSX Magic", path: "/jsx-magic" },
           { title: "Using Plugins", path: "/using-plugins" },
-        ],
-      },
-      {
-        title: "Plugins",
-        path: "/docs/plugins",
-        submenu: [
-          { title: "Official Plugins", path: "/official-plugins" },
-          { title: "Community Plugins", path: "/community-plugins" },
         ],
       },
       { title: "Browser Support", path: "/docs/browser-support" },
@@ -191,11 +184,13 @@ export default function Docs({ children }: React.PropsWithChildren) {
           </div>
           <nav className={menuIsOpen ? "open" : undefined}>
             {filteredNavMenu.length === 0 && (
-              <h2 className="text-gray-400 mt-6">look, blackhole!!!</h2>
+              <h2 className="text-gray-400 text-sm uppercase mt-6 mb-1">
+                Noting Here!
+              </h2>
             )}
             {filteredNavMenu.map((g) => (
               <Fragment key={g.name}>
-                <h2 className="text-gray-400 text-sm uppercase mt-6">
+                <h2 className="text-gray-400 text-sm uppercase mt-6 mb-1">
                   {g.name}
                 </h2>
                 <ul>
@@ -204,9 +199,9 @@ export default function Docs({ children }: React.PropsWithChildren) {
                       return (
                         <Fragment key={item.title + item.path}>
                           <li
-                            className={"py-1 flex items-center gap-2 cursor-pointer text-gray-600 hover:text-gray-900 " +
+                            className={"py-1 flex items-center gap-2 cursor-pointer text-gray-700 hover:text-gray-900 " +
                               (searchWords || extended[item.path]
-                                ? "text-gray-900"
+                                ? "!text-gray-900"
                                 : "text-gray-400")}
                             onClick={() => {
                               extended[item.path] = !extended[item.path];
@@ -243,7 +238,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                                   <span className="inline-block w-1 h-1 bg-gray-400 rounded-full" />
                                 </div>
                                 <NavLink
-                                  className="text-gray-600 hover:text-gray-900"
+                                  className="text-gray-700 hover:text-gray-900"
                                   activeClassName="!text-gray-900 font-semibold"
                                   to={item.path + (path === "/" ? "" : path)}
                                   onClick={() => setMenuIsOpen(false)}
@@ -254,27 +249,26 @@ export default function Docs({ children }: React.PropsWithChildren) {
                             ))}
                         </Fragment>
                       );
-                    } else {
-                      return (
-                        <li
-                          className="py-1 flex items-center gap-2"
-                          key={item.title + item.path}
-                        >
-                          <div className="flex items-center justify-center w-[6px] h-[10px]">
-                            <span className="inline-block w-1 h-1 bg-gray-400 rounded-full" />
-                          </div>
-                          <NavLink
-                            to={item.path}
-                            className="text-gray-600 hover:text-gray-900"
-                            activeClassName="!text-gray-900 font-semibold"
-                            onClick={() => setMenuIsOpen(false)}
-                          >
-                            {item.title}
-                            {item.modifier}
-                          </NavLink>
-                        </li>
-                      );
                     }
+                    return (
+                      <li
+                        className="py-1 flex items-center gap-2"
+                        key={item.title + item.path}
+                      >
+                        <div className="flex items-center justify-center w-[6px] h-[10px]">
+                          <span className="inline-block w-1 h-1 bg-gray-400 rounded-full" />
+                        </div>
+                        <NavLink
+                          to={item.path}
+                          className="text-gray-700 hover:text-gray-900"
+                          activeClassName="!text-gray-900 font-semibold"
+                          onClick={() => setMenuIsOpen(false)}
+                        >
+                          {item.title}
+                          {item.modifier}
+                        </NavLink>
+                      </li>
+                    );
                   })}
                 </ul>
               </Fragment>
