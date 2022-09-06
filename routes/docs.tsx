@@ -13,7 +13,6 @@ type MenuItem = {
   path: string;
   category?: string;
   submenu?: MenuItem[];
-  modifier?: React.ReactNode;
 };
 
 const description = "The Documentation for Aleph.js";
@@ -24,11 +23,6 @@ const navMenu: Menu[] = [
     items: [
       {
         title: "About",
-        // modifier: (
-        //   <span className="aleph-logo">
-        //     <Logo />
-        //   </span>
-        // ),
         path: "/docs/index",
       },
       { title: "Get Started", path: "/docs/get-started" },
@@ -48,8 +42,8 @@ const navMenu: Menu[] = [
         ],
       },
       {
-        title: "Framwork",
-        path: "/docs/framwork",
+        title: "Framework",
+        path: "/docs/framework",
         submenu: [
           { title: "`useDeno` Hook", path: "/use-deno-hook" },
           { title: "Dynamic Importing", path: "/dynamic-importing" },
@@ -163,7 +157,6 @@ export default function Docs({ children }: React.PropsWithChildren) {
     <>
       <Head>
         <meta name="description" content={description} />
-        {/* <meta name="keywords" content={keywords.join(",")} /> */}
         <meta name="og:description" content={description} />
         <meta name="og:image" content={ogImage} />
         <meta name="twitter:description" content={description} />
@@ -196,13 +189,12 @@ export default function Docs({ children }: React.PropsWithChildren) {
                 <ul>
                   {g.items.map((item) => {
                     if (item.submenu) {
+                      const isExtended = searchWords || extended[item.path];
                       return (
                         <Fragment key={item.title + item.path}>
                           <li
                             className={"py-1 flex items-center gap-2 cursor-pointer text-gray-700 hover:text-gray-900 " +
-                              (searchWords || extended[item.path]
-                                ? "!text-gray-900"
-                                : "text-gray-400")}
+                              (isExtended ? "!text-gray-900" : "text-gray-400")}
                             onClick={() => {
                               extended[item.path] = !extended[item.path];
                               setExtended({ ...extended });
@@ -210,9 +202,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                           >
                             <svg
                               className={"text-gray-400 " +
-                                (searchWords || extended[item.path]
-                                  ? "rotate-90"
-                                  : "")}
+                                (isExtended ? "rotate-90" : "")}
                               width="6"
                               height="10"
                               viewBox="0 0 6 10"
@@ -228,7 +218,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                             </svg>
                             {item.title}
                           </li>
-                          {(searchWords || extended[item.path]) &&
+                          {isExtended &&
                             item.submenu.map(({ title, path }) => (
                               <li
                                 className="py-1 pl-4 ml-0.5 border-l border-gray-200/80 flex items-center gap-2"
@@ -265,7 +255,6 @@ export default function Docs({ children }: React.PropsWithChildren) {
                           onClick={() => setMenuIsOpen(false)}
                         >
                           {item.title}
-                          {item.modifier}
                         </NavLink>
                       </li>
                     );

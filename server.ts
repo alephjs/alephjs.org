@@ -13,10 +13,15 @@ serve({
   middlewares: [
     {
       name: "gfm-css",
-      fetch: (req, ctx) => {
+      fetch: (req) => {
         const url = new URL(req.url);
         if (url.pathname === "/gfm.css") {
-          return new Response(CSS, { headers: { "content-type": "text/css" } });
+          return new Response(
+            CSS + "\n.markdown-body ul { list-style: disc; }",
+            {
+              headers: { "content-type": "text/css" },
+            },
+          );
         }
       },
     },
