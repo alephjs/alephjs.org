@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="h-20 sticky top-0">
+    <header className="h-20 sticky top-0 z-50 bg-white">
       <div className="m-auto w-14/16 max-w-250 h-full flex items-center justify-between">
         <h1>
           <a className="text-lg" href="/">

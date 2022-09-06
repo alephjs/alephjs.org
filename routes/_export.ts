@@ -3,14 +3,10 @@
 
 import * as $0 from "./index.tsx";
 import * as $1 from "./docs.tsx";
-import * as $2 from "./_docs.tsx";
-import * as $3 from "./_docs/$path+.tsx";
-import * as $4 from "./docs/$path+.tsx";
+import * as $2 from "./docs/$path+.tsx";
 
 export default {
   "/": $0,
   "/docs": $1,
-  "/_docs": $2,
-  "/_docs/:path+": $3,
-  "/docs/:path+": $4,
+  "/docs/:path+": $2,
 };
