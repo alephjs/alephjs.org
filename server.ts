@@ -17,7 +17,8 @@ serve({
         const url = new URL(req.url);
         if (url.pathname === "/gfm.css") {
           return new Response(
-            CSS + "\n.markdown-body ul { list-style: disc; }",
+            CSS +
+              "\n.markdown-body ul { list-style: disc; } .markdown-body ol { list-style: decimal; } .markdown-body strong { font-weight: 600; }",
             {
               headers: { "content-type": "text/css" },
             },
