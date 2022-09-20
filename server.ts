@@ -2,6 +2,8 @@ import presetUno from "@unocss/preset-uno";
 import { serve } from "aleph/react-server";
 import MDXLoader from "aleph/react/mdx-loader";
 import routes from "./routes/_export.ts";
+import remarkFrontmatter from "remark-frontmatter";
+import rehypeHighlight from "rehype-highlight";
 
 serve({
   router: {
@@ -11,7 +13,12 @@ serve({
   unocss: {
     presets: [presetUno()],
   },
-  loaders: [new MDXLoader()],
+  loaders: [
+    new MDXLoader({
+      remarkPlugins: [remarkFrontmatter],
+      rehypePlugins: [rehypeHighlight],
+    }),
+  ],
   middlewares: [
     {
       name: "proxy-module",

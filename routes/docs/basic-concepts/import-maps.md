@@ -13,7 +13,7 @@ Aleph.js supports [import maps](https://github.com/WICG/import-maps). To use imp
 {
   "imports": {
     "@/": "./",
-    "react": "https://esm.sh/react@17.0.2",
+    "react": "https://esm.sh/react@18.2.0",
     ...
   }
 }
@@ -25,17 +25,8 @@ then in your code:
 import React from "react";
 import Logo from "@/components/logo.tsx";
 
-export default function Hi() {
+export default function App() {
   return <Logo />;
 }
 ```
 
-If you are using **VS Code**, please add below settings to `.vscode/settings.json`:
-
-```json
-{
-  "deno.enable": true,
-  "deno.unstable": true,
-  "deno.importMap": "./import_map.json"
-}
-```

@@ -9,7 +9,9 @@ authors:
 
 Aleph.js has a file-system based router. When a file (`.js`, `.jsx`, `.ts`,
 `.tsx`, and `.mjs`) is added to the `routes` directory, it is automatically
-available as a route. You can configruate the `router` in `server.ts`.
+available as a route.
+
+You can configruate the `router` in `server.ts`.
 
 ```js
 // server.ts

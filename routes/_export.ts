@@ -3,869 +3,304 @@
 // deno-fmt-ignore-file
 // deno-lint-ignore-file
 // @ts-nocheck
-var Re=Object.defineProperty;var h=(n,e)=>{for(var se in e)Re(n,se,{get:e[se],enumerable:!0})};import*as Tn from"./index.tsx";import*as Pn from"./docs.tsx";var D={};h(D,{default:()=>Oe});import{Fragment as Ae,jsx as f,jsxs as C}from"https://esm.sh/react@18.2.0/jsx-runtime";function le(n){let e=Object.assign({h1:"h1",p:"p",a:"a",strong:"strong",ul:"ul",li:"li",h2:"h2",code:"code",pre:"pre"},n.components);return C(Ae,{children:[f(e.h1,{children:"Browser Support"}),`
-`,C(e.p,{children:[`Aleph.js requires a modern browser to support
-`,f(e.a,{href:"https://caniuse.com/#feat=es6-module",children:"native ES module imports"})," and ",f(e.strong,{children:`dynamic
+var Se=Object.defineProperty;var h=(n,e)=>{for(var re in e)Se(n,re,{get:e[re],enumerable:!0})};import*as Kn from"./index.tsx";import*as Qn from"./docs.tsx";var $={};h($,{default:()=>Re});import{Fragment as Ce,jsx as d,jsxs as _}from"https://esm.sh/react@18.2.0/jsx-runtime";function te(n){let e=Object.assign({h1:"h1",p:"p",a:"a",strong:"strong",ul:"ul",li:"li",h2:"h2",code:"code",pre:"pre",span:"span"},n.components);return _(Ce,{children:[d(e.h1,{children:"Browser Support"}),`
+`,_(e.p,{children:[`Aleph.js requires a modern browser to support
+`,d(e.a,{href:"https://caniuse.com/#feat=es6-module",children:"native ES module imports"})," and ",d(e.strong,{children:`dynamic
 imports`}),":"]}),`
-`,C(e.ul,{children:[`
-`,f(e.li,{children:"Chrome >= 61"}),`
-`,f(e.li,{children:"Edge >= 16"}),`
-`,f(e.li,{children:"Firefox >= 60"}),`
-`,f(e.li,{children:"Safari >= 11"}),`
-`,f(e.li,{children:"Opera >= 48"}),`
+`,_(e.ul,{children:[`
+`,d(e.li,{children:"Chrome >= 61"}),`
+`,d(e.li,{children:"Edge >= 16"}),`
+`,d(e.li,{children:"Firefox >= 60"}),`
+`,d(e.li,{children:"Safari >= 11"}),`
+`,d(e.li,{children:"Opera >= 48"}),`
 `]}),`
-`,f(e.h2,{children:"Build Target"}),`
-`,C(e.p,{children:["Aleph.js uses ",f(e.strong,{children:"esbuild"}),` to bundle modules at optimization time for production.
-You can set the `,f(e.code,{children:"optimization.buildTarget"})," in the server config."]}),`
-`,f(e.pre,{children:f(e.code,{className:"language-js",children:`import { serve } from "aleph/server";
+`,d(e.h2,{children:"Build Target"}),`
+`,_(e.p,{children:["Aleph.js uses ",d(e.strong,{children:"esbuild"}),` to bundle modules at optimization time for production.
+You can set the `,d(e.code,{children:"optimization.buildTarget"})," in the server config."]}),`
+`,d(e.pre,{children:_(e.code,{className:"hljs language-js",children:[d(e.span,{className:"hljs-keyword",children:"import"})," { serve } ",d(e.span,{className:"hljs-keyword",children:"from"})," ",d(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
 
-serve({
-  optimization: {
-    buildTarget: "es2020",
+`,d(e.span,{className:"hljs-title function_",children:"serve"}),`({
+  `,d(e.span,{className:"hljs-attr",children:"optimization"}),`: {
+    `,d(e.span,{className:"hljs-attr",children:"buildTarget"}),": ",d(e.span,{className:"hljs-string",children:'"es2020"'}),`,
   },
 });
-`})})]})}function Ne(n={}){let{wrapper:e}=n.components||{};return e?f(e,Object.assign({},n,{children:f(le,n)})):le(n)}var Oe=Ne;var k={};h(k,{default:()=>Pe});import{Fragment as Xe,jsx as b,jsxs as S}from"https://esm.sh/react@18.2.0/jsx-runtime";function ie(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",h2:"h2",a:"a",blockquote:"blockquote"},n.components);return S(Xe,{children:[b(e.h1,{children:"Deployment on your own host with Deno CLI"}),`
-`,S(e.p,{children:["You can run your app in production mode by ",b(e.code,{children:"deno"})," CLI."]}),`
-`,b(e.pre,{children:b(e.code,{className:"language-bash",children:`deno run --allow-network --allow-env --allow-read --allow-write server.ts
+`]})})]})}function Fe(n={}){let{wrapper:e}=n.components||{};return e?d(e,Object.assign({},n,{children:d(te,n)})):te(n)}var Re=Fe;var T={};h(T,{default:()=>Ae});import{Fragment as Oe,jsx as g,jsxs as y}from"https://esm.sh/react@18.2.0/jsx-runtime";function ce(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",h2:"h2",a:"a",blockquote:"blockquote"},n.components);return y(Oe,{children:[g(e.h1,{children:"Deployment on your own host with Deno CLI"}),`
+`,y(e.p,{children:["You can run your app in production mode by ",g(e.code,{children:"deno"})," CLI."]}),`
+`,g(e.pre,{children:g(e.code,{className:"hljs language-bash",children:`deno run --allow-network --allow-env --allow-read --allow-write server.ts
 `})}),`
-`,b(e.h2,{children:"Deploy on Deno Deploy"}),`
-`,S(e.p,{children:["To deploy your app to ",b(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),", please push your app to ",b(e.a,{href:"https://github.com",children:"Github"})," and create a new project on ",b(e.a,{href:"https://dash.deno.com/new",children:"Deno Deploy"}),"."]}),`
-`,S(e.p,{children:["Then link to the Repo and set the entrypoint to ",b(e.code,{children:"server.ts"})]}),`
-`,S(e.blockquote,{children:[`
-`,S(e.p,{children:["See the ",b(e.a,{href:"https://aleph-hello.deno.dev/",children:"hello-world"})," example on ",b(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),"."]}),`
-`]})]})}function Te(n={}){let{wrapper:e}=n.components||{};return e?b(e,Object.assign({},n,{children:b(ie,n)})):ie(n)}var Pe=Te;var R={};h(R,{default:()=>Fe});import{Fragment as Le,jsx as r,jsxs as d}from"https://esm.sh/react@18.2.0/jsx-runtime";function ce(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",blockquote:"blockquote",em:"em",code:"code",h2:"h2",ul:"ul",li:"li"},n.components);return d(Le,{children:[r(e.h1,{children:"Aleph.js"}),`
-`,d(e.p,{children:[r(e.strong,{children:"Aleph.js"})," (or ",r(e.strong,{children:"Aleph"})," or ",r(e.strong,{children:"\u05D0"})," or ",r(e.strong,{children:"\u963F\u83B1\u592B"}),", ",r("samp",{children:"\u02C8\u0251\u02D0l\u025Bf"}),`) is a
-fullstack framework in `,r(e.a,{href:"https://deno.land",children:"Deno"}),". inspired by ",r(e.a,{href:"https://nextjs.org",children:"Next.js"}),", ",r(e.a,{href:"https://remix.run",children:"Remix"})," and ",r(e.a,{href:"https://vitejs.dev",children:"Vite"}),"."]}),`
-`,d(e.blockquote,{children:[`
-`,d(e.p,{children:["The name is taken from the book ",r(e.a,{href:"http://phinnweb.org/links/literature/borges/aleph.html",children:r(e.em,{children:"The Aleph"})})," by ",r(e.strong,{children:"Jorge Luis Borges"}),"."]}),`
+`,g(e.h2,{children:"Deploy on Deno Deploy"}),`
+`,y(e.p,{children:["To deploy your app to ",g(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),", please push your app to ",g(e.a,{href:"https://github.com",children:"Github"})," and create a new project on ",g(e.a,{href:"https://dash.deno.com/new",children:"Deno Deploy"}),"."]}),`
+`,y(e.p,{children:["Then link to the Repo and set the entrypoint to ",g(e.code,{children:"server.ts"})]}),`
+`,y(e.blockquote,{children:[`
+`,y(e.p,{children:["See the ",g(e.a,{href:"https://aleph-hello.deno.dev/",children:"hello-world"})," example on ",g(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),"."]}),`
+`]})]})}function Xe(n={}){let{wrapper:e}=n.components||{};return e?g(e,Object.assign({},n,{children:g(ce,n)})):ce(n)}var Ae=Xe;var P={};h(P,{default:()=>$e});import{Fragment as Le,jsx as a,jsxs as m}from"https://esm.sh/react@18.2.0/jsx-runtime";function ie(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",blockquote:"blockquote",em:"em",code:"code",h2:"h2",ul:"ul",li:"li"},n.components);return m(Le,{children:[a(e.h1,{children:"Aleph.js"}),`
+`,m(e.p,{children:[a(e.strong,{children:"Aleph.js"})," (or ",a(e.strong,{children:"Aleph"})," or ",a(e.strong,{children:"\u05D0"})," or ",a(e.strong,{children:"\u963F\u83B1\u592B"}),", ",a("samp",{children:"\u02C8\u0251\u02D0l\u025Bf"}),`) is a
+fullstack framework in `,a(e.a,{href:"https://deno.land",children:"Deno"}),". Inspired by ",a(e.a,{href:"https://nextjs.org",children:"Next.js"}),", ",a(e.a,{href:"https://remix.run",children:"Remix"})," and ",a(e.a,{href:"https://vitejs.dev",children:"Vite"}),"."]}),`
+`,m(e.blockquote,{children:[`
+`,m(e.p,{children:["The name is taken from the book ",a(e.a,{href:"http://phinnweb.org/links/literature/borges/aleph.html",children:a(e.em,{children:"The Aleph"})})," by ",a(e.strong,{children:"Jorge Luis Borges"}),"."]}),`
 `]}),`
-`,d(e.p,{children:["Aleph.js is modern framework that doesn't need ",r(e.strong,{children:"webpack"}),` or other bundler
-since it uses the `,r(e.a,{href:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",children:"ES Module"}),` syntax during development. Every module only needs
+`,m(e.p,{children:["Aleph.js is modern framework that doesn't need ",a(e.strong,{children:"webpack"}),` or other bundler
+since it uses the `,a(e.a,{href:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",children:"ES Module"}),` syntax during development. Every module only needs
 to be compiled once, when a module changes, Aleph.js just needs to re-compile
-that single module. There is no time wasted `,r(e.em,{children:"re-bundling"}),` everytime a change is
-made. This, along with Hot Module Replacement (`,r(e.strong,{children:"HMR"}),") and ",r(e.strong,{children:"Fast Refresh"}),`,
+that single module. There is no time wasted `,a(e.em,{children:"re-bundling"}),` everytime a change is
+made. This, along with Hot Module Replacement (`,a(e.strong,{children:"HMR"}),") and ",a(e.strong,{children:"Fast Refresh"}),`,
 leads to instant updates in the browser.`]}),`
-`,d(e.p,{children:["Aleph.js uses modern tools to build your app. It transpiles code using ",r(e.a,{href:"https://swc.rs",children:"swc"}),` in
-WASM with high performance, and bundles modules with `,r(e.a,{href:"https://github.com/evanw/esbuild",children:"esbuild"}),` at optimization
+`,m(e.p,{children:["Aleph.js uses modern tools to build your app. It transpiles code using ",a(e.a,{href:"https://swc.rs",children:"swc"}),` in
+WASM with high performance, and bundles modules with `,a(e.a,{href:"https://github.com/evanw/esbuild",children:"esbuild"}),` at optimization
 time extremely fast.`]}),`
-`,d(e.p,{children:["Aleph.js works on top of ",r(e.strong,{children:"Deno"}),", a ",r(e.em,{children:"simple"}),", ",r(e.em,{children:"modern"})," and ",r(e.em,{children:"secure"}),` runtime for
+`,m(e.p,{children:["Aleph.js works on top of ",a(e.strong,{children:"Deno"}),", a ",a(e.em,{children:"simple"}),", ",a(e.em,{children:"modern"})," and ",a(e.em,{children:"secure"}),` runtime for
 JavaScript and TypeScript. All dependencies are imported using URLs, and managed
-by Deno cache system. No `,r(e.code,{children:"package.json"})," and ",r(e.code,{children:"node_modules"})," directory needed."]}),`
-`,r(e.h2,{children:"Features"}),`
-`,d(e.ul,{children:[`
-`,r(e.li,{children:"Zero Config"}),`
-`,r(e.li,{children:"No build step"}),`
-`,r(e.li,{children:"File-system Routing"}),`
-`,r(e.li,{children:"Just-in-time Server-side Rendering(SSR)"}),`
-`,r(e.li,{children:"Streaming SSR"}),`
-`,r(e.li,{children:"Support Typescript/JSX in Deno out of the box"}),`
-`,d(e.li,{children:["Built-in ",r(e.a,{href:"https://github.com/unocss/unocss",children:"Unocss"})," (automatic CSS)"]}),`
-`,r(e.li,{children:"Import Maps"}),`
-`,r(e.li,{children:"Hot Module Replacement (or HMR)"}),`
-`,r(e.li,{children:"Support Middware"}),`
-`,r(e.li,{children:"Custom Module Loader like MDX"}),`
+by Deno cache system. No `,a(e.code,{children:"package.json"})," and ",a(e.code,{children:"node_modules"})," directory needed."]}),`
+`,a(e.h2,{children:"Features"}),`
+`,m(e.ul,{children:[`
+`,a(e.li,{children:"Zero Config"}),`
+`,a(e.li,{children:"No build step"}),`
+`,a(e.li,{children:"File-system Routing"}),`
+`,a(e.li,{children:"Just-in-time Server-side Rendering(SSR)"}),`
+`,a(e.li,{children:"Streaming SSR"}),`
+`,a(e.li,{children:"Support Typescript/JSX in Deno out of the box"}),`
+`,m(e.li,{children:["Built-in ",a(e.a,{href:"https://github.com/unocss/unocss",children:"Unocss"})," (automatic CSS)"]}),`
+`,a(e.li,{children:"Import Maps"}),`
+`,a(e.li,{children:"Hot Module Replacement (or HMR)"}),`
+`,a(e.li,{children:"Support Middware"}),`
+`,a(e.li,{children:"Custom Module Loader like MDX"}),`
 `]}),`
-`,r(e.h2,{children:"Supported frameworks"}),`
-`,d(e.ul,{children:[`
-`,r(e.li,{children:r(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-app",children:"React"})}),`
-`,r(e.li,{children:r(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-mdx-app",children:"React with MDX"})}),`
-`,r(e.li,{children:r(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/vue-app",children:"Vue"})}),`
-`,d(e.li,{children:[r(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/solid-app",children:"Solid"}),`
-`,r(e.em,{children:"Experimental"})]}),`
-`,d(e.li,{children:[r(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/yew-app",children:"Yew"})," ",r(e.em,{children:"Rust"})]}),`
+`,a(e.h2,{children:"Supported frameworks"}),`
+`,m(e.ul,{children:[`
+`,a(e.li,{children:a(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-app",children:"React"})}),`
+`,a(e.li,{children:a(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-mdx-app",children:"React with MDX"})}),`
+`,a(e.li,{children:a(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/vue-app",children:"Vue"})}),`
+`,m(e.li,{children:[a(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/solid-app",children:"Solid"}),`
+`,a(e.em,{children:"Experimental"})]}),`
+`,m(e.li,{children:[a(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/yew-app",children:"Yew"})," ",a(e.em,{children:"Rust"})]}),`
 `]}),`
-`,d(e.p,{children:["Plan to support: ",r(e.a,{href:"https://svelte.dev/",children:"Svelte"}),", ",r(e.a,{href:"https://lit.dev/",children:"Lit"}),", etc.."]}),`
-`,r(e.h2,{children:"Examples"}),`
-`,d(e.p,{children:["Some demo apps deployed to ",r(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),":"]}),`
-`,d(e.ul,{children:[`
-`,d(e.li,{children:["React App: ",r(e.a,{href:"https://aleph-hello.deno.dev/",children:"https://aleph-hello.deno.dev/"})]}),`
-`,d(e.li,{children:["Vue App: ",r(e.a,{href:"https://aleph-vue.deno.dev/",children:"https://aleph-vue.deno.dev/"})]}),`
-`,d(e.li,{children:["REST API: ",r(e.a,{href:"https://aleph-api.deno.dev/",children:"https://aleph-api.deno.dev/"})]}),`
-`,d(e.li,{children:["React 18 Suspense SSR: ",r(e.a,{href:"https://aleph-suspense-ssr.deno.dev/",children:"https://aleph-suspense-ssr.deno.dev/"})]}),`
-`,d(e.li,{children:["UnoCSS(tailwind): ",r(e.a,{href:"https://aleph-unocss.deno.dev/",children:"https://aleph-unocss.deno.dev/"})]}),`
-`,d(e.li,{children:["Monaco Editor: ",r(e.a,{href:"https://aleph-monaco-editor.deno.dev/",children:"https://aleph-monaco-editor.deno.dev/"})]}),`
-`,d(e.li,{children:["Yew SSR: ",r(e.a,{href:"https://aleph-yew.deno.dev/",children:"https://aleph-yew.deno.dev/"})]}),`
-`,d(e.li,{children:["Github OAuth Middleware: ",r(e.a,{href:"https://aleph-github-oauth.deno.dev/",children:"https://aleph-github-oauth.deno.dev/"})]}),`
+`,m(e.p,{children:["Plan to support: ",a(e.a,{href:"https://svelte.dev/",children:"Svelte"}),", ",a(e.a,{href:"https://lit.dev/",children:"Lit"}),", etc.."]}),`
+`,a(e.h2,{children:"Examples"}),`
+`,m(e.p,{children:["Some demo apps deployed to ",a(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),":"]}),`
+`,m(e.ul,{children:[`
+`,a(e.li,{children:"React App: https://aleph-hello.deno.dev/"}),`
+`,a(e.li,{children:"Vue App: https://aleph-vue.deno.dev/"}),`
+`,a(e.li,{children:"REST API: https://aleph-api.deno.dev/"}),`
+`,a(e.li,{children:"React 18 Suspense SSR: https://aleph-suspense-ssr.deno.dev/"}),`
+`,a(e.li,{children:"UnoCSS(tailwind): https://aleph-unocss.deno.dev/"}),`
+`,a(e.li,{children:"Monaco Editor: https://aleph-monaco-editor.deno.dev/"}),`
+`,a(e.li,{children:"Yew SSR: https://aleph-yew.deno.dev/"}),`
+`,a(e.li,{children:"Github OAuth Middleware: https://aleph-github-oauth.deno.dev/"}),`
 `]}),`
-`,r(e.h2,{children:"Real-world Apps"}),`
-`,d(e.ul,{children:[`
-`,d(e.li,{children:["Deno Deploy: ",r(e.a,{href:"https://dash.deno.com",children:"https://dash.deno.com"})]}),`
-`,d(e.li,{children:["Meet Me: ",r(e.a,{href:"https://meet-me.deno.dev",children:"https://meet-me.deno.dev"}),`
-(`,r(e.a,{href:"https://github.com/denoland/meet-me",children:"source"}),")"]}),`
+`,a(e.h2,{children:"Real-world Apps"}),`
+`,m(e.ul,{children:[`
+`,a(e.li,{children:"Deno Deploy: https://dash.deno.com"}),`
+`,m(e.li,{children:[`Meet Me: https://meet-me.deno.dev
+(`,a(e.a,{href:"https://github.com/denoland/meet-me",children:"source"}),")"]}),`
 `]}),`
-`,r(e.h2,{children:"Status"}),`
-`,d(e.p,{children:["Currently in ",r(e.strong,{children:"beta"}),", not ready for production."]}),`
-`,r(e.h2,{children:"License"}),`
-`,d(e.p,{children:["Under the ",r(e.a,{href:"https://opensource.org/licenses/MIT",children:"MIT"})," License."]})]})}function $e(n={}){let{wrapper:e}=n.components||{};return e?r(e,Object.assign({},n,{children:r(ce,n)})):ce(n)}var Fe=$e;var A={};h(A,{default:()=>He});import{Fragment as Ie,jsx as u,jsxs as M}from"https://esm.sh/react@18.2.0/jsx-runtime";function de(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",h2:"h2",pre:"pre",code:"code"},n.components);return M(Ie,{children:[u(e.h1,{children:"Get Started!"}),`
+`,a(e.h2,{children:"Status"}),`
+`,m(e.p,{children:["Currently in ",a(e.strong,{children:"beta"}),", not ready for production."]}),`
+`,a(e.h2,{children:"License"}),`
+`,m(e.p,{children:["Under the ",a(e.a,{href:"https://opensource.org/licenses/MIT",children:"MIT"})," License."]})]})}function Ie(n={}){let{wrapper:e}=n.components||{};return e?a(e,Object.assign({},n,{children:a(ie,n)})):ie(n)}var $e=Ie;var W={};h(W,{default:()=>We});import{Fragment as Te,jsx as u,jsxs as M}from"https://esm.sh/react@18.2.0/jsx-runtime";function oe(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",h2:"h2",pre:"pre",code:"code"},n.components);return M(Te,{children:[u(e.h1,{children:"Get Started!"}),`
 `,M(e.p,{children:["Welcome to use ",u(e.strong,{children:"Aleph.js"}),"!"]}),`
 `,M(e.p,{children:["If you are new to Aleph.js you should check out the ",u(e.a,{href:"/docs/",children:"About"})," page."]}),`
 `,u(e.h2,{children:"Usage"}),`
 `,u(e.p,{children:"Create a new app:"}),`
-`,u(e.pre,{children:u(e.code,{className:"language-bash",children:`deno run -A -r https://alephjs.org/init.ts
+`,u(e.pre,{children:u(e.code,{className:"hljs language-bash",children:`deno run -A -r https://alephjs.org/init.ts
 `})}),`
 `,M(e.p,{children:["Start the app in ",u(e.code,{children:"development"})," mode:"]}),`
-`,u(e.pre,{children:u(e.code,{className:"language-bash",children:`deno task dev
+`,u(e.pre,{children:u(e.code,{className:"hljs language-bash",children:`deno task dev
 `})}),`
 `,M(e.p,{children:["Start the app in ",u(e.code,{children:"production"})," mode:"]}),`
-`,u(e.pre,{children:u(e.code,{className:"language-bash",children:`deno task start
+`,u(e.pre,{children:u(e.code,{className:"hljs language-bash",children:`deno task start
 `})}),`
 `,u(e.p,{children:"Optimize the application (bundling, ssg, etc.):"}),`
-`,u(e.pre,{children:u(e.code,{className:"language-bash",children:`deno task opt
-`})})]})}function qe(n={}){let{wrapper:e}=n.components||{};return e?u(e,Object.assign({},n,{children:u(de,n)})):de(n)}var He=qe;var O={};h(O,{default:()=>Je});import{jsx as N}from"https://esm.sh/react@18.2.0/jsx-runtime";function ae(n){let e=Object.assign({h1:"h1"},n.components);return N(e.h1,{children:"Vue"})}function Ee(n={}){let{wrapper:e}=n.components||{};return e?N(e,Object.assign({},n,{children:N(ae,n)})):ae(n)}var Je=Ee;var T={};h(T,{default:()=>Ue});import{jsx as X}from"https://esm.sh/react@18.2.0/jsx-runtime";function he(n){let e=Object.assign({h1:"h1"},n.components);return X(e.h1,{children:"React with MDX"})}function We(n={}){let{wrapper:e}=n.components||{};return e?X(e,Object.assign({},n,{children:X(he,n)})):he(n)}var Ue=We;var L={};h(L,{default:()=>ze});import{jsx as P}from"https://esm.sh/react@18.2.0/jsx-runtime";function pe(n){let e=Object.assign({h1:"h1"},n.components);return P(e.h1,{children:"SolidJS"})}function Be(n={}){let{wrapper:e}=n.components||{};return e?P(e,Object.assign({},n,{children:P(pe,n)})):pe(n)}var ze=Be;var F={};h(F,{default:()=>Ve});import{jsx as $}from"https://esm.sh/react@18.2.0/jsx-runtime";function ue(n){let e=Object.assign({h1:"h1"},n.components);return $(e.h1,{children:"React"})}function Ge(n={}){let{wrapper:e}=n.components||{};return e?$(e,Object.assign({},n,{children:$(ue,n)})):ue(n)}var Ve=Ge;var q={};h(q,{default:()=>Ze});import{jsx as I}from"https://esm.sh/react@18.2.0/jsx-runtime";function me(n){let e=Object.assign({h1:"h1"},n.components);return I(e.h1,{children:"Yew"})}function Ye(n={}){let{wrapper:e}=n.components||{};return e?I(e,Object.assign({},n,{children:I(me,n)})):me(n)}var Ze=Ye;var H={};h(H,{default:()=>en});import{Fragment as Ke,jsx as t,jsxs as a}from"https://esm.sh/react@18.2.0/jsx-runtime";function ge(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",h2:"h2",a:"a",h4:"h4",ul:"ul",li:"li",blockquote:"blockquote",em:"em"},n.components);return a(Ke,{children:[t(e.h1,{children:"Middleware API"}),`
-`,a(e.p,{children:["In Aleph.js, a ",t(e.strong,{children:"Plugin"})," is an object with a ",t(e.code,{children:"name"})," and a ",t(e.code,{children:"setup"}),` method. The
-`,t(e.code,{children:"setup"}),` method will be invoked once before the Aleph server runtime is
-initialized.`]}),`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`type Plugin = {
-  name: string;
-  setup(aleph: Aleph): Promise<void> | void;
-}
-`})}),`
-`,t(e.h2,{children:"Writing First Aleph Plugin"}),`
-`,t(e.p,{children:`Here's a simple plugin example that allows you to add a virtual dist file to the
+`,u(e.pre,{children:u(e.code,{className:"hljs language-bash",children:`deno task opt
+`})})]})}function Pe(n={}){let{wrapper:e}=n.components||{};return e?u(e,Object.assign({},n,{children:u(oe,n)})):oe(n)}var We=Pe;var H={};h(H,{default:()=>Ue});import{Fragment as He,jsx as v,jsxs as qe}from"https://esm.sh/react@18.2.0/jsx-runtime";function he(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return qe(He,{children:[v(e.h1,{children:"Vue"}),`
+`,v(e.p,{children:v(e.em,{children:"WIP"})})]})}function Ee(n={}){let{wrapper:e}=n.components||{};return e?v(e,Object.assign({},n,{children:v(he,n)})):he(n)}var Ue=Ee;var q={};h(q,{default:()=>Ge});import{Fragment as Je,jsx as k,jsxs as Ye}from"https://esm.sh/react@18.2.0/jsx-runtime";function de(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Ye(Je,{children:[k(e.h1,{children:"React with MDX"}),`
+`,k(e.p,{children:k(e.em,{children:"WIP"})})]})}function Be(n={}){let{wrapper:e}=n.components||{};return e?k(e,Object.assign({},n,{children:k(de,n)})):de(n)}var Ge=Be;var E={};h(E,{default:()=>Ke});import{Fragment as ze,jsx as D,jsxs as Ve}from"https://esm.sh/react@18.2.0/jsx-runtime";function pe(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Ve(ze,{children:[D(e.h1,{children:"SolidJS"}),`
+`,D(e.p,{children:D(e.em,{children:"WIP"})})]})}function Ze(n={}){let{wrapper:e}=n.components||{};return e?D(e,Object.assign({},n,{children:D(pe,n)})):pe(n)}var Ke=Ze;var U={};h(U,{default:()=>sn});import{Fragment as Qe,jsx as S,jsxs as en}from"https://esm.sh/react@18.2.0/jsx-runtime";function me(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return en(Qe,{children:[S(e.h1,{children:"React"}),`
+`,S(e.p,{children:S(e.em,{children:"WIP"})})]})}function nn(n={}){let{wrapper:e}=n.components||{};return e?S(e,Object.assign({},n,{children:S(me,n)})):me(n)}var sn=nn;var J={};h(J,{default:()=>tn});import{Fragment as an,jsx as C,jsxs as ln}from"https://esm.sh/react@18.2.0/jsx-runtime";function ue(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return ln(an,{children:[C(e.h1,{children:"Yew"}),`
+`,C(e.p,{children:C(e.em,{children:"WIP"})})]})}function rn(n={}){let{wrapper:e}=n.components||{};return e?C(e,Object.assign({},n,{children:C(ue,n)})):ue(n)}var tn=rn;var Y={};h(Y,{default:()=>hn});import{Fragment as cn,jsx as l,jsxs as b}from"https://esm.sh/react@18.2.0/jsx-runtime";function je(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",span:"span",h2:"h2",em:"em",h4:"h4"},n.components);return b(cn,{children:[l(e.h1,{children:"Middleware API"}),`
+`,b(e.p,{children:["In Aleph.js, a ",l(e.strong,{children:"Middleware"})," is an object with a ",l(e.code,{children:"name"})," and a ",l(e.code,{children:"fetch"}),` method.
+The `,l(e.code,{children:"fetch"}),` method will be invoked when a request is received by the server. And
+the `,l(e.code,{children:"fetch"})," method will end the request if returns a ",l(e.code,{children:"Response"})," object."]}),`
+`,l(e.pre,{children:b(e.code,{className:"hljs language-ts",children:[l(e.span,{className:"hljs-keyword",children:"type"})," ",l(e.span,{className:"hljs-title class_",children:"Middleware"}),` = {
+  `,l(e.span,{className:"hljs-attr",children:"name"}),": ",l(e.span,{className:"hljs-built_in",children:"string"}),`;
+  `,l(e.span,{className:"hljs-title function_",children:"fetch"}),"(",l(e.span,{className:"hljs-attr",children:"req"}),": ",l(e.span,{className:"hljs-title class_",children:"Request"}),", ",l(e.span,{className:"hljs-attr",children:"context"}),": ",l(e.span,{className:"hljs-title class_",children:"Context"}),"): ",l(e.span,{className:"hljs-title class_",children:"Promise"}),"<",l(e.span,{className:"hljs-title class_",children:"Response"}),"> | ",l(e.span,{className:"hljs-title class_",children:"Response"})," | ",l(e.span,{className:"hljs-built_in",children:"void"}),`;
+};
+`]})}),`
+`,l(e.h2,{children:"Use Middlewares"}),`
+`,l(e.p,{children:`Here's a simple plugin example that allows you to add a virtual dist file to the
 server:`}),`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`// aleph.config.ts
+`,l(e.pre,{children:b(e.code,{className:"hljs language-ts",children:[l(e.span,{className:"hljs-comment",children:"// server.ts"}),`
 
-import type { Config, Plugin } from 'https://deno.land/x/aleph/types.d.ts'
+`,l(e.span,{className:"hljs-keyword",children:"import"})," foo ",l(e.span,{className:"hljs-keyword",children:"from"})," ",l(e.span,{className:"hljs-string",children:'"./middleware/foo.ts"'}),`;
 
-const helloPlugin: Plugin = {
-  name: 'hello-plugin',
-  setup: aleph => {
-    aleph.addDist(
-      'hello.js',
-      (new TextEncoder()).encode('console.log("Hello World!")'),
-    )
-  },
-}
-
-export default <Config> {
-  plugins: [helloPlugin],
-}
-`})}),`
-`,a(e.p,{children:["then you can download the ",t(e.code,{children:"hello.js"}),` file from
-`,t(e.a,{href:"http://localhost:8080/_aleph/hello.js",children:"http://localhost:8080/_aleph/hello.js"})]}),`
-`,a(e.h2,{children:["Using ",t(e.code,{children:"Aleph"})," Object"]}),`
-`,a(e.p,{children:["The ",t(e.code,{children:"Aleph"}),` object is the server runtime reference of Aleph.js, that allows you
-to hack into the server runtime lifecycle.`]}),`
-`,t(e.h4,{children:"Properties"}),`
-`,a(e.ul,{children:[`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"mode"})})," specifies the build mode that should be ",t(e.strong,{children:"'development'"}),` or
-`,t(e.strong,{children:"'production'"}),".",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: aleph => {
-    if (aleph.mode === 'development') {
-      console.log('development mode')
-    }
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"workingDir"})})," shows the application absolute path that is a ",t(e.strong,{children:"read-only"}),`
-property.`,`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    const fp = path.join(aleph.workingDir, 'data.json')
-    const data = JSON.parse(await Deno.readFile(fp))
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"config"})})," is an object parsed from ",t(e.strong,{children:"'aleph.config.ts'"}),`, you can update it to
-add more options, check `,t(e.a,{href:"/docs/api-reference/config",children:"Config"}),` to get more
-usage.`,`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    aleph.config.env['foo'] = await getEnv('foo')
-    aleph.config.server.headers['X-Foo'] = 'bar'
-  }
-}
-`})}),`
-`]}),`
-`]}),`
-`,t(e.h4,{children:"Methods"}),`
-`,a(e.ul,{children:[`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"fetchModule"})})," fetches and caches the module source content.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    const { content } = aleph.fetchModule(specifier)
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"resolveImport"})})," resolves module import URL.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    const bundleMode = true
-    const forceRefresh = true
-    const mod = aleph.addModule('https://deno.land/x/aleph/hello.ts', 'export default { ... }')
-    aleph.resolveImport(mod, '/app.tsx') // './-/deno.land/x/aleph/hello.js#XXX'
-    aleph.resolveImport(mod, '/app.tsx', !bundleMode, forceRefresh) // './-/deno.land/x/aleph/hello.bundling.js#XXX-TIME'
-    aleph.resolveImport(mod, '/app.tsx', bundleMode) // './-/deno.land/x/aleph/hello.bundling.js'
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"addDist"})})," adds a virtual dist file to the server, then access it from ",t(e.code,{children:"/_aleph/$NAME"}),".",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    aleph.addDist('hello.js', (new TextEncoder).encode('console.log("Hello World!")'))
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"addModule"})})," adds a virtual module to the server, that can be a page, API, or CSS.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    // adds a virtual module
-    aleph.addModule('https://deno.land/x/aleph/hello.ts', 'export default { ... }')
-    // adds a virtual module as API
-    aleph.addModule('api/hello.ts', 'export const handler = (req) => { ... }')
-    // adds a virtual module as Page
-    aleph.addModule('pages/hello.tsx', 'export default function Hello() { ... }')
-    // adds a virtual style module
-    aleph.addModule('style/app.css', 'body { font-family: sans-serif; }')
-  }
-}
-`})}),`
-`,a(e.blockquote,{children:[`
-`,a(e.p,{children:["The available module type: ",t(e.code,{children:"js"}),", ",t(e.code,{children:"jsx"}),", ",t(e.code,{children:"ts"}),", ",t(e.code,{children:"tsx"})," and ",t(e.code,{children:"css"}),"."]}),`
-`]}),`
-`]}),`
-`]}),`
-`,t(e.h4,{children:"Lifecycle Hooks"}),`
-`,a(e.ul,{children:[`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"onResolve"})})," customizes how Aleph does path resolution.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    aleph.onResolve(/.(md|markdown)$/, specifier => {
-      return {
-        // rewrite the import specifier to other
-        specifier: specifier,
-        // allows modules as page when it is in the \`pages/\` dir
-        asPage: true,
-        // allows modules to be updated at runtime during development
-        acceptHMR: true,
-        // don't download/compile remote modules, let browser handles it
-        external: false,
-        // defines any data that will be passed to the next \`onResolve\` hook
-        data: {} as any
-      }
-    })
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"onLoad"})}),` allows you to load any content as a JS module, for example load
-`,t(e.em,{children:"markdown"})," as pages.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    // the \`data\` is passed from previous \`onResolve\` hook
-    aleph.onLoad(/.(md|markdown)$/, async ({ specifier, data }) => {
-      // loads and caches content as \`Uint8Array\` by the specifier
-      const { content } = await aleph.loadModule(specifier)
-      return {
-        // specifies the output code type (Available type: \`css\` | \`js\` | \`jsx\` | \`ts\` | \`tsx\`)
-        type: 'js',
-        // defines transformed code in above type
-        code: mdjs(content),
-        // provides source map if available
-        map: undefined,
-      }
-    })
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"onTransform"})})," injects code to compiled modules, you need to return an object with modified ",t(e.code,{children:"code"})," or ",t(e.code,{children:"undefined"})," to keep raw code.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    // inject code to the \`main.js\`
-    aleph.onTransform('main', ({ module, code, map }) => {
-      return {
-        code: code + '\\nconsole.log(":)")',
-        map: undefined, // provides source map if available
-      }
-    })
-    // inject code to modules when the HMR is available
-    aleph.onTransform('hmr', ({ module, code, map }) => {
-      return {
-        code: code + '\\nimport.meta.hot.accept(__REACT_REFRESH__)',
-        map: undefined, // provides source map if available
-      }
-    })
-    // inject code to page modules
-    aleph.onTransform(/pages\\//, ({ module, code, map, bundleMode }) => {
-      return {
-        code: code + \`\\nconsole.log("current module is \${module.specifier}")\`,
-        map: undefined, // provides source map if available
-      }
-    })
-  }
-}
-`})}),`
-`]}),`
-`,a(e.li,{children:[t(e.strong,{children:t(e.code,{children:"onRender"})})," modifies the ",t(e.strong,{children:"SSR"})," output HTML and data.",`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`{
-  name: 'plugin-name',
-  setup: async aleph => {
-    aleph.onRender(({ path, html, data }) => {
-      html.head.push('<link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro" />')
-    })
-  }
-}
-`})}),`
-`]}),`
-`]}),`
-`,t(e.h2,{children:"Examples"}),`
-`,t(e.p,{children:"The example plugins below are meant to give you an idea of the different types of things you can do with the plugin API."}),`
-`,t(e.h4,{children:"WASM loader"}),`
-`,a(e.p,{children:["This example plugin is a loader allows you to import ",t(e.code,{children:".wasm"})," files into JS module."]}),`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Plugin> {
-  name: 'wasm-loader',
-  setup: aleph => {
-    aleph.onLoad(/\\.wasm$/i, async ({ specifier }) => {
-      const { content } = await aleph.fetchModule(specifier)
-      return {
-        code: [
-          \`const wasmBytes = new Uint8Array([\${content.join(',')}])\`,
-          'const wasmModule = new WebAssembly.Module(wasmBytes)',
-          'const { exports } = new WebAssembly.Instance(wasmModule)',
-          'export default exports',
-        ].join('\\n'),
-      }
-    })
-  },
-}
-`})}),`
-`,a(e.p,{children:["Now you can import ",t(e.code,{children:".wasm"})," files as ES Module:"]}),`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`import wasm from '../lib/42.wasm'
-
-const answer = wasm.main() // 42
-`})}),`
-`,t(e.h4,{children:"Tailwind JIT for JSX"}),`
-`,t(e.p,{children:"Aleph's compiler will record the static class names in JSX files, with that you can create css on demand for tailwind very easily."}),`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`import { basename } from 'https://deno.land/std/path/mod.ts'
-import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Plugin> {
-  name: 'tailwind-loader',
-  setup: aleph => {
-    aleph.onTransform(/\\.(j|t)sx$/i, async ({ module, code, bundleMode }) => {
-      const { specifier, deps, sourceHash, jsxStaticClassNames } = module
-      if (jsxStaticClassNames?.length) {
-        const url = specifier.replace(/\\.(j|t)sx$/i, '') + '.tailwind.css'
-        const css = tailwindJITCompile(jsxStaticClassNames)
-        const cssModule = await aleph.addModule(url, css, true)
-
-        return {
-          // import tailwind css
-          code: \`import "\${aleph.resolveImport(cssModule, specifier, bundleMode, true)}";\\n\${code}\`,
-          // support SSR
-          extraDeps: [{ specifier: url, virtual: true }],
+`,l(e.span,{className:"hljs-title function_",children:"serve"}),`({
+  `,l(e.span,{className:"hljs-attr",children:"middlewares"}),`: [
+    foo,
+    {
+      `,l(e.span,{className:"hljs-attr",children:"name"}),": ",l(e.span,{className:"hljs-string",children:'"my-middleware"'}),`,
+      `,l(e.span,{className:"hljs-title function_",children:"fetch"}),"(",l(e.span,{className:"hljs-params",children:"req"}),`) {
+        `,l(e.span,{className:"hljs-keyword",children:"if"})," (req.",l(e.span,{className:"hljs-property",children:"url"})," === ",l(e.span,{className:"hljs-string",children:'"/my-middleware"'}),`) {
+          `,l(e.span,{className:"hljs-keyword",children:"return"})," ",l(e.span,{className:"hljs-keyword",children:"new"})," ",l(e.span,{className:"hljs-title class_",children:"Response"}),"(",l(e.span,{className:"hljs-string",children:'"Hello, Middleware!"'}),`);
         }
-      }
-    })
-  }
-}
-`})}),`
-`,t(e.h4,{children:"Google Analytics"}),`
-`,t(e.p,{children:"This example plugin shows how to insert custom scripts to SSR output HTML."}),`
-`,t(e.pre,{children:t(e.code,{className:"language-ts",children:`import { basename } from 'https://deno.land/std/path/mod.ts'
-import type { Plugin } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Plugin> {
-  name: 'google-analytics-plugin',
-  setup: aleph => {
-    const id = Deno.env.get('GTAID')
-    if (id && aleph.mode === 'production') {
-      aleph.onRender(({ html }) => {
-        html.scripts.push(
-          {
-            src: \`https://www.googletagmanager.com/gtag/js?id=\${encodeURIComponent(id)}\`,
-            async: true
-          },
-          \`
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', \${JSON.stringify(id)});
-          \`
-        )
-      })
-    }
-  }
-}
-`})})]})}function Qe(n={}){let{wrapper:e}=n.components||{};return e?t(e,Object.assign({},n,{children:t(ge,n)})):ge(n)}var en=Qe;var E={};h(E,{default:()=>on});import{Fragment as nn,jsx as o,jsxs as c}from"https://esm.sh/react@18.2.0/jsx-runtime";function fe(n){let e=Object.assign({h1:"h1",p:"p",code:"code",h4:"h4",strong:"strong",pre:"pre",ul:"ul",li:"li",em:"em",a:"a",blockquote:"blockquote"},n.components);return c(nn,{children:[o(e.h1,{children:"Config"}),`
-`,c(e.p,{children:["For custom advanced behavior of Aleph.js, add an ",o(e.code,{children:"aleph.config.ts"})," file in the root of your project directory."]}),`
-`,o(e.h4,{children:"Framework"}),`
-`,c(e.p,{children:["Aleph.js is a fullstack framework in Deno. Currently we only support ",o(e.strong,{children:"React"})," as the frontend renderer."]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  framework: 'react'
-}
-`})}),`
-`,o(e.h4,{children:"Base Path"}),`
-`,c(e.p,{children:[o(e.code,{children:"basePath"})," allows you to set a path prefix for the application."]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  basePath: '/docs'
-}
-`})}),`
-`,o(e.h4,{children:"Build"}),`
-`,c(e.p,{children:[o(e.code,{children:"build"})," specifies the options for ",o(e.strong,{children:"Build"})," command."]}),`
-`,c(e.ul,{children:[`
-`,c(e.li,{children:[o(e.strong,{children:"target"}),": ",o(e.code,{children:"string"})," specifies the build target in production mode (default is ",o(e.strong,{children:"'es2015'"}),", available targets: ",o(e.strong,{children:"'es2015'"})," - ",o(e.strong,{children:"'es2021'"}),", and ",o(e.strong,{children:"'esnext'"}),")."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"browsers"}),": ",o(e.code,{children:"Record<string, number>"})," adds the target browsers for esbuild (supported browsers: ",o(e.strong,{children:"'chrome'"})," | ",o(e.strong,{children:"'edge'"})," | ",o(e.strong,{children:"'firefox'"})," | ",o(e.strong,{children:"'ios'"})," | ",o(e.strong,{children:"'safari'"}),")."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"outputDir"}),": ",o(e.code,{children:"string"})," specifies the output directory for ",o(e.em,{children:"build"})," command (default is ",o(e.strong,{children:"'/dist'"}),")."]}),`
-`]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  build: {
-    target: 'es2015',
-    browsers: { chrome: 90, safari: 12 },
-    outputDir: '/dist',
-  }
-}
-`})}),`
-`,o(e.h4,{children:"Configuring CSS"}),`
-`,c(e.p,{children:[o(e.code,{children:"css"})," specifies the css processing options."]}),`
-`,c(e.ul,{children:[`
-`,c(e.li,{children:[o(e.strong,{children:"cache"}),": ",o(e.code,{children:"boolean"})," caches remote css to local if it equals ",o(e.code,{children:"true"}),"."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"postcss"}),": ",o(e.code,{children:"{ plugins: PostCSSPlugin[] }"})," specifies the postcss plugins. The ",o(e.code,{children:"PostCSSPlugin"})," can be a name string that is imported from ",o(e.a,{href:"https://esm.sh",children:"esm.sh"}),"."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"modules"}),": ",o(e.code,{children:"CSSModulesOptions"})," specifies CSS modules behavior, the options are passed on to ",o(e.a,{href:"https://github.com/madyankin/postcss-modules",children:"postcss-modules"}),"."]}),`
-`]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  css: {
-    cache: true,
-    postcss: { plugins: [ 'autoprefixer' ] },
-    modules: {
-      scopeBehaviour: 'global', // can be 'global' or 'local'
-    }
-  }
-}
-`})}),`
-`,o(e.h4,{children:"SSR Options"}),`
-`,c(e.p,{children:[o(e.code,{children:"ssr"})," enables ",o(e.strong,{children:"SSR"})," feature for your project, default is enable for all pages."]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  ssr: true
-}
-`})}),`
-`,c(e.p,{children:["Mix ",o(e.strong,{children:"SSR"})," and ",o(e.strong,{children:"SPA"}),":"]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`export default <Config>{
-  ssr: {
-    include: [/.html$/],
-    exclude: [/^\\/admin\\//],
-  }
-}
-`})}),`
-`,c(e.p,{children:["Pure ",o(e.strong,{children:"SPA"})," mode:"]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`export default <Config>{
-  ssr: false
-}
-`})}),`
-`,o(e.h4,{children:"I18N"}),`
-`,c(e.p,{children:[o(e.code,{children:"i18n"})," enables multiple locales for the routing."]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh-CN'],
-  }
-}
-`})}),`
-`,c(e.blockquote,{children:[`
-`,c(e.p,{children:["Check ",o(e.a,{href:"/docs/basic-features/routing#i18n-routing",children:"I18n routing"})," documentation for ",o(e.strong,{children:"I18N"})," support."]}),`
-`]}),`
-`,o(e.h4,{children:"Server Options"}),`
-`,c(e.p,{children:[o(e.code,{children:"server"})," specifies the options for ",o(e.strong,{children:"Aleph Server"}),"."]}),`
-`,c(e.ul,{children:[`
-`,c(e.li,{children:[o(e.strong,{children:"middlewares:"})," ",o(e.code,{children:"APIMiddleware[]"})," a list of ",o(e.em,{children:"Middleware"})," for API requests."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"headers"}),": ",o(e.code,{children:"Record<string, string>"})," appends custom headers for server requests."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"rewrites"}),": ",o(e.code,{children:"Record<string, string>"})," specifies the server rewrite map."]}),`
-`,c(e.li,{children:[o(e.strong,{children:"compress"}),": ",o(e.code,{children:"boolean"})," enables compression(gzip/brotli) for static files and SSR content (default is ",o(e.strong,{children:"true"})," for production mode)."]}),`
-`]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  server: {
-    middlewares: [
-      ({ response, data }, next) => {
-        response.headers.set('server', 'Aleph.js')
-        data.set('foo', 'bar')
-        next()
-      }
-    ],
-    headers: {
-      'Server': 'Custom'
+      },
     },
-    rewrites: {
-      '/p/[id]': '/blog/[id]'
-    },
-    compress: true
-  }
-}
-`})}),`
-`,o(e.h4,{children:"Plugins"}),`
-`,c(e.p,{children:[o(e.code,{children:"plugins"})," provides some plugins to extend Aleph.js runtime."]}),`
-`,o(e.pre,{children:o(e.code,{className:"language-ts",children:`import markdown from 'https://deno.land/x/aleph/plugins/markdown.ts'
-import type { Config } from 'https://deno.land/x/aleph/types.d.ts'
-
-export default <Config>{
-  plugins: [
-    markdown()
-  ]
-}
-`})}),`
-`,c(e.blockquote,{children:[`
-`,c(e.p,{children:["To find Aleph plugins, check our  ",o(e.a,{href:"/docs/plugins/official-plugins",children:"Official Plugins"})," and ",o(e.a,{href:"/docs/plugins/community-plugins",children:"Community Plugins"}),"."]}),`
-`]})]})}function tn(n={}){let{wrapper:e}=n.components||{};return e?o(e,Object.assign({},n,{children:o(fe,n)})):fe(n)}var on=tn;var W={};h(W,{default:()=>ln});import{Fragment as rn,jsx as x,jsxs as J}from"https://esm.sh/react@18.2.0/jsx-runtime";function xe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",code:"code",pre:"pre",strong:"strong"},n.components);return J(rn,{children:[x(e.h1,{children:"Import Maps"}),`
-`,J(e.p,{children:["Aleph.js supports ",x(e.a,{href:"https://github.com/WICG/import-maps",children:"import maps"}),". To use import maps, create a ",x(e.code,{children:"import_map.json"})," file in the root directory:"]}),`
-`,x(e.pre,{children:x(e.code,{className:"language-json",children:`{
-  "imports": {
-    "@/": "./",
-    "react": "https://esm.sh/react@17.0.2",
+  ],
+});
+`]})}),`
+`,b(e.h2,{children:["Use ",l(e.code,{children:"Context"})," Object"]}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h2,{children:"Examples"}),`
+`,l(e.p,{children:`The example plugins below are meant to give you an idea of the different types
+of things you can do with the plugin API.`}),`
+`,l(e.h4,{children:"Google Analytics"}),`
+`,l(e.p,{children:"This example plugin shows how to insert custom scripts to SSR output HTML using middleware."}),`
+`,l(e.pre,{children:b(e.code,{className:"hljs language-ts",children:[l(e.span,{className:"hljs-comment",children:"// wIP"}),`
+`]})})]})}function on(n={}){let{wrapper:e}=n.components||{};return e?l(e,Object.assign({},n,{children:l(je,n)})):je(n)}var hn=on;var B={};h(B,{default:()=>un});import{Fragment as dn,jsx as F,jsxs as pn}from"https://esm.sh/react@18.2.0/jsx-runtime";function ge(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return pn(dn,{children:[F(e.h1,{children:"Server Config"}),`
+`,F(e.p,{children:F(e.em,{children:"WIP"})})]})}function mn(n={}){let{wrapper:e}=n.components||{};return e?F(e,Object.assign({},n,{children:F(ge,n)})):ge(n)}var un=mn;var G={};h(G,{default:()=>fn});import{Fragment as jn,jsx as r,jsxs as R}from"https://esm.sh/react@18.2.0/jsx-runtime";function fe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",code:"code",pre:"pre",span:"span"},n.components);return R(jn,{children:[r(e.h1,{children:"Import Maps"}),`
+`,R(e.p,{children:["Aleph.js supports ",r(e.a,{href:"https://github.com/WICG/import-maps",children:"import maps"}),". To use import maps, create a ",r(e.code,{children:"import_map.json"})," file in the root directory:"]}),`
+`,r(e.pre,{children:R(e.code,{className:"hljs language-json",children:[r(e.span,{className:"hljs-punctuation",children:"{"}),`
+  `,r(e.span,{className:"hljs-attr",children:'"imports"'}),r(e.span,{className:"hljs-punctuation",children:":"})," ",r(e.span,{className:"hljs-punctuation",children:"{"}),`
+    `,r(e.span,{className:"hljs-attr",children:'"@/"'}),r(e.span,{className:"hljs-punctuation",children:":"})," ",r(e.span,{className:"hljs-string",children:'"./"'}),r(e.span,{className:"hljs-punctuation",children:","}),`
+    `,r(e.span,{className:"hljs-attr",children:'"react"'}),r(e.span,{className:"hljs-punctuation",children:":"})," ",r(e.span,{className:"hljs-string",children:'"https://esm.sh/react@18.2.0"'}),r(e.span,{className:"hljs-punctuation",children:","}),`
     ...
-  }
-}
-`})}),`
-`,x(e.p,{children:"then in your code:"}),`
-`,x(e.pre,{children:x(e.code,{className:"language-tsx",children:`import React from "react";
-import Logo from "@/components/logo.tsx";
+  `,r(e.span,{className:"hljs-punctuation",children:"}"}),`
+`,r(e.span,{className:"hljs-punctuation",children:"}"}),`
+`]})}),`
+`,r(e.p,{children:"then in your code:"}),`
+`,r(e.pre,{children:R(e.code,{className:"hljs language-tsx",children:[r(e.span,{className:"hljs-keyword",children:"import"})," ",r(e.span,{className:"hljs-title class_",children:"React"})," ",r(e.span,{className:"hljs-keyword",children:"from"})," ",r(e.span,{className:"hljs-string",children:'"react"'}),`;
+`,r(e.span,{className:"hljs-keyword",children:"import"})," ",r(e.span,{className:"hljs-title class_",children:"Logo"})," ",r(e.span,{className:"hljs-keyword",children:"from"})," ",r(e.span,{className:"hljs-string",children:'"@/components/logo.tsx"'}),`;
 
-export default function Hi() {
-  return <Logo />;
+`,r(e.span,{className:"hljs-keyword",children:"export"})," ",r(e.span,{className:"hljs-keyword",children:"default"})," ",r(e.span,{className:"hljs-keyword",children:"function"})," ",r(e.span,{className:"hljs-title function_",children:"App"}),"(",r(e.span,{className:"hljs-params"}),`) {
+  `,r(e.span,{className:"hljs-keyword",children:"return"})," ",r(e.span,{className:"xml",children:R(e.span,{className:"hljs-tag",children:["<",r(e.span,{className:"hljs-name",children:"Logo"})," />"]})}),`;
 }
-`})}),`
-`,J(e.p,{children:["If you are using ",x(e.strong,{children:"VS Code"}),", please add below settings to ",x(e.code,{children:".vscode/settings.json"}),":"]}),`
-`,x(e.pre,{children:x(e.code,{className:"language-json",children:`{
-  "deno.enable": true,
-  "deno.unstable": true,
-  "deno.importMap": "./import_map.json"
-}
-`})})]})}function sn(n={}){let{wrapper:e}=n.components||{};return e?x(e,Object.assign({},n,{children:x(xe,n)})):xe(n)}var ln=sn;var U={};h(U,{default:()=>an});import{Fragment as cn,jsx as m,jsxs as _}from"https://esm.sh/react@18.2.0/jsx-runtime";function be(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",ul:"ul",li:"li"},n.components);return _(cn,{children:[m(e.h1,{children:"Static File Serving"}),`
-`,_(e.p,{children:["Aleph.js will serve any static files in the ",m(e.code,{children:"public"})," directory. Files inside the ",m(e.code,{children:"public"})," directory can then be referenced by your code by using the base URL (",m(e.code,{children:"/"}),")."]}),`
-`,_(e.p,{children:["For example, if you add an image ",m(e.code,{children:"public/logo.png"}),", the following code will access the image:"]}),`
-`,m(e.pre,{children:m(e.code,{className:"language-jsx",children:`import React from "https://esm.sh/react"
-
-export default function Logo() {
-  return (
-    <img src="/logo.png" alt="Logo" />
+`]})})]})}function gn(n={}){let{wrapper:e}=n.components||{};return e?r(e,Object.assign({},n,{children:r(fe,n)})):fe(n)}var fn=gn;var z={};h(z,{default:()=>yn});import{Fragment as Nn,jsx as i,jsxs as w}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ne(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",span:"span",ul:"ul",li:"li"},n.components);return w(Nn,{children:[i(e.h1,{children:"Static File Serving"}),`
+`,w(e.p,{children:["Aleph.js will serve any static files in the project directory. Files inside the project directory can then be referenced by your code by using the base URL (",i(e.code,{children:"/"}),")."]}),`
+`,w(e.p,{children:["For example, if you add an image ",i(e.code,{children:"assets/logo.png"}),", the following code will access the image:"]}),`
+`,i(e.pre,{children:w(e.code,{className:"hljs language-jsx",children:[i(e.span,{className:"hljs-keyword",children:"export"})," ",i(e.span,{className:"hljs-keyword",children:"default"})," ",i(e.span,{className:"hljs-keyword",children:"function"})," ",i(e.span,{className:"hljs-title function_",children:"Logo"}),"(",i(e.span,{className:"hljs-params"}),`) {
+  `,i(e.span,{className:"hljs-keyword",children:"return"}),` (
+    `,i(e.span,{className:"xml",children:w(e.span,{className:"hljs-tag",children:["<",i(e.span,{className:"hljs-name",children:"img"})," ",i(e.span,{className:"hljs-attr",children:"src"}),"=",i(e.span,{className:"hljs-string",children:'"/assets/logo.png"'})," ",i(e.span,{className:"hljs-attr",children:"alt"}),"=",i(e.span,{className:"hljs-string",children:'"Logo"'})," />"]})}),`
   )
 }
-`})}),`
-`,m(e.p,{children:"You can also serve other static assets such as:"}),`
-`,_(e.ul,{children:[`
-`,m(e.li,{children:m(e.code,{children:"favicon.ico"})}),`
-`,m(e.li,{children:m(e.code,{children:"manifest.json"})}),`
-`,m(e.li,{children:m(e.code,{children:"robots.txt"})}),`
-`,m(e.li,{children:"Google Site Verification, etc"}),`
-`]})]})}function dn(n={}){let{wrapper:e}=n.components||{};return e?m(e,Object.assign({},n,{children:m(be,n)})):be(n)}var an=dn;var B={};h(B,{default:()=>un});import{Fragment as hn,jsx as i,jsxs as y}from"https://esm.sh/react@18.2.0/jsx-runtime";function ye(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",h3:"h3",ul:"ul",li:"li",strong:"strong"},n.components);return y(hn,{children:[i(e.h1,{children:"Routing"}),`
-`,y(e.p,{children:["Aleph.js has a file-system based router. When a file (",i(e.code,{children:".js"}),", ",i(e.code,{children:".jsx"}),", ",i(e.code,{children:".ts"}),`,
-`,i(e.code,{children:".tsx"}),", and ",i(e.code,{children:".mjs"}),") is added to the ",i(e.code,{children:"routes"}),` directory, it is automatically
-available as a route. You can configruate the `,i(e.code,{children:"router"})," in ",i(e.code,{children:"server.ts"}),"."]}),`
-`,i(e.pre,{children:i(e.code,{className:"language-js",children:`// server.ts
+`]})}),`
+`,i(e.p,{children:"You can also serve other static assets such as:"}),`
+`,w(e.ul,{children:[`
+`,i(e.li,{children:i(e.code,{children:"favicon.ico"})}),`
+`,i(e.li,{children:i(e.code,{children:"manifest.json"})}),`
+`,i(e.li,{children:i(e.code,{children:"robots.txt"})}),`
+`,i(e.li,{children:"Google Site Verification, etc"}),`
+`]})]})}function xn(n={}){let{wrapper:e}=n.components||{};return e?i(e,Object.assign({},n,{children:i(Ne,n)})):Ne(n)}var yn=xn;var V={};h(V,{default:()=>_n});import{Fragment as bn,jsx as s,jsxs as p}from"https://esm.sh/react@18.2.0/jsx-runtime";function xe(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",span:"span",h3:"h3",ul:"ul",li:"li",strong:"strong"},n.components);return p(bn,{children:[s(e.h1,{children:"Routing"}),`
+`,p(e.p,{children:["Aleph.js has a file-system based router. When a file (",s(e.code,{children:".js"}),", ",s(e.code,{children:".jsx"}),", ",s(e.code,{children:".ts"}),`,
+`,s(e.code,{children:".tsx"}),", and ",s(e.code,{children:".mjs"}),") is added to the ",s(e.code,{children:"routes"}),` directory, it is automatically
+available as a route.`]}),`
+`,p(e.p,{children:["You can configruate the ",s(e.code,{children:"router"})," in ",s(e.code,{children:"server.ts"}),"."]}),`
+`,s(e.pre,{children:p(e.code,{className:"hljs language-js",children:[s(e.span,{className:"hljs-comment",children:"// server.ts"}),`
 
-import { server } from "aleph/server";
+`,s(e.span,{className:"hljs-keyword",children:"import"})," { server } ",s(e.span,{className:"hljs-keyword",children:"from"})," ",s(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
 
-serve({
-  router: {
-    // use glob
-    glob: "./routes/**/*.{tsx,jsx,mdx}",
+`,s(e.span,{className:"hljs-title function_",children:"serve"}),`({
+  `,s(e.span,{className:"hljs-attr",children:"router"}),`: {
+    `,s(e.span,{className:"hljs-comment",children:"// use glob"}),`
+    `,s(e.span,{className:"hljs-attr",children:"glob"}),": ",s(e.span,{className:"hljs-string",children:'"./routes/**/*.{tsx,jsx,mdx}"'}),`,
 
-    // use dir prefix and exts
-    dir: "./routes",
-    exts: [".tsx", ".jsx", ".mdx"],
+    `,s(e.span,{className:"hljs-comment",children:"// use dir prefix and exts"}),`
+    `,s(e.span,{className:"hljs-attr",children:"dir"}),": ",s(e.span,{className:"hljs-string",children:'"./routes"'}),`,
+    `,s(e.span,{className:"hljs-attr",children:"exts"}),": [",s(e.span,{className:"hljs-string",children:'".tsx"'}),", ",s(e.span,{className:"hljs-string",children:'".jsx"'}),", ",s(e.span,{className:"hljs-string",children:'".mdx"'}),`],
   },
 });
-`})}),`
-`,i(e.h3,{children:"Index Routes"}),`
-`,y(e.p,{children:["The router will automatically route files named ",i(e.code,{children:"index"}),` to the root of the
+`]})}),`
+`,s(e.h3,{children:"Index Routes"}),`
+`,p(e.p,{children:["The router will automatically route files named ",s(e.code,{children:"index"}),` to the root of the
 directory.`]}),`
-`,y(e.ul,{children:[`
-`,y(e.li,{children:[i(e.code,{children:"pages/index.tsx"})," \u2192 ",i(e.code,{children:"/"})]}),`
-`,y(e.li,{children:[i(e.code,{children:"pages/blog/index.tsx"})," \u2192 ",i(e.code,{children:"/blog"})]}),`
+`,p(e.ul,{children:[`
+`,p(e.li,{children:[s(e.code,{children:"pages/index.tsx"})," \u2192 ",s(e.code,{children:"/"})]}),`
+`,p(e.li,{children:[s(e.code,{children:"pages/blog/index.tsx"})," \u2192 ",s(e.code,{children:"/blog"})]}),`
 `]}),`
-`,i(e.h3,{children:"Dynamic Routes"}),`
-`,y(e.p,{children:[`To match a dynamic segment, you can use bracket syntax or start the segment with
-`,i(e.strong,{children:"$"}),":"]}),`
-`,y(e.ul,{children:[`
-`,y(e.li,{children:[i(e.code,{children:"pages/blog/$slug.tsx"})," \u2192 ",i(e.code,{children:"/blog/:slug"})," (",i(e.code,{children:"/blog/hello-world"}),")"]}),`
-`,y(e.li,{children:[i(e.code,{children:"pages/$username/settings.tsx"})," \u2192 ",i(e.code,{children:"/:username/settings"})," (",i(e.code,{children:"/foo/settings"}),")"]}),`
-`,y(e.li,{children:[i(e.code,{children:"pages/post/$all+.tsx"})," \u2192 ",i(e.code,{children:"/post/*"})," (",i(e.code,{children:"/post/2020/id/title"}),")"]}),`
+`,s(e.h3,{children:"Dynamic Routes"}),`
+`,p(e.p,{children:[`To match a dynamic segment, you can use bracket syntax or start the segment with
+`,s(e.strong,{children:"$"}),":"]}),`
+`,p(e.ul,{children:[`
+`,p(e.li,{children:[s(e.code,{children:"pages/blog/$slug.tsx"})," \u2192 ",s(e.code,{children:"/blog/:slug"})," (",s(e.code,{children:"/blog/hello-world"}),")"]}),`
+`,p(e.li,{children:[s(e.code,{children:"pages/$username/settings.tsx"})," \u2192 ",s(e.code,{children:"/:username/settings"})," (",s(e.code,{children:"/foo/settings"}),")"]}),`
+`,p(e.li,{children:[s(e.code,{children:"pages/post/$all+.tsx"})," \u2192 ",s(e.code,{children:"/post/*"})," (",s(e.code,{children:"/post/2020/id/title"}),")"]}),`
 `]}),`
-`,i(e.h3,{children:"Nested Routes"}),`
-`,i(e.p,{children:"Aleph.js supports nested route structures like:"}),`
-`,y(e.ul,{children:[`
-`,i(e.li,{children:i(e.code,{children:"pages/blog.tsx"})}),`
-`,i(e.li,{children:i(e.code,{children:"pages/blog/$slug.tsx"})}),`
+`,s(e.h3,{children:"Nested Routes"}),`
+`,s(e.p,{children:"Aleph.js supports nested route structures like:"}),`
+`,p(e.ul,{children:[`
+`,s(e.li,{children:s(e.code,{children:"pages/blog.tsx"})}),`
+`,s(e.li,{children:s(e.code,{children:"pages/blog/$slug.tsx"})}),`
 `]}),`
-`,y(e.p,{children:["In the example, routes in ",i(e.code,{children:"/blog/:slug"}),` will be rendered under the
-`,i(e.code,{children:"pages/blog.tsx"}),", that is useful to create a ",i(e.strong,{children:"layout"})," for pages:"]}),`
-`,i(e.pre,{children:i(e.code,{className:"language-jsx",children:`import BlogHeader from "../components/blog-header.tsx";
+`,p(e.p,{children:["In the example, routes in ",s(e.code,{children:"/blog/:slug"}),` will be rendered under the
+`,s(e.code,{children:"pages/blog.tsx"}),", that is useful to create a ",s(e.strong,{children:"layout"})," for pages:"]}),`
+`,s(e.pre,{children:p(e.code,{className:"hljs language-jsx",children:[s(e.span,{className:"hljs-keyword",children:"import"})," ",s(e.span,{className:"hljs-title class_",children:"BlogHeader"})," ",s(e.span,{className:"hljs-keyword",children:"from"})," ",s(e.span,{className:"hljs-string",children:'"../components/blog-header.tsx"'}),`;
 
-export default function Blog({ children }) {
-  return (
-    <>
-      <BlogHeader />
-      <div className="blog-body">
+`,s(e.span,{className:"hljs-keyword",children:"export"})," ",s(e.span,{className:"hljs-keyword",children:"default"})," ",s(e.span,{className:"hljs-keyword",children:"function"})," ",s(e.span,{className:"hljs-title function_",children:"Blog"}),"(",s(e.span,{className:"hljs-params",children:"{ children }"}),`) {
+  `,s(e.span,{className:"hljs-keyword",children:"return"}),` (
+    `,p(e.span,{className:"xml",children:[s(e.span,{className:"hljs-tag",children:"<>"}),`
+      `,p(e.span,{className:"hljs-tag",children:["<",s(e.span,{className:"hljs-name",children:"BlogHeader"})," />"]}),`
+      `,p(e.span,{className:"hljs-tag",children:["<",s(e.span,{className:"hljs-name",children:"div"})," ",s(e.span,{className:"hljs-attr",children:"className"}),"=",s(e.span,{className:"hljs-string",children:'"blog-body"'}),">"]}),`
         {children}
-      </div>
-    </>
+      `,p(e.span,{className:"hljs-tag",children:["</",s(e.span,{className:"hljs-name",children:"div"}),">"]}),`
+    `,s(e.span,{className:"hljs-tag",children:"</>"})]}),`
   );
 }
-`})})]})}function pn(n={}){let{wrapper:e}=n.components||{};return e?i(e,Object.assign({},n,{children:i(ye,n)})):ye(n)}var un=pn;var z={};h(z,{default:()=>fn});import{Fragment as mn,jsx as v,jsxs as je}from"https://esm.sh/react@18.2.0/jsx-runtime";function we(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",pre:"pre",code:"code"},n.components);return je(mn,{children:[v(e.h1,{children:"Import From NPM"}),`
-`,je(e.p,{children:["Aleph.js uses ",v(e.strong,{children:"ESM"})," imports syntax in Deno. To import modules from ",v(e.strong,{children:"NPM"}),", you can use ",v(e.a,{href:"https://esm.sh",children:"esm.sh"})," CDN that is maintained by Aleph.js team."]}),`
-`,v(e.pre,{children:v(e.code,{className:"language-jsx",children:`import useSWR from 'https://esm.sh/swr'
+`]})})]})}function wn(n={}){let{wrapper:e}=n.components||{};return e?s(e,Object.assign({},n,{children:s(xe,n)})):xe(n)}var _n=wn;var Z={};h(Z,{default:()=>kn});import{Fragment as Mn,jsx as t,jsxs as f}from"https://esm.sh/react@18.2.0/jsx-runtime";function ye(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",pre:"pre",code:"code",span:"span",h2:"h2"},n.components);return f(Mn,{children:[t(e.h1,{children:"Import From NPM"}),`
+`,f(e.p,{children:["Aleph.js uses ",t(e.strong,{children:"ESM"})," imports syntax in Deno. To import modules from ",t(e.strong,{children:"NPM"}),", you can use ",t(e.a,{href:"https://esm.sh",children:"esm.sh"})," CDN that is maintained by Aleph.js team."]}),`
+`,t(e.pre,{children:f(e.code,{className:"hljs language-jsx",children:[t(e.span,{className:"hljs-keyword",children:"import"})," useSWR ",t(e.span,{className:"hljs-keyword",children:"from"})," ",t(e.span,{className:"hljs-string",children:"'https://esm.sh/swr'"}),`
 
-export default function About() {
-  const { data, error } = useSWR('/api/user', fetcher)
+`,t(e.span,{className:"hljs-keyword",children:"export"})," ",t(e.span,{className:"hljs-keyword",children:"default"})," ",t(e.span,{className:"hljs-keyword",children:"function"})," ",t(e.span,{className:"hljs-title function_",children:"About"}),"(",t(e.span,{className:"hljs-params"}),`) {
+  `,t(e.span,{className:"hljs-keyword",children:"const"})," { data, error } = ",t(e.span,{className:"hljs-title function_",children:"useSWR"}),"(",t(e.span,{className:"hljs-string",children:"'/api/user'"}),`, fetcher)
 
-  if (error) {
-    return <div>failed to load</div>
+  `,t(e.span,{className:"hljs-keyword",children:"if"}),` (error) {
+    `,t(e.span,{className:"hljs-keyword",children:"return"})," ",f(e.span,{className:"xml",children:[f(e.span,{className:"hljs-tag",children:["<",t(e.span,{className:"hljs-name",children:"div"}),">"]}),"failed to load",f(e.span,{className:"hljs-tag",children:["</",t(e.span,{className:"hljs-name",children:"div"}),">"]})]}),`
   }
-  if (!data) {
-    return <div>loading...</div>
+  `,t(e.span,{className:"hljs-keyword",children:"if"}),` (!data) {
+    `,t(e.span,{className:"hljs-keyword",children:"return"})," ",f(e.span,{className:"xml",children:[f(e.span,{className:"hljs-tag",children:["<",t(e.span,{className:"hljs-name",children:"div"}),">"]}),"loading...",f(e.span,{className:"hljs-tag",children:["</",t(e.span,{className:"hljs-name",children:"div"}),">"]})]}),`
   }
-  return <div>hello {data.name}!</div>
+  `,t(e.span,{className:"hljs-keyword",children:"return"})," ",f(e.span,{className:"xml",children:[f(e.span,{className:"hljs-tag",children:["<",t(e.span,{className:"hljs-name",children:"div"}),">"]}),"hello {data.name}!",f(e.span,{className:"hljs-tag",children:["</",t(e.span,{className:"hljs-name",children:"div"}),">"]})]}),`
 }
-`})})]})}function gn(n={}){let{wrapper:e}=n.components||{};return e?v(e,Object.assign({},n,{children:v(we,n)})):we(n)}var fn=gn;var G={};h(G,{default:()=>yn});import{Fragment as xn,jsx as s,jsxs as j}from"https://esm.sh/react@18.2.0/jsx-runtime";function ve(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",pre:"pre",code:"code",h2:"h2",a:"a",em:"em"},n.components);return j(xn,{children:[s(e.h1,{children:"CSS Support"}),`
-`,j(e.p,{children:["Aleph.js allows you to import ",s(e.strong,{children:"CSS"})," files with ESM syntax:"]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-javascript",children:`import '../style.css'
-`})}),`
-`,s(e.p,{children:"or external styles:"}),`
-`,s(e.pre,{children:s(e.code,{className:"language-javascript",children:`import 'https://esm.sh/tailwindcss/dist/tailwind.min.css'
-`})}),`
-`,s(e.h2,{children:"How It Works"}),`
-`,j(e.p,{children:["Aleph's built-in CSS Loader transpiles ",s(e.code,{children:".css"})," file as JS module that will be ignored in Deno runtime and be applied in browser."]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-javascript",children:`import '../style.css';
-`})}),`
-`,s(e.p,{children:"will become:"}),`
-`,s(e.pre,{children:s(e.code,{className:"language-javascript",children:`import '../style.css.js'
-`})}),`
-`,j(e.p,{children:["the ",s(e.code,{children:"style.css.js"})," file looks like:"]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-javascript",children:`import { applyCSS } from 'https://deno.land/x/aleph/framework/core/style.ts'
-applyCSS('/style/app.css', \`\${CSS_CODE}\`)
+`]})}),`
+`,t(e.h2,{children:"Next"}),`
+`,t(e.p,{children:"Deno is adding built-in npm support: https://deno.com/blog/changes#compatibility-with-node-and-npm"})]})}function vn(n={}){let{wrapper:e}=n.components||{};return e?t(e,Object.assign({},n,{children:t(ye,n)})):ye(n)}var kn=vn;var K={};h(K,{default:()=>Cn});import{Fragment as Dn,jsx as o,jsxs as j}from"https://esm.sh/react@18.2.0/jsx-runtime";function be(n){let e=Object.assign({h1:"h1",p:"p",code:"code",strong:"strong",pre:"pre",span:"span",h2:"h2",a:"a"},n.components);return j(Dn,{children:[o(e.h1,{children:"CSS Support"}),`
+`,j(e.p,{children:["Aleph.js use the ",o(e.code,{children:"index.html"})," as page entry, that means you can add any ",o(e.strong,{children:"CSS"})," files with ",o(e.code,{children:"link"})]}),`
+`,o(e.pre,{children:j(e.code,{className:"hljs language-html",children:[j(e.span,{className:"hljs-tag",children:["<",o(e.span,{className:"hljs-name",children:"html"}),">"]}),`
+  `,j(e.span,{className:"hljs-tag",children:["<",o(e.span,{className:"hljs-name",children:"head"}),">"]}),`
+    `,j(e.span,{className:"hljs-tag",children:["<",o(e.span,{className:"hljs-name",children:"title"}),">"]}),"Hello, World!",j(e.span,{className:"hljs-tag",children:["</",o(e.span,{className:"hljs-name",children:"title"}),">"]}),`
+    `,j(e.span,{className:"hljs-tag",children:["<",o(e.span,{className:"hljs-name",children:"link"})," ",o(e.span,{className:"hljs-attr",children:"rel"}),"=",o(e.span,{className:"hljs-string",children:'"stylesheet"'})," ",o(e.span,{className:"hljs-attr",children:"href"}),"=",o(e.span,{className:"hljs-string",children:'"./style/app.css"'}),">"]}),`
+  `,j(e.span,{className:"hljs-tag",children:["</",o(e.span,{className:"hljs-name",children:"head"}),">"]}),`
+  `,j(e.span,{className:"hljs-tag",children:["<",o(e.span,{className:"hljs-name",children:"body"}),">"]}),`
+    `,j(e.span,{className:"hljs-tag",children:["<",o(e.span,{className:"hljs-name",children:"h1"}),">"]}),"Hello, World!",j(e.span,{className:"hljs-tag",children:["</",o(e.span,{className:"hljs-name",children:"h1"}),">"]}),`
+  `,j(e.span,{className:"hljs-tag",children:["</",o(e.span,{className:"hljs-name",children:"body"}),">"]}),`
+`,j(e.span,{className:"hljs-tag",children:["</",o(e.span,{className:"hljs-name",children:"html"}),">"]}),`
+`]})}),`
+`,j(e.h2,{children:["CSS Imports (",o(e.code,{children:"@import"}),")"]}),`
+`,j(e.p,{children:["Aleph.js uses ",o(e.a,{href:"https://lightningcss.dev/",children:"lightningcss"})," to bundle your CSS code that means you can use ",o(e.code,{children:"@import"})," syntax safety."]})]})}function Sn(n={}){let{wrapper:e}=n.components||{};return e?o(e,Object.assign({},n,{children:o(be,n)})):be(n)}var Cn=Sn;var Q={};h(Q,{default:()=>On});import{Fragment as Fn,jsx as c,jsxs as x}from"https://esm.sh/react@18.2.0/jsx-runtime";function we(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",span:"span",h2:"h2",blockquote:"blockquote",a:"a",h3:"h3",ul:"ul",li:"li"},n.components);return x(Fn,{children:[c(e.h1,{children:"Hot Module Replacement"}),`
+`,x(e.p,{children:["Hot Module Replacement (or HMR) allows modules to be updated at runtime without the need for a full refresh during ",c(e.strong,{children:"development"}),". To support this, Aleph.js's built-in ",c(e.strong,{children:"HMR"})," module creates a ",c(e.strong,{children:"WebSocket"})," connection to the dev server on the client, and the server listens for file changes. Once the HMR client gets an update signal from the server, Aleph.js will re-import the updated module."]}),`
+`,c(e.p,{children:"For a CSS module, the old style will be removed after the new one is applied. For a React Component, Fast Refresh will re-render the component view without losing component state."}),`
+`,x(e.p,{children:["You can use the ",c(e.code,{children:"hot"})," api to handle the module update event."]}),`
+`,c(e.pre,{children:x(e.code,{className:"hljs language-js",children:[c(e.span,{className:"hljs-keyword",children:"import"}),".",c(e.span,{className:"hljs-property",children:"meta"}),".",c(e.span,{className:"hljs-property",children:"hot"}),"?.",c(e.span,{className:"hljs-title function_",children:"accept"}),"(",x(e.span,{className:"hljs-function",children:["(",c(e.span,{className:"hljs-params",children:"mod"}),")=>"]}),`{
+  `,c(e.span,{className:"hljs-comment",children:"// update UI"}),`
+})
 
-// Support HMR in development mode.
-import.meta.hot.accept()
-`})}),`
-`,j(e.h2,{children:["Using ",s(e.code,{children:"link"})," Tag"]}),`
-`,j(e.p,{children:[s(e.strong,{children:"If you import CSS files using ESM syntax above, these CSS files will not be removed when page(component) unmounted."})," To improve this, Aleph's compiler checks all the ",s(e.code,{children:"link"})," JSX elements with ",s(e.code,{children:'rel="stylesheet"'})," then transpiles them as ES modules, and these CSS files will be ",s(e.strong,{children:"cleaned up"})," automatically when current page(component) unmounted (we call it ",s(e.a,{href:"/docs/advanced-features/jsx-magic",children:"JSX Magic"}),")."]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-tsx",children:`import React from 'https://esm.sh/react'
-
-export default function App() {
-  return (
-    <>
-      <link rel="stylesheet" href="../style/app.css" />
-      <h1>Hi :)</h1>
-    </>
-  )
-}
-`})}),`
-`,s(e.h2,{children:"Inline CSS"}),`
-`,j(e.p,{children:["Aleph.js supports ",s(e.em,{children:"Inline CSS"}),", that means you can write CSS in ",s(e.code,{children:".tsx"})," files directly, this concept is called ",s(e.strong,{children:"CSS-in-JS"}),":"]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-tsx",children:`import React from 'https://esm.sh/react'
-
-export default function App() {
-  const color = 'black'
-  return (
-    <>
-      <style>{\`
-        h1 {
-          font-size: 2em;
-          color: \${color};
-        }
-      \`}</style>
-      <h1>Hi :)</h1>
-    </>
-  )
-}
-`})}),`
-`,s(e.h2,{children:"CSS Modules"}),`
-`,j(e.p,{children:["Any CSS file ending with ",s(e.code,{children:".module.css"})," is considered a ",s(e.a,{href:"https://github.com/css-modules/css-modules",children:"CSS modules"})," file:"]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-tsx",children:`import React from 'https://esm.sh/react'
-import styles from '../style/app.module.css'
-
-export default function App() {
-  return (
-    <>
-      <h1 className={styles.title}>Hi :)</h1>
-    </>
-  )
-}
-`})}),`
-`,j(e.p,{children:["With Aleph's ",s(e.a,{href:"/docs/advanced-features/jsx-magic",children:"JSX Magic"})," you can use the scoped class names via ",s(e.code,{children:"$CLASSNAME"})," magic trick that gives you a better developer experience, when the CSS Modules is loaded by the ",s(e.code,{children:"link"})," tag."]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-tsx",children:`import React from 'https://esm.sh/react'
-
-export default function App() {
-  return (
-    <>
-      <link rel="stylesheet" href="../style/app.module.css" />
-      <h1 className="$title">Hi :)</h1>
-    </>
-  )
-}
-`})}),`
-`,j(e.p,{children:["CSS modules behavior can be configured via the ",s(e.code,{children:"css.modules"})," options, the options are passed on to ",s(e.a,{href:"https://github.com/madyankin/postcss-modules",children:"postcss-modules"}),"."]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-ts",children:`// aleph.config.ts
-
-export default <Config>{
-  css: {
-    modules: {
-      scopeBehaviour: 'global', // can be 'global' or 'local'
-    }
-  }
-}
-`})}),`
-`,s(e.h2,{children:"PostCSS"}),`
-`,j(e.p,{children:["If the ",s(e.code,{children:"aleph.config.ts"})," contains valid ",s(e.code,{children:"css.postcss"})," config, it will be automatically applied to all imported CSS."]}),`
-`,s(e.pre,{children:s(e.code,{className:"language-ts",children:`// aleph.config.ts
-
-export default <Config>{
-  css: {
-    postcss: {
-      plugins: ['postcss-nested', 'autoprefixer']
-    }
-  }
-}
-`})}),`
-`,s(e.h2,{children:"Global Stylesheet"}),`
-`,j(e.p,{children:["To add a global stylesheet to your application, import the CSS files in ",s(e.code,{children:"app.tsx"}),"."]}),`
-`,s(e.h2,{children:"CSS Imports (@import)"}),`
-`,j(e.p,{children:["Aleph.js use ",s(e.strong,{children:"esbuild"})," to bundle your css code that means you can use ",s(e.code,{children:"@import"})," syntax safety. Or you can put the imported CSS files into the ",s(e.code,{children:"public"})," directory then import them with ",s(e.em,{children:"absolute"})," URLs."]})]})}function bn(n={}){let{wrapper:e}=n.components||{};return e?s(e,Object.assign({},n,{children:s(ve,n)})):ve(n)}var yn=bn;var V={};h(V,{default:()=>vn});import{Fragment as jn,jsx as p,jsxs as w}from"https://esm.sh/react@18.2.0/jsx-runtime";function Se(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",ul:"ul",li:"li",code:"code",h2:"h2",blockquote:"blockquote",a:"a",h3:"h3"},n.components);return w(jn,{children:[p(e.h1,{children:"Hot Module Replacement"}),`
-`,w(e.p,{children:["Hot Module Replacement (or HMR) allows modules to be updated at runtime without the need for a full refresh during ",p(e.strong,{children:"development"}),". To support this, Aleph.js's built-in ",p(e.strong,{children:"HMR"})," module creates a ",p(e.strong,{children:"WebSocket"})," connection to the dev server on the client, and the server listens for file changes. Once the HMR client gets an update signal from the server, Aleph.js will re-import the updated module."]}),`
-`,p(e.p,{children:"For a CSS module, the old style will be removed after the new one is applied. For a React Component, Fast Refresh will re-render the component view without losing component state."}),`
-`,p(e.p,{children:"Aleph.js supports full HMR out-of-the-box for the following served files:"}),`
-`,w(e.ul,{children:[`
-`,w(e.li,{children:[p(e.strong,{children:"JSX"}),"/",p(e.strong,{children:"TSX"})," in ",p(e.code,{children:"pages"})," and ",p(e.code,{children:"components"})," directory"]}),`
-`,w(e.li,{children:["Files loaded by loader plugin with ",p(e.code,{children:"acceptHMR"})," enabled"]}),`
+`,c(e.span,{className:"hljs-comment",children:"// just reload the page when the module is updated"}),`
+`,c(e.span,{className:"hljs-keyword",children:"import"}),".",c(e.span,{className:"hljs-property",children:"meta"}),".",c(e.span,{className:"hljs-property",children:"hot"}),"?.",c(e.span,{className:"hljs-title function_",children:"decline"}),`()
+`]})}),`
+`,c(e.h2,{children:"React Fast Refresh"}),`
+`,x(e.blockquote,{children:[`
+`,x(e.p,{children:[`It's a reimplementation of "hot reloading" with full support from React. It's originally `,c(e.a,{href:"https://twitter.com/dan_abramov/status/1169687758849400832",children:"shipped for React Native"}),", but most of the implementation is platform-independent. The plan is to use it across the board, as a replacement for purely userland solutions (like react-hot-loader). ",c(e.a,{href:"https://github.com/facebook/react/issues/16604#issuecomment-528663101",children:"\xB9"})]}),`
 `]}),`
-`,p(e.h2,{children:"What Is Fast Refresh"}),`
-`,w(e.blockquote,{children:[`
-`,w(e.p,{children:[`It's a reimplementation of "hot reloading" with full support from React. It's originally `,p(e.a,{href:"https://twitter.com/dan_abramov/status/1169687758849400832",children:"shipped for React Native"}),", but most of the implementation is platform-independent. The plan is to use it across the board, as a replacement for purely userland solutions (like react-hot-loader). ",p(e.a,{href:"https://github.com/facebook/react/issues/16604#issuecomment-528663101",children:"\xB9"})]}),`
-`]}),`
-`,p("video",{src:"/fast-refresh.mp4",loop:!0,autoplay:!0,muted:!0}),`
-`,p(e.h3,{children:"Limits"}),`
-`,w(e.ul,{children:[`
-`,p(e.li,{children:"Fast Refresh only supports functional components with hooks."}),`
-`,w(e.li,{children:["Functional components using default exports must be named: ",p(e.code,{children:"export default function ComponentName() { ... }"}),"."]}),`
-`]})]})}function wn(n={}){let{wrapper:e}=n.components||{};return e?p(e,Object.assign({},n,{children:p(Se,n)})):Se(n)}var vn=wn;var Z={};h(Z,{default:()=>Mn});import{jsx as Y}from"https://esm.sh/react@18.2.0/jsx-runtime";function Me(n){let e=Object.assign({h1:"h1"},n.components);return Y(e.h1,{children:"Server"})}function Sn(n={}){let{wrapper:e}=n.components||{};return e?Y(e,Object.assign({},n,{children:Y(Me,n)})):Me(n)}var Mn=Sn;var K={};h(K,{default:()=>Dn});import{Fragment as Cn,jsx as l,jsxs as g}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ce(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",em:"em",code:"code",pre:"pre",h2:"h2",a:"a",blockquote:"blockquote"},n.components);return g(Cn,{children:[l(e.h1,{children:"Server-side Rendering"}),`
-`,g(e.p,{children:["By default, Aleph.js ",l(e.strong,{children:"pre-renders"})," every page. This means that Aleph.js generates HTML for each page in advance, instead of rendering it with client-side JavaScript. Pre-rendering can result in better performance and SEO."]}),`
-`,g(e.p,{children:["Each generated HTML page only needs a small amount of JavaScript. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called ",l(e.em,{children:"hydration"}),".)"]}),`
-`,g(e.p,{children:["You can disable ",l(e.strong,{children:"SSR"})," functionality in ",l(e.code,{children:"aleph.config.ts"}),":"]}),`
-`,l(e.pre,{children:l(e.code,{className:"language-ts",children:`export default <Config>{
-  ssr: false, // SPA mode
-  ...
-}
-`})}),`
-`,l(e.p,{children:"or specify exclude paths:"}),`
-`,l(e.pre,{children:l(e.code,{className:"language-ts",children:`export default <Config>{
-  ssr: {
-    exclude: [
-      /^\\/admin\\//,
-      /^\\/dashboard\\//
-    ]
-  },
-  ...
-}
-`})}),`
-`,l(e.h2,{children:"SSR Options"}),`
-`,g(e.p,{children:["If you export an object called ",l(e.code,{children:"ssr"})," with a ",l(e.code,{children:"props"})," function from a page, Aleph.js will pre-render this page using the returned props by the ",l(e.code,{children:"props"})," function at build time. The ",l(e.a,{href:"https://developer.mozilla.org/en-US/docs/Web/API/Request/Request",children:l(e.code,{children:"Request"})})," object is passed as the first parameter of the function. (This is equal to ",l(e.code,{children:"getStaticProps"})," of Next.js)"]}),`
-`,g(e.p,{children:["The ",l(e.code,{children:"paths"})," in the ",l(e.code,{children:"ssr"})," options returns a static paths if the page is a dynamic route. (This is equal to ",l(e.code,{children:"getStaticPaths"})," of Next.js)"]}),`
-`,l(e.pre,{children:l(e.code,{className:"language-tsx",children:`import React from 'https://esm.sh/react'
-import type { SSROptions } from 'https://deno.land/x/aleph/types.d.ts'
-
-export const ssr: SSROptions = {
-  props: async req => {
-    return {
-      $revalidate: 1, // revalidate props after 1 second
-      username: await auth(req.headers.get('Auth-Token')),
-      serverTime: Date.now()
-    }
-  },
-  paths: async () => {
-    return []
-  }
-}
-
-export default function Page(props) {
-  return (
-    <p>Welcome back {props.username}, the server time is {props.serverTime}</p>
-  )
-}
-`})}),`
-`,g(e.p,{children:["We don't provide the ",l(e.code,{children:"getServerSideProps"})," of Next.js, instead we allow the ",l(e.code,{children:"ssr.props"})," access to ",l(e.code,{children:"Request"}),", with ",l(e.code,{children:"$revalidate"})," in the returned props equals ",l(e.code,{children:"true"})," or ",l(e.code,{children:"0"}),", you can complete same thing."]}),`
-`,l(e.pre,{children:l(e.code,{className:"language-ts",children:`export const ssr: SSROptions = {
-  props: async req => {
-    return {
-      $revalidate: 0, // revalidate props each request
-      username: await auth(req.headers.get('Auth-Token'))
-    }
-  }
-}
-`})}),`
-`,g(e.h2,{children:[l(e.code,{children:"useDeno"})," hook"]}),`
-`,g(e.p,{children:["Aleph.js also provides an ",l(e.code,{children:"useDeno"})," hook to mix the ",l(e.strong,{children:"Deno"})," runtime in your component:"]}),`
-`,l(e.pre,{children:l(e.code,{className:"language-tsx",children:`import React from 'https://esm.sh/react'
-import { useDeno } from 'https://deno.land/x/aleph/framework/react/mod.ts'
-
-export default function Page() {
-  const version = useDeno(() => {
-    return Deno.version
-  })
-
-  return (
-    <p>Powered by Deno v{version.deno}</p>
-  )
-}
-`})}),`
-`,g(e.blockquote,{children:[`
-`,g(e.p,{children:["To learn more ",l(e.code,{children:"useDeno"}),", check the ",g(e.a,{href:"/docs/advanced-features/use-deno-hook",children:[l(e.code,{children:"useDeno"})," Hook"]})," documentation."]}),`
-`]}),`
-`,l(e.h2,{children:"Static Site Generation (SSG)"}),`
-`,g(e.p,{children:["Aleph.js can export your app as a ",l(e.strong,{children:"static site"})," with rendered htmls, which can be served on any server or CDN."]}),`
-`,l(e.pre,{children:l(e.code,{className:"language-bash",children:`$ aleph build
-`})}),`
-`,g(e.p,{children:["For ",l(e.strong,{children:"dynamic routes"})," with SSR, your can define the ",l(e.strong,{children:"static paths"})," in the ",l(e.code,{children:"ssr"})," options:"]}),`
-`,l(e.pre,{children:l(e.code,{className:"language-tsx",children:`// pages/post/[id].tsx
-
-import type { SSROptions } from 'https://deno.land/x/aleph/types.d.ts'
-
-export const ssr: SSROptions = {
-  paths: async () => {
-    const posts = await (await fetch('https://.../api/posts')).json()
-    return posts.map(({ id }) => \`/post/\${id}\`)
-  }
-}
-
-export default function Post() {
-  return (
-    <div>...</div>
-  )
-}
-`})}),`
-`,g(e.blockquote,{children:[`
-`,g(e.p,{children:["See the ",l(e.a,{href:"https://alephjs-hello-world.vercel.app/",children:"hello-world"})," example on ",l(e.a,{href:"https://vercel.com",children:"Vercel"}),"."]}),`
-`]})]})}function _n(n={}){let{wrapper:e}=n.components||{};return e?l(e,Object.assign({},n,{children:l(Ce,n)})):Ce(n)}var Dn=_n;var ee={};h(ee,{default:()=>Rn});import{jsx as Q}from"https://esm.sh/react@18.2.0/jsx-runtime";function _e(n){let e=Object.assign({h1:"h1"},n.components);return Q(e.h1,{children:"Unocss"})}function kn(n={}){let{wrapper:e}=n.components||{};return e?Q(e,Object.assign({},n,{children:Q(_e,n)})):_e(n)}var Rn=kn;var te={};h(te,{default:()=>Nn});import{jsx as ne}from"https://esm.sh/react@18.2.0/jsx-runtime";function De(n){let e=Object.assign({h1:"h1"},n.components);return ne(e.h1,{children:"Vue"})}function An(n={}){let{wrapper:e}=n.components||{};return e?ne(e,Object.assign({},n,{children:ne(De,n)})):De(n)}var Nn=An;var re={};h(re,{default:()=>Xn});import{jsx as oe}from"https://esm.sh/react@18.2.0/jsx-runtime";function ke(n){let e=Object.assign({h1:"h1"},n.components);return oe(e.h1,{children:"React"})}function On(n={}){let{wrapper:e}=n.components||{};return e?oe(e,Object.assign({},n,{children:oe(ke,n)})):ke(n)}var Xn=On;var st={"/":Tn,"/docs":Pn,"/docs/browser-support":D,"/docs/deployment":k,"/docs/index":R,"/docs/get-started":A,"/docs/framework/vue":O,"/docs/framework/react-mdx":T,"/docs/framework/solid":L,"/docs/framework/react":F,"/docs/framework/yew":q,"/docs/api-reference/middleware":H,"/docs/api-reference/server-config":E,"/docs/basic-concepts/import-maps":W,"/docs/basic-concepts/static-file-serving":U,"/docs/basic-concepts/routing":B,"/docs/basic-concepts/import-from-npm":z,"/docs/basic-concepts/css-support":G,"/docs/basic-concepts/hmr":V,"/docs/basic-concepts/server":Z,"/docs/basic-concepts/ssr":K,"/docs/basic-concepts/unocss":ee,"/docs/api-reference/framework/vue":te,"/docs/api-reference/framework/react":re,depGraph:{"modules":[{"specifier":"./routes/docs/browser-support.md"},{"specifier":"./routes/docs/deployment.md"},{"specifier":"./routes/docs/index.md"},{"specifier":"./routes/docs/get-started.md"},{"specifier":"./routes/docs/framework/vue.md"},{"specifier":"./routes/docs/framework/react-mdx.md"},{"specifier":"./routes/docs/framework/solid.md"},{"specifier":"./routes/docs/framework/react.md"},{"specifier":"./routes/docs/framework/yew.md"},{"specifier":"./routes/docs/api-reference/middleware.md"},{"specifier":"./routes/docs/api-reference/server-config.md"},{"specifier":"./routes/docs/basic-concepts/import-maps.md"},{"specifier":"./routes/docs/basic-concepts/static-file-serving.md"},{"specifier":"./routes/docs/basic-concepts/routing.md"},{"specifier":"./routes/docs/basic-concepts/import-from-npm.md"},{"specifier":"./routes/docs/basic-concepts/css-support.md"},{"specifier":"./routes/docs/basic-concepts/hmr.md"},{"specifier":"./routes/docs/basic-concepts/server.md"},{"specifier":"./routes/docs/basic-concepts/ssr.md"},{"specifier":"./routes/docs/basic-concepts/unocss.md"},{"specifier":"./routes/docs/api-reference/framework/vue.md"},{"specifier":"./routes/docs/api-reference/framework/react.md"}]}};export{st as default};
+`,c("video",{src:"/fast-refresh.mp4",loop:!0,autoplay:!0,muted:!0}),`
+`,c(e.h3,{children:"Limits"}),`
+`,x(e.ul,{children:[`
+`,c(e.li,{children:"Fast Refresh only supports functional components with hooks."}),`
+`,x(e.li,{children:["Functional components using default exports must be named: ",c(e.code,{children:"export default function ComponentName() { ... }"}),"."]}),`
+`]})]})}function Rn(n={}){let{wrapper:e}=n.components||{};return e?c(e,Object.assign({},n,{children:c(we,n)})):we(n)}var On=Rn;var ee={};h(ee,{default:()=>In});import{Fragment as Xn,jsx as O,jsxs as An}from"https://esm.sh/react@18.2.0/jsx-runtime";function _e(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return An(Xn,{children:[O(e.h1,{children:"Server"}),`
+`,O(e.p,{children:O(e.em,{children:"WIP"})})]})}function Ln(n={}){let{wrapper:e}=n.components||{};return e?O(e,Object.assign({},n,{children:O(_e,n)})):_e(n)}var In=Ln;var ne={};h(ne,{default:()=>Pn});import{Fragment as $n,jsx as N,jsxs as X}from"https://esm.sh/react@18.2.0/jsx-runtime";function Me(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",em:"em",code:"code",pre:"pre",span:"span"},n.components);return X($n,{children:[N(e.h1,{children:"Server-side Rendering"}),`
+`,X(e.p,{children:["By default, Aleph.js ",N(e.strong,{children:"pre-renders"})," every page. This means that Aleph.js generates HTML for each page in advance, instead of rendering it with client-side JavaScript. Pre-rendering can result in better performance and SEO."]}),`
+`,X(e.p,{children:["Each generated HTML page only needs a small amount of JavaScript. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called ",N(e.em,{children:"hydration"}),".)"]}),`
+`,X(e.p,{children:["You can disable ",N(e.strong,{children:"SSR"})," functionality in ",N(e.code,{children:"server.ts"}),":"]}),`
+`,N(e.pre,{children:X(e.code,{className:"hljs language-ts",children:[N(e.span,{className:"hljs-title function_",children:"server"}),`({
+  `,N(e.span,{className:"hljs-attr",children:"ssr"}),": ",N(e.span,{className:"hljs-literal",children:"true"}),`
+})
+`]})})]})}function Tn(n={}){let{wrapper:e}=n.components||{};return e?N(e,Object.assign({},n,{children:N(Me,n)})):Me(n)}var Pn=Tn;var se={};h(se,{default:()=>En});import{Fragment as Wn,jsx as A,jsxs as Hn}from"https://esm.sh/react@18.2.0/jsx-runtime";function ve(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Hn(Wn,{children:[A(e.h1,{children:"Unocss"}),`
+`,A(e.p,{children:A(e.em,{children:"WIP"})})]})}function qn(n={}){let{wrapper:e}=n.components||{};return e?A(e,Object.assign({},n,{children:A(ve,n)})):ve(n)}var En=qn;var ae={};h(ae,{default:()=>Bn});import{Fragment as Un,jsx as L,jsxs as Jn}from"https://esm.sh/react@18.2.0/jsx-runtime";function ke(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Jn(Un,{children:[L(e.h1,{children:"Vue"}),`
+`,L(e.p,{children:L(e.em,{children:"WIP"})})]})}function Yn(n={}){let{wrapper:e}=n.components||{};return e?L(e,Object.assign({},n,{children:L(ke,n)})):ke(n)}var Bn=Yn;var le={};h(le,{default:()=>Zn});import{Fragment as Gn,jsx as I,jsxs as zn}from"https://esm.sh/react@18.2.0/jsx-runtime";function De(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return zn(Gn,{children:[I(e.h1,{children:"React"}),`
+`,I(e.p,{children:I(e.em,{children:"WIP"})})]})}function Vn(n={}){let{wrapper:e}=n.components||{};return e?I(e,Object.assign({},n,{children:I(De,n)})):De(n)}var Zn=Vn;var _s={"/":Kn,"/docs":Qn,"/docs/browser-support":$,"/docs/deployment":T,"/docs/index":P,"/docs/get-started":W,"/docs/framework/vue":H,"/docs/framework/react-mdx":q,"/docs/framework/solid":E,"/docs/framework/react":U,"/docs/framework/yew":J,"/docs/api-reference/middleware":Y,"/docs/api-reference/server-config":B,"/docs/basic-concepts/import-maps":G,"/docs/basic-concepts/static-file-serving":z,"/docs/basic-concepts/routing":V,"/docs/basic-concepts/import-from-npm":Z,"/docs/basic-concepts/css-support":K,"/docs/basic-concepts/hmr":Q,"/docs/basic-concepts/server":ee,"/docs/basic-concepts/ssr":ne,"/docs/basic-concepts/unocss":se,"/docs/api-reference/framework/vue":ae,"/docs/api-reference/framework/react":le,depGraph:{"modules":[{"specifier":"./routes/docs/browser-support.md"},{"specifier":"./routes/docs/deployment.md"},{"specifier":"./routes/docs/index.md"},{"specifier":"./routes/docs/get-started.md"},{"specifier":"./routes/docs/framework/vue.md"},{"specifier":"./routes/docs/framework/react-mdx.md"},{"specifier":"./routes/docs/framework/solid.md"},{"specifier":"./routes/docs/framework/react.md"},{"specifier":"./routes/docs/framework/yew.md"},{"specifier":"./routes/docs/api-reference/middleware.md"},{"specifier":"./routes/docs/api-reference/server-config.md"},{"specifier":"./routes/docs/basic-concepts/import-maps.md"},{"specifier":"./routes/docs/basic-concepts/static-file-serving.md"},{"specifier":"./routes/docs/basic-concepts/routing.md"},{"specifier":"./routes/docs/basic-concepts/import-from-npm.md"},{"specifier":"./routes/docs/basic-concepts/css-support.md"},{"specifier":"./routes/docs/basic-concepts/hmr.md"},{"specifier":"./routes/docs/basic-concepts/server.md"},{"specifier":"./routes/docs/basic-concepts/ssr.md"},{"specifier":"./routes/docs/basic-concepts/unocss.md"},{"specifier":"./routes/docs/api-reference/framework/vue.md"},{"specifier":"./routes/docs/api-reference/framework/react.md"}]}};export{_s as default};

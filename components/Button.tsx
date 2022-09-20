@@ -79,7 +79,7 @@ export default function Button({
       css.pointerEvents = "none";
     }
     return css;
-  }, [height, color, hover, activated]);
+  }, [height, color, hover, activated, strong]);
 
   return (
     <button

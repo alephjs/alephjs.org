@@ -24,3 +24,7 @@ export default function About() {
   return <div>hello {data.name}!</div>
 }
 ```
+
+## Next
+
+Deno is adding built-in npm support: https://deno.com/blog/changes#compatibility-with-node-and-npm

@@ -8,7 +8,7 @@ authors:
 # Aleph.js
 
 **Aleph.js** (or **Aleph** or **א** or **阿莱夫**, <samp>ˈɑːlɛf</samp>) is a
-fullstack framework in [Deno]. inspired by [Next.js], [Remix] and [Vite].
+fullstack framework in [Deno]. Inspired by [Next.js], [Remix] and [Vite].
 
 > The name is taken from the book [_The Aleph_] by **Jorge Luis Borges**.
 

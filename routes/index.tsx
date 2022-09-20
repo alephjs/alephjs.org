@@ -69,9 +69,9 @@ export default function Home() {
         </p>
         <div className="flex gap-1.5 mt-3">
           <Link to="/docs/get-started">
-            <Button height={42} strong>
-              Get started{" "}
-              <span className="pl-3 opacity-60 text-sm font-medium">
+            <Button height={42} strong activated>
+              Get started
+              <span className="pl-2 opacity-60 text-sm font-medium">
                 {version}
               </span>
             </Button>

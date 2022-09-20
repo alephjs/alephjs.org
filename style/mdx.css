@@ -1,3 +1,5 @@
+@import url("./hljs.css");
+
 :root {
   --theme-color: #d63369;
 }
@@ -33,7 +35,7 @@
   }
 
   & h1 {
-    margin-bottom: 1.2rem;
+    margin-top: 3.2rem;
     font-size: 2.4rem;
     font-weight: 700;
   }
@@ -43,31 +45,23 @@
   }
 
   & h2 {
-    margin-top: 3rem;
+    margin-top: 2.8rem;
     font-size: 1.8rem;
   }
 
   & h3 {
-    margin-top: 2.7rem;
+    margin-top: 2.4rem;
     font-size: 1.5rem;
   }
 
   & h4 {
-    margin-top: 2.4rem;
+    margin-top: 2.0rem;
     font-size: 1.27rem;
   }
 
   & > p {
     margin-top: 1.2rem;
     line-height: 1.5;
-  }
-
-  & > p + p {
-    margin-top: 1.2rem;
-  }
-
-  & > h4 + p {
-    margin-top: 0.9rem;
   }
 
   & ul {
@@ -120,6 +114,7 @@
   & :not(pre)>code {
     display: inline;
     white-space: pre-wrap;
+    font-size: 90%;
     color: var(--theme-color);
 
     &::before,

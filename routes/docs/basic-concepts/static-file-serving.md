@@ -7,16 +7,14 @@ authors:
 
 # Static File Serving
 
-Aleph.js will serve any static files in the `public` directory. Files inside the `public` directory can then be referenced by your code by using the base URL (`/`).
+Aleph.js will serve any static files in the project directory. Files inside the project directory can then be referenced by your code by using the base URL (`/`).
 
-For example, if you add an image `public/logo.png`, the following code will access the image:
+For example, if you add an image `assets/logo.png`, the following code will access the image:
 
 ```jsx
-import React from "https://esm.sh/react"
-
 export default function Logo() {
   return (
-    <img src="/logo.png" alt="Logo" />
+    <img src="/assets/logo.png" alt="Logo" />
   )
 }
 ```
