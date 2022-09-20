@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { Head, NavLink, useRouter } from "aleph/react";
-import Logo from "components/Logo.tsx";
 import Header from "components/Header.tsx";
 
 type Menu = {
@@ -23,20 +22,20 @@ const navMenu: Menu[] = [
     items: [
       {
         title: "About",
-        path: "/docs/index",
+        path: "/docs",
       },
       { title: "Get Started", path: "/docs/get-started" },
       {
         title: "Basic Concepts",
         path: "/docs/basic-concepts",
         submenu: [
-          { title: "Pages", path: "/pages" },
-          { title: "APIs", path: "/apis" },
+          { title: "Server", path: "/server" },
           { title: "Routing", path: "/routing" },
-          { title: "Built-in CSS Support", path: "/built-in-css-support" },
-          { title: "SSR & SSG", path: "/ssr-and-ssg" },
+          { title: "Server-side Rendering", path: "/ssr" },
+          { title: "CSS Support", path: "/css-support" },
+          { title: "Unocss", path: "/unocss" },
           { title: "Static File Serving", path: "/static-file-serving" },
-          { title: "HMR with Fast Refresh", path: "/hmr-with-fast-refresh" },
+          { title: "Hot Module Replacement", path: "/hmr" },
           { title: "Import From NPM", path: "/import-from-npm" },
           { title: "Import Maps", path: "/import-maps" },
         ],
@@ -45,13 +44,11 @@ const navMenu: Menu[] = [
         title: "Framework",
         path: "/docs/framework",
         submenu: [
-          { title: "`useDeno` Hook", path: "/use-deno-hook" },
-          { title: "Dynamic Importing", path: "/dynamic-importing" },
-          { title: "Custom `App`", path: "/custom-app" },
-          { title: "Custom Error Page", path: "/custom-error-page" },
-          { title: "Custom Server", path: "/custom-server" },
-          { title: "JSX Magic", path: "/jsx-magic" },
-          { title: "Using Plugins", path: "/using-plugins" },
+          { title: "React", path: "/react" },
+          { title: "React with MDX", path: "/react-mdx" },
+          { title: "Vue", path: "/vue" },
+          { title: "SolidJS", path: "/solid" },
+          { title: "Yew", path: "/yew" },
         ],
       },
       { title: "Browser Support", path: "/docs/browser-support" },
@@ -61,9 +58,16 @@ const navMenu: Menu[] = [
   {
     name: "API Reference",
     items: [
-      { title: "Server Config", path: "/docs/api-reference/config" },
-      { title: "Framework API", path: "/docs/api-reference/framework-api" },
-      { title: "Plugin API", path: "/docs/api-reference/plugin-api" },
+      { title: "Server Config", path: "/docs/api-reference/server-config" },
+      {
+        title: "Framework API",
+        path: "/docs/api-reference/framework",
+        submenu: [
+          { title: "React", path: "/react" },
+          { title: "Vue", path: "/vue" },
+        ],
+      },
+      { title: "Middleware API", path: "/docs/api-reference/middleware" },
     ],
   },
 ];
@@ -104,9 +108,8 @@ export default function Docs({ children }: React.PropsWithChildren) {
     const md = url.pathname === "/docs"
       ? url.pathname + "/index.md"
       : url.pathname + ".md";
-    return `https://github.com/alephjs/alephjs.org/edit/master/pages${md}`;
+    return `https://github.com/alephjs/alephjs.org/edit/master/routes${md}`;
   }, [url.pathname]);
-  const title = "Documentation - Aleph.js";
   const filteredNavMenu = useMemo(() => {
     if (searchWords === "") {
       return navMenu;
@@ -138,7 +141,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
         {} as Record<string, boolean>,
       ),
     );
-    document.querySelectorAll(".docs .content video").forEach((block) => {
+    document.querySelectorAll(".makedown-body video").forEach((block) => {
       const v = block as HTMLVideoElement;
       v.className = "is-paused";
       v.addEventListener("click", () => {
@@ -165,7 +168,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
         <meta name="twitter:site" content="@alephjs" />
       </Head>
       <Header />
-      <div className="m-auto w-14/16 pt-10 max-w-250 h-full flex items-start justify-between gap-12">
+      <div className="m-auto w-14/16 py-4 max-w-300 h-full flex items-start justify-between gap-18">
         <aside className="sticky top-20 w-60 shrink-0">
           <div className="search">
             <input
@@ -193,7 +196,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                       return (
                         <Fragment key={item.title + item.path}>
                           <li
-                            className={"py-1 flex items-center gap-2 cursor-pointer text-gray-700 hover:text-gray-900 " +
+                            className={"py-1.5 flex items-center gap-2 cursor-pointer text-gray-700 hover:text-gray-900 " +
                               (isExtended ? "!text-gray-900" : "text-gray-400")}
                             onClick={() => {
                               extended[item.path] = !extended[item.path];
@@ -221,7 +224,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                           {isExtended &&
                             item.submenu.map(({ title, path }) => (
                               <li
-                                className="py-1 pl-4 ml-0.5 border-l border-gray-200/80 flex items-center gap-2"
+                                className="py-1.5 pl-4 ml-0.5 border-l border-gray-200/80 flex items-center gap-2"
                                 key={title + path}
                               >
                                 <div className="flex items-center justify-center w-[6px] h-[10px]">
@@ -232,6 +235,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                                   activeClassName="!text-gray-900 font-semibold"
                                   to={item.path + (path === "/" ? "" : path)}
                                   onClick={() => setMenuIsOpen(false)}
+                                  exact
                                 >
                                   {title}
                                 </NavLink>
@@ -242,7 +246,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                     }
                     return (
                       <li
-                        className="py-1 flex items-center gap-2"
+                        className="py-1.5 flex items-center gap-2"
                         key={item.title + item.path}
                       >
                         <div className="flex items-center justify-center w-[6px] h-[10px]">
@@ -253,6 +257,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
                           className="text-gray-700 hover:text-gray-900"
                           activeClassName="!text-gray-900 font-semibold"
                           onClick={() => setMenuIsOpen(false)}
+                          exact
                         >
                           {item.title}
                         </NavLink>
@@ -264,7 +269,9 @@ export default function Docs({ children }: React.PropsWithChildren) {
             ))}
           </nav>
         </aside>
-        {children}
+        <div className="markdown-body grow-1">
+          {children}
+        </div>
       </div>
     </>
   );

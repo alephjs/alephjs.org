@@ -1,9 +1,11 @@
+import { Link } from "aleph/react";
+
 export default function Header() {
   return (
     <header className="h-20 sticky top-0 z-50 bg-white">
-      <div className="m-auto w-14/16 max-w-250 h-full flex items-center justify-between">
+      <div className="m-auto w-14/16 max-w-300 h-full flex items-center justify-between">
         <h1>
-          <a className="text-lg" href="/">
+          <Link className="text-md" to="/">
             <svg
               viewBox="0 0 60 12.09"
               style={{ width: "auto", height: "1em" }}
@@ -27,7 +29,7 @@ export default function Header() {
               {/* s */}
               <path d="M56,7.81a.56.56,0,0,0,.17.32.53.53,0,0,0,.34.13h1.41a.51.51,0,0,0,.51-.51c0-.34-.22-.53-.67-.56l-1.11-.12a2.21,2.21,0,0,1-1.45-.66A1.9,1.9,0,0,1,54.65,5a2,2,0,0,1,.6-1.47,2,2,0,0,1,1.46-.6h1.18a2,2,0,0,1,1.27.43,2,2,0,0,1,.74,1.12l-1.5.44a.53.53,0,0,0-.17-.31.52.52,0,0,0-.34-.12H56.71a.49.49,0,0,0-.36.15.48.48,0,0,0-.14.36c0,.3.2.47.63.51L58,5.64a2.22,2.22,0,0,1,1.42.68A2,2,0,0,1,60,7.75a2.08,2.08,0,0,1-2.07,2.07H56.52a2,2,0,0,1-1.27-.44,2.05,2.05,0,0,1-.74-1.11Z" />
             </svg>
-          </a>
+          </Link>
         </h1>
         <nav className="flex items-center gap-6 text-xl">
           <a

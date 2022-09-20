@@ -1,10 +1,10 @@
 ---
-title: Built-in CSS Support
+title: CSS Support
 authors:
   - ije
 ---
 
-# Built-in CSS Support
+# CSS Support
 
 Aleph.js allows you to import **CSS** files with ESM syntax:
 

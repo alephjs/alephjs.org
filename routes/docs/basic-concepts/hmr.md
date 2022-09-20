@@ -1,11 +1,11 @@
 ---
-title: HMR with Fast Refresh
+title: Hot Module Replacement
 authors:
   - ije
   - razermoon
 ---
 
-# HMR with Fast Refresh
+# Hot Module Replacement
 
 Hot Module Replacement (or HMR) allows modules to be updated at runtime without the need for a full refresh during **development**. To support this, Aleph.js's built-in **HMR** module creates a **WebSocket** connection to the dev server on the client, and the server listens for file changes. Once the HMR client gets an update signal from the server, Aleph.js will re-import the updated module.
 

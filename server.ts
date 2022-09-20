@@ -1,27 +1,24 @@
-import presetUno from "@unocss/preset-uno.ts";
+import presetUno from "@unocss/preset-uno";
 import { serve } from "aleph/react-server";
+import MDXLoader from "aleph/react/mdx-loader";
 import routes from "./routes/_export.ts";
-import { CSS } from "./utils/gfm.ts";
 
 serve({
   router: {
+    glob: "./routes/**/*.{ts,tsx,mdx,md}",
     routes,
   },
   unocss: {
     presets: [presetUno()],
   },
+  loaders: [new MDXLoader()],
   middlewares: [
     {
-      name: "gfm-css",
-      fetch: (req) => {
-        const url = new URL(req.url);
-        if (url.pathname === "/gfm.css") {
-          return new Response(
-            CSS +
-              "\n.markdown-body ul { list-style: disc; } .markdown-body ol { list-style: decimal; } .markdown-body strong { font-weight: 600; }",
-            {
-              headers: { "content-type": "text/css" },
-            },
+      name: "proxy-module",
+      fetch(req: Request) {
+        if (req.url.endsWith(".ts")) {
+          return fetch(
+            "https://deno.land/x/aleph" + (new URL(req.url)).pathname,
           );
         }
       },

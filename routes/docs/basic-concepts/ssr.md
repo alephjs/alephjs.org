@@ -1,12 +1,12 @@
 ---
-title: SSR & SSG
+title: Server-side Rendering
 authors:
   - ije
   - Serdar Sever
   - razermoon
 ---
 
-# SSR & SSG
+# Server-side Rendering
 
 By default, Aleph.js **pre-renders** every page. This means that Aleph.js generates HTML for each page in advance, instead of rendering it with client-side JavaScript. Pre-rendering can result in better performance and SEO.
 

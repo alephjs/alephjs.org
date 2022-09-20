@@ -1,4 +1,4 @@
-import { Head, useData } from "aleph/react";
+import { Head, Link, useData } from "aleph/react";
 import Button from "components/Button.tsx";
 import Header from "components/Header.tsx";
 
@@ -67,15 +67,15 @@ export default function Home() {
           <strong>Aleph.js</strong>{" "}
           gives you the best developer experience for building web applications.
         </p>
-        <div className="flex gap-2 mt-3">
-          <a href="https://github.com/alephjs/aleph.js">
+        <div className="flex gap-1.5 mt-3">
+          <Link to="/docs/get-started">
             <Button height={42} strong>
-              Working In Progress{" "}
+              Get started{" "}
               <span className="pl-3 opacity-60 text-sm font-medium">
                 {version}
               </span>
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </>
