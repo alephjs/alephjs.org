@@ -3,7 +3,7 @@ import { Link } from "aleph/react";
 export default function Header() {
   return (
     <header className="h-20 sticky top-0 z-50 bg-white">
-      <div className="m-auto w-14/16 max-w-300 h-full flex items-center justify-between">
+      <div className="m-auto w-14/16 max-w-[1080px] h-full flex items-center justify-between">
         <h1>
           <Link className="text-md" to="/">
             <svg

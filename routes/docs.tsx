@@ -168,7 +168,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
         <meta name="twitter:site" content="@alephjs" />
       </Head>
       <Header />
-      <div className="m-auto w-14/16 py-4 max-w-300 h-full flex items-start justify-between gap-18">
+      <div className="m-auto w-14/16 py-4 max-w-[1080px] h-full flex items-start justify-between gap-18">
         <aside className="sticky top-20 w-60 shrink-0">
           <div className="search">
             <input
