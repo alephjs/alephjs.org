@@ -5,6 +5,8 @@ authors:
   - razermoon
 ---
 
+import { Link } from "aleph/react"
+
 # Aleph.js
 
 **Aleph.js** (or **Aleph** or **א** or **阿莱夫**, <samp>ˈɑːlɛf</samp>) is a
@@ -41,35 +43,16 @@ by Deno cache system. No `package.json` and `node_modules` directory needed.
 - Support Middware
 - Custom Module Loader like MDX
 
-## Supported frameworks
+## Supported Frameworks
 
-- [React](https://github.com/alephjs/aleph.js/tree/main/examples/react-app)
-- [React with MDX](https://github.com/alephjs/aleph.js/tree/main/examples/react-mdx-app)
-- [Vue](https://github.com/alephjs/aleph.js/tree/main/examples/vue-app)
-- [Solid](https://github.com/alephjs/aleph.js/tree/main/examples/solid-app)
+- [React](https://reactjs.org) (<Link to="/docs/framework/react">docs</Link>, [example](https://github.com/alephjs/aleph.js/tree/main/examples/react-app))
+- [React](https://reactjs.org) with [MDX](https://mdxjs.com) (<Link to="/docs/framework/react-mdx">docs</Link>, [example](https://github.com/alephjs/aleph.js/tree/main/examples/react-mdx-app))
+- [Vue](https://vuejs.org) (<Link to="/docs/framework/vue">docs</Link>, [example](https://github.com/alephjs/aleph.js/tree/main/examples/vue-app))
+- [SolidJS](https://www.solidjs.com/) (<Link to="/docs/framework/solid">docs</Link>, [example](https://github.com/alephjs/aleph.js/tree/main/examples/solid-app))
   _Experimental_
-- [Yew](https://github.com/alephjs/aleph.js/tree/main/examples/yew-app) _Rust_
+- [Yew](https://yew.rs) (<Link to="/docs/framework/yew">docs</Link>, [example](https://github.com/alephjs/aleph.js/tree/main/examples/yew-app)) _In Rust_
 
 Plan to support: [Svelte](https://svelte.dev/), [Lit](https://lit.dev/), etc..
-
-## Examples
-
-Some demo apps deployed to [Deno Deploy](https://deno.com/deploy):
-
-- React App: https://aleph-hello.deno.dev/
-- Vue App: https://aleph-vue.deno.dev/
-- REST API: https://aleph-api.deno.dev/
-- React 18 Suspense SSR: https://aleph-suspense-ssr.deno.dev/
-- UnoCSS(tailwind): https://aleph-unocss.deno.dev/
-- Monaco Editor: https://aleph-monaco-editor.deno.dev/
-- Yew SSR: https://aleph-yew.deno.dev/
-- Github OAuth Middleware: https://aleph-github-oauth.deno.dev/
-
-## Real-world Apps
-
-- Deno Deploy: https://dash.deno.com
-- Meet Me: https://meet-me.deno.dev
-  ([source](https://github.com/denoland/meet-me))
 
 ## Status
 

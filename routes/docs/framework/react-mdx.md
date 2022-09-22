@@ -15,7 +15,7 @@ deno run -A -r https://alephjs.org/init.ts --template=react-mdx
 
 ## Extending MDX
 
-You can add  [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins) and [rehype plugins](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#list-of-plugins) for the MDX compiler in `server.ts`
+You can add [remark plugins](https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins) and [rehype plugins](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#list-of-plugins) for the **MDX Loader** in `server.ts`
 
 ```js
 import { serve } from "aleph/server";

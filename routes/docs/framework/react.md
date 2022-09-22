@@ -63,8 +63,8 @@ specified page:
 
 ## NavLink
 
-Aleph.js also provides a `NavLink` component that will add active className when
-the specific page is activated. You can change the active className via
+Aleph.js also provides a `NavLink` component that will add active class/style
+when the specific page is activated. You can add the active class via
 `activeClassName` or add active style using `activeStyle`.
 
 ```jsx
@@ -73,9 +73,9 @@ import { NavLink } from "aleph/react";
 export default function Nav() {
   return (
     <nav>
-      <NavLink href="/">Home</NavLink>
-      <NavLink activeClassName="active" href="/about">About</NavLink>
-      <NavLink activeStyle={{ fontWeight: "bold" }} href="/contact">
+      <NavLink to="/">Home</NavLink>
+      <NavLink activeClassName="active" to="/about">About</NavLink>
+      <NavLink activeStyle={{ color: "red" }} to="/contact">
         Contact
       </NavLink>
     </nav>

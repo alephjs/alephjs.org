@@ -15,23 +15,25 @@ module transpile.
 ```jsx
 // server.ts
 
-import { serve } from "aleph/server"
+import { serve } from "aleph/server";
 
 serve({
   port: 8080,
   router: {
     glob: "./routes/**/*.{ts,tsx}",
-  }
-  middlewares: [ /* ... */ ]
-  uncoss: { /* ... */ }
+  },
+  middlewares: [/* ... */],
+  uncoss: {/* ... */},
   ssr: (ctx) => {
-    return renderToString(<App/>)
-  }
-})
+    return renderToString(<App />);
+  },
+});
 ```
 
-> Normally you don't need to configure the server by using Aleph's template created by the `init` script.
-> To learn more about server configuration, check out the
+> Normally you don't need to configure the server by using Aleph's template
+> created by the `init` script. To learn more about server configuration, check
+> out the
+>
 > <Link to="/docs/api-reference/server-config">Server Config API</Link>.
 
 ## `index.html`
@@ -62,5 +64,6 @@ output template, you can add your own tags to it, like `<meta>`, `<script>`,
 
 - The attribute `data-ssr-root` is to point out the root element for server-side
   rendering.
-- Aleph.js will transpile modules for browsers automatically, you can safely add non-JS modules like `JSX` or `TS`.
+- Aleph.js will transpile modules for browsers automatically, you can safely add
+  non-JS modules like `JSX` or `TS`.
 - CSS files will be bundled using [lightningcss](https://lightningcss.dev/)

@@ -17,6 +17,7 @@ Create a new app:
 
 ```bash
 deno run -A -r https://alephjs.org/init.ts
+cd my-app
 ```
 
 Start the app in `development` mode:
