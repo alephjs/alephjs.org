@@ -59,7 +59,7 @@
     font-size: 1.27rem;
   }
 
-  & > p {
+  &>p {
     margin-top: 1.2rem;
     line-height: 1.5;
   }
@@ -82,10 +82,12 @@
     list-style: decimal inside;
   }
 
-  & ul, & ol {
-    & li + li {
+  & ul,
+  & ol {
+    & li+li {
       margin-top: 0.5rem;
     }
+
     & li p {
       display: inline;
     }
@@ -136,6 +138,17 @@
 
     & a {
       box-shadow: none;
+    }
+  }
+
+  & samp {
+    font-weight: 700;
+
+    &:before,
+    &:after {
+      font-weight: 500;
+      color: #aaa;
+      content: "/";
     }
   }
 }
