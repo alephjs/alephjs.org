@@ -7,7 +7,7 @@ authors:
 
 # Import Maps
 
-Aleph.js supports [import maps](https://github.com/WICG/import-maps). To use import maps, create a `import_map.json` file in the root directory:
+To use [import maps](https://github.com/WICG/import-maps), create a `import_map.json` file in the root directory:
 
 ```json
 {
@@ -19,14 +19,21 @@ Aleph.js supports [import maps](https://github.com/WICG/import-maps). To use imp
 }
 ```
 
+Add the `importMap` option in the `deno.json` file:
+
+```json
+{
+  "importMap": "import_map.json"
+}
+```
+
 then in your code:
 
 ```tsx
-import React from "react";
+import { useState } from "react";
 import Logo from "@/components/logo.tsx";
 
 export default function App() {
   return <Logo />;
 }
 ```
-

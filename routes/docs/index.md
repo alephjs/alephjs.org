@@ -35,7 +35,7 @@ by Deno cache system. No `package.json` and `node_modules` directory needed.
 - Just-in-time Server-side Rendering(SSR)
 - Streaming SSR
 - Support Typescript/JSX in Deno out of the box
-- Built-in [Unocss] (automatic CSS)
+- Built-in [Unocss] (Automatic CSS)
 - Import Maps
 - Hot Module Replacement (or HMR)
 - Support Middware

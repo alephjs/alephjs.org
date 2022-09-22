@@ -15,7 +15,7 @@ Each generated HTML page only needs a small amount of JavaScript. When a page is
 You can disable **SSR** functionality in `server.ts`:
 
 ```ts
-server({
+serve({
   ssr: true
 })
 ```
