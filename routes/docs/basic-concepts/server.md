@@ -10,7 +10,7 @@ import { Link } from "aleph/react"
 
 In Aleph.js, the server handles all incoming requests, everything is
 just-in-time, includes static files, server-side rendering, data fetching, and
-module transpile.
+module transpiling.
 
 ```jsx
 // server.ts
@@ -32,9 +32,7 @@ serve({
 
 > Normally you don't need to configure the server by using Aleph's template
 > created by the `init` script. To learn more about server configuration, check
-> out the
->
-> <Link to="/docs/api-reference/server-config">Server Config API</Link>.
+> out the <Link to="/docs/api-reference/server-config">Server Config API</Link>.
 
 ## `index.html`
 

@@ -16,9 +16,9 @@ request by returning a `Response` object in the `fetch` method.
 
 ```ts
 type Middleware = {
-  /* The middleware name. */
+  /** The middleware name. */
   readonly name?: string;
-  /* The middleware fetch method. */
+  /** The middleware fetch method. */
   fetch(req: Request, context: Context): Promise<Response> | Response | void;
 };
 ```
