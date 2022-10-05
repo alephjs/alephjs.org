@@ -3,7 +3,7 @@
 // deno-fmt-ignore-file
 // deno-lint-ignore-file
 // @ts-nocheck
-var Pe=Object.defineProperty;var N=(n,e)=>{for(var oe in e)Pe(n,oe,{get:e[oe],enumerable:!0})};import*as sn from"./index.tsx";import*as nn from"./docs.tsx";var E={};N(E,{default:()=>$e});import{Fragment as He,jsx as g,jsxs as X}from"https://esm.sh/react@18.2.0/jsx-runtime";function pe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",strong:"strong",ul:"ul",li:"li",h2:"h2",code:"code",pre:"pre",span:"span"},n.components);return X(He,{children:[g(e.h1,{children:"Browser Support"}),`
+var Ie=Object.defineProperty;var N=(n,e)=>{for(var de in e)Ie(n,de,{get:e[de],enumerable:!0})};import*as Qs from"./index.tsx";import*as en from"./docs.tsx";var U={};N(U,{default:()=>qe});import{Fragment as Pe,jsx as g,jsxs as X}from"https://esm.sh/react@18.2.0/jsx-runtime";function oe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",strong:"strong",ul:"ul",li:"li",h2:"h2",code:"code",pre:"pre",span:"span"},n.components);return X(Pe,{children:[g(e.h1,{children:"Browser Support"}),`
 `,X(e.p,{children:[`Aleph.js requires a modern browser to support
 `,g(e.a,{href:"https://caniuse.com/#feat=es6-module",children:"native ES module imports"})," and ",g(e.strong,{children:`dynamic
 imports`}),":"]}),`
@@ -24,7 +24,7 @@ You can set the `,g(e.code,{children:"optimization.buildTarget"})," in the serve
     `,g(e.span,{className:"hljs-attr",children:"buildTarget"}),": ",g(e.span,{className:"hljs-string",children:'"es2020"'}),`,
   },
 });
-`]})})]})}function qe(n={}){let{wrapper:e}=n.components||{};return e?g(e,Object.assign({},n,{children:g(pe,n)})):pe(n)}var $e=qe;var W={};N(W,{default:()=>We});import{Fragment as Ue,jsx as v,jsxs as D}from"https://esm.sh/react@18.2.0/jsx-runtime";function me(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",h2:"h2",a:"a",blockquote:"blockquote"},n.components);return D(Ue,{children:[v(e.h1,{children:"Deployment on your own host with Deno CLI"}),`
+`]})})]})}function He(n={}){let{wrapper:e}=n.components||{};return e?g(e,Object.assign({},n,{children:g(oe,n)})):oe(n)}var qe=He;var E={};N(E,{default:()=>Ee});import{Fragment as $e,jsx as v,jsxs as D}from"https://esm.sh/react@18.2.0/jsx-runtime";function pe(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",h2:"h2",a:"a",blockquote:"blockquote"},n.components);return D($e,{children:[v(e.h1,{children:"Deployment on your own host with Deno CLI"}),`
 `,D(e.p,{children:["You can run your app in production mode by ",v(e.code,{children:"deno"})," CLI."]}),`
 `,v(e.pre,{children:v(e.code,{className:"hljs language-bash",children:`deno run --allow-network --allow-env --allow-read --allow-write server.ts
 `})}),`
@@ -33,8 +33,9 @@ You can set the `,g(e.code,{children:"optimization.buildTarget"})," in the serve
 `,D(e.p,{children:["Then link to the Repo and set the entrypoint to ",v(e.code,{children:"server.ts"})]}),`
 `,D(e.blockquote,{children:[`
 `,D(e.p,{children:["See the ",v(e.a,{href:"https://aleph-hello.deno.dev/",children:"hello-world"})," example on ",v(e.a,{href:"https://deno.com/deploy",children:"Deno Deploy"}),"."]}),`
-`]})]})}function Ee(n={}){let{wrapper:e}=n.components||{};return e?v(e,Object.assign({},n,{children:v(me,n)})):me(n)}var We=Ee;var J={};N(J,{default:()=>Ye});import{Fragment as Je,jsx as t,jsxs as x}from"https://esm.sh/react@18.2.0/jsx-runtime";import{Link as I}from"aleph/react";function je(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",blockquote:"blockquote",em:"em",code:"code",h2:"h2",ul:"ul",li:"li"},n.components);return x(Je,{children:[t(e.h1,{children:"Aleph.js"}),`
-`,x(e.p,{children:[t(e.strong,{children:"Aleph.js"})," (or ",t(e.strong,{children:"Aleph"})," or ",t(e.strong,{children:"\u05D0"})," or ",t(e.strong,{children:"\u963F\u83B1\u592B"}),", ",t("samp",{children:"\u02C8\u0251\u02D0l\u025Bf"}),`) is a
+`]})]})}function Ue(n={}){let{wrapper:e}=n.components||{};return e?v(e,Object.assign({},n,{children:v(pe,n)})):pe(n)}var Ee=Ue;var W={};N(W,{default:()=>Ge});import{Fragment as We,jsx as t,jsxs as x}from"https://esm.sh/react@18.2.0/jsx-runtime";function me(n){let e=Object.assign({p:"p",h1:"h1",strong:"strong",a:"a",blockquote:"blockquote",em:"em",code:"code",h2:"h2",ul:"ul",li:"li"},n.components);return x(We,{children:[t(e.p,{children:'import { Link } from "aleph/react"'}),`
+`,t(e.h1,{children:"Aleph.js"}),`
+`,x(e.p,{children:[t(e.strong,{children:"Aleph.js"})," (or ",t(e.strong,{children:"Aleph"})," or ",t(e.strong,{children:"\u05D0"})," or ",t(e.strong,{children:"\u963F\u83B1\u592B"}),", ","\u02C8\u0251\u02D0l\u025Bf",`) is a
 fullstack framework in `,t(e.a,{href:"https://deno.land",children:"Deno"}),". Inspired by ",t(e.a,{href:"https://nextjs.org",children:"Next.js"}),", ",t(e.a,{href:"https://remix.run",children:"Remix"})," and ",t(e.a,{href:"https://vitejs.dev",children:"Vite"}),"."]}),`
 `,x(e.blockquote,{children:[`
 `,x(e.p,{children:["The name is taken from the book ",t(e.a,{href:"http://phinnweb.org/links/literature/borges/aleph.html",children:t(e.em,{children:"The Aleph"})})," by ",t(e.strong,{children:"Jorge Luis Borges"}),"."]}),`
@@ -67,44 +68,44 @@ by Deno cache system. No `,t(e.code,{children:"package.json"})," and ",t(e.code,
 `]}),`
 `,t(e.h2,{children:"Supported Frameworks"}),`
 `,x(e.ul,{children:[`
-`,x(e.li,{children:[t(e.a,{href:"https://reactjs.org",children:"React"})," (",t(I,{to:"/docs/framework/react",children:"docs"}),", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-app",children:"example"}),")"]}),`
-`,x(e.li,{children:[t(e.a,{href:"https://reactjs.org",children:"React"})," with ",t(e.a,{href:"https://mdxjs.com",children:"MDX"})," (",t(I,{to:"/docs/framework/react-mdx",children:"docs"}),", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-mdx-app",children:"example"}),")"]}),`
-`,x(e.li,{children:[t(e.a,{href:"https://vuejs.org",children:"Vue"})," (",t(I,{to:"/docs/framework/vue",children:"docs"}),", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/vue-app",children:"example"}),")"]}),`
-`,x(e.li,{children:[t(e.a,{href:"https://www.solidjs.com/",children:"SolidJS"})," (",t(I,{to:"/docs/framework/solid",children:"docs"}),", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/solid-app",children:"example"}),`)
+`,x(e.li,{children:[t(e.a,{href:"https://reactjs.org",children:"React"})," (","docs",", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-app",children:"example"}),")"]}),`
+`,x(e.li,{children:[t(e.a,{href:"https://reactjs.org",children:"React"})," with ",t(e.a,{href:"https://mdxjs.com",children:"MDX"})," (","docs",", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/react-mdx-app",children:"example"}),")"]}),`
+`,x(e.li,{children:[t(e.a,{href:"https://vuejs.org",children:"Vue"})," (","docs",", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/vue-app",children:"example"}),")"]}),`
+`,x(e.li,{children:[t(e.a,{href:"https://www.solidjs.com/",children:"SolidJS"})," (","docs",", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/solid-app",children:"example"}),`)
 `,t(e.em,{children:"Experimental"})]}),`
-`,x(e.li,{children:[t(e.a,{href:"https://yew.rs",children:"Yew"})," (",t(I,{to:"/docs/framework/yew",children:"docs"}),", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/yew-app",children:"example"}),") ",t(e.em,{children:"In Rust"})]}),`
+`,x(e.li,{children:[t(e.a,{href:"https://yew.rs",children:"Yew"})," (","docs",", ",t(e.a,{href:"https://github.com/alephjs/aleph.js/tree/main/examples/yew-app",children:"example"}),") ",t(e.em,{children:"In Rust"})]}),`
 `]}),`
 `,x(e.p,{children:["Plan to support: ",t(e.a,{href:"https://svelte.dev/",children:"Svelte"}),", ",t(e.a,{href:"https://lit.dev/",children:"Lit"}),", etc.."]}),`
 `,t(e.h2,{children:"Status"}),`
 `,x(e.p,{children:["Currently in ",t(e.strong,{children:"beta"}),", not ready for production."]}),`
 `,t(e.h2,{children:"License"}),`
-`,x(e.p,{children:["Under the ",t(e.a,{href:"https://opensource.org/licenses/MIT",children:"MIT"})," License."]})]})}function Ge(n={}){let{wrapper:e}=n.components||{};return e?t(e,Object.assign({},n,{children:t(je,n)})):je(n)}var Ye=Ge;var G={};N(G,{default:()=>Ve});import{Fragment as Be,jsx as _,jsxs as L}from"https://esm.sh/react@18.2.0/jsx-runtime";function ue(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",h2:"h2",pre:"pre",code:"code",span:"span"},n.components);return L(Be,{children:[_(e.h1,{children:"Get Started!"}),`
-`,L(e.p,{children:["Welcome to use ",_(e.strong,{children:"Aleph.js"}),"!"]}),`
-`,L(e.p,{children:["If you are new to Aleph.js you should check out the ",_(e.a,{href:"/docs/",children:"About"})," page."]}),`
+`,x(e.p,{children:["Under the ",t(e.a,{href:"https://opensource.org/licenses/MIT",children:"MIT"})," License."]})]})}function Je(n={}){let{wrapper:e}=n.components||{};return e?t(e,Object.assign({},n,{children:t(me,n)})):me(n)}var Ge=Je;var J={};N(J,{default:()=>ze});import{Fragment as Ye,jsx as _,jsxs as R}from"https://esm.sh/react@18.2.0/jsx-runtime";function je(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",h2:"h2",pre:"pre",code:"code",span:"span"},n.components);return R(Ye,{children:[_(e.h1,{children:"Get Started!"}),`
+`,R(e.p,{children:["Welcome to use ",_(e.strong,{children:"Aleph.js"}),"!"]}),`
+`,R(e.p,{children:["If you are new to Aleph.js you should check out the ",_(e.a,{href:"/docs/",children:"About"})," page."]}),`
 `,_(e.h2,{children:"Usage"}),`
 `,_(e.p,{children:"Create a new app:"}),`
-`,_(e.pre,{children:L(e.code,{className:"hljs language-bash",children:[`deno run -A -r https://alephjs.org/init.ts
+`,_(e.pre,{children:R(e.code,{className:"hljs language-bash",children:[`deno run -A -r https://alephjs.org/init.ts
 `,_(e.span,{className:"hljs-built_in",children:"cd"}),` my-app
 `]})}),`
-`,L(e.p,{children:["Start the app in ",_(e.code,{children:"development"})," mode:"]}),`
+`,R(e.p,{children:["Start the app in ",_(e.code,{children:"development"})," mode:"]}),`
 `,_(e.pre,{children:_(e.code,{className:"hljs language-bash",children:`deno task dev
 `})}),`
-`,L(e.p,{children:["Start the app in ",_(e.code,{children:"production"})," mode:"]}),`
+`,R(e.p,{children:["Start the app in ",_(e.code,{children:"production"})," mode:"]}),`
 `,_(e.pre,{children:_(e.code,{className:"hljs language-bash",children:`deno task start
 `})}),`
 `,_(e.p,{children:"Optimize the application (bundling, ssg, etc.):"}),`
 `,_(e.pre,{children:_(e.code,{className:"hljs language-bash",children:`deno task opt
-`})})]})}function ze(n={}){let{wrapper:e}=n.components||{};return e?_(e,Object.assign({},n,{children:_(ue,n)})):ue(n)}var Ve=ze;var Y={};N(Y,{default:()=>Qe});import{Fragment as Ze,jsx as T,jsxs as Ne}from"https://esm.sh/react@18.2.0/jsx-runtime";function ge(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code"},n.components);return Ne(Ze,{children:[T(e.h1,{children:"Vue"}),`
-`,Ne(e.p,{children:["Create a new ",T(e.a,{href:"https://vuejs.org",children:"Vue"})," app:"]}),`
+`})})]})}function Be(n={}){let{wrapper:e}=n.components||{};return e?_(e,Object.assign({},n,{children:_(je,n)})):je(n)}var ze=Be;var G={};N(G,{default:()=>Ke});import{Fragment as Ve,jsx as T,jsxs as ue}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ne(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code"},n.components);return ue(Ve,{children:[T(e.h1,{children:"Vue"}),`
+`,ue(e.p,{children:["Create a new ",T(e.a,{href:"https://vuejs.org",children:"Vue"})," app:"]}),`
 `,T(e.pre,{children:T(e.code,{className:"hljs language-bash",children:`deno run -A -r https://alephjs.org/init.ts --template=vue
-`})})]})}function Ke(n={}){let{wrapper:e}=n.components||{};return e?T(e,Object.assign({},n,{children:T(ge,n)})):ge(n)}var Qe=Ke;var B={};N(B,{default:()=>ns});import{Fragment as es,jsx as p,jsxs as R}from"https://esm.sh/react@18.2.0/jsx-runtime";function fe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code",h2:"h2",strong:"strong",span:"span",blockquote:"blockquote"},n.components);return R(es,{children:[p(e.h1,{children:"React with MDX"}),`
-`,R(e.p,{children:["Create a new ",p(e.a,{href:"https://reactjs.org",children:"React"})," app with ",p(e.a,{href:"https://mdxjs.com",children:"MDX"}),`
+`})})]})}function Ze(n={}){let{wrapper:e}=n.components||{};return e?T(e,Object.assign({},n,{children:T(Ne,n)})):Ne(n)}var Ke=Ze;var Y={};N(Y,{default:()=>ss});import{Fragment as Qe,jsx as p,jsxs as L}from"https://esm.sh/react@18.2.0/jsx-runtime";function ge(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code",h2:"h2",strong:"strong",span:"span",blockquote:"blockquote"},n.components);return L(Qe,{children:[p(e.h1,{children:"React with MDX"}),`
+`,L(e.p,{children:["Create a new ",p(e.a,{href:"https://reactjs.org",children:"React"})," app with ",p(e.a,{href:"https://mdxjs.com",children:"MDX"}),`
 support:`]}),`
 `,p(e.pre,{children:p(e.code,{className:"hljs language-bash",children:`deno run -A -r https://alephjs.org/init.ts --template=react-mdx
 `})}),`
 `,p(e.h2,{children:"Extending MDX"}),`
-`,R(e.p,{children:["You can add ",p(e.a,{href:"https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins",children:"remark plugins"})," and ",p(e.a,{href:"https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#list-of-plugins",children:"rehype plugins"})," for the ",p(e.strong,{children:"MDX Loader"})," in ",p(e.code,{children:"server.ts"})]}),`
-`,p(e.pre,{children:R(e.code,{className:"hljs language-js",children:[p(e.span,{className:"hljs-keyword",children:"import"})," { serve } ",p(e.span,{className:"hljs-keyword",children:"from"})," ",p(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
+`,L(e.p,{children:["You can add ",p(e.a,{href:"https://github.com/remarkjs/remark/blob/main/doc/plugins.md#list-of-plugins",children:"remark plugins"})," and ",p(e.a,{href:"https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#list-of-plugins",children:"rehype plugins"})," for the ",p(e.strong,{children:"MDX Loader"})," in ",p(e.code,{children:"server.ts"})]}),`
+`,p(e.pre,{children:L(e.code,{className:"hljs language-js",children:[p(e.span,{className:"hljs-keyword",children:"import"})," { serve } ",p(e.span,{className:"hljs-keyword",children:"from"})," ",p(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
 `,p(e.span,{className:"hljs-keyword",children:"import"})," remarkFrontmatter ",p(e.span,{className:"hljs-keyword",children:"from"})," ",p(e.span,{className:"hljs-string",children:'"https://esm.sh/remark-frontmatter@4.0.1"'}),`;
 `,p(e.span,{className:"hljs-keyword",children:"import"})," rehypeHighlight ",p(e.span,{className:"hljs-keyword",children:"from"})," ",p(e.span,{className:"hljs-string",children:'"https://esm.sh/rehype-highlight@5.0.2"'}),`;
 
@@ -121,12 +122,12 @@ support:`]}),`
   `,p(e.span,{className:"hljs-attr",children:"ssr"}),": ",p(e.span,{className:"hljs-literal",children:"true"}),`,
 });
 `]})}),`
-`,R(e.blockquote,{children:[`
-`,R(e.p,{children:["See ",p(e.a,{href:"https://mdxjs.com/docs/extending-mdx/",children:"Extending MDX"})," for more details."]}),`
-`]})]})}function ss(n={}){let{wrapper:e}=n.components||{};return e?p(e,Object.assign({},n,{children:p(fe,n)})):fe(n)}var ns=ss;var z={};N(z,{default:()=>rs});import{Fragment as as,jsx as A,jsxs as we}from"https://esm.sh/react@18.2.0/jsx-runtime";function ye(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code"},n.components);return we(as,{children:[A(e.h1,{children:"SolidJS"}),`
-`,we(e.p,{children:["Create a new ",A(e.a,{href:"https://www.solidjs.com/",children:"SolidJS"})," app:"]}),`
+`,L(e.blockquote,{children:[`
+`,L(e.p,{children:["See ",p(e.a,{href:"https://mdxjs.com/docs/extending-mdx/",children:"Extending MDX"})," for more details."]}),`
+`]})]})}function es(n={}){let{wrapper:e}=n.components||{};return e?p(e,Object.assign({},n,{children:p(ge,n)})):ge(n)}var ss=es;var B={};N(B,{default:()=>ls});import{Fragment as ns,jsx as A,jsxs as fe}from"https://esm.sh/react@18.2.0/jsx-runtime";function we(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code"},n.components);return fe(ns,{children:[A(e.h1,{children:"SolidJS"}),`
+`,fe(e.p,{children:["Create a new ",A(e.a,{href:"https://www.solidjs.com/",children:"SolidJS"})," app:"]}),`
 `,A(e.pre,{children:A(e.code,{className:"hljs language-bash",children:`deno run -A -r https://alephjs.org/init.ts --template=solid
-`})})]})}function ls(n={}){let{wrapper:e}=n.components||{};return e?A(e,Object.assign({},n,{children:A(ye,n)})):ye(n)}var rs=ls;var V={};N(V,{default:()=>hs});import{Fragment as cs,jsx as a,jsxs as o}from"https://esm.sh/react@18.2.0/jsx-runtime";function be(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code",h2:"h2",strong:"strong",span:"span",blockquote:"blockquote",ul:"ul",li:"li"},n.components);return o(cs,{children:[a(e.h1,{children:"React"}),`
+`})})]})}function as(n={}){let{wrapper:e}=n.components||{};return e?A(e,Object.assign({},n,{children:A(we,n)})):we(n)}var ls=as;var z={};N(z,{default:()=>ts});import{Fragment as rs,jsx as a,jsxs as o}from"https://esm.sh/react@18.2.0/jsx-runtime";function ye(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code",h2:"h2",strong:"strong",span:"span",blockquote:"blockquote",ul:"ul",li:"li"},n.components);return o(rs,{children:[a(e.h1,{children:"React"}),`
 `,o(e.p,{children:["Create a new ",a(e.a,{href:"https://reactjs.org",children:"React"})," app:"]}),`
 `,a(e.pre,{children:a(e.code,{className:"hljs language-bash",children:`deno run -A -r https://alephjs.org/init.ts --template=react
 `})}),`
@@ -185,10 +186,70 @@ when the specific page is activated. You can add the active class via
     `,o(e.span,{className:"hljs-tag",children:["</",a(e.span,{className:"hljs-name",children:"nav"}),">"]})]}),`
   );
 }
-`]})})]})}function ts(n={}){let{wrapper:e}=n.components||{};return e?a(e,Object.assign({},n,{children:a(be,n)})):be(n)}var hs=ts;var Z={};N(Z,{default:()=>os});import{Fragment as is,jsx as F,jsxs as xe}from"https://esm.sh/react@18.2.0/jsx-runtime";function _e(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code"},n.components);return xe(is,{children:[F(e.h1,{children:"Yew"}),`
-`,xe(e.p,{children:["Create a new ",F(e.a,{href:"https://yew.rs",children:"Yew"})," app:"]}),`
+`]})})]})}function cs(n={}){let{wrapper:e}=n.components||{};return e?a(e,Object.assign({},n,{children:a(ye,n)})):ye(n)}var ts=cs;var V={};N(V,{default:()=>ds});import{Fragment as hs,jsx as F,jsxs as be}from"https://esm.sh/react@18.2.0/jsx-runtime";function xe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",pre:"pre",code:"code"},n.components);return be(hs,{children:[F(e.h1,{children:"Yew"}),`
+`,be(e.p,{children:["Create a new ",F(e.a,{href:"https://yew.rs",children:"Yew"})," app:"]}),`
 `,F(e.pre,{children:F(e.code,{className:"hljs language-bash",children:`deno run -A -r https://alephjs.org/init.ts --template=yew
-`})})]})}function ds(n={}){let{wrapper:e}=n.components||{};return e?F(e,Object.assign({},n,{children:F(_e,n)})):_e(n)}var os=ds;var K={};N(K,{default:()=>js});import{Fragment as ps,jsx as s,jsxs as y}from"https://esm.sh/react@18.2.0/jsx-runtime";import ke from"components/Border.tsx";function ve(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",span:"span",h2:"h2",h4:"h4"},n.components);return y(ps,{children:[s(e.h1,{children:"Middleware API"}),`
+`})})]})}function is(n={}){let{wrapper:e}=n.components||{};return e?F(e,Object.assign({},n,{children:F(xe,n)})):xe(n)}var ds=is;var Z={};N(Z,{default:()=>js});import{Fragment as os,jsx as l,jsxs as I}from"https://esm.sh/react@18.2.0/jsx-runtime";import ps from"components/Border.tsx";function _e(n){let e=Object.assign({h1:"h1",p:"p",pre:"pre",code:"code",span:"span",h3:"h3",em:"em"},n.components);return I(os,{children:[l(e.h1,{children:"Server Config"}),`
+`,l(e.p,{children:"The server config is an object that contains the following properties:"}),`
+`,l(e.pre,{children:I(e.code,{className:"hljs language-jsx",children:[l(e.span,{className:"hljs-comment",children:"// server.ts"}),`
+
+`,l(e.span,{className:"hljs-keyword",children:"import"})," { serve } ",l(e.span,{className:"hljs-keyword",children:"from"})," ",l(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
+
+`,l(e.span,{className:"hljs-title function_",children:"serve"}),`({
+  `,l(e.span,{className:"hljs-attr",children:"port"}),": ",l(e.span,{className:"hljs-number",children:"8080"}),`,
+  `,l(e.span,{className:"hljs-attr",children:"router"}),`: {
+    `,l(e.span,{className:"hljs-attr",children:"glob"}),": ",l(e.span,{className:"hljs-string",children:'"./routes/**/*.{ts,tsx}"'}),`,
+  },
+  `,l(e.span,{className:"hljs-attr",children:"middlewares"}),": [",l(e.span,{className:"hljs-comment",children:"/* ... */"}),`],
+  `,l(e.span,{className:"hljs-attr",children:"uncoss"}),": {",l(e.span,{className:"hljs-comment",children:"/* ... */"}),`},
+  `,l(e.span,{className:"hljs-attr",children:"ssr"}),": ",I(e.span,{className:"hljs-function",children:["(",l(e.span,{className:"hljs-params",children:"ctx"}),") =>"]}),` {
+    `,l(e.span,{className:"hljs-keyword",children:"return"})," ",l(e.span,{className:"hljs-title function_",children:"renderToString"}),"(",l(e.span,{className:"xml",children:I(e.span,{className:"hljs-tag",children:["<",l(e.span,{className:"hljs-name",children:"App"})," />"]})}),`);
+  },
+});
+`]})}),`
+`,l(ps,{color:"#d63369",children:l(e.pre,{children:I(e.code,{className:"hljs language-ts",children:[l(e.span,{className:"hljs-keyword",children:"export"})," ",l(e.span,{className:"hljs-keyword",children:"interface"})," ",l(e.span,{className:"hljs-title class_",children:"ServerConfig"})," ",l(e.span,{className:"hljs-keyword",children:"extends"})," ",l(e.span,{className:"hljs-title class_",children:"ServeInit"}),` {
+  `,l(e.span,{className:"hljs-comment",children:"/** The cert file for tls. */"}),`
+  certFile?: `,l(e.span,{className:"hljs-built_in",children:"string"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The key file for tls. */"}),`
+  keyFile?: `,l(e.span,{className:"hljs-built_in",children:"string"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The error handler. */"}),`
+  onError?: `,l(e.span,{className:"hljs-title class_",children:"ErrorHandler"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The base url of the server. */"}),`
+  baseUrl?: `,l(e.span,{className:"hljs-built_in",children:"string"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The router options for the file-system based routing. */"}),`
+  router?: `,l(e.span,{className:"hljs-title class_",children:"RouterInit"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The module loaders. */"}),`
+  loaders?: `,l(e.span,{className:"hljs-title class_",children:"ModuleLoader"}),`[];
+  `,l(e.span,{className:"hljs-comment",children:"/** The server middlewares. */"}),`
+  middlewares?: `,l(e.span,{className:"hljs-title class_",children:"Middleware"}),`[];
+  `,l(e.span,{className:"hljs-comment",children:"/** The options for session. */"}),`
+  session?: `,l(e.span,{className:"hljs-title class_",children:"SessionOptions"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The options for SSR. */"}),`
+  ssr?: `,l(e.span,{className:"hljs-variable constant_",children:"SSR"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The options for optimization. */"}),`
+  optimization?: `,l(e.span,{className:"hljs-title class_",children:"OptimizationOptions"}),`;
+  `,l(e.span,{className:"hljs-comment",children:"/** The config for UnoCSS. */"}),`
+  unocss?: `,l(e.span,{className:"hljs-title class_",children:"UnoConfig"}),`;
+}
+`]})})}),`
+`,l(e.h3,{children:"TLS"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Router"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Server-side Rendering (SSR)"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Middlewares"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"UnoCSS (Automatic CSS)"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Module Loader"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Setup Session"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Optimization Options"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
+`,l(e.h3,{children:"Error Handler"}),`
+`,l(e.p,{children:l(e.em,{children:"WIP"})})]})}function ms(n={}){let{wrapper:e}=n.components||{};return e?l(e,Object.assign({},n,{children:l(_e,n)})):_e(n)}var js=ms;var K={};N(K,{default:()=>gs});import{Fragment as us,jsx as s,jsxs as y}from"https://esm.sh/react@18.2.0/jsx-runtime";import ke from"components/Border.tsx";function ve(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",span:"span",h2:"h2",h4:"h4"},n.components);return y(us,{children:[s(e.h1,{children:"Middleware API"}),`
 `,y(e.p,{children:["In Aleph.js, a ",s(e.strong,{children:"Middleware"})," is an object with a ",s(e.code,{children:"fetch"})," method. The ",s(e.code,{children:"fetch"}),`
 method will be invoked when a request is received by the server. You can end the
 request by returning a `,s(e.code,{children:"Response"})," object in the ",s(e.code,{children:"fetch"})," method."]}),`
@@ -337,69 +398,7 @@ types of things you can do with the middleware API.`}),`
     ctx.`,s(e.span,{className:"hljs-property",children:"user"})," = session.",s(e.span,{className:"hljs-property",children:"store"}),".",s(e.span,{className:"hljs-property",children:"user"}),`;
   },
 };
-`]})})]})}function ms(n={}){let{wrapper:e}=n.components||{};return e?s(e,Object.assign({},n,{children:s(ve,n)})):ve(n)}var js=ms;var Q={};N(Q,{default:()=>fs});import{Fragment as us,jsx as l,jsxs as P}from"https://esm.sh/react@18.2.0/jsx-runtime";import Ns from"components/Border.tsx";function Me(n){let e=Object.assign({h1:"h1",p:"p",pre:"pre",code:"code",span:"span",h3:"h3",em:"em"},n.components);return P(us,{children:[l(e.h1,{children:"Server Config"}),`
-`,l(e.p,{children:"The server config is an object that contains the following properties:"}),`
-`,l(e.pre,{children:P(e.code,{className:"hljs language-jsx",children:[l(e.span,{className:"hljs-comment",children:"// server.ts"}),`
-
-`,l(e.span,{className:"hljs-keyword",children:"import"})," { serve } ",l(e.span,{className:"hljs-keyword",children:"from"})," ",l(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
-
-`,l(e.span,{className:"hljs-title function_",children:"serve"}),`({
-  `,l(e.span,{className:"hljs-attr",children:"port"}),": ",l(e.span,{className:"hljs-number",children:"8080"}),`,
-  `,l(e.span,{className:"hljs-attr",children:"router"}),`: {
-    `,l(e.span,{className:"hljs-attr",children:"glob"}),": ",l(e.span,{className:"hljs-string",children:'"./routes/**/*.{ts,tsx}"'}),`,
-  },
-  `,l(e.span,{className:"hljs-attr",children:"middlewares"}),": [",l(e.span,{className:"hljs-comment",children:"/* ... */"}),`],
-  `,l(e.span,{className:"hljs-attr",children:"uncoss"}),": {",l(e.span,{className:"hljs-comment",children:"/* ... */"}),`},
-  `,l(e.span,{className:"hljs-attr",children:"ssr"}),": ",P(e.span,{className:"hljs-function",children:["(",l(e.span,{className:"hljs-params",children:"ctx"}),") =>"]}),` {
-    `,l(e.span,{className:"hljs-keyword",children:"return"})," ",l(e.span,{className:"hljs-title function_",children:"renderToString"}),"(",l(e.span,{className:"xml",children:P(e.span,{className:"hljs-tag",children:["<",l(e.span,{className:"hljs-name",children:"App"})," />"]})}),`);
-  },
-});
-`]})}),`
-`,l(Ns,{color:"#d63369",children:l(e.pre,{children:P(e.code,{className:"hljs language-ts",children:[l(e.span,{className:"hljs-keyword",children:"export"})," ",l(e.span,{className:"hljs-keyword",children:"interface"})," ",l(e.span,{className:"hljs-title class_",children:"ServerConfig"})," ",l(e.span,{className:"hljs-keyword",children:"extends"})," ",l(e.span,{className:"hljs-title class_",children:"ServeInit"}),` {
-  `,l(e.span,{className:"hljs-comment",children:"/** The cert file for tls. */"}),`
-  certFile?: `,l(e.span,{className:"hljs-built_in",children:"string"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The key file for tls. */"}),`
-  keyFile?: `,l(e.span,{className:"hljs-built_in",children:"string"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The log level, default is 'info'. */"}),`
-  logLevel?: `,l(e.span,{className:"hljs-title class_",children:"LevelName"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The error handler. */"}),`
-  onError?: `,l(e.span,{className:"hljs-title class_",children:"ErrorHandler"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The base url of the server. */"}),`
-  baseUrl?: `,l(e.span,{className:"hljs-built_in",children:"string"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The router options for the file-system based routing. */"}),`
-  router?: `,l(e.span,{className:"hljs-title class_",children:"RouterInit"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The module loaders. */"}),`
-  loaders?: `,l(e.span,{className:"hljs-title class_",children:"ModuleLoader"}),`[];
-  `,l(e.span,{className:"hljs-comment",children:"/** The server middlewares. */"}),`
-  middlewares?: `,l(e.span,{className:"hljs-title class_",children:"Middleware"}),`[];
-  `,l(e.span,{className:"hljs-comment",children:"/** The options for session. */"}),`
-  session?: `,l(e.span,{className:"hljs-title class_",children:"SessionOptions"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The options for SSR. */"}),`
-  ssr?: `,l(e.span,{className:"hljs-variable constant_",children:"SSR"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The options for optimization. */"}),`
-  optimization?: `,l(e.span,{className:"hljs-title class_",children:"OptimizationOptions"}),`;
-  `,l(e.span,{className:"hljs-comment",children:"/** The config for UnoCSS. */"}),`
-  unocss?: `,l(e.span,{className:"hljs-title class_",children:"UnoConfig"}),`;
-}
-`]})})}),`
-`,l(e.h3,{children:"TLS"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Router"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Server-side Rendering (SSR)"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Middlewares"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"UnoCSS (Automatic CSS)"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Module Loader"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Setup Session"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Optimization Options"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})}),`
-`,l(e.h3,{children:"Error Handler"}),`
-`,l(e.p,{children:l(e.em,{children:"WIP"})})]})}function gs(n={}){let{wrapper:e}=n.components||{};return e?l(e,Object.assign({},n,{children:l(Me,n)})):Me(n)}var fs=gs;var ee={};N(ee,{default:()=>bs});import{Fragment as ws,jsx as i,jsxs as C}from"https://esm.sh/react@18.2.0/jsx-runtime";function Se(n){let e=Object.assign({h1:"h1",p:"p",a:"a",code:"code",pre:"pre",span:"span"},n.components);return C(ws,{children:[i(e.h1,{children:"Import Maps"}),`
+`]})})]})}function Ns(n={}){let{wrapper:e}=n.components||{};return e?s(e,Object.assign({},n,{children:s(ve,n)})):ve(n)}var gs=Ns;var Q={};N(Q,{default:()=>ys});import{Fragment as fs,jsx as i,jsxs as C}from"https://esm.sh/react@18.2.0/jsx-runtime";function Me(n){let e=Object.assign({h1:"h1",p:"p",a:"a",code:"code",pre:"pre",span:"span"},n.components);return C(fs,{children:[i(e.h1,{children:"Import Maps"}),`
 `,C(e.p,{children:["To use ",i(e.a,{href:"https://github.com/WICG/import-maps",children:"import maps"}),", create a ",i(e.code,{children:"import_map.json"})," file in the root directory:"]}),`
 `,i(e.pre,{children:C(e.code,{className:"hljs language-json",children:[i(e.span,{className:"hljs-punctuation",children:"{"}),`
   `,i(e.span,{className:"hljs-attr",children:'"imports"'}),i(e.span,{className:"hljs-punctuation",children:":"})," ",i(e.span,{className:"hljs-punctuation",children:"{"}),`
@@ -421,7 +420,7 @@ types of things you can do with the middleware API.`}),`
 `,i(e.span,{className:"hljs-keyword",children:"export"})," ",i(e.span,{className:"hljs-keyword",children:"default"})," ",i(e.span,{className:"hljs-keyword",children:"function"})," ",i(e.span,{className:"hljs-title function_",children:"App"}),"(",i(e.span,{className:"hljs-params"}),`) {
   `,i(e.span,{className:"hljs-keyword",children:"return"})," ",i(e.span,{className:"xml",children:C(e.span,{className:"hljs-tag",children:["<",i(e.span,{className:"hljs-name",children:"Logo"})," />"]})}),`;
 }
-`]})})]})}function ys(n={}){let{wrapper:e}=n.components||{};return e?i(e,Object.assign({},n,{children:i(Se,n)})):Se(n)}var bs=ys;var se={};N(se,{default:()=>ks});import{Fragment as xs,jsx as u,jsxs as O}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ce(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",span:"span",ul:"ul",li:"li"},n.components);return O(xs,{children:[u(e.h1,{children:"Static File Serving"}),`
+`]})})]})}function ws(n={}){let{wrapper:e}=n.components||{};return e?i(e,Object.assign({},n,{children:i(Me,n)})):Me(n)}var ys=ws;var ee={};N(ee,{default:()=>_s});import{Fragment as bs,jsx as u,jsxs as O}from"https://esm.sh/react@18.2.0/jsx-runtime";function Se(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",span:"span",ul:"ul",li:"li"},n.components);return O(bs,{children:[u(e.h1,{children:"Static File Serving"}),`
 `,O(e.p,{children:["Aleph.js will serve any static files in the project directory. Files inside the project directory can then be referenced by your code by using the base URL (",u(e.code,{children:"/"}),")."]}),`
 `,O(e.p,{children:["For example, if you add an image ",u(e.code,{children:"assets/logo.png"}),", the following code will access the image:"]}),`
 `,u(e.pre,{children:O(e.code,{className:"hljs language-jsx",children:[u(e.span,{className:"hljs-keyword",children:"export"})," ",u(e.span,{className:"hljs-keyword",children:"default"})," ",u(e.span,{className:"hljs-keyword",children:"function"})," ",u(e.span,{className:"hljs-title function_",children:"Logo"}),"(",u(e.span,{className:"hljs-params"}),`) {
@@ -436,7 +435,7 @@ types of things you can do with the middleware API.`}),`
 `,u(e.li,{children:u(e.code,{children:"manifest.json"})}),`
 `,u(e.li,{children:u(e.code,{children:"robots.txt"})}),`
 `,u(e.li,{children:"Google Site Verification, etc"}),`
-`]})]})}function _s(n={}){let{wrapper:e}=n.components||{};return e?u(e,Object.assign({},n,{children:u(Ce,n)})):Ce(n)}var ks=_s;var ne={};N(ne,{default:()=>Ss});import{Fragment as vs,jsx as c,jsxs as f}from"https://esm.sh/react@18.2.0/jsx-runtime";function De(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",span:"span",h3:"h3",ul:"ul",li:"li",strong:"strong"},n.components);return f(vs,{children:[c(e.h1,{children:"Routing"}),`
+`]})]})}function xs(n={}){let{wrapper:e}=n.components||{};return e?u(e,Object.assign({},n,{children:u(Se,n)})):Se(n)}var _s=xs;var se={};N(se,{default:()=>Ms});import{Fragment as ks,jsx as c,jsxs as f}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ce(n){let e=Object.assign({h1:"h1",p:"p",code:"code",pre:"pre",span:"span",h3:"h3",ul:"ul",li:"li",strong:"strong"},n.components);return f(ks,{children:[c(e.h1,{children:"Routing"}),`
 `,f(e.p,{children:["Aleph.js has a file-system based router. When a file (",c(e.code,{children:".js"}),", ",c(e.code,{children:".jsx"}),", ",c(e.code,{children:".ts"}),`,
 `,c(e.code,{children:".tsx"}),", and ",c(e.code,{children:".mjs"}),") is added to the ",c(e.code,{children:"routes"}),` directory, it is automatically
 available as a route.`]}),`
@@ -493,7 +492,7 @@ directory.`]}),`
     `,c(e.span,{className:"hljs-tag",children:"</>"})]}),`
   );
 }
-`]})})]})}function Ms(n={}){let{wrapper:e}=n.components||{};return e?c(e,Object.assign({},n,{children:c(De,n)})):De(n)}var Ss=Ms;var ae={};N(ae,{default:()=>Ls});import{Fragment as Cs,jsx as d,jsxs as k}from"https://esm.sh/react@18.2.0/jsx-runtime";function Le(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",pre:"pre",code:"code",span:"span",h2:"h2"},n.components);return k(Cs,{children:[d(e.h1,{children:"Import From NPM"}),`
+`]})})]})}function vs(n={}){let{wrapper:e}=n.components||{};return e?c(e,Object.assign({},n,{children:c(Ce,n)})):Ce(n)}var Ms=vs;var ne={};N(ne,{default:()=>Ds});import{Fragment as Ss,jsx as d,jsxs as k}from"https://esm.sh/react@18.2.0/jsx-runtime";function De(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",a:"a",pre:"pre",code:"code",span:"span",h2:"h2"},n.components);return k(Ss,{children:[d(e.h1,{children:"Import From NPM"}),`
 `,k(e.p,{children:["Aleph.js uses ",d(e.strong,{children:"ESM"})," imports syntax in Deno. To import modules from ",d(e.strong,{children:"NPM"}),`,
 you can use `,d(e.a,{href:"https://esm.sh",children:"esm.sh"})," CDN that is maintained by Aleph.js team."]}),`
 `,d(e.pre,{children:k(e.code,{className:"hljs language-jsx",children:[d(e.span,{className:"hljs-keyword",children:"import"})," useSWR ",d(e.span,{className:"hljs-keyword",children:"from"})," ",d(e.span,{className:"hljs-string",children:'"https://esm.sh/swr"'}),`;
@@ -516,7 +515,7 @@ you can use `,d(e.a,{href:"https://esm.sh",children:"esm.sh"})," CDN that is mai
 `]})}),`
 `,d(e.p,{children:"These npm specifiers have the following format:"}),`
 `,d(e.pre,{children:k(e.code,{className:"hljs language-lua",children:["npm:<",d(e.span,{className:"hljs-built_in",children:"package"}),"-name>[@<version-requirement>][/<",d(e.span,{className:"hljs-built_in",children:"sub"}),"-",d(e.span,{className:"hljs-built_in",children:"path"}),`>]
-`]})})]})}function Ds(n={}){let{wrapper:e}=n.components||{};return e?d(e,Object.assign({},n,{children:d(Le,n)})):Le(n)}var Ls=Ds;var le={};N(le,{default:()=>As});import{Fragment as Ts,jsx as h,jsxs as b}from"https://esm.sh/react@18.2.0/jsx-runtime";function Te(n){let e=Object.assign({h1:"h1",p:"p",code:"code",strong:"strong",pre:"pre",span:"span",h2:"h2",a:"a"},n.components);return b(Ts,{children:[h(e.h1,{children:"CSS Support"}),`
+`]})})]})}function Cs(n={}){let{wrapper:e}=n.components||{};return e?d(e,Object.assign({},n,{children:d(De,n)})):De(n)}var Ds=Cs;var ae={};N(ae,{default:()=>Ls});import{Fragment as Rs,jsx as h,jsxs as b}from"https://esm.sh/react@18.2.0/jsx-runtime";function Re(n){let e=Object.assign({h1:"h1",p:"p",code:"code",strong:"strong",pre:"pre",span:"span",h2:"h2",a:"a"},n.components);return b(Rs,{children:[h(e.h1,{children:"CSS Support"}),`
 `,b(e.p,{children:["Aleph.js uses the ",h(e.code,{children:"index.html"}),` as the page entry template, that means you can
 add any `,h(e.strong,{children:"CSS"})," files with ",h(e.code,{children:"link"})," tag:"]}),`
 `,h(e.pre,{children:b(e.code,{className:"hljs language-html",children:[b(e.span,{className:"hljs-tag",children:["<",h(e.span,{className:"hljs-name",children:"html"}),">"]}),`
@@ -557,7 +556,7 @@ spec`]}),`
     `,h(e.span,{className:"hljs-attribute",children:"color"}),`: green;
   }
 }
-`]})})]})}function Rs(n={}){let{wrapper:e}=n.components||{};return e?h(e,Object.assign({},n,{children:h(Te,n)})):Te(n)}var As=Rs;var re={};N(re,{default:()=>Xs});import{Fragment as Fs,jsx as j,jsxs as S}from"https://esm.sh/react@18.2.0/jsx-runtime";function Re(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",span:"span",h2:"h2",blockquote:"blockquote",a:"a",h3:"h3",ul:"ul",li:"li"},n.components);return S(Fs,{children:[j(e.h1,{children:"Hot Module Replacement"}),`
+`]})})]})}function Ts(n={}){let{wrapper:e}=n.components||{};return e?h(e,Object.assign({},n,{children:h(Re,n)})):Re(n)}var Ls=Ts;var le={};N(le,{default:()=>Os});import{Fragment as As,jsx as j,jsxs as S}from"https://esm.sh/react@18.2.0/jsx-runtime";function Te(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",code:"code",pre:"pre",span:"span",h2:"h2",blockquote:"blockquote",a:"a",h3:"h3",ul:"ul",li:"li"},n.components);return S(As,{children:[j(e.h1,{children:"Hot Module Replacement"}),`
 `,S(e.p,{children:["Hot Module Replacement (or HMR) allows modules to be updated at runtime without the need for a full refresh during ",j(e.strong,{children:"development"}),". To support this, Aleph.js's built-in ",j(e.strong,{children:"HMR"})," module creates a ",j(e.strong,{children:"WebSocket"})," connection to the dev server on the client, and the server listens for file changes. Once the HMR client gets an update signal from the server, Aleph.js will re-import the updated module."]}),`
 `,j(e.p,{children:"For a CSS module, the old style will be removed after the new one is applied. For a React Component, Fast Refresh will re-render the component view without losing component state."}),`
 `,S(e.p,{children:["You can use the ",j(e.code,{children:"hot"})," api to handle the module update event."]}),`
@@ -572,12 +571,13 @@ spec`]}),`
 `,S(e.blockquote,{children:[`
 `,S(e.p,{children:[`It's a reimplementation of "hot reloading" with full support from React. It's originally `,j(e.a,{href:"https://twitter.com/dan_abramov/status/1169687758849400832",children:"shipped for React Native"}),", but most of the implementation is platform-independent. The plan is to use it across the board, as a replacement for purely userland solutions (like react-hot-loader). ",j(e.a,{href:"https://github.com/facebook/react/issues/16604#issuecomment-528663101",children:"\xB9"})]}),`
 `]}),`
-`,j("video",{src:"/assets/fast-refresh.mp4",loop:!0,autoplay:!0,muted:!0,controls:!0}),`
+`,j(e.p,{}),`
 `,j(e.h3,{children:"Limits"}),`
 `,S(e.ul,{children:[`
 `,j(e.li,{children:"Fast Refresh only supports functional components with hooks."}),`
 `,S(e.li,{children:["Functional components using default exports must be named: ",j(e.code,{children:"export default function ComponentName() {}"}),"."]}),`
-`]})]})}function Os(n={}){let{wrapper:e}=n.components||{};return e?j(e,Object.assign({},n,{children:j(Re,n)})):Re(n)}var Xs=Os;var ce={};N(ce,{default:()=>qs});import{Fragment as Is,jsx as r,jsxs as m}from"https://esm.sh/react@18.2.0/jsx-runtime";import{Link as Ps}from"aleph/react";function Ae(n){let e=Object.assign({h1:"h1",p:"p",pre:"pre",code:"code",span:"span",blockquote:"blockquote",h2:"h2",ul:"ul",li:"li",a:"a"},n.components);return m(Is,{children:[r(e.h1,{children:"Server"}),`
+`]})]})}function Fs(n={}){let{wrapper:e}=n.components||{};return e?j(e,Object.assign({},n,{children:j(Te,n)})):Te(n)}var Os=Fs;var re={};N(re,{default:()=>Ps});import{Fragment as Xs,jsx as r,jsxs as m}from"https://esm.sh/react@18.2.0/jsx-runtime";function Le(n){let e=Object.assign({p:"p",h1:"h1",pre:"pre",code:"code",span:"span",blockquote:"blockquote",h2:"h2",ul:"ul",li:"li",a:"a"},n.components);return m(Xs,{children:[r(e.p,{children:'import { Link } from "aleph/react"'}),`
+`,r(e.h1,{children:"Server"}),`
 `,r(e.p,{children:`In Aleph.js, the server handles all incoming requests, everything is
 just-in-time, includes static files, server-side rendering, data fetching, and
 module transpiling.`}),`
@@ -600,7 +600,7 @@ module transpiling.`}),`
 `,m(e.blockquote,{children:[`
 `,m(e.p,{children:[`Normally you don't need to configure the server by using Aleph's template
 created by the `,r(e.code,{children:"init"}),` script. To learn more about server configuration, check
-out the `,r(Ps,{to:"/docs/api-reference/server-config",children:"Server Config API"}),"."]}),`
+out the `,"Server Config API","."]}),`
 `]}),`
 `,r(e.h2,{children:r(e.code,{children:"index.html"})}),`
 `,m(e.p,{children:["Aleph.js uses ",r(e.code,{children:"index.html"}),` (in the project root directory) as the page html
@@ -630,17 +630,17 @@ rendering.`]}),`
 `,m(e.li,{children:[`Aleph.js will transpile modules for browsers automatically, you can safely add
 non-JS modules like `,r(e.code,{children:"JSX"})," or ",r(e.code,{children:"TS"}),"."]}),`
 `,m(e.li,{children:["CSS files will be bundled using ",r(e.a,{href:"https://lightningcss.dev/",children:"lightningcss"})]}),`
-`]})]})}function Hs(n={}){let{wrapper:e}=n.components||{};return e?r(e,Object.assign({},n,{children:r(Ae,n)})):Ae(n)}var qs=Hs;var te={};N(te,{default:()=>Es});import{Fragment as $s,jsx as M,jsxs as H}from"https://esm.sh/react@18.2.0/jsx-runtime";function Fe(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",em:"em",code:"code",pre:"pre",span:"span"},n.components);return H($s,{children:[M(e.h1,{children:"Server-side Rendering"}),`
-`,H(e.p,{children:["By default, Aleph.js ",M(e.strong,{children:"pre-renders"})," every page. This means that Aleph.js generates HTML for each page in advance, instead of rendering it with client-side JavaScript. Pre-rendering can result in better performance and SEO."]}),`
-`,H(e.p,{children:["Each generated HTML page only needs a small amount of JavaScript. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called ",M(e.em,{children:"hydration"}),".)"]}),`
-`,H(e.p,{children:["You can disable ",M(e.strong,{children:"SSR"})," functionality in ",M(e.code,{children:"server.ts"}),":"]}),`
-`,M(e.pre,{children:H(e.code,{className:"hljs language-ts",children:[M(e.span,{className:"hljs-title function_",children:"serve"}),`({
+`]})]})}function Is(n={}){let{wrapper:e}=n.components||{};return e?r(e,Object.assign({},n,{children:r(Le,n)})):Le(n)}var Ps=Is;var ce={};N(ce,{default:()=>$s});import{Fragment as Hs,jsx as M,jsxs as P}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ae(n){let e=Object.assign({h1:"h1",p:"p",strong:"strong",em:"em",code:"code",pre:"pre",span:"span"},n.components);return P(Hs,{children:[M(e.h1,{children:"Server-side Rendering"}),`
+`,P(e.p,{children:["By default, Aleph.js ",M(e.strong,{children:"pre-renders"})," every page. This means that Aleph.js generates HTML for each page in advance, instead of rendering it with client-side JavaScript. Pre-rendering can result in better performance and SEO."]}),`
+`,P(e.p,{children:["Each generated HTML page only needs a small amount of JavaScript. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called ",M(e.em,{children:"hydration"}),".)"]}),`
+`,P(e.p,{children:["You can disable ",M(e.strong,{children:"SSR"})," functionality in ",M(e.code,{children:"server.ts"}),":"]}),`
+`,M(e.pre,{children:P(e.code,{className:"hljs language-ts",children:[M(e.span,{className:"hljs-title function_",children:"serve"}),`({
   `,M(e.span,{className:"hljs-attr",children:"ssr"}),": ",M(e.span,{className:"hljs-literal",children:"true"}),`
 })
-`]})})]})}function Us(n={}){let{wrapper:e}=n.components||{};return e?M(e,Object.assign({},n,{children:M(Fe,n)})):Fe(n)}var Es=Us;var he={};N(he,{default:()=>Gs});import{Fragment as Ws,jsx as w,jsxs as U}from"https://esm.sh/react@18.2.0/jsx-runtime";function Oe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",code:"code",pre:"pre",span:"span"},n.components);return U(Ws,{children:[w(e.h1,{children:"Unocss"}),`
-`,U(e.p,{children:["Aleph.js uses ",w(e.a,{href:"https://github.com/unocss/unocss/",children:"Unocss"}),` as the Atomic CSS
+`]})})]})}function qs(n={}){let{wrapper:e}=n.components||{};return e?M(e,Object.assign({},n,{children:M(Ae,n)})):Ae(n)}var $s=qs;var te={};N(te,{default:()=>Ws});import{Fragment as Us,jsx as w,jsxs as $}from"https://esm.sh/react@18.2.0/jsx-runtime";function Fe(n){let e=Object.assign({h1:"h1",p:"p",a:"a",code:"code",pre:"pre",span:"span"},n.components);return $(Us,{children:[w(e.h1,{children:"Unocss"}),`
+`,$(e.p,{children:["Aleph.js uses ",w(e.a,{href:"https://github.com/unocss/unocss/",children:"Unocss"}),` as the Atomic CSS
 engine. To enable unocss, add `,w(e.code,{children:"presets"})," to the ",w(e.code,{children:"unocss"})," option in ",w(e.code,{children:"server.ts"}),":"]}),`
-`,w(e.pre,{children:U(e.code,{className:"hljs language-js",children:[w(e.span,{className:"hljs-keyword",children:"import"})," presetUno ",w(e.span,{className:"hljs-keyword",children:"from"})," ",w(e.span,{className:"hljs-string",children:'"https://esm.sh/@unocss/preset-uno"'}),`;
+`,w(e.pre,{children:$(e.code,{className:"hljs language-js",children:[w(e.span,{className:"hljs-keyword",children:"import"})," presetUno ",w(e.span,{className:"hljs-keyword",children:"from"})," ",w(e.span,{className:"hljs-string",children:'"https://esm.sh/@unocss/preset-uno"'}),`;
 `,w(e.span,{className:"hljs-keyword",children:"import"})," { serve } ",w(e.span,{className:"hljs-keyword",children:"from"})," ",w(e.span,{className:"hljs-string",children:'"aleph/server"'}),`;
 
 `,w(e.span,{className:"hljs-title function_",children:"serve"}),`({
@@ -649,7 +649,7 @@ engine. To enable unocss, add `,w(e.code,{children:"presets"})," to the ",w(e.co
   },
 });
 `]})}),`
-`,U(e.p,{children:["Check out the ",w(e.a,{href:"https://github.com/unocss/unocss/#presets",children:"available presets"}),` or
-Unocss `,w(e.a,{href:"https://github.com/unocss/unocss/#configurations",children:"configurations"}),"."]})]})}function Js(n={}){let{wrapper:e}=n.components||{};return e?w(e,Object.assign({},n,{children:w(Oe,n)})):Oe(n)}var Gs=Js;var ie={};N(ie,{default:()=>Vs});import{Fragment as Ys,jsx as q,jsxs as Bs}from"https://esm.sh/react@18.2.0/jsx-runtime";function Xe(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Bs(Ys,{children:[q(e.h1,{children:"Vue"}),`
-`,q(e.p,{children:q(e.em,{children:"WIP"})})]})}function zs(n={}){let{wrapper:e}=n.components||{};return e?q(e,Object.assign({},n,{children:q(Xe,n)})):Xe(n)}var Vs=zs;var de={};N(de,{default:()=>en});import{Fragment as Zs,jsx as $,jsxs as Ks}from"https://esm.sh/react@18.2.0/jsx-runtime";function Ie(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Ks(Zs,{children:[$(e.h1,{children:"React"}),`
-`,$(e.p,{children:$(e.em,{children:"WIP"})})]})}function Qs(n={}){let{wrapper:e}=n.components||{};return e?$(e,Object.assign({},n,{children:$(Ie,n)})):Ie(n)}var en=Qs;var Tn={"/":sn,"/docs":nn,"/docs/browser-support":E,"/docs/deployment":W,"/docs/index":J,"/docs/get-started":G,"/docs/framework/vue":Y,"/docs/framework/react-mdx":B,"/docs/framework/solid":z,"/docs/framework/react":V,"/docs/framework/yew":Z,"/docs/api-reference/middleware":K,"/docs/api-reference/server-config":Q,"/docs/basic-concepts/import-maps":ee,"/docs/basic-concepts/static-file-serving":se,"/docs/basic-concepts/routing":ne,"/docs/basic-concepts/import-from-npm":ae,"/docs/basic-concepts/css-support":le,"/docs/basic-concepts/hmr":re,"/docs/basic-concepts/server":ce,"/docs/basic-concepts/ssr":te,"/docs/basic-concepts/unocss":he,"/docs/api-reference/framework/vue":ie,"/docs/api-reference/framework/react":de,depGraph:{"modules":[{"specifier":"./routes/docs/browser-support.md"},{"specifier":"./routes/docs/deployment.md"},{"specifier":"./routes/docs/index.md"},{"specifier":"./routes/docs/get-started.md"},{"specifier":"./routes/docs/framework/vue.md"},{"specifier":"./routes/docs/framework/react-mdx.md"},{"specifier":"./routes/docs/framework/solid.md"},{"specifier":"./routes/docs/framework/react.md"},{"specifier":"./routes/docs/framework/yew.md"},{"specifier":"./routes/docs/api-reference/middleware.md"},{"specifier":"./routes/docs/api-reference/server-config.md"},{"specifier":"./routes/docs/basic-concepts/import-maps.md"},{"specifier":"./routes/docs/basic-concepts/static-file-serving.md"},{"specifier":"./routes/docs/basic-concepts/routing.md"},{"specifier":"./routes/docs/basic-concepts/import-from-npm.md"},{"specifier":"./routes/docs/basic-concepts/css-support.md"},{"specifier":"./routes/docs/basic-concepts/hmr.md"},{"specifier":"./routes/docs/basic-concepts/server.md"},{"specifier":"./routes/docs/basic-concepts/ssr.md"},{"specifier":"./routes/docs/basic-concepts/unocss.md"},{"specifier":"./routes/docs/api-reference/framework/vue.md"},{"specifier":"./routes/docs/api-reference/framework/react.md"}]}};export{Tn as default};
+`,$(e.p,{children:["Check out the ",w(e.a,{href:"https://github.com/unocss/unocss/#presets",children:"available presets"}),` or
+Unocss `,w(e.a,{href:"https://github.com/unocss/unocss/#configurations",children:"configurations"}),"."]})]})}function Es(n={}){let{wrapper:e}=n.components||{};return e?w(e,Object.assign({},n,{children:w(Fe,n)})):Fe(n)}var Ws=Es;var he={};N(he,{default:()=>Bs});import{Fragment as Js,jsx as H,jsxs as Gs}from"https://esm.sh/react@18.2.0/jsx-runtime";function Oe(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Gs(Js,{children:[H(e.h1,{children:"Vue"}),`
+`,H(e.p,{children:H(e.em,{children:"WIP"})})]})}function Ys(n={}){let{wrapper:e}=n.components||{};return e?H(e,Object.assign({},n,{children:H(Oe,n)})):Oe(n)}var Bs=Ys;var ie={};N(ie,{default:()=>Ks});import{Fragment as zs,jsx as q,jsxs as Vs}from"https://esm.sh/react@18.2.0/jsx-runtime";function Xe(n){let e=Object.assign({h1:"h1",p:"p",em:"em"},n.components);return Vs(zs,{children:[q(e.h1,{children:"React"}),`
+`,q(e.p,{children:q(e.em,{children:"WIP"})})]})}function Zs(n={}){let{wrapper:e}=n.components||{};return e?q(e,Object.assign({},n,{children:q(Xe,n)})):Xe(n)}var Ks=Zs;var Sn={"/":Qs,"/docs":en,"/docs/browser-support":U,"/docs/deployment":E,"/docs/index":W,"/docs/get-started":J,"/docs/framework/vue":G,"/docs/framework/react-mdx":Y,"/docs/framework/solid":B,"/docs/framework/react":z,"/docs/framework/yew":V,"/docs/api-reference/server-config":Z,"/docs/api-reference/middleware":K,"/docs/basic-concepts/import-maps":Q,"/docs/basic-concepts/static-file-serving":ee,"/docs/basic-concepts/routing":se,"/docs/basic-concepts/import-from-npm":ne,"/docs/basic-concepts/css-support":ae,"/docs/basic-concepts/hmr":le,"/docs/basic-concepts/server":re,"/docs/basic-concepts/ssr":ce,"/docs/basic-concepts/unocss":te,"/docs/api-reference/framework/vue":he,"/docs/api-reference/framework/react":ie,depGraph:{"modules":[{"specifier":"./routes/docs/browser-support.md"},{"specifier":"./routes/docs/deployment.md"},{"specifier":"./routes/docs/index.md"},{"specifier":"./routes/docs/get-started.md"},{"specifier":"./routes/docs/framework/vue.md"},{"specifier":"./routes/docs/framework/react-mdx.md"},{"specifier":"./routes/docs/framework/solid.md"},{"specifier":"./routes/docs/framework/react.md"},{"specifier":"./routes/docs/framework/yew.md"},{"specifier":"./routes/docs/api-reference/server-config.mdx"},{"specifier":"./routes/docs/api-reference/middleware.mdx"},{"specifier":"./routes/docs/basic-concepts/import-maps.md"},{"specifier":"./routes/docs/basic-concepts/static-file-serving.md"},{"specifier":"./routes/docs/basic-concepts/routing.md"},{"specifier":"./routes/docs/basic-concepts/import-from-npm.md"},{"specifier":"./routes/docs/basic-concepts/css-support.md"},{"specifier":"./routes/docs/basic-concepts/hmr.md"},{"specifier":"./routes/docs/basic-concepts/server.md"},{"specifier":"./routes/docs/basic-concepts/ssr.md"},{"specifier":"./routes/docs/basic-concepts/unocss.md"},{"specifier":"./routes/docs/api-reference/framework/vue.md"},{"specifier":"./routes/docs/api-reference/framework/react.md"}]}};export{Sn as default};
