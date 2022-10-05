@@ -21,9 +21,9 @@ serve({
   ],
   middlewares: [
     {
-      name: "proxy-module",
+      name: "proxy-init-script",
       fetch(req: Request) {
-        if (req.url.endsWith(".ts")) {
+        if (req.url.endsWith("/init.ts")) {
           return fetch(
             "https://deno.land/x/aleph" + (new URL(req.url)).pathname,
           );
