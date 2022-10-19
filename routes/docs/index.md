@@ -5,8 +5,6 @@ authors:
   - razermoon
 ---
 
-import { Link } from "aleph/react"
-
 # Aleph.js
 
 **Aleph.js** (or **Aleph** or **א** or **阿莱夫**, <samp>ˈɑːlɛf</samp>) is a

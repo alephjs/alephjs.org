@@ -4,8 +4,6 @@ authors:
   - ije
 ---
 
-import { Link } from "aleph/react"
-
 # Server
 
 In Aleph.js, the server handles all incoming requests, everything is
