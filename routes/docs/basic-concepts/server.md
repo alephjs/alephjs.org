@@ -23,7 +23,7 @@ serve({
     glob: "./routes/**/*.{ts,tsx}",
   },
   middlewares: [/* ... */],
-  uncoss: {/* ... */},
+  unocss: {/* ... */},
   ssr: (ctx) => {
     return renderToString(<App />);
   },
