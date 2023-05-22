@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);
@@ -9,8 +9,8 @@ const useMediaQuery = (query: string) => {
       setMatches(media.matches);
     }
     const listener = () => setMatches(media.matches);
-    self.addEventListener('resize', listener);
-    return () => self.removeEventListener('resize', listener);
+    self.addEventListener("resize", listener);
+    return () => self.removeEventListener("resize", listener);
   }, [matches, query]);
 
   return matches;
