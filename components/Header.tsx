@@ -77,6 +77,32 @@ export default function Header() {
               </path>
             </svg>
           </a>
+          <div
+            className="space-y-1 pointer md:hidden"
+            id="hamburger-menu-button"
+          >
+            <div className="w-4 h-0.5 bg-gray-600"></div>
+            <div className="w-4 h-0.5 bg-gray-600"></div>
+            <div className="w-4 h-0.5 bg-gray-600"></div>
+          </div>
+
+          <div className="pointer hidden w-[16px]" id="hamburger-menu-close">
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
         </nav>
       </div>
     </header>

@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { Head, NavLink, useRouter } from "aleph/react";
 import Header from "components/Header.tsx";
+import useMediaQuery from "components/useMediaQuery.tsx";
 
 type Menu = {
   name: string;
@@ -73,37 +74,38 @@ const navMenu: Menu[] = [
 ];
 
 export default function Docs({ children }: React.PropsWithChildren) {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const { url } = useRouter();
   const [extended, setExtended] = useState(
-    navMenu.map((m) => m.items).flat().filter((item) => item.submenu).reduce(
-      (m, item) => {
+    navMenu
+      .map((m) => m.items)
+      .flat()
+      .filter((item) => item.submenu)
+      .reduce((m, item) => {
         m[item.path] = url.pathname.startsWith(item.path);
         return m;
-      },
-      {} as Record<string, boolean>,
-    ),
+      }, {} as Record<string, boolean>),
   );
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchWords, setSearchWords] = useState("");
-  const navLinks = useMemo<[[string, string] | null, [string, string] | null]>(
-    () => {
-      const all: [string, string][] = [];
-      navMenu.forEach((g) =>
-        g.items.forEach((item) => {
-          if (item.submenu) {
-            item.submenu.forEach(({ title, path }) => {
-              all.push([title, item.path + (path === "/" ? "" : path)]);
-            });
-          } else {
-            all.push([item.title, item.path]);
-          }
-        })
-      );
-      const index = all.findIndex(([_, path]) => path === url.pathname);
-      return [all[index - 1] || null, all[index + 1] || null];
-    },
-    [url.pathname],
-  );
+  const navLinks = useMemo<
+    [[string, string] | null, [string, string] | null]
+  >(() => {
+    const all: [string, string][] = [];
+    navMenu.forEach((g) =>
+      g.items.forEach((item) => {
+        if (item.submenu) {
+          item.submenu.forEach(({ title, path }) => {
+            all.push([title, item.path + (path === "/" ? "" : path)]);
+          });
+        } else {
+          all.push([item.title, item.path]);
+        }
+      })
+    );
+    const index = all.findIndex(([_, path]) => path === url.pathname);
+    return [all[index - 1] || null, all[index + 1] || null];
+  }, [url.pathname]);
   const editUrl = useMemo(() => {
     const md = url.pathname === "/docs"
       ? url.pathname + "/index.md"
@@ -114,32 +116,37 @@ export default function Docs({ children }: React.PropsWithChildren) {
     if (searchWords === "") {
       return navMenu;
     }
-    return navMenu.map((g) => {
-      const includes = (item: MenuItem) =>
-        item.title.toLowerCase().includes(searchWords);
-      return {
-        ...g,
-        items: g.items.filter((item) => {
-          return includes(item) || item.submenu?.some(includes);
-        }).map((item) => ({
-          ...item,
-          submenu: item.submenu?.filter((subItem) =>
-            includes(item) || includes(subItem)
-          ),
-        })),
-      };
-    }).filter((g) => g.items.length > 0);
+    return navMenu
+      .map((g) => {
+        const includes = (item: MenuItem) =>
+          item.title.toLowerCase().includes(searchWords);
+        return {
+          ...g,
+          items: g.items
+            .filter((item) => {
+              return includes(item) || item.submenu?.some(includes);
+            })
+            .map((item) => ({
+              ...item,
+              submenu: item.submenu?.filter(
+                (subItem) => includes(item) || includes(subItem),
+              ),
+            })),
+        };
+      })
+      .filter((g) => g.items.length > 0);
   }, [searchWords]);
 
   useEffect(() => {
     setExtended(
-      navMenu.map((m) => m.items).flat().filter((item) => item.submenu).reduce(
-        (m, item) => {
+      navMenu
+        .map((m) => m.items)
+        .flat()
+        .filter((item) => item.submenu)
+        .reduce((m, item) => {
           m[item.path] = url.pathname.startsWith(item.path);
           return m;
-        },
-        {} as Record<string, boolean>,
-      ),
+        }, {} as Record<string, boolean>),
     );
     document.querySelectorAll(".makedown-body video").forEach((block) => {
       const v = block as HTMLVideoElement;
@@ -151,10 +158,85 @@ export default function Docs({ children }: React.PropsWithChildren) {
           v.requestFullscreen();
         }
       });
-      v.addEventListener("playing", () => v.className = "is-playing");
-      v.addEventListener("pause", () => v.className = "is-paused");
+      v.addEventListener("playing", () => (v.className = "is-playing"));
+      v.addEventListener("pause", () => (v.className = "is-paused"));
     });
   }, [url.pathname]);
+
+  // Hamburger menu for mobile devices
+  useEffect(() => {
+    const hamburgerMenuButton = document.getElementById(
+      "hamburger-menu-button",
+    );
+    const hamburgerMenuClose = document.getElementById("hamburger-menu-close");
+    const navMenuButton = document.getElementById("nav-menu");
+
+    // Toggle the accordian
+    function toggleAccordion(event: MouseEvent) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (navMenuButton) {
+        navMenuButton.classList.toggle("hidden");
+      }
+
+      if (hamburgerMenuButton && hamburgerMenuClose) {
+        hamburgerMenuButton.classList.toggle("hidden");
+        hamburgerMenuClose.classList.toggle("hidden");
+      }
+    }
+
+    // Event Listener for Navigation Mobile Hamburger Icon
+    if (hamburgerMenuButton) {
+      hamburgerMenuButton.addEventListener("click", toggleAccordion);
+    }
+
+    // Event Listener for Navigation Mobile Close Icon
+    if (hamburgerMenuClose) {
+      hamburgerMenuClose.addEventListener("click", toggleAccordion);
+    }
+
+    // Event listeners should be removed when unmounted
+    return () => {
+      hamburgerMenuButton?.removeEventListener("click", toggleAccordion);
+      hamburgerMenuClose?.removeEventListener("click", toggleAccordion);
+    };
+  }, []);
+
+  useEffect(() => {
+    const navMenuButton = document.getElementById("nav-menu");
+    const hamburgerMenuClose = document.getElementById("hamburger-menu-close");
+    const hamburgerMenuButton = document.getElementById(
+      "hamburger-menu-button",
+    );
+    const isContainHidden = navMenuButton?.classList.contains("hidden");
+    if (isDesktop && navMenuButton) {
+      // When the windows is resized for desktop
+
+      // Remove the hidden from navigation for desktop
+      if (isContainHidden) {
+        navMenuButton.classList.remove("hidden");
+      }
+
+      // Remove the close button from navigation when resized to desktop
+      if (hamburgerMenuClose) {
+        hamburgerMenuClose.classList.add("hidden");
+      }
+    } else {
+      // When the windows is resized to mobile
+
+      // Navigation Menu should not be visible at first render
+      if (!isContainHidden && navMenuButton) {
+        navMenuButton.classList.add("hidden");
+      }
+
+      // When resize to mobile then hamburger button should show if it is hidden
+      if (hamburgerMenuButton) {
+        if (hamburgerMenuButton.classList.contains("hidden")) {
+          hamburgerMenuButton.classList.remove("hidden");
+        }
+      }
+    }
+  }, [isDesktop]);
 
   return (
     <>
@@ -169,7 +251,10 @@ export default function Docs({ children }: React.PropsWithChildren) {
       </Head>
       <Header />
       <div className="m-auto w-14/16 py-4 max-w-[1080px] h-full flex items-start justify-between gap-18">
-        <aside className="sticky top-20 w-60 shrink-0">
+        <aside
+          className="sticky md:top-20 md:w-60 shrink-0 w-full"
+          id="nav-menu"
+        >
           <div className="search">
             <input
               className="border border-gray-200 rounded-md px-3 py-1.5 w-full"
@@ -269,9 +354,7 @@ export default function Docs({ children }: React.PropsWithChildren) {
             ))}
           </nav>
         </aside>
-        <div className="markdown-body grow-1">
-          {children}
-        </div>
+        <div className="markdown-body grow-1">{children}</div>
       </div>
     </>
   );
