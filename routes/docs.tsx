@@ -50,6 +50,7 @@ const navMenu: Menu[] = [
           { title: "Vue", path: "/vue" },
           { title: "SolidJS", path: "/solid" },
           { title: "Yew", path: "/yew" },
+          { title: "Leptos", path: "/leptos" },
         ],
       },
       { title: "Browser Support", path: "/docs/browser-support" },
